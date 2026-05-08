@@ -1,0 +1,26 @@
+<section id="faq" class="faq section light-background">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about working with us.</p>
+    </div>
+
+    <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+      <div
+        *ngFor="let faq of faqs; let i = index"
+        class="faq-item"
+        [ngClass]="{ 'faq-active': faq.active }"
+        (click)="toggleFaq(i)">
+
+        <h3>
+          <span class="num">{{ faq.num }}.</span>
+          {{ faq.question }}
+        </h3>
+        <div class="faq-content">
+          <p>{{ faq.answer }}</p>
+        </div>
+        <i class="faq-toggle bi bi-chevron-right"></i>
+      </div>
+    </div>
+  </div>
+</section>

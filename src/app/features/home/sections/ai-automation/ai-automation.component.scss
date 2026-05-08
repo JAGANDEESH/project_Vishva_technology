@@ -1,0 +1,278 @@
+/* ================================================
+   AI & Automation Section
+   ================================================ */
+
+/* ---- Headline Banner ---- */
+.ai-headline {
+  background: linear-gradient(135deg, #0f2742 0%, #1a4a8a 60%, #2094E7 100%);
+  border-radius: 12px;
+  padding: 50px 50px;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    padding: 36px 24px;
+  }
+}
+
+.ai-headline-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+
+  @media (max-width: 991px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.ai-headline-text {
+  flex: 1;
+
+  h3 {
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: var(--heading-font);
+    margin-bottom: 16px;
+
+    @media (max-width: 575px) {
+      font-size: 20px;
+    }
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+}
+
+.ai-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #1a4a8a;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-family: var(--nav-font);
+
+  i { transition: transform 0.3s; }
+
+  &:hover {
+    background: #e8f3ff;
+    color: #0f2742;
+
+    i { transform: translateX(4px); }
+  }
+}
+
+/* ---- Orbit Visual ---- */
+.ai-headline-visual {
+  flex-shrink: 0;
+  width: 240px;
+  height: 240px;
+  position: relative;
+
+  @media (max-width: 991px) {
+    width: 180px;
+    height: 180px;
+  }
+
+  @media (max-width: 575px) {
+    display: none;
+  }
+}
+
+.ai-orbit {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-orbit-center {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+
+  i {
+    font-size: 28px;
+    color: #fff;
+  }
+}
+
+.ai-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  top: 50%;
+  left: 50%;
+
+  &.ring-1 {
+    width: 140px;
+    height: 140px;
+    margin-top: -70px;
+    margin-left: -70px;
+    animation: orbit-spin 8s linear infinite;
+
+    @media (max-width: 991px) {
+      width: 110px;
+      height: 110px;
+      margin-top: -55px;
+      margin-left: -55px;
+    }
+  }
+
+  &.ring-2 {
+    width: 220px;
+    height: 220px;
+    margin-top: -110px;
+    margin-left: -110px;
+    animation: orbit-spin 14s linear infinite reverse;
+
+    @media (max-width: 991px) {
+      width: 168px;
+      height: 168px;
+      margin-top: -84px;
+      margin-left: -84px;
+    }
+  }
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 13px;
+    color: #fff;
+  }
+
+  /* Ring-1 dots */
+  &.d1 { top: -16px; left: 50%; transform: translateX(-50%); }
+  &.d2 { bottom: -16px; left: 20%; }
+  &.d3 { bottom: -16px; right: 20%; }
+
+  /* Ring-2 dots */
+  &.d4 { top: -16px; left: 25%; }
+  &.d5 { top: -16px; right: 25%; }
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---- Capability Cards ---- */
+.capability-card {
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  border-radius: 8px;
+  padding: 28px 24px;
+  height: 100%;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 28px rgba(32, 148, 231, 0.12);
+    transform: translateY(-4px);
+
+    .capability-icon {
+      background: var(--accent-color);
+
+      i { color: #fff; }
+    }
+  }
+}
+
+.capability-icon {
+  width: 52px;
+  height: 52px;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: background 0.3s;
+
+  i {
+    font-size: 22px;
+    color: var(--accent-color);
+    transition: color 0.3s;
+  }
+}
+
+.capability-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+  font-family: var(--heading-font);
+}
+
+.capability-card p {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---- AI Stats Bar ---- */
+.ai-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background: linear-gradient(135deg, #0f2742 0%, #2094E7 100%);
+  border-radius: 10px;
+  padding: 36px 20px;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.ai-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 120px;
+}
+
+.ai-stat-value {
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  font-family: var(--heading-font);
+  line-height: 1;
+}
+
+.ai-stat-label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: center;
+  font-family: var(--nav-font);
+}

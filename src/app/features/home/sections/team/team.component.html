@@ -1,0 +1,29 @@
+<section id="doctors" class="doctors section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Team</h2>
+      <p>Meet the talented professionals who bring your vision to life.</p>
+    </div>
+
+    <div class="row" style="gap: 30px 0;">
+      <div class="col-lg-6" *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="(i+1)*100">
+        <div class="team-member">
+          <div class="pic">
+            <img [src]="member.img" [alt]="member.name" class="img-fluid">
+          </div>
+          <div class="member-info">
+            <h4>{{ member.name }}</h4>
+            <span>{{ member.role }}</span>
+            <p>{{ member.bio }}</p>
+            <div class="social">
+              <a [href]="member.twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a [href]="member.facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a [href]="member.instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a [href]="member.linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

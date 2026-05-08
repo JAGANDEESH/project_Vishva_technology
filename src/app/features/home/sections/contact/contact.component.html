@@ -1,0 +1,70 @@
+<section id="contact" class="contact section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Contact Us</h2>
+      <p>Have a project in mind? Let's talk about how we can help you succeed.</p>
+    </div>
+
+    <div class="row" style="gap: 30px 0;">
+
+      <!-- Map -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1smk!2sbg!4v1539943755621"
+          style="border:0; width:100%; height:270px;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div class="info-item" style="display:flex; align-items:center; margin-top:30px;">
+          <i class="bi bi-geo-alt"></i>
+          <div>
+            <h3>Location</h3>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </div>
+        </div>
+
+        <div class="info-item" style="display:flex; align-items:center; margin-top:30px;">
+          <i class="bi bi-telephone"></i>
+          <div>
+            <h3>Call Us</h3>
+            <p>+1 5589 55488 55</p>
+          </div>
+        </div>
+
+        <div class="info-item" style="display:flex; align-items:center; margin-top:30px;">
+          <i class="bi bi-envelope"></i>
+          <div>
+            <h3>Email Us</h3>
+            <p>info&#64;vishvatechnolabs.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <form class="php-email-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div *ngIf="submitted" style="background:#059652; color:#fff; padding:15px; margin-bottom:20px; text-align:center; font-weight:600;">
+            Your message has been sent. Thank you!
+          </div>
+          <div *ngIf="loading" style="text-align:center; padding:15px; margin-bottom:20px;">
+            Sending message...
+          </div>
+
+          <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your Name" required>
+          <input type="email" name="email" [(ngModel)]="form.email" placeholder="Your Email" required>
+          <input type="text" name="subject" [(ngModel)]="form.subject" placeholder="Subject" required>
+          <textarea name="message" [(ngModel)]="form.message" rows="6" placeholder="Message" required></textarea>
+
+          <div style="text-align:center;">
+            <button type="submit" [disabled]="loading">
+              {{ loading ? 'Sending...' : 'Send Message' }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

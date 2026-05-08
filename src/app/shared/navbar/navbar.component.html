@@ -1,0 +1,145 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="contact-info">
+        <i><i class="bi bi-phone"></i> <a href="tel:+15589554885">+1 5589 55488 55</a></i>
+        <i><i class="bi bi-envelope"></i> <a href="mailto:info&#64;vishvatechnolabs.com">info&#64;vishvatechnolabs.com</a></i>
+      </div>
+      <div class="social-links">
+        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Branding Row -->
+  <div class="branding">
+    <div class="container d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <a href="/" class="logo d-flex align-items-center">
+        <img src="assets/logo.jpg" alt="Vishva Techno Labs Logo">
+        <h1>Vishva Technologies</h1>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active" (click)="scrollToSection('hero'); $event.preventDefault()">Home</a></li>
+          <li><a href="#about" (click)="scrollToSection('about'); $event.preventDefault()">About</a></li>
+          <li><a href="#services" (click)="scrollToSection('services'); $event.preventDefault()">Services</a></li>
+          <li class="dropdown">
+            <a href="#portfolio" (click)="goToPortfolio('all'); $event.preventDefault()"><span>Portfolio</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#portfolio" (click)="goToPortfolio('web'); $event.preventDefault()">Web Development</a></li>
+              <li><a href="#portfolio" (click)="goToPortfolio('mobile'); $event.preventDefault()">Mobile Apps</a></li>
+              <li><a href="#portfolio" (click)="goToPortfolio('design'); $event.preventDefault()">UI/UX Design</a></li>
+              <li><a href="#ai-automation" (click)="goToPortfolio('ai'); $event.preventDefault()">AI &amp; Automation</a></li>
+            </ul>
+          </li>
+          <li><a href="#doctors" (click)="scrollToSection('doctors'); $event.preventDefault()">Team</a></li>
+          <li><a href="#contact" (click)="scrollToSection('contact'); $event.preventDefault()">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#appointment" class="cta-btn" (click)="scrollToSection('appointment'); $event.preventDefault()">Get a Quote</a>
+
+      <!-- Mobile Toggle -->
+      <button class="mobile-nav-toggle" (click)="toggleMobileNav()" aria-label="Toggle navigation">
+        <i [class]="mobileNavOpen ? 'bi bi-x' : 'bi bi-list'"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Backdrop -->
+<div class="mobile-backdrop" [class.show]="mobileNavOpen" (click)="closeMobileNav()"></div>
+
+<!-- Mobile Drawer -->
+<div class="mobile-nav-panel" [class.open]="mobileNavOpen" role="dialog" aria-label="Mobile navigation">
+
+  <!-- Drawer Header -->
+  <div class="mnp-header">
+    <div class="mnp-logo">
+      <img src="assets/logo.jpg" alt="Vishva Techno Labs Logo">
+      <span>Vishva Techno Labs</span>
+    </div>
+    <button class="mnp-close" (click)="closeMobileNav()" aria-label="Close menu">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <!-- Nav Links -->
+  <nav class="mnp-nav">
+
+    <a href="#hero" class="mnp-link" (click)="scrollToSection('hero'); $event.preventDefault()">
+      <span class="mnp-icon"><i class="bi bi-house-door"></i></span>
+      <span class="mnp-label">Home</span>
+    </a>
+
+    <a href="#about" class="mnp-link" (click)="scrollToSection('about'); $event.preventDefault()">
+      <span class="mnp-icon"><i class="bi bi-info-circle"></i></span>
+      <span class="mnp-label">About</span>
+    </a>
+
+    <a href="#services" class="mnp-link" (click)="scrollToSection('services'); $event.preventDefault()">
+      <span class="mnp-icon"><i class="bi bi-grid-1x2"></i></span>
+      <span class="mnp-label">Services</span>
+    </a>
+
+    <!-- Portfolio Accordion -->
+    <div class="mnp-accordion" [class.open]="portfolioOpen">
+      <button class="mnp-link mnp-accordion-toggle" (click)="togglePortfolio()">
+        <span class="mnp-icon"><i class="bi bi-briefcase"></i></span>
+        <span class="mnp-label">Portfolio</span>
+        <i class="bi bi-chevron-down mnp-chevron"></i>
+      </button>
+      <div class="mnp-accordion-body">
+        <a href="#portfolio" class="mnp-sub-link" (click)="goToPortfolio('web'); $event.preventDefault()">
+          <i class="bi bi-code-slash"></i> Web Development
+        </a>
+        <a href="#portfolio" class="mnp-sub-link" (click)="goToPortfolio('mobile'); $event.preventDefault()">
+          <i class="bi bi-phone"></i> Mobile Apps
+        </a>
+        <a href="#portfolio" class="mnp-sub-link" (click)="goToPortfolio('design'); $event.preventDefault()">
+          <i class="bi bi-palette"></i> UI/UX Design
+        </a>
+        <a href="#portfolio" class="mnp-sub-link ai-item" (click)="goToPortfolio('ai'); $event.preventDefault()">
+          <i class="bi bi-robot"></i> AI &amp; Automation
+        </a>
+      </div>
+    </div>
+
+    <a href="#doctors" class="mnp-link" (click)="scrollToSection('doctors'); $event.preventDefault()">
+      <span class="mnp-icon"><i class="bi bi-people"></i></span>
+      <span class="mnp-label">Team</span>
+    </a>
+
+    <a href="#contact" class="mnp-link" (click)="scrollToSection('contact'); $event.preventDefault()">
+      <span class="mnp-icon"><i class="bi bi-envelope"></i></span>
+      <span class="mnp-label">Contact</span>
+    </a>
+
+  </nav>
+
+  <!-- Drawer Footer -->
+  <div class="mnp-footer">
+    <a href="#appointment" class="mnp-cta" (click)="scrollToSection('appointment'); $event.preventDefault()">
+      <i class="bi bi-send-fill"></i> Get a Quote
+    </a>
+    <div class="mnp-contact-row">
+      <a href="tel:+15589554885" class="mnp-contact-link">
+        <i class="bi bi-telephone-fill"></i> +1 5589 55488 55
+      </a>
+    </div>
+    <div class="mnp-social">
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+
+</div>

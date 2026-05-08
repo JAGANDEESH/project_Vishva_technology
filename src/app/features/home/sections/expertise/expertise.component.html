@@ -1,0 +1,44 @@
+<section id="departments" class="departments section">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Expertise</h2>
+      <p>Deep specialization across key technology domains to deliver complete solutions.</p>
+    </div>
+
+    <div class="departments-layout" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- Vertical Tabs -->
+      <div class="departments-tabs">
+        <div class="nav-tabs">
+          @for (tab of tabs; track i; let i = $index) {
+            <button
+              class="nav-link"
+              [ngClass]="{ 'active': activeTab === i }"
+              (click)="setActiveTab(i)">
+              {{ tab.label }}
+            </button>
+          }
+        </div>
+      </div>
+
+      <!-- Tab Content -->
+      <div class="departments-content">
+        @for (tab of tabs; track i; let i = $index) {
+          <div class="tab-pane" [ngClass]="{ 'active': activeTab === i }">
+            <div class="row" style="align-items: center; gap: 20px 0;">
+              <div class="col-lg-8 details">
+                <h3>{{ tab.title }}</h3>
+                <p>{{ tab.description }}</p>
+                <p>{{ tab.description2 }}</p>
+              </div>
+              <div class="col-lg-4">
+                <img [src]="tab.img" class="img-fluid" [alt]="tab.title" style="border-radius:4px;">
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>

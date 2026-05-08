@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-Object Name, Mode)",
+      "PowerShell(Remove-Item \"c:\\\\Documents\\\\Jagadeesh\\\\VishvaTech\\\\medilab-angular\\\\README.md\" -Confirm:$false)"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+<section id="appointment" class="appointment section light-background">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Get a Quote</h2>
+      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+    </div>
+
+    <div class="row" style="gap: 30px 0;">
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets/img/appointment.jpg" class="img-fluid" alt="Get a Quote" style="border-radius:4px; display:block; width:100%; height:300px; object-fit:cover;" onerror="this.src='assets/img/about.jpg'">
+        <div style="margin-top:30px;">
+          <h3 style="color:var(--heading-color); font-family:var(--heading-font); font-size:20px; font-weight:700; margin-bottom:15px;">Why Work With Us?</h3>
+          <ul style="list-style:none; padding:0;">
+            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
+              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
+              <span>Free initial consultation</span>
+            </li>
+            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
+              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
+              <span>Transparent pricing, no hidden fees</span>
+            </li>
+            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
+              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
+              <span>Dedicated project manager</span>
+            </li>
+            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
+              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
+              <span>On-time delivery guarantee</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+        <form class="php-email-form" (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+          <div *ngIf="submitted" style="background:#059652; color:#fff; padding:15px; margin-bottom:20px; text-align:center; font-weight:600;">
+            Thank you! We'll contact you within 24 hours.
+          </div>
+          <div *ngIf="loading" style="text-align:center; padding:15px; margin-bottom:20px;">
+            Sending your request...
+          </div>
+
+          <div class="row" style="gap: 0;">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group" style="padding-left:10px;">
+              <input type="email" name="email" [(ngModel)]="form.email" placeholder="Your Email" required>
+            </div>
+          </div>
+
+          <div class="row" style="gap: 0; margin-top:8px;">
+            <div class="col-md-6 form-group">
+              <input type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Your Phone">
+            </div>
+            <div class="col-md-6 form-group" style="padding-left:10px;">
+              <input type="date" name="date" [(ngModel)]="form.date">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:8px;">
+            <select name="service" [(ngModel)]="form.service">
+              <option value="">Select Service</option>
+              <option value="web">Web Development</option>
+              <option value="mobile">Mobile App Development</option>
+              <option value="design">UI/UX Design</option>
+              <option value="cloud">Cloud & DevOps</option>
+              <option value="ai">AI & Machine Learning</option>
+              <option value="security">Cybersecurity</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-top:8px;">
+            <textarea name="message" [(ngModel)]="form.message" rows="5" placeholder="Describe your project..."></textarea>
+          </div>
+
+          <div style="text-align:center; margin-top:15px;">
+            <button type="submit" [disabled]="loading">
+              {{ loading ? 'Sending...' : 'Request a Quote' }}
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

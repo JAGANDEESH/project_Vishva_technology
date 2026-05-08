@@ -1,0 +1,42 @@
+<section id="portfolio" class="portfolio section light-background">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Portfolio</h2>
+      <p>Explore our work across web, mobile, design, and cutting-edge AI & automation projects.</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+      <button
+        *ngFor="let f of filters"
+        class="filter-btn"
+        [ngClass]="{ 'active': activeFilter === f.key }"
+        (click)="setFilter(f.key)">
+        {{ f.label }}
+      </button>
+    </div>
+
+    <!-- Project Cards -->
+    <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+      <div
+        *ngFor="let project of filteredProjects"
+        class="portfolio-card">
+        <div class="card-img-wrap">
+          <img [src]="project.img" [alt]="project.title" class="card-img">
+          <div class="card-overlay">
+            <div class="overlay-icon" [style.background]="project.color">
+              <i class="bi" [ngClass]="project.icon"></i>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag" [style.color]="project.color">{{ project.tag }}</span>
+          <h4 class="card-title">{{ project.title }}</h4>
+          <p class="card-desc">{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<section id="ai-automation" class="ai-automation section">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-title" data-aos="fade-up">
+      <h2>AI &amp; Automation</h2>
+      <p>We help businesses unlock the power of artificial intelligence and intelligent automation to reduce costs, accelerate operations, and create smarter products.</p>
+    </div>
+
+    <!-- Headline Banner -->
+    <div class="ai-headline" data-aos="fade-up" data-aos-delay="100">
+      <div class="ai-headline-inner">
+        <div class="ai-headline-text">
+          <h3>Build Smarter. Automate Faster. Scale Intelligently.</h3>
+          <p>
+            From data strategy to production deployment, our AI &amp; Automation practice guides you through every step —
+            turning complex models into real business value.
+          </p>
+          <a href="#appointment" class="ai-cta-btn" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'}); return false;">
+            Start Your AI Journey <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+        <div class="ai-headline-visual">
+          <img src="assets/img/AI image 1.jpg" alt="AI & Automation" class="img-fluid"
+            style="width:100%; height:100%; object-fit:cover; border-radius:12px; box-shadow:0 0 0 4px rgba(255,255,255,0.18);">
+        </div>
+      </div>
+    </div>
+
+    <!-- Capabilities Grid -->
+    <div class="row" style="gap: 28px 0; margin-top: 20px;">
+      <div
+        class="col-lg-4 col-md-6"
+        *ngFor="let cap of capabilities; let i = index"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="(i + 1) * 100">
+        <div class="capability-card">
+          <div class="capability-icon">
+            <i class="bi" [ngClass]="cap.icon"></i>
+          </div>
+          <h4>{{ cap.title }}</h4>
+          <p>{{ cap.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Stats Bar -->
+    <div class="ai-stats-bar" #statsBar data-aos="fade-up" data-aos-delay="100">
+      <div class="ai-stat" *ngFor="let stat of stats">
+        <span class="ai-stat-value">{{ stat.display }}{{ stat.suffix }}</span>
+        <span class="ai-stat-label">{{ stat.label }}</span>
+      </div>
+    </div>
+
+  </div>
+</section>

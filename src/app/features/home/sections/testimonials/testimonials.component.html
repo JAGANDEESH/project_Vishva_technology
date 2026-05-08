@@ -1,0 +1,46 @@
+<section id="testimonials" class="testimonials section">
+  <div class="container">
+    <div class="row" style="align-items: center; gap: 30px 0;">
+
+      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
+        <h3>What Our Clients Say</h3>
+        <p>
+          Don't just take our word for it. Here's what clients from around the world say about
+          working with Vishva Techno Labs.
+        </p>
+      </div>
+
+      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper">
+          <div class="testimonial-item">
+            <div style="display:flex; align-items:center;">
+              <img [src]="testimonials[currentIndex].img"
+                   [alt]="testimonials[currentIndex].name"
+                   class="testimonial-img">
+              <div>
+                <h3>{{ testimonials[currentIndex].name }}</h3>
+                <h4>{{ testimonials[currentIndex].role }}</h4>
+                <div class="stars">
+                  <i *ngFor="let s of [1,2,3,4,5]" class="bi bi-star-fill"></i>
+                </div>
+              </div>
+            </div>
+            <p>
+              <i class="bi bi-quote quote-icon-left"></i>
+              {{ testimonials[currentIndex].quote }}
+              <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+          </div>
+          <div class="swiper-pagination">
+            <span *ngFor="let t of testimonials; let i = index"
+                  class="swiper-pagination-bullet"
+                  [class.swiper-pagination-bullet-active]="i === currentIndex"
+                  (click)="goToSlide(i)">
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
