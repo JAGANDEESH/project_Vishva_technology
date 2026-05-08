@@ -1,31 +1,31 @@
 <section id="appointment" class="appointment section light-background">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
-      <h2>Get a Quote</h2>
-      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+      <h2>Get a Demo</h2>
+      <p>Experience the power of vSuite firsthand. Fill in your details and our team will reach out within 24 hours to schedule a personalized demo.</p>
     </div>
 
     <div class="row" style="gap: 30px 0;">
       <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/appointment.jpg" class="img-fluid" alt="Get a Quote" style="border-radius:4px; display:block; width:100%; height:300px; object-fit:cover;" onerror="this.src='assets/img/about.jpg'">
+        <img src="assets/img/appointment.jpg" class="img-fluid" alt="Get a Demo" style="border-radius:4px; display:block; width:100%; height:300px; object-fit:cover;" onerror="this.src='assets/img/about.jpg'">
         <div style="margin-top:30px;">
-          <h3 style="color:var(--heading-color); font-family:var(--heading-font); font-size:20px; font-weight:700; margin-bottom:15px;">Why Work With Us?</h3>
+          <h3 style="color:var(--heading-color); font-family:var(--heading-font); font-size:20px; font-weight:700; margin-bottom:15px;">Why Request a Demo?</h3>
           <ul style="list-style:none; padding:0;">
             <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
               <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>Free initial consultation</span>
+              <span>See vSuite products live in action</span>
             </li>
             <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
               <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>Transparent pricing, no hidden fees</span>
+              <span>Personalized walkthrough for your industry</span>
             </li>
             <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
               <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>Dedicated project manager</span>
+              <span>Understand RPA & AI automation benefits</span>
             </li>
             <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
               <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>On-time delivery guarantee</span>
+              <span>No commitment — free initial consultation</span>
             </li>
           </ul>
         </div>
@@ -34,10 +34,10 @@
       <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
         <form class="php-email-form" (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
           <div *ngIf="submitted" style="background:#059652; color:#fff; padding:15px; margin-bottom:20px; text-align:center; font-weight:600;">
-            Thank you! We'll contact you within 24 hours.
+            Thank you! Our team will contact you within 24 hours.
           </div>
           <div *ngIf="loading" style="text-align:center; padding:15px; margin-bottom:20px;">
-            Sending your request...
+            Submitting your request...
           </div>
 
           <div class="row" style="gap: 0;">
@@ -54,29 +54,30 @@
               <input type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Your Phone">
             </div>
             <div class="col-md-6 form-group" style="padding-left:10px;">
-              <input type="date" name="date" [(ngModel)]="form.date">
+              <input type="text" name="company" [(ngModel)]="form.date" placeholder="Company Name">
             </div>
           </div>
 
           <div class="form-group" style="margin-top:8px;">
             <select name="service" [(ngModel)]="form.service">
-              <option value="">Select Service</option>
-              <option value="web">Web Development</option>
-              <option value="mobile">Mobile App Development</option>
-              <option value="design">UI/UX Design</option>
-              <option value="cloud">Cloud & DevOps</option>
-              <option value="ai">AI & Machine Learning</option>
-              <option value="security">Cybersecurity</option>
+              <option value="">Select Product / Area of Interest</option>
+              <option value="vsuite-finance">vSuite Finance</option>
+              <option value="vsuite-workforce">vSuite WorkForce</option>
+              <option value="vsuite-commerce">vSuite Commerce</option>
+              <option value="vsuite-logistics">vSuite Logistics</option>
+              <option value="rpa">RPA & Automation</option>
+              <option value="ai">AI Offerings</option>
+              <option value="all">Full Platform Demo</option>
             </select>
           </div>
 
           <div class="form-group" style="margin-top:8px;">
-            <textarea name="message" [(ngModel)]="form.message" rows="5" placeholder="Describe your project..."></textarea>
+            <textarea name="message" [(ngModel)]="form.message" rows="5" placeholder="Tell us about your business and what you'd like to automate or improve..."></textarea>
           </div>
 
           <div style="text-align:center; margin-top:15px;">
             <button type="submit" [disabled]="loading">
-              {{ loading ? 'Sending...' : 'Request a Quote' }}
+              {{ loading ? 'Submitting...' : 'Request a Demo' }}
             </button>
           </div>
         </form>

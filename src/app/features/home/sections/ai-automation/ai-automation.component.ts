@@ -15,34 +15,34 @@ export class AiAutomationComponent implements AfterViewInit, OnDestroy {
 
   capabilities = [
     {
-      icon: 'bi-robot',
-      title: 'Intelligent Chatbots',
-      description: 'LLM-powered conversational agents that handle customer queries, bookings, and support — 24/7, at scale.'
+      icon: 'bi-chat-dots',
+      title: 'LLM Development',
+      description: 'Custom LLM-based applications including chatbots, virtual assistants, copilots, document understanding, and natural language query interfaces with domain-specific fine-tuning.'
     },
     {
-      icon: 'bi-graph-up-arrow',
-      title: 'Predictive Analytics',
-      description: 'Machine learning models that forecast demand, detect anomalies, and surface actionable business insights.'
+      icon: 'bi-search',
+      title: 'RAG Solutions',
+      description: 'Retrieval-Augmented Generation combining AI models with your business data to provide reliable, real-time, context-rich outputs — connecting AI with internal documents and databases.'
+    },
+    {
+      icon: 'bi-lightbulb',
+      title: 'AI Consulting',
+      description: 'Strategic guidance on AI adoption, data strategy, model selection, and production deployment — turning complex AI concepts into real, measurable business value.'
     },
     {
       icon: 'bi-gear-wide-connected',
-      title: 'Robotic Process Automation',
-      description: 'Eliminate repetitive manual tasks by automating data entry, document processing, and multi-system workflows.'
-    },
-    {
-      icon: 'bi-eye',
-      title: 'Computer Vision',
-      description: 'Image recognition and video analysis systems for quality inspection, facial recognition, and real-time monitoring.'
+      title: 'AI Automation',
+      description: 'Intelligent automation combining RPA with AI to handle semi-structured data, self-healing bots that adapt to changes, and AI-driven decisioning for complex workflows.'
     },
     {
       icon: 'bi-translate',
       title: 'Natural Language Processing',
-      description: 'Sentiment analysis, document classification, entity extraction, and custom NLP pipelines for unstructured data.'
+      description: 'Sentiment analysis, document classification, entity extraction, and multi-language support — turning unstructured data into actionable business intelligence.'
     },
     {
       icon: 'bi-cpu',
-      title: 'AI-Powered APIs',
-      description: 'Plug AI capabilities directly into your existing products via lightweight, production-ready REST and GraphQL APIs.'
+      title: 'AI-Powered Integration',
+      description: 'Plug AI capabilities directly into your existing enterprise systems with secure, private deployments and context-aware responses with memory support.'
     }
   ];
 
@@ -75,7 +75,6 @@ export class AiAutomationComponent implements AfterViewInit, OnDestroy {
     const tick = (now: number) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      // ease-out curve
       const eased = 1 - Math.pow(1 - progress, 3);
 
       this.stats.forEach(stat => {

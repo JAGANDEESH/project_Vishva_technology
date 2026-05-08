@@ -12,7 +12,10 @@ import { PortfolioFilterService } from '../services/portfolio-filter.service';
 export class NavbarComponent implements OnInit {
   isScrolled = false;
   mobileNavOpen = false;
-  portfolioOpen = false;
+  productsOpen = false;
+  automationOpen = false;
+  aiOfferingsOpen = false;
+  solutionsOpen = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -33,22 +36,30 @@ export class NavbarComponent implements OnInit {
         document.body.classList.add('mobile-nav-active');
       } else {
         document.body.classList.remove('mobile-nav-active');
-        this.portfolioOpen = false;
+        this.closeAllAccordions();
       }
     }
   }
 
   closeMobileNav(): void {
     this.mobileNavOpen = false;
-    this.portfolioOpen = false;
+    this.closeAllAccordions();
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.remove('mobile-nav-active');
     }
   }
 
-  togglePortfolio(): void {
-    this.portfolioOpen = !this.portfolioOpen;
+  private closeAllAccordions(): void {
+    this.productsOpen = false;
+    this.automationOpen = false;
+    this.aiOfferingsOpen = false;
+    this.solutionsOpen = false;
   }
+
+  toggleProducts(): void { this.productsOpen = !this.productsOpen; }
+  toggleAutomation(): void { this.automationOpen = !this.automationOpen; }
+  toggleAiOfferings(): void { this.aiOfferingsOpen = !this.aiOfferingsOpen; }
+  toggleSolutions(): void { this.solutionsOpen = !this.solutionsOpen; }
 
   scrollToSection(sectionId: string): void {
     this.closeMobileNav();
@@ -56,10 +67,5 @@ export class NavbarComponent implements OnInit {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
-  }
-
-  goToPortfolio(filter: string): void {
-    this.portfolioFilter.setFilter(filter);
-    this.scrollToSection('portfolio');
   }
 }

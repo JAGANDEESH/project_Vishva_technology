@@ -1,1 +1,261 @@
-// Departments component styles
+// ── Sliding border indicator ──────────────────────────────────────
+.departments-tabs {
+  position: relative;
+}
+
+.tab-indicator {
+  position: absolute;
+  right: -2px; // overlaps the 2px border-right of .departments-tabs
+  width: 3px;
+  height: 24px;
+  background: var(--accent-color, #0d6efd);
+  border-radius: 2px;
+  transition: top 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 2;
+}
+
+// ── Swipe hint: desktop hidden, mobile shown via media query ──────
+.swipe-hint { display: none; }
+
+// ── Progress dots ─────────────────────────────────────────────────
+.tab-dots {
+  display: flex;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.tab-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--default-color, #333), transparent 72%);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &.active {
+    background: var(--accent-color, #0d6efd);
+    transform: scale(1.45);
+  }
+}
+
+// ── Content container ─────────────────────────────────────────────
+.departments-content {
+  position: relative;
+  overflow: hidden;
+
+  &.dir-down {
+    .tab-pane.active    { animation: slideInUp   0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .tab-pane.exiting   { animation: slideOutUp  0.38s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
+  }
+
+  &.dir-up {
+    .tab-pane.active    { animation: slideInDown  0.52s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .tab-pane.exiting   { animation: slideOutDown 0.38s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
+  }
+}
+
+// ── Tab pane states ───────────────────────────────────────────────
+.tab-pane {
+  &.exiting {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &.active {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ── Staggered content animations ─────────────────────────────────
+.tab-pane.active {
+  .details h3 {
+    animation: contentFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.06s both;
+  }
+
+  .desc-1 {
+    animation: contentFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
+  }
+
+  .desc-2 {
+    animation: contentFadeIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+  }
+
+  .img-col img {
+    animation: imgReveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+}
+
+// ── Keyframes ─────────────────────────────────────────────────────
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(38px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-38px); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translateY(-38px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOutDown {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(38px); }
+}
+
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes imgReveal {
+  from { opacity: 0; transform: scale(0.94) translateY(14px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+// ── Mobile: image sizing (below lg) ──────────────────────────────
+@media (max-width: 991px) {
+  .img-col img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px !important;
+  }
+}
+
+// ── Mobile: full redesign (below md) ─────────────────────────────
+@media (max-width: 768px) {
+
+  // Hide desktop vertical indicator
+  .tab-indicator { display: none; }
+
+  // Tabs container: horizontal scrollable bar
+  .departments-tabs {
+    border-right: none;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  .nav-tabs {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 16px;
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color, #333), transparent 88%);
+
+    &::-webkit-scrollbar { display: none; }
+  }
+
+  .nav-link {
+    flex-shrink: 0;
+    padding: 8px 20px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    background: color-mix(in srgb, var(--default-color, #333), transparent 93%);
+    color: color-mix(in srgb, var(--default-color, #333), transparent 25%);
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+
+    &.active {
+      background: var(--accent-color, #0d6efd);
+      color: #fff;
+      transform: scale(1.04);
+    }
+  }
+
+  // Progress dots: centered and larger on mobile
+  .tab-dots {
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .tab-dot {
+    width: 9px;
+    height: 9px;
+
+    &.active {
+      transform: scale(1.5);
+    }
+  }
+
+  // Swipe hint label
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 11px;
+    color: color-mix(in srgb, var(--default-color, #333), transparent 55%);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+
+    &::before,
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 1px;
+      background: currentColor;
+    }
+  }
+
+  // Reveal swipe hint
+  .swipe-hint { display: flex; }
+
+  // Content area
+  .departments-content {
+    padding-left: 0;
+  }
+
+  // Tighter heading on mobile
+  .details h3 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .details p {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  // Full-width cover image
+  .img-col {
+    margin-bottom: 6px;
+
+    img {
+      height: 200px;
+      border-radius: 10px !important;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+    }
+  }
+}
+
+// ── Small phones ─────────────────────────────────────────────────
+@media (max-width: 480px) {
+  .nav-link {
+    padding: 7px 15px;
+    font-size: 12px;
+  }
+
+  .img-col img {
+    height: 170px;
+  }
+
+  .details h3 {
+    font-size: 18px !important;
+  }
+}

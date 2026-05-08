@@ -14,6 +14,7 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
 
   private swiperInstance: any;
   currentIndex = 0;
+  isVisible = true;
   autoPlayInterval: any;
 
   testimonials = [
@@ -75,14 +76,26 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   }
 
   nextSlide(): void {
-    this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+    this.transition(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+    });
   }
 
   goToSlide(index: number): void {
-    this.currentIndex = index;
+    this.transition(() => {
+      this.currentIndex = index;
+    });
     if (this.autoPlayInterval) {
       clearInterval(this.autoPlayInterval);
       this.startAutoPlay();
     }
+  }
+
+  private transition(changeFn: () => void): void {
+    this.isVisible = false;
+    setTimeout(() => {
+      changeFn();
+      this.isVisible = true;
+    }, 280);
   }
 }

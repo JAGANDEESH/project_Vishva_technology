@@ -3,7 +3,7 @@ import { NgFor, NgClass } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { PortfolioFilterService } from '../../../../shared/services/portfolio-filter.service';
 
-interface PortfolioItem {
+interface SolutionItem {
   title: string;
   category: string;
   tag: string;
@@ -37,107 +37,89 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   filters = [
-    { key: 'all', label: 'All' },
-    { key: 'web', label: 'Web Development' },
-    { key: 'mobile', label: 'Mobile Apps' },
-    { key: 'design', label: 'UI/UX Design' },
-    { key: 'ai', label: 'AI & Automation' }
+    { key: 'all', label: 'All Solutions' },
+    { key: 'finance', label: 'Finance' },
+    { key: 'commerce', label: 'Commerce' },
+    { key: 'workforce', label: 'Workforce' },
+    { key: 'logistics', label: 'Logistics' }
   ];
 
-  projects: PortfolioItem[] = [
+  projects: SolutionItem[] = [
     {
-      title: 'E-Commerce Platform',
-      category: 'web',
-      tag: 'Web Development',
-      description: 'A fully featured multi-vendor marketplace with real-time inventory, payment gateway, and analytics dashboard.',
+      title: 'Smart Billing & Invoicing',
+      category: 'finance',
+      tag: 'Finance',
+      description: 'Instant GST-compliant invoice generation with UPI/QR payment support, automated reminders, recurring billing, and real-time sales dashboard for modern businesses.',
       img: 'assets/img/gallery/gallery-1.jpg',
-      icon: 'bi-cart4',
+      icon: 'bi-receipt',
       color: '#2094E7'
     },
     {
-      title: 'Healthcare Patient Portal',
-      category: 'web',
-      tag: 'Web Development',
-      description: 'HIPAA-compliant patient management portal with appointment scheduling, medical records, and telemedicine integration.',
+      title: 'Intelligent Accounting',
+      category: 'finance',
+      tag: 'Finance',
+      description: 'Complete financial management with general ledger, journal entries, expense tracking, GST compliance, bank reconciliation, and AI-driven financial forecasting.',
       img: 'assets/img/gallery/gallery-2.jpg',
-      icon: 'bi-hospital',
+      icon: 'bi-calculator',
       color: '#2094E7'
     },
     {
-      title: 'Fitness Tracker App',
-      category: 'mobile',
-      tag: 'Mobile Apps',
-      description: 'Cross-platform fitness app with workout tracking, nutrition logging, wearable sync, and AI-powered coach.',
+      title: 'Automated Payroll',
+      category: 'workforce',
+      tag: 'Workforce',
+      description: 'Accurate salary processing with automated PF/ESI/TDS compliance, payslip generation, UPI salary disbursement, reimbursements, and AI-assisted anomaly detection.',
       img: 'assets/img/gallery/gallery-3.jpg',
-      icon: 'bi-phone',
+      icon: 'bi-cash-stack',
       color: '#28a745'
     },
     {
-      title: 'Food Delivery App',
-      category: 'mobile',
-      tag: 'Mobile Apps',
-      description: 'On-demand food delivery platform with real-time order tracking, driver dispatch, and in-app payment.',
+      title: 'HR Management Suite',
+      category: 'workforce',
+      tag: 'Workforce',
+      description: 'End-to-end employee lifecycle management including onboarding, attendance, leave tracking, performance appraisals, self-service portal, and workforce analytics.',
       img: 'assets/img/gallery/gallery-4.jpg',
-      icon: 'bi-bag-check',
+      icon: 'bi-person-badge',
       color: '#28a745'
     },
     {
-      title: 'SaaS Dashboard Redesign',
-      category: 'design',
-      tag: 'UI/UX Design',
-      description: 'Complete UX overhaul of a B2B analytics platform, reducing user onboarding time by 40% through intuitive design.',
+      title: 'E-Commerce Storefront',
+      category: 'commerce',
+      tag: 'Commerce',
+      description: 'Modern online store with customizable themes, product catalog management, seamless cart & checkout, multi-payment support, and AI-powered product recommendations.',
       img: 'assets/img/gallery/gallery-5.jpg',
-      icon: 'bi-palette',
+      icon: 'bi-cart4',
       color: '#fd7e14'
     },
     {
-      title: 'Mobile Banking UX',
-      category: 'design',
-      tag: 'UI/UX Design',
-      description: 'User-centric redesign of a banking app serving 2M+ users, improving task completion rate by 35%.',
+      title: 'Omnichannel Commerce',
+      category: 'commerce',
+      tag: 'Commerce',
+      description: 'Unified selling across web, mobile, and social commerce with order tracking, fulfilment management, abandoned cart recovery, and integrated sales analytics.',
       img: 'assets/img/gallery/gallery-6.jpg',
-      icon: 'bi-credit-card',
+      icon: 'bi-shop',
       color: '#fd7e14'
     },
     {
-      title: 'AI Customer Support Bot',
-      category: 'ai',
-      tag: 'AI & Automation',
-      description: 'Intelligent chatbot powered by LLMs that handles 80% of customer queries autonomously, reducing support costs.',
+      title: 'Logistics Document Automation',
+      category: 'logistics',
+      tag: 'Logistics',
+      description: 'Auto-download Bill of Lading and invoices from multiple vendor portals, with support for email, API, and web-based sources and vendor-wise scheduling.',
       img: 'assets/img/gallery/gallery-7.jpg',
-      icon: 'bi-robot',
+      icon: 'bi-file-earmark-text',
       color: '#6f42c1'
     },
     {
-      title: 'Predictive Analytics Platform',
-      category: 'ai',
-      tag: 'AI & Automation',
-      description: 'ML-powered forecasting engine that predicts sales demand with 94% accuracy, optimizing inventory for retail chains.',
+      title: 'ERP Integration & Reconciliation',
+      category: 'logistics',
+      tag: 'Logistics',
+      description: 'Intelligent data extraction, validation against business rules, BL-to-invoice matching, exception handling, and direct ERP push for payments and receipts.',
       img: 'assets/img/gallery/gallery-8.jpg',
-      icon: 'bi-graph-up-arrow',
-      color: '#6f42c1'
-    },
-    {
-      title: 'RPA Workflow Engine',
-      category: 'ai',
-      tag: 'AI & Automation',
-      description: 'Robotic Process Automation solution that eliminated 12,000 manual data-entry hours/year for a financial institution.',
-      img: 'assets/img/gallery/gallery-1.jpg',
-      icon: 'bi-gear-wide-connected',
-      color: '#6f42c1'
-    },
-    {
-      title: 'Computer Vision QC System',
-      category: 'ai',
-      tag: 'AI & Automation',
-      description: 'Automated quality inspection system using computer vision that detects product defects with 99.2% precision.',
-      img: 'assets/img/gallery/gallery-2.jpg',
-      icon: 'bi-eye',
+      icon: 'bi-arrow-repeat',
       color: '#6f42c1'
     }
   ];
 
-  get filteredProjects(): PortfolioItem[] {
+  get filteredProjects(): SolutionItem[] {
     if (this.activeFilter === 'all') return this.projects;
     return this.projects.filter(p => p.category === this.activeFilter);
   }

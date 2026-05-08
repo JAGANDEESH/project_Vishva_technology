@@ -1108,16 +1108,19 @@ section, .section {
 .departments { overflow: hidden; }
 .departments .departments-layout {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  gap: 0;
+  align-items: stretch;
 }
 .departments .departments-tabs {
   flex: 0 0 200px;
   width: 200px;
+  padding-right: 30px;
+  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 85%);
 }
 .departments .departments-content {
   flex: 1;
   min-width: 0;
+  padding-left: 30px;
 }
 .departments .nav-tabs { border: 0; display: flex; flex-direction: column; }
 .departments .nav-link {
@@ -1126,7 +1129,6 @@ section, .section {
   transition: 0.3s;
   color: var(--default-color);
   border-radius: 0;
-  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
@@ -1136,7 +1138,7 @@ section, .section {
   width: 100%;
 }
 .departments .nav-link:hover { color: var(--accent-color); }
-.departments .nav-link.active { color: var(--accent-color); border-color: var(--accent-color); background-color: var(--background-color); }
+.departments .nav-link.active { color: var(--accent-color); background-color: var(--background-color); }
 .departments .tab-pane { display: none; }
 .departments .tab-pane.active { display: block; animation: fadeIn 0.5s ease-out; }
 .departments .details h3 { font-size: 26px; font-weight: 600; margin-bottom: 20px; }
@@ -1145,10 +1147,11 @@ section, .section {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 600px) {
   .departments .departments-layout { flex-direction: column; }
-  .departments .departments-tabs { width: 100%; flex: none; }
+  .departments .departments-tabs { width: 100%; flex: none; padding-right: 0; border-right: 0; border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 85%); padding-bottom: 10px; margin-bottom: 20px; }
+  .departments .departments-content { padding-left: 0; }
   .departments .nav-tabs { flex-direction: row; flex-wrap: wrap; }
-  .departments .nav-link { border: 0; padding: 12px 15px; }
-  .departments .nav-link.active { color: var(--contrast-color); background: var(--accent-color); }
+  .departments .nav-link { padding: 10px 15px; }
+  .departments .nav-link.active { color: var(--contrast-color); background: var(--accent-color); border-radius: 4px; }
 }
 
 /* ================================================
@@ -1265,7 +1268,7 @@ section, .section {
 .faq .faq-container .faq-active h3:hover { color: var(--contrast-color); }
 .faq .faq-container .faq-active .faq-content { grid-template-rows: 1fr; visibility: visible; opacity: 1; padding-top: 10px; }
 .faq .faq-container .faq-active .faq-toggle { transform: rotate(90deg); color: var(--contrast-color); }
-.faq .faq-container .faq-active .num { color: var(--contrast-color); }
+.faq .faq-container .faq-active h3 .num { color: var(--contrast-color); }
 
 /* ================================================
    Testimonials Section
@@ -1422,6 +1425,82 @@ section, .section {
 .footer .copyright { padding-top: 25px; padding-bottom: 25px; border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
 .footer .copyright p { margin-bottom: 0; }
 .footer .credits { margin-top: 8px; font-size: 13px; }
+
+/* ================================================
+   Hover & Interaction Animations
+   ================================================ */
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes pulse-icon {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+@keyframes bounce-icon {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-8px); }
+  70%      { transform: translateY(-4px); }
+}
+
+@keyframes tabSlideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Services — card lift + icon float */
+.services .service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+}
+.services .service-item:hover .icon i {
+  animation: float-icon 0.55s ease-in-out;
+}
+
+/* Team — image zoom on card hover */
+.doctors .team-member:hover .pic img {
+  transform: scale(1.08);
+}
+
+/* Stats — card lift + icon pulse */
+.stats .stats-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stats .stats-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+}
+.stats .stats-item:hover i {
+  animation: pulse-icon 0.5s ease-in-out;
+}
+
+/* FAQ — slide right on hover (inactive items only) */
+.faq .faq-container .faq-item {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.faq .faq-container .faq-item:not(.faq-active):hover {
+  transform: translateX(5px);
+  box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Expertise tabs — slide-in content */
+.departments .tab-pane.active {
+  animation: tabSlideIn 0.35s ease-out;
+}
+
+/* Contact — icon bounce on hover */
+.contact .info-item:hover i {
+  animation: bounce-icon 0.5s ease;
+}
+
+/* Hero icon-box — icon floats while hovered */
+.hero .content .icon-box:hover i {
+  animation: float-icon 0.7s ease-in-out infinite;
+}
 
 /* ================================================
    AOS delay disable on mobile

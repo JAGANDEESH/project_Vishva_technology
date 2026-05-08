@@ -1,17 +1,21 @@
-<section id="departments" class="departments section">
+<section id="departments" class="departments section" #sectionContainer>
   <div class="container">
     <div class="section-title" data-aos="fade-up">
-      <h2>Our Expertise</h2>
-      <p>Deep specialization across key technology domains to deliver complete solutions.</p>
+      <h2>Automation</h2>
+      <p>An intelligent automation layer designed to eliminate manual work, streamline business processes, and connect systems seamlessly — empowering organizations to operate faster with less effort.</p>
     </div>
 
     <div class="departments-layout" data-aos="fade-up" data-aos-delay="100">
 
       <!-- Vertical Tabs -->
       <div class="departments-tabs">
+        <!-- Sliding indicator sits on the right border of departments-tabs -->
+        <div class="tab-indicator" [style.top.px]="indicatorTop"></div>
+
         <div class="nav-tabs">
           @for (tab of tabs; track i; let i = $index) {
             <button
+              #tabBtn
               class="nav-link"
               [ngClass]="{ 'active': activeTab === i }"
               (click)="setActiveTab(i)">
@@ -19,20 +23,34 @@
             </button>
           }
         </div>
+
+        <!-- Progress dots -->
+        <div class="tab-dots">
+          @for (tab of tabs; track i; let i = $index) {
+            <span class="tab-dot" [class.active]="activeTab === i" (click)="setActiveTab(i)"></span>
+          }
+        </div>
+
+        <!-- Swipe hint (visible on mobile only) -->
+        <p class="swipe-hint">swipe to explore</p>
       </div>
 
       <!-- Tab Content -->
-      <div class="departments-content">
+      <div class="departments-content"
+           [class.dir-down]="scrollDirection === 'down'"
+           [class.dir-up]="scrollDirection === 'up'">
         @for (tab of tabs; track i; let i = $index) {
-          <div class="tab-pane" [ngClass]="{ 'active': activeTab === i }">
+          <div class="tab-pane"
+               [class.active]="activeTab === i"
+               [class.exiting]="prevTab === i">
             <div class="row" style="align-items: center; gap: 20px 0;">
-              <div class="col-lg-8 details">
-                <h3>{{ tab.title }}</h3>
-                <p>{{ tab.description }}</p>
-                <p>{{ tab.description2 }}</p>
-              </div>
-              <div class="col-lg-4">
+              <div class="col-lg-4 img-col order-1 order-lg-2">
                 <img [src]="tab.img" class="img-fluid" [alt]="tab.title" style="border-radius:4px;">
+              </div>
+              <div class="col-lg-8 details order-2 order-lg-1">
+                <h3>{{ tab.title }}</h3>
+                <p class="desc-1">{{ tab.description }}</p>
+                <p class="desc-2">{{ tab.description2 }}</p>
               </div>
             </div>
           </div>

@@ -7,4 +7,16 @@
 }
 .swiper-pagination-bullet {
   cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.swiper-pagination-bullet:hover {
+  transform: scale(1.4);
+}
+
+.testimonial-item {
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+.testimonial-item.testimonial-hidden {
+  opacity: 0;
+  transform: translateY(12px);
 }

@@ -12,7 +12,7 @@
 
       <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
         <div class="swiper">
-          <div class="testimonial-item">
+          <div class="testimonial-item" [class.testimonial-hidden]="!isVisible">
             <div style="display:flex; align-items:center;">
               <img [src]="testimonials[currentIndex].img"
                    [alt]="testimonials[currentIndex].name"
