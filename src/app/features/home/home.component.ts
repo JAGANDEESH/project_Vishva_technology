@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { HeroComponent } from './sections/hero/hero.component';
 import { AboutComponent } from './sections/about/about.component';
 import { StatsComponent } from './sections/stats/stats.component';
+import { WhyChooseUsComponent } from './sections/why-choose-us/why-choose-us';
 import { ServicesComponent } from './sections/services/services.component';
 import { AiAutomationComponent } from './sections/ai-automation/ai-automation.component';
 import { QuoteComponent } from './sections/quote/quote.component';
@@ -20,6 +21,7 @@ import { ContactComponent } from './sections/contact/contact.component';
     HeroComponent,
     AboutComponent,
     StatsComponent,
+    WhyChooseUsComponent,
     ServicesComponent,
     AiAutomationComponent,
     QuoteComponent,
@@ -35,6 +37,7 @@ import { ContactComponent } from './sections/contact/contact.component';
     <app-hero></app-hero>
     <app-about></app-about>
     <app-stats></app-stats>
+    <app-why-choose-us></app-why-choose-us>
     <app-services></app-services>
     <app-ai-automation></app-ai-automation>
     <app-quote></app-quote>

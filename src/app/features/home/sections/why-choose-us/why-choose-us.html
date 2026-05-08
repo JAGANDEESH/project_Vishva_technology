@@ -1,0 +1,40 @@
+<section id="why-choose-us" class="why-choose-us section light-background">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Why Choose VISHVA Technologies?</h2>
+      <p>A team of forward-thinking technology experts dedicated to helping businesses transform through product innovation, intelligent automation, and AI-driven scalability.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let reason of reasons; let i = index" data-aos="fade-up" [attr.data-aos-delay]="(i % 2) * 100">
+        <div class="reason-item d-flex">
+          <div class="reason-icon flex-shrink-0">
+            <i class="bi" [ngClass]="reason.icon"></i>
+          </div>
+          <div class="reason-content">
+            <h4>{{ reason.title }}</h4>
+            <p>{{ reason.description }}</p>
+            
+            <ul class="highlight-list">
+              <li *ngFor="let item of reason.highlights">
+                <i class="bi bi-check-circle"></i> {{ item }}
+              </li>
+            </ul>
+
+            <div *ngIf="reason.benefits" class="badge-row">
+              <span class="badge" *ngFor="let b of reason.benefits">{{ b }}</span>
+            </div>
+
+            <div *ngIf="reason.useCases" class="badge-row">
+              <span class="badge ai-badge" *ngFor="let u of reason.useCases">{{ u }}</span>
+            </div>
+
+            <p class="promise" *ngIf="reason.promise">
+              <strong>Our Promise:</strong> {{ reason.promise }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
