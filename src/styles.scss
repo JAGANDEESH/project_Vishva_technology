@@ -453,18 +453,31 @@ section, .section {
   padding: 10px 0;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 .header .logo {
   line-height: 1;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  max-width: 220px;
+  overflow: hidden;
 }
 .header .logo img { max-height: 36px; margin-right: 8px; }
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 28px;
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.header .navmenu {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .header .cta-btn,
 .header .cta-btn:focus {
@@ -659,6 +672,7 @@ section, .section {
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  white-space: nowrap;
 }
 .mnp-logo img {
   width: 38px;
@@ -1394,7 +1408,7 @@ section, .section {
   position: relative;
 }
 .footer .footer-top { padding-top: 50px; }
-.footer .footer-about .logo { line-height: 1; margin-bottom: 25px; display: flex; align-items: center; }
+.footer .footer-about .logo { line-height: 1; margin-bottom: 25px; display: flex; align-items: center; white-space: nowrap; }
 .footer .footer-about .logo img { max-height: 40px; margin-right: 6px; }
 .footer .footer-about .logo span { color: var(--heading-color); font-family: var(--heading-font); font-size: 26px; font-weight: 700; letter-spacing: 1px; }
 .footer .footer-about p { font-size: 14px; font-family: var(--heading-font); }
