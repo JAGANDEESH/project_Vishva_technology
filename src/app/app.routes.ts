@@ -6,6 +6,7 @@ import { PayrollComponent } from './features/products/payroll/payroll';
 import { HrComponent } from './features/products/hr/hr';
 import { EcommerceComponent } from './features/products/ecommerce/ecommerce';
 import { ProcessflowComponent } from './features/products/processflow/processflow';
+import { VsuiteFinanceComponent } from './features/products/vsuite-finance/vsuite-finance';
 
 export const routes: Routes = [
   {
@@ -20,6 +21,10 @@ export const routes: Routes = [
   {
     path: 'products/accounting',
     component: AccountingComponent
+  },
+  {
+    path: 'products/finance',
+    component: VsuiteFinanceComponent
   },
   {
     path: 'products/payroll',

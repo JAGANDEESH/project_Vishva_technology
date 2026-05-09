@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { NgIf, TitleCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-generic-service',
   standalone: true,
-  imports: [NgIf, TitleCasePipe, RouterLink],
+  imports: [RouterLink],
   templateUrl: './generic-service.html',
   styleUrl: './generic-service.scss'
 })

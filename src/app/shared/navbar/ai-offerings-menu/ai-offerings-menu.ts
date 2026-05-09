@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import { NgFor, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 interface MenuItem {
@@ -12,7 +12,7 @@ interface MenuItem {
 @Component({
   selector: 'app-ai-offerings-menu',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass, RouterLink],
+  imports: [NgFor, NgClass, RouterLink],
   templateUrl: './ai-offerings-menu.html',
   styleUrl: './ai-offerings-menu.scss'
 })

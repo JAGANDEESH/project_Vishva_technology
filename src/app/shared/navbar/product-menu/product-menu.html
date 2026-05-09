@@ -8,8 +8,10 @@
           <div class="col" *ngFor="let cat of categories">
             <div class="category-group">
               <h6 class="category-title d-flex align-items-center mb-3">
-                <i class="bi" [ngClass]="cat.icon"></i>
-                {{ cat.title }}
+                <a [routerLink]="cat.link" class="text-decoration-none text-inherit d-flex align-items-center" (click)="onProductClick()">
+                  <i class="bi me-2" [ngClass]="cat.icon"></i>
+                  {{ cat.title }}
+                </a>
               </h6>
               
               <div class="product-list">
@@ -32,38 +34,6 @@
         </div>
       </div>
 
-      <!-- Featured Sidebar / CTA -->
-      <div class="col-lg-3 p-4 featured-pane light-background">
-        <div class="featured-content">
-          <span class="badge mb-2">Featured</span>
-          <h5>Experience vSuite</h5>
-          <p class="mb-4 small">See how Vishva Technologies can transform your business operations with intelligent automation.</p>
-          
-          <div class="cta-stack d-grid gap-2">
-            <a href="#appointment" class="btn btn-primary btn-sm cta-btn" (click)="onProductClick()">
-              <i class="bi bi-send-fill me-2"></i> Get a Demo
-            </a>
-            <a href="#services" class="btn btn-outline-primary btn-sm cta-btn" (click)="onProductClick()">
-              Explore All Products
-            </a>
-          </div>
-
-          <div class="mt-4 stats-mini border-top pt-3">
-            <div class="d-flex align-items-center mb-2">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="small">GST Ready & Compliant</span>
-            </div>
-            <div class="d-flex align-items-center mb-2">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="small">AI-Powered Automation</span>
-            </div>
-            <div class="d-flex align-items-center">
-              <i class="bi bi-check-circle-fill text-success me-2"></i>
-              <span class="small">24/7 Enterprise Support</span>
-            </div>
-          </div>
-        </div>
-      </div>
 
     </div>
   </div>

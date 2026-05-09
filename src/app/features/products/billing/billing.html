@@ -1,42 +1,65 @@
-<section class="product-hero section light-background">
-  <div class="container" data-aos="fade-up">
+<section class="product-page-hero section light-background overflow-hidden">
+  <div class="container position-relative" data-aos="fade-up">
+    <!-- Animated background element -->
+    <div class="hero-bg-shape"></div>
+    
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase">vSuite Billing</span>
-        <h1 class="display-4 fw-bold mb-3">Smart Billing. Faster Payments. Better Business.</h1>
-        <p class="lead mb-4">
-          vSuite Billing is a powerful and intelligent billing & accounting platform designed to simplify invoicing, manage finances, and ensure compliance—helping businesses operate faster and smarter.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#appointment" class="btn btn-primary btn-lg rounded-pill px-4">Get Started</a>
-          <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-4">Request Demo</a>
+      <div class="col-lg-6 hero-text-col">
+        <div class="content-wrapper">
+          <span class="badge bg-primary-soft mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Billing</span>
+          <h1 class="display-4 fw-extrabold mb-4 text-gradient">Smart Billing.<br>Faster Payments.</h1>
+          <p class="lead mb-5 text-muted-dark">
+            vSuite Billing is a powerful and intelligent billing & accounting platform designed to simplify invoicing, manage finances, and ensure compliance—helping businesses operate faster and smarter.
+          </p>
+          <div class="d-flex flex-wrap gap-3 btn-group-hero">
+            <a href="#appointment" class="btn btn-primary btn-lg rounded-pill px-5 shadow-lg-hover">
+              Get Started <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-4">
+              Request Demo
+            </a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
-        <img src="assets/img/appointment.jpg" alt="Billing Platform" class="img-fluid rounded-4 shadow-lg">
+      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col">
+        <div class="image-stack">
+          <img src="assets/img/appointment.jpg" alt="Billing Platform" class="img-fluid main-img rounded-5 shadow-2xl">
+          <div class="floating-badge shadow-lg" data-aos="fade-left" data-aos-delay="300">
+            <div class="d-flex align-items-center gap-3">
+              <div class="icon-wrap bg-primary text-white rounded-circle">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div>
+                <h6 class="mb-0 fw-bold">GST Ready</h6>
+                <p class="mb-0 small text-muted">100% Compliant</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="key-features section">
+<section class="key-features section py-10">
   <div class="container">
     <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2>Comprehensive Key Features</h2>
-      <p>Everything you need to manage your business efficiently in one platform.</p>
+      <h2 class="fw-bold h1">Comprehensive Key Features</h2>
+      <div class="title-underline mx-auto"></div>
+      <p class="text-muted mt-3 max-w-2xl mx-auto">Everything you need to manage your business efficiently in one unified and secure platform.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-4" *ngFor="let group of features; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="feature-card p-4 h-100 rounded-4 shadow-sm bg-white">
-          <div class="icon-box mb-3">
+    <div class="row g-4 pt-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let group of features; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="feature-card-premium p-5 h-100 rounded-5 shadow-hover">
+          <div class="icon-box-modern mb-4">
             <i class="bi" [ngClass]="group.icon"></i>
           </div>
-          <h4 class="fw-bold mb-3">{{ group.category }}</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2 d-flex align-items-start" *ngFor="let item of group.items">
-              <i class="bi bi-check2-circle text-primary me-2 mt-1"></i>
-              <span class="small">{{ item }}</span>
+          <h4 class="fw-bold mb-4">{{ group.category }}</h4>
+          <ul class="list-unstyled feature-list-modern">
+            <li class="mb-3 d-flex align-items-start" *ngFor="let item of group.items">
+              <i class="bi bi-check2 text-primary me-3 mt-1"></i>
+              <span>{{ item }}</span>
             </li>
           </ul>
         </div>
@@ -45,27 +68,36 @@
   </div>
 </section>
 
-<section class="ai-features section light-background">
+<section class="ai-features section light-background py-10 overflow-hidden">
   <div class="container">
     <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="text-primary">Smart & AI-Driven Features</h2>
-      <p>Leveraging cutting-edge AI to automate your financial operations.</p>
+      <h2 class="text-primary fw-bold">Smart & AI-Driven Features</h2>
+      <p class="text-muted">Leveraging cutting-edge AI to automate your financial operations with high precision.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-md-6" *ngFor="let ai of aiFeatures; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
-        <div class="ai-card p-4 rounded-4 shadow-sm bg-white border-start border-primary border-4">
-          <h5 class="fw-bold mb-2">{{ ai.title }}</h5>
-          <p class="mb-0 text-muted small">{{ ai.description }}</p>
+    <div class="row g-4 justify-content-center">
+      <div class="col-lg-5 col-md-6" *ngFor="let ai of aiFeatures; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
+        <div class="ai-glass-card p-4 rounded-4 shadow-sm border-0 h-100">
+          <div class="d-flex gap-4">
+            <div class="ai-step-num">{{ i + 1 }}</div>
+            <div>
+              <h5 class="fw-bold mb-2 text-dark">{{ ai.title }}</h5>
+              <p class="mb-0 text-muted small leading-relaxed">{{ ai.description }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-banner section bg-primary text-white">
-  <div class="container text-center py-4">
-    <h3 class="fw-bold mb-4">Ready to simplify your billing process?</h3>
-    <a href="#appointment" class="btn btn-light btn-lg rounded-pill px-5">Join vSuite Today</a>
+<section class="cta-modern section overflow-hidden position-relative">
+  <div class="cta-bg-gradient position-absolute inset-0"></div>
+  <div class="container position-relative text-center py-5" data-aos="zoom-out">
+    <h3 class="display-5 fw-bold mb-4 text-white">Ready to simplify your billing process?</h3>
+    <p class="lead text-white opacity-75 mb-5">Join hundreds of forward-thinking businesses using vSuite to scale.</p>
+    <a href="#appointment" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+      Join vSuite Today
+    </a>
   </div>
 </section>

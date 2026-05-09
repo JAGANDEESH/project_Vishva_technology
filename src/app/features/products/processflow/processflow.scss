@@ -1,7 +1,3 @@
-.product-hero {
-  padding-top: 140px;
-}
-
 .pf-card {
   transition: all 0.4s ease;
   &:hover {
@@ -12,12 +8,4 @@
 
 .impact-stats {
   border-top: 5px solid var(--bs-dark);
-}
-
-@media (max-width: 991px) {
-  .product-hero {
-    padding-top: 100px;
-    text-align: center;
-    .d-flex { justify-content: center; }
-  }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgClass } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 interface Product {
@@ -12,13 +12,14 @@ interface Product {
 interface Category {
   title: string;
   icon: string;
+  link: string;
   products: Product[];
 }
 
 @Component({
   selector: 'app-product-menu',
   standalone: true,
-  imports: [NgFor, NgIf, RouterLink],
+  imports: [NgFor, NgClass, RouterLink],
   templateUrl: './product-menu.html',
   styleUrl: './product-menu.scss'
 })
@@ -29,6 +30,7 @@ export class ProductMenuComponent {
     {
       title: 'vSuite Finance',
       icon: 'bi-currency-dollar',
+      link: '/products/finance',
       products: [
         {
           title: 'vSuite Billing',
@@ -47,6 +49,7 @@ export class ProductMenuComponent {
     {
       title: 'vSuite Workforce',
       icon: 'bi-people',
+      link: '/service/products/workforce',
       products: [
         {
           title: 'vSuite PayRoll',
@@ -65,6 +68,7 @@ export class ProductMenuComponent {
     {
       title: 'vSuite Commerce',
       icon: 'bi-shop',
+      link: '/service/products/commerce',
       products: [
         {
           title: 'vSuite E-Commerce',
@@ -77,6 +81,7 @@ export class ProductMenuComponent {
     {
       title: 'vSuite Logistics',
       icon: 'bi-truck',
+      link: '/service/products/logistics',
       products: [
         {
           title: 'vSuite ProcessFlow',

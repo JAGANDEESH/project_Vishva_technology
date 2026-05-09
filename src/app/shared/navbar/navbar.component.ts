@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, NgIf, NgClass } from '@angular/common';
+import { isPlatformBrowser, NgClass, NgIf } from '@angular/common';
 import { PortfolioFilterService } from '../services/portfolio-filter.service';
 import { ProductMenuComponent } from './product-menu/product-menu';
 import { AutomationMenuComponent } from './automation-menu/automation-menu';
@@ -9,7 +9,7 @@ import { SolutionsMenuComponent } from './solutions-menu/solutions-menu';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgIf, NgClass, ProductMenuComponent, AutomationMenuComponent, AiOfferingsMenuComponent, SolutionsMenuComponent],
+  imports: [NgClass, NgIf, ProductMenuComponent, AutomationMenuComponent, AiOfferingsMenuComponent, SolutionsMenuComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
