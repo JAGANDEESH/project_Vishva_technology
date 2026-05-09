@@ -1,0 +1,41 @@
+<div class="mega-menu">
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      
+      <div class="col-lg-8 p-4 main-pane">
+        <h6 class="menu-heading mb-3">AI Offerings</h6>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="col" *ngFor="let item of items">
+            <a 
+              [routerLink]="item.link" 
+              class="menu-item d-flex align-items-start"
+              (click)="onItemClick()">
+              <div class="icon-wrap ai-icon">
+                <i class="bi" [ngClass]="item.icon"></i>
+              </div>
+              <div class="info">
+                <span class="name">{{ item.title }}</span>
+                <p class="desc">{{ item.description }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 p-4 sidebar light-background">
+        <div class="sidebar-content">
+          <span class="badge ai-badge mb-2">Next-Gen</span>
+          <h6>Agentic AI Capabilities</h6>
+          <p class="small mb-3">Next-gen AI systems that analyze large data sets, make informed decisions, and continuously evolve.</p>
+          <ul class="feature-list mb-4">
+            <li><i class="bi bi-cpu"></i> Self-evolving systems</li>
+            <li><i class="bi bi-graph-up"></i> Predictive analytics</li>
+            <li><i class="bi bi-shield-check"></i> Secure deployments</li>
+          </ul>
+          <a href="#ai-automation" class="btn btn-outline-dark btn-sm w-100" (click)="onItemClick()">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

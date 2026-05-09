@@ -1,0 +1,31 @@
+.product-hero {
+  padding-top: 140px;
+}
+
+.stat-card {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.capability-item {
+  transition: all 0.3s ease;
+  &:hover {
+    background: #fdfdfd;
+    border-color: var(--bs-success) !important;
+    transform: translateY(-3px);
+  }
+}
+
+.why-choose-box {
+  box-shadow: 0 10px 30px rgba(25, 135, 84, 0.15);
+}
+
+@media (max-width: 991px) {
+  .product-hero {
+    padding-top: 100px;
+    text-align: center;
+    .d-flex { justify-content: center; }
+  }
+}

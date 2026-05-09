@@ -1,0 +1,24 @@
+.product-hero {
+  padding-top: 140px;
+}
+
+.hr-cap-card {
+  transition: all 0.4s ease;
+  &:hover {
+    border-color: var(--bs-info) !important;
+    transform: translateY(-5px);
+  }
+}
+
+.stats-mini-grid {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .product-hero {
+    padding-top: 100px;
+    text-align: center;
+    .d-flex { justify-content: center; }
+  }
+}

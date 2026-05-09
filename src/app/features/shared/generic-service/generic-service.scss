@@ -1,0 +1,56 @@
+.generic-service-page {
+  padding-top: 120px;
+  min-height: 80vh;
+
+  .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    
+    a {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+  }
+
+  .content-box {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .badge {
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+
+  .img-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+    
+    img {
+      transition: transform 0.5s ease;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+
+  .overlay-badge {
+    z-index: 10;
+    width: 100%;
+    
+    div {
+      display: inline-block;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .generic-service-page {
+    padding-top: 100px;
+    
+    .content-box {
+      padding: 30px !important;
+    }
+  }
+}

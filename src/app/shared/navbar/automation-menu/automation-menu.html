@@ -1,0 +1,27 @@
+<div class="mega-menu">
+  <div class="container-fluid p-0">
+    <div class="row g-0">
+      
+      <div class="col-lg-12 p-4 main-pane">
+        <h6 class="menu-heading mb-3">Intelligent Automation</h6>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col" *ngFor="let item of items">
+            <a 
+              [routerLink]="item.link" 
+              class="menu-item d-flex align-items-start"
+              (click)="onItemClick()">
+              <div class="icon-wrap">
+                <i class="bi" [ngClass]="item.icon"></i>
+              </div>
+              <div class="info">
+                <span class="name">{{ item.title }}</span>
+                <p class="desc">{{ item.description }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

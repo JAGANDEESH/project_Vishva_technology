@@ -1,0 +1,75 @@
+<section class="product-hero section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-info mb-3 px-3 py-2 text-uppercase text-dark">vSuite Human Resources</span>
+        <h1 class="display-4 fw-bold mb-3">Manage People. Build Better Workplaces.</h1>
+        <p class="lead mb-4">
+          vSuite Human Resources helps you manage the entire employee lifecycle—from hiring to performance—through one intelligent and connected platform.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#appointment" class="btn btn-info btn-lg rounded-pill px-4">Get Started</a>
+          <a href="#contact" class="btn btn-outline-info btn-lg rounded-pill px-4">Book a Demo</a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+        <img src="assets/img/team/doctors/doctors-2.jpg" alt="Workplace Team" class="img-fluid rounded-4 shadow-lg border border-5 border-white">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-capabilities section">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <h2>HR Transformation Tools</h2>
+      <p>Streamline HR operations, improve productivity, and make data-driven decisions.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="hr-cap-card p-4 h-100 rounded-4 shadow-sm d-flex align-items-start bg-white border">
+          <div class="icon-wrap me-4">
+            <i class="bi text-info fs-1" [ngClass]="cap.icon"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">{{ cap.title }}</h5>
+            <p class="small text-muted mb-0">{{ cap.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-hr section light-background">
+  <div class="container">
+    <div class="row align-items-center flex-row-reverse">
+      <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+        <div class="stats-mini-grid row g-3">
+          <div class="col-6">
+            <div class="p-4 bg-white rounded-3 shadow-sm">
+              <h2 class="fw-bold text-info mb-1">98%</h2>
+              <p class="small mb-0">Engagement</p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-4 bg-white rounded-3 shadow-sm">
+              <h2 class="fw-bold text-info mb-1">50%</h2>
+              <p class="small mb-0">Faster Hiring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 pe-lg-5">
+        <h2 class="fw-bold mb-4">Why Choose vSuite HR?</h2>
+        <ul class="list-unstyled">
+          <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose" data-aos="fade-right">
+            <i class="bi bi-check-circle-fill text-info me-3 fs-5"></i>
+            <span class="fs-6">{{ point }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
