@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-why-choose-us',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgClass, NgFor, NgIf],
   templateUrl: './why-choose-us.html',
   styleUrl: './why-choose-us.scss'
 })
