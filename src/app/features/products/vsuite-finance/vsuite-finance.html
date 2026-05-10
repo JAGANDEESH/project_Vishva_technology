@@ -1,0 +1,88 @@
+<section class="product-page-hero section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase">vSuite Ecosystem</span>
+        <h1 class="display-4 fw-bold mb-3">vSuite Finance</h1>
+        <p class="lead mb-4 text-primary fw-bold fst-italic">{{ tagline }}</p>
+        <p class="mb-5 lead">
+          Transform your core financial operations with intelligent automation. 
+          vSuite Finance powers your business with smarter billing, seamless accounting, and automated payroll—so you can focus on growth, not complexity.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#appointment" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Get Started</a>
+          <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-5">Contact Sales</a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="hero-visual-wrapper position-relative">
+          <img src="assets/img/hero-bg.jpg" alt="Finance Automation" class="img-fluid rounded-4 shadow-lg">
+          <div class="stat-overlay position-absolute bottom-0 end-0 p-4 bg-white rounded-4 shadow-lg m-4 border-start border-primary border-4">
+            <h4 class="fw-bold mb-0">70%</h4>
+            <p class="small text-muted mb-0">Efficiency Increase</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finance-pillars section">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <h2>Core Finance Pillars</h2>
+      <p>Modular solutions that work together to provide a unified financial view.</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-6" *ngFor="let pillar of financePillars; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 200">
+        <div class="pillar-card p-5 h-100 rounded-5 shadow-sm border bg-white">
+          <div class="pillar-icon-box mb-4">
+            <i class="bi" [ngClass]="pillar.icon"></i>
+          </div>
+          <h3 class="fw-bold mb-3">{{ pillar.title }}</h3>
+          <p class="mb-4 text-muted">{{ pillar.description }}</p>
+          
+          <ul class="pillar-highlights list-unstyled mb-5">
+            <li class="mb-2" *ngFor="let highlight of pillar.highlights">
+              <i class="bi bi-check2-circle text-primary me-2"></i>
+              <span>{{ highlight }}</span>
+            </li>
+          </ul>
+
+          <a [routerLink]="pillar.link" class="btn btn-link p-0 fw-bold text-decoration-none text-primary">
+            Explore {{ pillar.title }} <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finance-benefits section light-background">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4" *ngFor="let benefit of benefits" data-aos="zoom-in">
+        <div class="benefit-box p-4 text-center">
+          <h2 class="display-4 fw-bold text-primary mb-2">{{ benefit.value }}</h2>
+          <h5 class="fw-bold mb-3">{{ benefit.title }}</h5>
+          <p class="small text-muted">{{ benefit.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="integration-cta section bg-primary text-white">
+  <div class="container text-center py-5">
+    <h2 class="display-5 fw-bold mb-4">Integrate with Your Favorite Tools</h2>
+    <p class="lead mb-5 opacity-75">Connect vSuite Finance seamlessly with Tally, QuickBooks, Razorpay, Stripe, and more.</p>
+    <div class="partner-logos d-flex justify-content-center gap-5 flex-wrap opacity-50 mb-5">
+      <i class="bi bi-bank fs-1"></i>
+      <i class="bi bi-credit-card fs-1"></i>
+      <i class="bi bi-wallet2 fs-1"></i>
+      <i class="bi bi-shield-check fs-1"></i>
+    </div>
+    <a href="#appointment" class="btn btn-light btn-lg rounded-pill px-5 fw-bold text-primary">Request a Custom Demo</a>
+  </div>
+</section>

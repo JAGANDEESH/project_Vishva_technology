@@ -1,0 +1,61 @@
+<section class="product-page-hero section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-dark mb-3 px-3 py-2 text-uppercase">vSuite ProcessFlow</span>
+        <h1 class="display-4 fw-bold mb-3">Automate Shipping Documents. Simplify Operations.</h1>
+        <p class="lead mb-4">
+          vSuite ProcessFlow automates the retrieval, extraction, and integration of Bill of Lading (BL) and invoices—eliminating manual effort and accelerating your finance workflows.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#appointment" class="btn btn-dark btn-lg rounded-pill px-4">Request Demo</a>
+          <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-4">See How It Works</a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="impact-stats p-4 bg-white rounded-4 shadow-lg">
+          <div class="row g-4">
+            <div class="col-md-4 text-center" *ngFor="let imp of impacts">
+              <div class="p-3 border-bottom border-dark border-2 mb-3">
+                <i class="bi fs-2" [ngClass]="imp.icon"></i>
+              </div>
+              <h2 class="fw-bold mb-1">{{ imp.value }}</h2>
+              <p class="small text-muted">{{ imp.label }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-capabilities section">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <h2>Intelligent Workflow Automation</h2>
+      <p>Building high-performance logistics operations through intelligent data extraction and reconciliation.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="pf-card p-5 h-100 rounded-4 border bg-white d-flex align-items-center">
+          <div class="icon-wrap me-4 bg-dark text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px; flex-shrink:0;">
+            <i class="bi fs-4" [ngClass]="cap.icon"></i>
+          </div>
+          <div>
+            <h5 class="fw-bold mb-2">{{ cap.title }}</h5>
+            <p class="small text-muted mb-0">{{ cap.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-dark section bg-dark text-white">
+  <div class="container text-center py-5">
+    <h2 class="display-6 fw-bold mb-4">Ready to Automate Your Shipping Document Workflow?</h2>
+    <p class="mb-5 lead">Join hundreds of logistics companies optimizing their operations with vSuite.</p>
+    <a href="#appointment" class="btn btn-outline-light btn-lg rounded-pill px-5">Get a Free Consultation</a>
+  </div>
+</section>

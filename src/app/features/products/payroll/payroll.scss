@@ -1,0 +1,20 @@
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.cap-card {
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: var(--accent-color) !important;
+    transform: translateY(-5px);
+    background: #fff;
+  }
+}

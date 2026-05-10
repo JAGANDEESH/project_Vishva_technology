@@ -20,38 +20,38 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   testimonials = [
     {
       img: 'assets/img/testimonials/testimonials-1.jpg',
-      name: 'Saul Goodman',
-      role: 'CEO, Goodman Consulting',
+      name: 'Michael Chen',
+      role: 'Business Owner, Retail Hub',
       stars: 5,
-      quote: "Vishva Techno Labs delivered our platform ahead of schedule with exceptional quality. Their communication and technical expertise are unmatched. Highly recommended!"
+      quote: "vSuite Accounting helped us manage billing and accounting in one place—huge time saver. The integration is seamless and highly reliable."
     },
     {
       img: 'assets/img/testimonials/testimonials-2.jpg',
-      name: 'Sara Wilkins',
-      role: 'Product Manager, TechCorp',
+      name: 'Sarah Williams',
+      role: 'Senior Accountant, Finance Pro',
       stars: 5,
-      quote: "The team understood our vision perfectly and turned it into a stunning product. The UI/UX design exceeded all our expectations. We'll definitely partner again."
+      quote: "Clear insights and easy GST handling made our work effortless. vSuite Accounting is truly future-ready and scales with our growth."
     },
     {
       img: 'assets/img/testimonials/testimonials-3.jpg',
-      name: 'Jena Karlis',
-      role: 'CTO, StartupXYZ',
+      name: 'David Miller',
+      role: 'Logistics Operations Team',
       stars: 5,
-      quote: "Professional, skilled, and dedicated. Vishva Techno Labs built our entire cloud infrastructure from scratch. The result is a rock-solid system that scales effortlessly."
+      quote: "We reduced hours of manual work to minutes with vSuite ProcessFlow. Accurate extraction and seamless integration made reconciliation effortless."
     },
     {
       img: 'assets/img/testimonials/testimonials-4.jpg',
-      name: 'Matt Brandon',
-      role: 'Founder, BrandForge',
+      name: 'Elena Rodriguez',
+      role: 'HR Manager, TechScale',
       stars: 5,
-      quote: "From the initial consultation to final delivery, the experience was seamless. Our app got 50,000 downloads in the first month. Incredible work by the entire team!"
+      quote: "vSuite Payroll simplified our salary process and saved hours every month. It ensures full compliance and precision every time."
     },
     {
       img: 'assets/img/testimonials/testimonials-5.jpg',
-      name: 'John Larson',
-      role: 'VP Engineering, DataFlow',
+      name: 'Robert Taylor',
+      role: 'HR Lead, Global Solutions',
       stars: 5,
-      quote: "The AI solution they built for us reduced manual processing by 80%. Their ML engineers are top-notch and truly understood our domain requirements."
+      quote: "vSuite Human Resources gave us complete visibility into our workforce and simplified HR operations across all our departments."
     }
   ];
 

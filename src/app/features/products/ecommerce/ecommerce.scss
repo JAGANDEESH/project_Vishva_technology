@@ -1,0 +1,13 @@
+.feat-card {
+  transition: all 0.3s ease;
+  &:hover {
+    border-color: var(--bs-warning) !important;
+    transform: translateY(-5px);
+  }
+}
+
+.ecommerce-visual {
+  img {
+    filter: brightness(0.9);
+  }
+}

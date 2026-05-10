@@ -1,0 +1,76 @@
+<section class="product-page-hero section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <span class="badge bg-success mb-3 px-3 py-2 text-uppercase">vSuite Accounting</span>
+        <h1 class="display-4 fw-bold mb-3">One Platform to Manage Your Business Finances</h1>
+        <p class="lead mb-4">
+          vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
+        </p>
+        <div class="d-flex gap-3">
+          <a href="#appointment" class="btn btn-success btn-lg rounded-pill px-4 text-white">Get Started Free</a>
+          <a href="#contact" class="btn btn-outline-success btn-lg rounded-pill px-4">View Demo</a>
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="impact-grid row g-3">
+          <div class="col-6" *ngFor="let stat of businessImpact">
+            <div class="stat-card p-4 rounded-4 shadow-sm bg-white text-center">
+              <i class="bi mb-2 d-block text-success fs-2" [ngClass]="stat.icon"></i>
+              <h3 class="fw-bold mb-1">{{ stat.value }}</h3>
+              <p class="small text-muted mb-0">{{ stat.label }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="core-capabilities section">
+  <div class="container">
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <h2>Core Capabilities</h2>
+      <p>Powerful tools designed to provide accuracy and clarity in financial management.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
+        <div class="capability-item p-4 h-100 rounded-4 border">
+          <div class="icon-wrap mb-3 text-success fs-3">
+            <i class="bi" [ngClass]="cap.icon"></i>
+          </div>
+          <h5 class="fw-bold mb-3">{{ cap.title }}</h5>
+          <p class="small text-muted mb-0">{{ cap.description }}</p>
+        </div>
+      </div>
+      
+      <!-- Special Why Choose Block -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="why-choose-box p-4 h-100 rounded-4 bg-success text-white">
+          <h5 class="fw-bold mb-4">Why Choose vSuite Accounting?</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-lg me-2 mt-1"></i>
+              <span class="small">{{ point }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="business-impact section light-background">
+  <div class="container text-center">
+    <div class="impact-quote mb-5" data-aos="fade-up">
+      <h2 class="fw-bold">"Turn Financial Data into Business Growth"</h2>
+      <p class="lead">Empower your decision-making with real-time visibility and AI-ready insights.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <img src="assets/img/hero-bg.jpg" alt="Dashboard Preview" class="img-fluid rounded-4 shadow-lg">
+      </div>
+    </div>
+  </div>
+</section>

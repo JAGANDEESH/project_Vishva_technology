@@ -1,0 +1,62 @@
+<section class="product-page-hero section light-background">
+  <div class="container" data-aos="fade-up">
+    
+    <nav aria-label="breadcrumb" class="mb-4">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item text-capitalize">{{ category }}</li>
+        <li class="breadcrumb-item active text-capitalize" aria-current="page">{{ displayName }}</li>
+      </ol>
+    </nav>
+
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="content-box p-5 bg-white rounded-4 shadow-sm">
+          <span class="badge bg-primary mb-3 text-uppercase px-3 py-2">{{ category }}</span>
+          <h1 class="display-5 fw-bold mb-4 text-capitalize">{{ displayName }}</h1>
+          <p class="lead mb-4">
+            We are currently enhancing the detailed documentation for <strong>{{ displayName }}</strong>. 
+            This service is a core part of the Vishva Technologies ecosystem, designed to drive efficiency and digital transformation.
+          </p>
+          <div class="features-list mb-5">
+            <div class="d-flex align-items-start mb-3">
+              <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Intelligent Automation</h6>
+                <p class="small text-muted mb-0">Seamlessly integrated into your existing business workflows.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start mb-3">
+              <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Scalable Architecture</h6>
+                <p class="small text-muted mb-0">Built to grow as your business requirements expand.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start">
+              <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Enterprise-Grade Security</h6>
+                <p class="small text-muted mb-0">Robust protection for all your sensitive business data.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary btn-lg px-4 rounded-pill">
+            Enquire About This Service
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-6 text-center mt-5 mt-lg-0">
+        <div class="img-wrapper position-relative">
+          <img src="assets/img/AI image 1.jpg" alt="Service Image" class="img-fluid rounded-4 shadow">
+          <div class="overlay-badge position-absolute bottom-0 start-50 translate-middle-x mb-n3">
+            <div class="bg-dark text-white px-4 py-2 rounded-pill shadow-lg">
+              <span class="fw-bold">Coming Soon: Full Case Study</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
