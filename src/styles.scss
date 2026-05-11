@@ -553,10 +553,7 @@ section, .section {
   .navmenu .active,
   .navmenu .active:focus { color: var(--nav-hover-color); }
   .navmenu .dropdown ul,
-  .navmenu .dropdown app-product-menu,
-  .navmenu .dropdown app-automation-menu,
-  .navmenu .dropdown app-ai-offerings-menu,
-  .navmenu .dropdown app-solutions-menu {
+  .navmenu .dropdown app-shared-menu {
     margin: 0;
     padding: 0;
     background: #ffffff;
@@ -586,14 +583,19 @@ section, .section {
     }
   }
   .navmenu .dropdown:hover > ul,
-  .navmenu .dropdown:hover > app-product-menu,
-  .navmenu .dropdown:hover > app-automation-menu,
-  .navmenu .dropdown:hover > app-ai-offerings-menu,
-  .navmenu .dropdown:hover > app-solutions-menu { 
-    opacity: 1; 
-    visibility: visible; 
+  .navmenu .dropdown:hover > app-shared-menu {
+    opacity: 1;
+    visibility: visible;
     transform: translateY(5px);
     pointer-events: all;
+  }
+
+  /* Right-align menus for the 4th and 5th nav items (AI Offerings, Solutions)
+     so they don't overflow the right edge of the viewport */
+  .navmenu ul > li:nth-child(4) > app-shared-menu,
+  .navmenu ul > li:nth-child(5) > app-shared-menu {
+    left: auto;
+    right: 0;
   }
 }
 
@@ -611,6 +613,15 @@ section, .section {
     flex: 0 0 260px;
     max-width: 260px;
   }
+}
+
+/* Fix mega-menu inner grid: replace negative-margin gutter approach with pure gap.
+   The custom .row adds margin: 0 -15px which conflicts with g-4's CSS gap. */
+.mega-menu .main-pane .row {
+  margin: 0;
+}
+.mega-menu .main-pane .row > .col {
+  padding: 0;
 }
 
 /* ================================================
@@ -828,7 +839,7 @@ section, .section {
   transition: max-height 0.3s ease;
   background: color-mix(in srgb, var(--accent-color), transparent 96%);
 }
-.mnp-accordion.open .mnp-accordion-body { max-height: 300px; }
+.mnp-accordion.open .mnp-accordion-body { max-height: 800px; }
 
 .mnp-sub-link {
   display: flex;
@@ -1811,3 +1822,18 @@ img { max-width: 100%; height: auto; }
 .position-relative { position: relative; }
 .w-100 { width: 100%; }
 .h-100 { height: 100%; }
+
+/* Grid gap utilities */
+.g-0 { gap: 0; }
+
+/* Row-cols utilities (enable 2-column layout in mega-menu grids) */
+.row-cols-1 > .col { flex: 0 0 100%; max-width: 100%; }
+.row-cols-2 > .col { flex: 0 0 50%; max-width: 50%; }
+@media (min-width: 768px) {
+  .row-cols-md-2 > .col { flex: 0 0 50%; max-width: 50%; }
+}
+
+/* Text utilities used in mega-menu featured panel */
+.text-muted { color: #6c757d; }
+.text-decoration-none { text-decoration: none; }
+.text-inherit { color: inherit; }

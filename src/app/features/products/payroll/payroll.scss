@@ -1,20 +1,259 @@
-.icon-circle {
-  width: 60px;
-  height: 60px;
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  color: var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
+// ===== Payroll Product Page — Accent: Gray/Gold (#6c757d / #b8963e) =====
+$accent: #6c757d;
+$gold: #b8963e;
+
+// ===== Keyframe Animations =====
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 
-.cap-card {
-  transition: all 0.3s ease;
-  &:hover {
-    border-color: var(--accent-color) !important;
-    transform: translateY(-5px);
-    background: #fff;
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.07; transform: scale(1); }
+  50% { opacity: 0.14; transform: scale(1.1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blobDrift {
+  0%, 100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; transform: rotate(0deg); }
+  50% { border-radius: 40% 60% 55% 45% / 48% 62% 38% 52%; transform: rotate(6deg); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// ===== Brand Image Frame =====
+.brand-img-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(108, 117, 125, 0.14);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, $gold, transparent 60%);
+    opacity: 0.18;
+    z-index: 0;
   }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 380px;
+    object-fit: contain;
+    background: #f8f9fa;
+    border-radius: 22px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: block;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: $gold;
+    opacity: 0.07;
+    top: -30px;
+    right: -30px;
+    z-index: 0;
+    animation: pulseSoft 6s infinite ease-in-out;
+  }
+
+  // compliance pill overlay
+  .compliance-pill {
+    position: absolute;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba($gold, 0.35);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: darken($gold, 10%);
+    white-space: nowrap;
+    z-index: 3;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    animation: fadeSlideUp 0.6s ease 0.5s both;
+  }
+
+  &.why-frame {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+// ===== Hero Section =====
+.product-page-hero {
+  background:
+    radial-gradient(circle at 88% 12%, rgba($gold, 0.08) 0%, transparent 52%),
+    radial-gradient(circle at 12% 88%, rgba(108, 117, 125, 0.06) 0%, transparent 45%),
+    linear-gradient(160deg, #faf9f7 0%, #f8f9fa 100%);
+  padding: 100px 0 80px;
+  position: relative;
+
+  .hero-bg-blob {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: rgba($gold, 0.06);
+    top: -80px;
+    right: -80px;
+    z-index: 0;
+    animation: blobDrift 16s infinite ease-in-out;
+  }
+
+  .tracking-wider { letter-spacing: 0.12em; }
+
+  .payroll-badge {
+    background: rgba($gold, 0.12);
+    color: darken($gold, 8%);
+    font-weight: 700;
+    border: 1px solid rgba($gold, 0.25);
+  }
+
+  .text-gradient-payroll {
+    background: linear-gradient(135deg, var(--heading-color) 0%, $gold 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-text-col {
+    position: relative;
+    z-index: 1;
+
+    .content-wrapper {
+      animation: slideInRight 0.7s ease both;
+    }
+  }
+
+  .hero-img-col {
+    position: relative;
+    z-index: 1;
+    animation: floatY 7s infinite ease-in-out;
+  }
+
+  .btn-payroll {
+    background: $gold;
+    border-color: $gold;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba($gold, 0.35);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: darken($gold, 10%);
+      border-color: darken($gold, 10%);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba($gold, 0.45);
+    }
+  }
+
+  .btn-outline-payroll {
+    border-color: $accent;
+    color: $accent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent;
+      color: #fff;
+    }
+  }
+}
+
+// ===== Core Capabilities Section =====
+.core-capabilities {
+  .icon-circle {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, rgba($gold, 0.12), rgba($gold, 0.05));
+    color: $gold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    transition: all 0.4s ease;
+  }
+
+  .cap-card {
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    h6 { color: var(--heading-color); }
+
+    &:hover {
+      border-color: rgba($gold, 0.4) !important;
+      transform: translateY(-10px);
+      box-shadow: 0 24px 50px rgba($gold, 0.1) !important;
+
+      .icon-circle {
+        background: $gold;
+        color: #fff;
+        transform: scale(1.1) rotate(-5deg);
+      }
+    }
+  }
+}
+
+// ===== Why Payroll Section =====
+.why-payroll {
+  background: linear-gradient(160deg, #faf9f7 0%, #f0eeeb 100%);
+
+  .why-list li {
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+    padding-bottom: 0.6rem;
+
+    &:last-child { border-bottom: none; }
+
+    i { color: $gold !important; }
+  }
+}
+
+// ===== Section Title Override (suppress global double underline) =====
+.section-title h2 {
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+
+  &::before { display: none; }
+
+  &::after {
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, $gold, rgba($gold, 0.25));
+    border-radius: 6px;
+    bottom: 0;
+  }
+}
+
+// ===== Responsive =====
+@media (max-width: 991px) {
+  .product-page-hero {
+    padding: 70px 0 50px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-page-hero .display-4 { font-size: 2.2rem; }
 }

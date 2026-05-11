@@ -1,23 +1,26 @@
-<section class="product-page-hero section light-background">
-  <div class="container" data-aos="fade-up">
+<section class="product-page-hero section light-background overflow-hidden">
+  <div class="container position-relative" data-aos="fade-up">
+    <div class="hero-bg-blob"></div>
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="badge bg-success mb-3 px-3 py-2 text-uppercase">vSuite Accounting</span>
-        <h1 class="display-4 fw-bold mb-3">One Platform to Manage Your Business Finances</h1>
-        <p class="lead mb-4">
-          vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#appointment" class="btn btn-success btn-lg rounded-pill px-4 text-white">Get Started Free</a>
-          <a href="#contact" class="btn btn-outline-success btn-lg rounded-pill px-4">View Demo</a>
+      <div class="col-lg-6 hero-text-col">
+        <div class="content-wrapper">
+          <span class="badge accounting-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Accounting</span>
+          <h1 class="display-4 fw-bold mb-4 text-gradient-accounting">One Platform to Manage<br>Your Business Finances</h1>
+          <p class="lead mb-5">
+            vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#appointment" class="btn btn-accounting btn-lg rounded-pill px-5 shadow-hover">Get Started Free <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-accounting btn-lg rounded-pill px-4">View Demo</a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
+      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
         <div class="impact-grid row g-3">
-          <div class="col-6" *ngFor="let stat of businessImpact">
+          <div class="col-6" *ngFor="let stat of businessImpact; let i = index" [attr.data-aos-delay]="i * 80">
             <div class="stat-card p-4 rounded-4 shadow-sm bg-white text-center">
-              <i class="bi mb-2 d-block text-success fs-2" [ngClass]="stat.icon"></i>
-              <h3 class="fw-bold mb-1">{{ stat.value }}</h3>
+              <i class="bi mb-2 d-block fs-2 stat-icon" [ngClass]="stat.icon"></i>
+              <h3 class="fw-bold mb-1 stat-value">{{ stat.value }}</h3>
               <p class="small text-muted mb-0">{{ stat.label }}</p>
             </div>
           </div>
@@ -30,46 +33,63 @@
 <section class="core-capabilities section">
   <div class="container">
     <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2>Core Capabilities</h2>
-      <p>Powerful tools designed to provide accuracy and clarity in financial management.</p>
+      <h2 class="fw-bold">Core Capabilities</h2>
+
+      <p class="text-muted mt-3">Powerful tools designed to provide accuracy and clarity in financial management.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-4 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="capability-item p-4 h-100 rounded-4 border">
-          <div class="icon-wrap mb-3 text-success fs-3">
+    <!-- 5 capability cards — even 3+2 grid -->
+    <div class="row g-4 mb-4">
+      <div class="col-lg-4 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
+        <div class="capability-item p-4 h-100 rounded-4">
+          <div class="cap-icon-box mb-3">
             <i class="bi" [ngClass]="cap.icon"></i>
           </div>
-          <h5 class="fw-bold mb-3">{{ cap.title }}</h5>
+          <h5 class="fw-bold mb-2">{{ cap.title }}</h5>
           <p class="small text-muted mb-0">{{ cap.description }}</p>
         </div>
       </div>
-      
-      <!-- Special Why Choose Block -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-        <div class="why-choose-box p-4 h-100 rounded-4 bg-success text-white">
-          <h5 class="fw-bold mb-4">Why Choose vSuite Accounting?</h5>
-          <ul class="list-unstyled">
-            <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose">
-              <i class="bi bi-check-lg me-2 mt-1"></i>
-              <span class="small">{{ point }}</span>
-            </li>
-          </ul>
+    </div>
+
+    <!-- Why Choose — full-width strip below the grid -->
+    <div class="why-choose-strip rounded-4 p-4 p-lg-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="why-icon-box">
+              <i class="bi bi-stars"></i>
+            </div>
+            <h4 class="fw-bold mb-0 text-white">Why Choose vSuite Accounting?</h4>
+          </div>
+          <p class="text-white opacity-75 small mb-0">Built for modern businesses that need precision and scale.</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="row row-cols-1 row-cols-sm-2 g-3">
+            <div class="col" *ngFor="let point of whyChoose">
+              <div class="why-point d-flex align-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i>
+                <span class="small fw-semibold">{{ point }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="business-impact section light-background">
+<section class="business-impact section light-background overflow-hidden">
   <div class="container text-center">
     <div class="impact-quote mb-5" data-aos="fade-up">
       <h2 class="fw-bold">"Turn Financial Data into Business Growth"</h2>
-      <p class="lead">Empower your decision-making with real-time visibility and AI-ready insights.</p>
+
+      <p class="lead mt-3">Empower your decision-making with real-time visibility and AI-ready insights.</p>
     </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <img src="assets/img/hero-bg.jpg" alt="Dashboard Preview" class="img-fluid rounded-4 shadow-lg">
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-7 col-md-9">
+        <div class="brand-img-frame">
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(5).jpg" alt="vSuite Accounting">
+        </div>
       </div>
     </div>
   </div>

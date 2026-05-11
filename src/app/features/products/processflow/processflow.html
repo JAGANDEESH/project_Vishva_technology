@@ -1,18 +1,24 @@
-<section class="product-page-hero section light-background">
-  <div class="container" data-aos="fade-up">
+<section class="product-page-hero section light-background overflow-hidden">
+  <div class="container position-relative" data-aos="fade-up">
+    <div class="hero-bg-blob"></div>
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="badge bg-dark mb-3 px-3 py-2 text-uppercase">vSuite ProcessFlow</span>
-        <h1 class="display-4 fw-bold mb-3">Automate Shipping Documents. Simplify Operations.</h1>
-        <p class="lead mb-4">
-          vSuite ProcessFlow automates the retrieval, extraction, and integration of Bill of Lading (BL) and invoices—eliminating manual effort and accelerating your finance workflows.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#appointment" class="btn btn-dark btn-lg rounded-pill px-4">Request Demo</a>
-          <a href="#contact" class="btn btn-outline-dark btn-lg rounded-pill px-4">See How It Works</a>
+      <div class="col-lg-6 hero-text-col">
+        <div class="content-wrapper">
+          <span class="badge pf-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite ProcessFlow</span>
+          <h1 class="display-4 fw-bold mb-4 text-gradient-pf">Automate Shipping Documents.<br>Simplify Operations.</h1>
+          <p class="lead mb-5">
+            vSuite ProcessFlow automates the retrieval, extraction, and integration of Bill of Lading (BL) and invoices—eliminating manual effort and accelerating your finance workflows.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#appointment" class="btn btn-pf btn-lg rounded-pill px-5 shadow-hover">Request Demo <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-pf btn-lg rounded-pill px-4">See How It Works</a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
+      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
+        <div class="brand-img-frame mb-4">
+          <img src="assets/img/vs%20suitable%20image/shared%20image.jpg" alt="vSuite ProcessFlow">
+        </div>
         <div class="impact-stats p-4 bg-white rounded-4 shadow-lg">
           <div class="row g-4">
             <div class="col-md-4 text-center" *ngFor="let imp of impacts">
@@ -32,8 +38,9 @@
 <section class="core-capabilities section">
   <div class="container">
     <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2>Intelligent Workflow Automation</h2>
-      <p>Building high-performance logistics operations through intelligent data extraction and reconciliation.</p>
+      <h2 class="fw-bold">Intelligent Workflow Automation</h2>
+
+      <p class="text-muted mt-3">Building high-performance logistics operations through intelligent data extraction and reconciliation.</p>
     </div>
 
     <div class="row g-4">
@@ -52,10 +59,20 @@
   </div>
 </section>
 
-<section class="cta-dark section bg-dark text-white">
-  <div class="container text-center py-5">
-    <h2 class="display-6 fw-bold mb-4">Ready to Automate Your Shipping Document Workflow?</h2>
-    <p class="mb-5 lead">Join hundreds of logistics companies optimizing their operations with vSuite.</p>
-    <a href="#appointment" class="btn btn-outline-light btn-lg rounded-pill px-5">Get a Free Consultation</a>
+<section class="cta-dark section overflow-hidden position-relative">
+  <div class="cta-dark-bg position-absolute inset-0"></div>
+  <div class="container position-relative py-5" data-aos="zoom-out">
+    <div class="row align-items-center">
+      <div class="col-lg-4 text-center mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+        <div class="cta-img-frame">
+          <img src="assets/img/vs%20suitable%20image/shared%20image.jpg" alt="vSuite ProcessFlow" class="img-fluid rounded-4">
+        </div>
+      </div>
+      <div class="col-lg-8 text-center text-lg-start text-white">
+        <h2 class="display-6 fw-bold mb-4">Ready to Automate Your Shipping Document Workflow?</h2>
+        <p class="mb-5 lead opacity-75">Join hundreds of logistics companies optimizing their operations with vSuite.</p>
+        <a href="#appointment" class="btn btn-cta-outline btn-lg rounded-pill px-5">Get a Free Consultation</a>
+      </div>
+    </div>
   </div>
 </section>

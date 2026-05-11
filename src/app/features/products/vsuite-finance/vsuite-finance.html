@@ -1,24 +1,27 @@
-<section class="product-page-hero section light-background">
-  <div class="container" data-aos="fade-up">
+<section class="product-page-hero section light-background overflow-hidden">
+  <div class="container position-relative" data-aos="fade-up">
+    <div class="hero-bg-blob"></div>
     <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="badge bg-primary mb-3 px-3 py-2 text-uppercase">vSuite Ecosystem</span>
-        <h1 class="display-4 fw-bold mb-3">vSuite Finance</h1>
-        <p class="lead mb-4 text-primary fw-bold fst-italic">{{ tagline }}</p>
-        <p class="mb-5 lead">
-          Transform your core financial operations with intelligent automation. 
-          vSuite Finance powers your business with smarter billing, seamless accounting, and automated payroll—so you can focus on growth, not complexity.
-        </p>
-        <div class="d-flex gap-3">
-          <a href="#appointment" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Get Started</a>
-          <a href="#contact" class="btn btn-outline-primary btn-lg rounded-pill px-5">Contact Sales</a>
+      <div class="col-lg-6 hero-text-col">
+        <div class="content-wrapper">
+          <span class="badge finance-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Ecosystem</span>
+          <h1 class="display-4 fw-bold mb-3 text-gradient-finance">vSuite Finance</h1>
+          <p class="lead mb-3 fw-bold fst-italic tagline-text">{{ tagline }}</p>
+          <p class="mb-5 lead">
+            Transform your core financial operations with intelligent automation.
+            vSuite Finance powers your business with smarter billing, seamless accounting, and automated payroll—so you can focus on growth, not complexity.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#appointment" class="btn btn-finance btn-lg rounded-pill px-5 shadow-hover">Get Started <i class="bi bi-arrow-right ms-2"></i></a>
+            <a href="#contact" class="btn btn-outline-finance btn-lg rounded-pill px-5">Contact Sales</a>
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
-        <div class="hero-visual-wrapper position-relative">
-          <img src="assets/img/hero-bg.jpg" alt="Finance Automation" class="img-fluid rounded-4 shadow-lg">
-          <div class="stat-overlay position-absolute bottom-0 end-0 p-4 bg-white rounded-4 shadow-lg m-4 border-start border-primary border-4">
-            <h4 class="fw-bold mb-0">70%</h4>
+      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
+        <div class="hero-visual-wrapper brand-img-frame position-relative">
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(5).jpg" alt="vSuite Finance">
+          <div class="stat-overlay position-absolute bottom-0 end-0 p-3 bg-white rounded-4 shadow-lg m-3 border-start border-primary border-4" data-aos="fade-left" data-aos-delay="400">
+            <h4 class="fw-bold mb-0 text-primary">70%</h4>
             <p class="small text-muted mb-0">Efficiency Increase</p>
           </div>
         </div>
@@ -30,8 +33,9 @@
 <section class="finance-pillars section">
   <div class="container">
     <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2>Core Finance Pillars</h2>
-      <p>Modular solutions that work together to provide a unified financial view.</p>
+      <h2 class="fw-bold">Core Finance Pillars</h2>
+
+      <p class="text-muted mt-3">Modular solutions that work together to provide a unified financial view.</p>
     </div>
 
     <div class="row g-5">
@@ -62,7 +66,7 @@
 <section class="finance-benefits section light-background">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-4" *ngFor="let benefit of benefits" data-aos="zoom-in">
+      <div class="col-lg-4" *ngFor="let benefit of benefits; let i = index" data-aos="zoom-in" [attr.data-aos-delay]="i * 100">
         <div class="benefit-box p-4 text-center">
           <h2 class="display-4 fw-bold text-primary mb-2">{{ benefit.value }}</h2>
           <h5 class="fw-bold mb-3">{{ benefit.title }}</h5>

@@ -1,11 +1,288 @@
-.pf-card {
-  transition: all 0.4s ease;
-  &:hover {
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    transform: translateY(-5px);
+// ===== ProcessFlow Product Page — Accent: Dark (#212529) =====
+$accent: #212529;
+$accent-mid: #495057;
+$accent-light: rgba(33, 37, 41, 0.08);
+$highlight: #6c757d;
+
+// ===== Keyframe Animations =====
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(1.1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes blobDrift {
+  0%, 100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
+  50% { border-radius: 40% 60% 55% 45% / 48% 62% 38% 52%; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// ===== Brand Image Frame =====
+.brand-img-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(33, 37, 41, 0.16);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 26px;
+    background: linear-gradient(135deg, $accent, transparent 60%);
+    opacity: 0.2;
+    z-index: 0;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    max-height: 320px;
+    object-fit: contain;
+    background: #f8f9fa;
+    border-radius: 22px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: block;
+  }
+
+  &:hover img {
+    transform: scale(1.03);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: $highlight;
+    opacity: 0.07;
+    top: -28px;
+    right: -28px;
+    z-index: 0;
+    animation: pulseSoft 6s infinite ease-in-out;
   }
 }
 
+// ===== Hero Section =====
+.product-page-hero {
+  background:
+    radial-gradient(circle at 88% 12%, rgba($accent, 0.05) 0%, transparent 52%),
+    radial-gradient(circle at 12% 88%, rgba($highlight, 0.04) 0%, transparent 45%),
+    linear-gradient(160deg, #f5f5f5 0%, #f8f9fa 100%);
+  padding: 100px 0 80px;
+  position: relative;
+
+  .hero-bg-blob {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: rgba($accent, 0.04);
+    top: -80px;
+    right: -80px;
+    z-index: 0;
+    animation: blobDrift 18s infinite ease-in-out;
+  }
+
+  .tracking-wider { letter-spacing: 0.12em; }
+
+  .pf-badge {
+    background: $accent-light;
+    color: $accent;
+    font-weight: 700;
+    border: 1px solid rgba($accent, 0.2);
+  }
+
+  .text-gradient-pf {
+    background: linear-gradient(135deg, $accent 0%, $accent-mid 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-text-col {
+    position: relative;
+    z-index: 1;
+
+    .content-wrapper {
+      animation: slideInRight 0.7s ease both;
+    }
+  }
+
+  .hero-img-col {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-pf {
+    background: $accent;
+    border-color: $accent;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba($accent, 0.3);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent-mid;
+      border-color: $accent-mid;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 35px rgba($accent, 0.4);
+    }
+  }
+
+  .btn-outline-pf {
+    border-color: $accent;
+    color: $accent;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent;
+      color: #fff;
+    }
+  }
+}
+
+// ===== Impact Stats (hero) =====
 .impact-stats {
-  border-top: 5px solid var(--bs-dark);
+  border-top: 5px solid $accent;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+
+  .col-md-4 {
+    transition: transform 0.3s ease;
+
+    i { color: $accent; transition: transform 0.4s ease; }
+    h2 { color: $accent; }
+
+    &:hover {
+      transform: translateY(-4px);
+
+      i { transform: scale(1.2); }
+    }
+
+    &:not(:last-child) {
+      border-right: 1px dashed rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// ===== Core Capabilities Section =====
+.core-capabilities {
+  .pf-card {
+    border: 1px solid rgba($accent, 0.08) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .icon-wrap {
+      background: $accent !important;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.4s ease;
+
+      i { color: #fff !important; }
+    }
+
+    &:hover {
+      box-shadow: 0 24px 55px rgba($accent, 0.1) !important;
+      transform: translateY(-10px);
+      border-color: rgba($accent, 0.25) !important;
+
+      .icon-wrap {
+        background: $accent-mid !important;
+        transform: scale(1.1) rotate(-5deg);
+      }
+    }
+  }
+}
+
+// ===== CTA Dark Section =====
+.cta-dark {
+  .cta-dark-bg {
+    inset: 0;
+    background: linear-gradient(135deg, $accent 0%, lighten($accent, 12%) 100%);
+    z-index: 0;
+  }
+
+  .cta-img-frame {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 16px 50px rgba(0,0,0,0.3);
+    max-width: 280px;
+    margin: 0 auto;
+    animation: floatY 6s infinite ease-in-out;
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+  }
+
+  .btn-cta-outline {
+    border: 2px solid rgba(255,255,255,0.8);
+    color: #fff;
+    font-weight: 700;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #fff;
+      color: $accent;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+// ===== Section Title Override (suppress global double underline) =====
+.section-title h2 {
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+
+  &::before { display: none; }
+
+  &::after {
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, $accent-mid, rgba($accent-mid, 0.25));
+    border-radius: 6px;
+    bottom: 0;
+  }
+}
+
+// ===== Responsive =====
+@media (max-width: 991px) {
+  .product-page-hero {
+    padding: 70px 0 50px;
+  }
+
+  .impact-stats .col-md-4 {
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+
+    &:last-child { border-bottom: none; }
+  }
+}
+
+@media (max-width: 575px) {
+  .product-page-hero .display-4 { font-size: 2.2rem; }
 }
