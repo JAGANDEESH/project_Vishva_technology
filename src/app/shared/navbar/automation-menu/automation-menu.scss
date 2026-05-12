@@ -19,21 +19,10 @@
   transition: all 0.3s ease;
   height: 100%;
   border: 1px solid transparent;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
   
-  &:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 94%);
-    border-color: color-mix(in srgb, var(--accent-color), transparent 85%);
-    transform: translateY(-2px);
-    
-    .icon-wrap {
-      background: var(--accent-color);
-      color: #fff;
-    }
-    
-    .name {
-      color: var(--accent-color);
-    }
-  }
 }
 
 .icon-wrap {

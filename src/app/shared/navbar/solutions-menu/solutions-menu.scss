@@ -19,23 +19,10 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 100%;
   border: 1px solid transparent;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
   
-  &:hover {
-    background: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border-color: color-mix(in srgb, var(--accent-color), transparent 85%);
-    transform: translateY(-5px);
-    
-    .icon-wrap.solution-icon {
-      background: var(--accent-color);
-      color: #fff;
-      transform: scale(1.1);
-    }
-    
-    .name {
-      color: var(--accent-color);
-    }
-  }
 }
 
 .icon-wrap.solution-icon {

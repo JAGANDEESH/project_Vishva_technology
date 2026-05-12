@@ -53,22 +53,6 @@
   display: flex;
   align-items: flex-start;
 
-  &:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 93%);
-    border-color: color-mix(in srgb, var(--accent-color), transparent 82%);
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-
-    .item-icon {
-      background: var(--accent-color);
-      color: #fff;
-      transform: scale(1.08);
-    }
-
-    .item-name {
-      color: var(--accent-color);
-    }
-  }
 }
 
 .item-icon {
