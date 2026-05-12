@@ -3,12 +3,21 @@
   <div class="solc-bg-mesh"></div>
   <div class="solc-bg-circle solc-bg-circle--1"></div>
   <div class="solc-bg-circle solc-bg-circle--2"></div>
+  <div class="solc-hero-particles">
+    <div class="solc-particle"></div>
+    <div class="solc-particle"></div>
+    <div class="solc-particle"></div>
+    <div class="solc-particle"></div>
+    <div class="solc-particle"></div>
+    <div class="solc-particle"></div>
+  </div>
 
   <div class="container position-relative">
     <div class="row align-items-center g-5">
       <div class="col-lg-6" data-aos="fade-right">
         <span class="solc-badge">
-          <i class="bi bi-bag-check me-2"></i>Commerce Solutions
+          <span class="solc-pulse-dot"></span>
+          <i class="bi bi-bag-check ms-1 me-2"></i>Commerce Solutions
         </span>
         <h1 class="solc-hero-title mt-4">
           Sell More. Faster.<br>
@@ -53,8 +62,9 @@
       <h2 class="solc-section-title">Commerce Management Capabilities</h2>
       <p class="solc-section-sub">End-to-end commerce tools that unify your storefronts, orders, inventory, and customers into one powerful platform.</p>
     </div>
-    <div class="solc-cap-grid" data-aos="fade-up" data-aos-delay="100">
+    <div class="solc-cap-grid">
       <div class="solc-cap-card" *ngFor="let cap of capabilities; let i = index"
+           data-aos="fade-up" [attr.data-aos-delay]="i * 80 + 100"
            [style.animation-delay]="(i * 0.08) + 's'">
         <div class="solc-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
         <div class="solc-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
@@ -108,6 +118,35 @@
             <i class="bi bi-arrow-up-right-circle me-1"></i>2× Sales Growth
           </div>
         </div>
+      </div>
+    </div>
+    <div class="solc-impact-metrics row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-6 col-sm-3" *ngFor="let stat of businessImpact">
+        <div class="solc-impact-metric">
+          <i class="bi" [ngClass]="stat.icon"></i>
+          <div class="solc-impact-metric-value">{{ stat.value }}</div>
+          <div class="solc-impact-metric-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="solc-cta section">
+  <div class="solc-cta-glow"></div>
+  <div class="container position-relative">
+    <div class="text-center" data-aos="fade-up">
+      <span class="solc-cta-tag">Get Started Today</span>
+      <h2 class="solc-cta-title mt-3">Ready to Scale Your<br>Commerce Business?</h2>
+      <p class="solc-cta-sub">Unify your storefronts, manage orders in real-time, and grow sales across every channel — all from one powerful platform.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#appointment" class="btn solc-btn-white btn-lg rounded-pill px-5">
+          Start Free Trial <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+        <a href="#contact" class="btn solc-btn-outline-white btn-lg rounded-pill px-4">
+          <i class="bi bi-calendar-check me-2"></i>Book a Demo
+        </a>
       </div>
     </div>
   </div>

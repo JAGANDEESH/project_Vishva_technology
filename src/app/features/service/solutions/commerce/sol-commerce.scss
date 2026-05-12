@@ -529,3 +529,226 @@ $solc-soft: rgba(234, 88, 12, 0.09);
   .solc-cap-card { padding: 24px 20px; }
   .solc-why-strip { padding: 28px 20px; }
 }
+
+// ===== Pulse Dot =====
+@keyframes solc-pulse-ring {
+  0%   { transform: scale(1); opacity: 0.75; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+.solc-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: $solc;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 1.5px solid $solc;
+    animation: solc-pulse-ring 1.7s ease-out infinite;
+  }
+}
+
+// ===== Hero Particles =====
+@keyframes solc-particle-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%       { transform: translate(var(--dx, 10px), var(--dy, -16px)) scale(0.82); }
+}
+
+.solc-hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.solc-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: $solc;
+  opacity: 0.10;
+  animation: solc-particle-float var(--dur, 8s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+
+  &:nth-child(1) { width: 14px; height: 14px; top: 18%; left: 65%; --dur: 7s;    --delay: -1s;   --dx: 16px;  --dy: -22px; }
+  &:nth-child(2) { width: 8px;  height: 8px;  top: 38%; left: 78%; --dur: 9.5s;  --delay: -3s;   --dx: -12px; --dy: -14px; }
+  &:nth-child(3) { width: 20px; height: 20px; top: 22%; left: 88%; --dur: 11s;   --delay: -5s;   --dx: 9px;   --dy: -28px; opacity: 0.05; }
+  &:nth-child(4) { width: 10px; height: 10px; top: 62%; left: 74%; --dur: 8s;    --delay: -2s;   --dx: -18px; --dy: -10px; }
+  &:nth-child(5) { width: 6px;  height: 6px;  top: 72%; left: 60%; --dur: 10s;   --delay: -4.5s; --dx: 14px;  --dy: 12px;  opacity: 0.16; }
+  &:nth-child(6) { width: 16px; height: 16px; top: 48%; left: 92%; --dur: 7.5s;  --delay: -6s;   --dx: -14px; --dy: -22px; opacity: 0.07; }
+}
+
+// ===== Impact Metrics Row =====
+.solc-impact-metrics {
+  border-top: 1px solid rgba($solc, 0.12);
+  padding-top: 36px;
+}
+
+.solc-impact-metric {
+  background: #fff;
+  border: 1px solid rgba($solc, 0.10);
+  border-radius: 18px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  i {
+    font-size: 22px;
+    color: $solc;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &:hover {
+    border-color: rgba($solc, 0.25);
+    box-shadow: 0 12px 36px rgba($solc, 0.10);
+    transform: translateY(-5px);
+  }
+}
+
+.solc-impact-metric-value {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 800;
+  color: var(--heading-color);
+  line-height: 1;
+  margin-bottom: 6px;
+  font-family: var(--heading-font);
+}
+
+.solc-impact-metric-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--default-color), transparent 38%);
+  line-height: 1.4;
+}
+
+// ===== CTA Section =====
+.solc-cta {
+  background: linear-gradient(135deg, $solc 0%, $solc-dark 65%, #9a340c 100%);
+  padding: clamp(64px, 9vw, 110px) 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .solc-cta-glow {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 18% 50%, rgba(255, 255, 255, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 82% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 420px; height: 420px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    top: -160px; right: -100px;
+    pointer-events: none;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    bottom: -80px; left: 4%;
+    pointer-events: none;
+  }
+}
+
+.solc-cta-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50px;
+  padding: 6px 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.solc-cta-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.solc-cta-sub {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.75;
+}
+
+.solc-btn-white {
+  background: #fff;
+  border-color: #fff;
+  color: $solc;
+  font-weight: 700;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.93);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    color: $solc-dark;
+  }
+}
+
+.solc-btn-outline-white {
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.75);
+    color: #fff;
+  }
+}
+
+// ===== Extended Responsive =====
+@media (max-width: 480px) {
+  .solc-hero-title     { font-size: 1.7rem; }
+  .solc-stat-card      { padding: 20px 12px; }
+  .solc-stat-value     { font-size: 1.4rem; }
+  .solc-trust-row      { gap: 10px !important; }
+  .solc-trust-item     { font-size: 12px; }
+  .solc-impact-metric  { padding: 18px 10px; }
+  .solc-cta-title      { font-size: 1.55rem; }
+  .solc-cta .d-flex    { flex-direction: column; align-items: stretch; }
+  .solc-btn-white,
+  .solc-btn-outline-white { justify-content: center; }
+}
+
+@media (max-width: 360px) {
+  .solc-badge       { font-size: 10px; padding: 7px 14px; }
+  .solc-stats-grid  { gap: 8px; }
+  .solc-stat-card   { padding: 16px 10px; border-radius: 16px; }
+  .solc-cap-card    { padding: 20px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solc-pulse-dot::after,
+  .solc-particle,
+  .solc-float-badge,
+  .solc-bg-circle       { animation: none !important; }
+  .solc-gradient-text   { animation: none !important; -webkit-text-fill-color: $solc; }
+}

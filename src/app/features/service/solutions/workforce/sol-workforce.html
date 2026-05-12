@@ -3,12 +3,21 @@
   <div class="solw-bg-mesh"></div>
   <div class="solw-bg-circle solw-bg-circle--1"></div>
   <div class="solw-bg-circle solw-bg-circle--2"></div>
+  <div class="solw-hero-particles">
+    <div class="solw-particle"></div>
+    <div class="solw-particle"></div>
+    <div class="solw-particle"></div>
+    <div class="solw-particle"></div>
+    <div class="solw-particle"></div>
+    <div class="solw-particle"></div>
+  </div>
 
   <div class="container position-relative">
     <div class="row align-items-center g-5">
       <div class="col-lg-6" data-aos="fade-right">
         <span class="solw-badge">
-          <i class="bi bi-people me-2"></i>Workforce Solutions
+          <span class="solw-pulse-dot"></span>
+          <i class="bi bi-people ms-1 me-2"></i>Workforce Solutions
         </span>
         <h1 class="solw-hero-title mt-4">
           Hire. Engage.<br>
@@ -53,8 +62,9 @@
       <h2 class="solw-section-title">Workforce Management Capabilities</h2>
       <p class="solw-section-sub">End-to-end HR automation that keeps your team compliant, engaged, and productive — from first hire to final payslip.</p>
     </div>
-    <div class="solw-cap-grid" data-aos="fade-up" data-aos-delay="100">
+    <div class="solw-cap-grid">
       <div class="solw-cap-card" *ngFor="let cap of capabilities; let i = index"
+           data-aos="fade-up" [attr.data-aos-delay]="i * 80 + 100"
            [style.animation-delay]="(i * 0.08) + 's'">
         <div class="solw-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
         <div class="solw-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
@@ -108,6 +118,35 @@
             <i class="bi bi-shield-check me-1"></i>100% Statutory Compliance
           </div>
         </div>
+      </div>
+    </div>
+    <div class="solw-impact-metrics row g-3 mt-5" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-6 col-sm-3" *ngFor="let stat of businessImpact">
+        <div class="solw-impact-metric">
+          <i class="bi" [ngClass]="stat.icon"></i>
+          <div class="solw-impact-metric-value">{{ stat.value }}</div>
+          <div class="solw-impact-metric-label">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="solw-cta section">
+  <div class="solw-cta-glow"></div>
+  <div class="container position-relative">
+    <div class="text-center" data-aos="fade-up">
+      <span class="solw-cta-tag">Get Started Today</span>
+      <h2 class="solw-cta-title mt-3">Ready to Empower<br>Your Workforce?</h2>
+      <p class="solw-cta-sub">Automate payroll, ensure compliance, and build a high-performance culture — all from one intuitive HR platform.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="#appointment" class="btn solw-btn-white btn-lg rounded-pill px-5">
+          Start Free Trial <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+        <a href="#contact" class="btn solw-btn-outline-white btn-lg rounded-pill px-4">
+          <i class="bi bi-calendar-check me-2"></i>Book a Demo
+        </a>
       </div>
     </div>
   </div>
