@@ -17,10 +17,10 @@ import { FooterComponent } from './shared/footer/footer.component';
           <div class="orbit orbit-3"></div>
           <div class="orbit orbit-2"></div>
           <div class="orbit orbit-1"></div>
-          <div class="preloader-core">VTL</div>
+          <div class="preloader-core">VT</div>
         </div>
         <div class="preloader-progress"><div class="preloader-progress-bar"></div></div>
-        <p class="preloader-tagline">Vishva Techno Labs</p>
+        <p class="preloader-tagline">Vishva Technologies</p>
         <p class="preloader-sub">Building Tomorrow's Solutions</p>
       </div>
     </div>
