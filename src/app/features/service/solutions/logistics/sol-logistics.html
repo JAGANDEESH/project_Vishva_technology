@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="soll-hero section overflow-hidden">
+  <div class="soll-bg-mesh"></div>
+  <div class="soll-bg-circle soll-bg-circle--1"></div>
+  <div class="soll-bg-circle soll-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="soll-badge">
+          <i class="bi bi-truck me-2"></i>Logistics Solutions
+        </span>
+        <h1 class="soll-hero-title mt-4">
+          Deliver On Time.<br>
+          <span class="soll-gradient-text">Every Single Time.</span>
+        </h1>
+        <p class="soll-hero-lead mt-4 mb-5">
+          From real-time shipment tracking to AI-driven route optimization and automated carrier management — one platform to move goods faster, cheaper, and smarter.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn soll-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn soll-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See a Demo
+          </a>
+        </div>
+        <div class="soll-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="soll-trust-item"><i class="bi bi-broadcast"></i><span>Real-time Tracking</span></div>
+          <div class="soll-trust-item"><i class="bi bi-diagram-3"></i><span>Multi-Carrier</span></div>
+          <div class="soll-trust-item"><i class="bi bi-cpu"></i><span>AI-Optimized Routes</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="soll-stats-grid">
+          <div class="soll-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="soll-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="soll-stat-value">{{ stat.value }}</div>
+            <div class="soll-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="soll-capabilities section">
+  <div class="container">
+    <div class="soll-section-head text-center" data-aos="fade-up">
+      <span class="soll-section-tag">What We Offer</span>
+      <h2 class="soll-section-title">Logistics Management Capabilities</h2>
+      <p class="soll-section-sub">End-to-end logistics automation that cuts costs, prevents delays, and gives you full visibility across every shipment.</p>
+    </div>
+    <div class="soll-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="soll-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="soll-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="soll-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="soll-cap-title">{{ cap.title }}</h5>
+        <p class="soll-cap-desc">{{ cap.description }}</p>
+        <div class="soll-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="soll-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="soll-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Logistics Solutions?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for speed. Designed for scale.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="soll-why-grid">
+            <div class="soll-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="soll-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="soll-impact-title">
+        "From Dispatch to Delivery.<br>
+        <span class="soll-gradient-text">Logistics That Never Stops."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">One platform for tracking, carrier management, routing, warehousing, and returns — fully automated.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="soll-img-frame">
+          <div class="soll-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="Logistics Solutions Dashboard">
+          <div class="soll-float-badge soll-float-badge--tl">
+            <i class="bi bi-truck me-1"></i>100+ Carrier Integrations
+          </div>
+          <div class="soll-float-badge soll-float-badge--br">
+            <i class="bi bi-clock-history me-1"></i>98% On-Time Delivery
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

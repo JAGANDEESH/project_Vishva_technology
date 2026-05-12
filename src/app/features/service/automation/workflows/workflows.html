@@ -1,0 +1,143 @@
+<!-- ===== HERO ===== -->
+<section class="wf-hero section overflow-hidden">
+  <div class="wf-bg-mesh"></div>
+  <div class="wf-bg-circle wf-bg-circle--1"></div>
+  <div class="wf-bg-circle wf-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="wf-badge">
+          <i class="bi bi-diagram-3 me-2"></i>Workflow Automation
+        </span>
+        <h1 class="wf-hero-title mt-4">
+          Build Smarter Processes.<br>
+          <span class="wf-gradient-text">Automate Every Step.</span>
+        </h1>
+        <p class="wf-hero-lead mt-4 mb-5">
+          Design, deploy, and manage structured workflows with approvals, conditions, and automated actions — connecting your entire organisation without a single line of code.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn wf-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn wf-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See It in Action
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="wf-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="wf-trust-item">
+            <i class="bi bi-diagram-3"></i><span>No-Code Builder</span>
+          </div>
+          <div class="wf-trust-item">
+            <i class="bi bi-bell-fill"></i><span>Real-Time Alerts</span>
+          </div>
+          <div class="wf-trust-item">
+            <i class="bi bi-shield-check"></i><span>Audit-Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="wf-stats-grid">
+          <div class="wf-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="wf-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
+            </div>
+            <div class="wf-stat-value">{{ stat.value }}</div>
+            <div class="wf-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="wf-capabilities section">
+  <div class="container">
+
+    <div class="wf-section-head text-center" data-aos="fade-up">
+      <span class="wf-section-tag">What We Offer</span>
+      <h2 class="wf-section-title">End-to-End Workflow Capabilities</h2>
+      <p class="wf-section-sub">Powerful tools to design, automate, and optimise every business process from end to end.</p>
+    </div>
+
+    <div class="wf-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="wf-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="wf-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="wf-cap-icon">
+          <i class="bi" [ngClass]="cap.icon"></i>
+        </div>
+        <h5 class="wf-cap-title">{{ cap.title }}</h5>
+        <p class="wf-cap-desc">{{ cap.description }}</p>
+        <div class="wf-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose strip -->
+    <div class="wf-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="wf-why-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Automate Workflows?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for process-driven organisations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="wf-why-grid">
+            <div class="wf-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="wf-impact section light-background overflow-hidden">
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="wf-impact-title">
+        "Stop Managing Processes Manually.<br>
+        <span class="wf-gradient-text">Let Workflows Do the Work."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">From simple approvals to complex multi-team processes — automate it all.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="wf-img-frame">
+          <div class="wf-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="Workflow Automation Dashboard">
+          <div class="wf-float-badge wf-float-badge--tl">
+            <i class="bi bi-diagram-3-fill me-1"></i>Visual Workflow Builder
+          </div>
+          <div class="wf-float-badge wf-float-badge--br">
+            <i class="bi bi-graph-up-arrow me-1"></i>80% Faster Cycles
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="solf-hero section overflow-hidden">
+  <div class="solf-bg-mesh"></div>
+  <div class="solf-bg-circle solf-bg-circle--1"></div>
+  <div class="solf-bg-circle solf-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="solf-badge">
+          <i class="bi bi-bank me-2"></i>Finance Solutions
+        </span>
+        <h1 class="solf-hero-title mt-4">
+          Complete Financial Control.<br>
+          <span class="solf-gradient-text">Zero Complexity.</span>
+        </h1>
+        <p class="solf-hero-lead mt-4 mb-5">
+          From invoice automation to GST filing and real-time cash flow forecasting — one integrated platform to manage every aspect of your business finances with confidence.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn solf-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn solf-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See a Demo
+          </a>
+        </div>
+        <div class="solf-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="solf-trust-item"><i class="bi bi-patch-check"></i><span>GST-Ready</span></div>
+          <div class="solf-trust-item"><i class="bi bi-graph-up"></i><span>Real-time Reporting</span></div>
+          <div class="solf-trust-item"><i class="bi bi-bank2"></i><span>Auto-Reconciliation</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="solf-stats-grid">
+          <div class="solf-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="solf-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="solf-stat-value">{{ stat.value }}</div>
+            <div class="solf-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="solf-capabilities section">
+  <div class="container">
+    <div class="solf-section-head text-center" data-aos="fade-up">
+      <span class="solf-section-tag">What We Offer</span>
+      <h2 class="solf-section-title">Finance Management Capabilities</h2>
+      <p class="solf-section-sub">End-to-end financial automation that keeps your books clean, your compliance current, and your cash flow visible.</p>
+    </div>
+    <div class="solf-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="solf-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="solf-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="solf-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="solf-cap-title">{{ cap.title }}</h5>
+        <p class="solf-cap-desc">{{ cap.description }}</p>
+        <div class="solf-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="solf-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="solf-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Finance Solutions?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for accuracy. Designed for growth.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="solf-why-grid">
+            <div class="solf-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="solf-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="solf-impact-title">
+        "From Ledgers to Insights.<br>
+        <span class="solf-gradient-text">Finance That Works for You."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">One platform for invoicing, reconciliation, compliance, and real-time financial intelligence.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="solf-img-frame">
+          <div class="solf-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="Finance Solutions Dashboard">
+          <div class="solf-float-badge solf-float-badge--tl">
+            <i class="bi bi-bank me-1"></i>GST-Ready Finance
+          </div>
+          <div class="solf-float-badge solf-float-badge--br">
+            <i class="bi bi-shield-check me-1"></i>99.9% Accuracy
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

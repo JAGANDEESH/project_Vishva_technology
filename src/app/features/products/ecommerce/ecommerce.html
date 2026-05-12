@@ -1,69 +1,143 @@
-<section class="product-page-hero section light-background overflow-hidden">
-  <div class="container position-relative" data-aos="fade-up">
-    <div class="hero-bg-blob"></div>
-    <div class="row align-items-center">
-      <div class="col-lg-6 hero-text-col">
-        <div class="content-wrapper">
-          <span class="badge ecommerce-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite E-Commerce</span>
-          <h1 class="display-4 fw-bold mb-4 text-gradient-ecommerce">Smart Shopping Starts<br>with vSuite E-Commerce</h1>
-          <p class="lead mb-5">
-            A flexible and scalable shopping platform designed to power any business—from retail to services—with a seamless cart and checkout experience.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#appointment" class="btn btn-ecommerce btn-lg rounded-pill px-5 shadow-hover">Get Started <i class="bi bi-arrow-right ms-2"></i></a>
-            <a href="#contact" class="btn btn-outline-ecommerce btn-lg rounded-pill px-4">Request Demo</a>
+<!-- ===== HERO ===== -->
+<section class="ec-hero section overflow-hidden">
+  <div class="ec-bg-mesh"></div>
+  <div class="ec-bg-circle ec-bg-circle--1"></div>
+  <div class="ec-bg-circle ec-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="ec-badge">
+          <i class="bi bi-cart4 me-2"></i>vSuite E-Commerce
+        </span>
+        <h1 class="ec-hero-title mt-4">
+          Sell Smarter.<br>
+          <span class="ec-gradient-text">Scale Faster Online.</span>
+        </h1>
+        <p class="ec-hero-lead mt-4 mb-5">
+          A flexible and scalable commerce platform designed to power any business—from retail to services—with a seamless cart and checkout experience.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn ec-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn ec-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>View Demo
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="ec-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="ec-trust-item">
+            <i class="bi bi-bag-check"></i><span>Multi-Domain Ready</span>
+          </div>
+          <div class="ec-trust-item">
+            <i class="bi bi-shield-lock"></i><span>Secure Checkout</span>
+          </div>
+          <div class="ec-trust-item">
+            <i class="bi bi-cloud-check"></i><span>Cloud-Scalable</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
-        <div class="brand-img-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(3).jpg" alt="vSuite E-Commerce">
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="ec-stats-grid">
+          <div class="ec-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="ec-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
+            </div>
+            <div class="ec-stat-value">{{ stat.value }}</div>
+            <div class="ec-stat-label">{{ stat.label }}</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="key-features section">
+<!-- ===== PLATFORM FEATURES ===== -->
+<section class="ec-capabilities section">
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">Platform Features</h2>
 
-      <p class="text-muted mt-3">Modern tools built to simplify how you sell products and services online.</p>
+    <div class="ec-section-head text-center" data-aos="fade-up">
+      <span class="ec-section-tag">What We Offer</span>
+      <h2 class="ec-section-title">Platform Features</h2>
+      <p class="ec-section-sub">Modern tools built to simplify how you sell products and services online.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-4 col-md-6" *ngFor="let feat of features; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="feat-card p-4 h-100 rounded-4 shadow-sm border">
-          <i class="bi text-warning mb-3 d-block fs-1" [ngClass]="feat.icon"></i>
-          <h5 class="fw-bold mb-3">{{ feat.title }}</h5>
-          <p class="small text-muted mb-0">{{ feat.description }}</p>
+    <div class="ec-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="ec-cap-card" *ngFor="let feat of features; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="ec-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="ec-cap-icon">
+          <i class="bi" [ngClass]="feat.icon"></i>
+        </div>
+        <h5 class="ec-cap-title">{{ feat.title }}</h5>
+        <p class="ec-cap-desc">{{ feat.description }}</p>
+        <div class="ec-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="use-cases section light-background">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-5">
-        <h2 class="fw-bold mb-4">Versatile Solutions for Multiple Domains</h2>
-        <p class="mb-5">vSuite E-Commerce adapts to your industry needs with ease, from physical goods to digital subscriptions.</p>
-        <div class="row row-cols-1 g-3">
-          <div class="col" *ngFor="let use of useCases">
-            <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm border-start border-warning border-4">
-              <i class="bi bi-arrow-right-circle text-warning me-3"></i>
-              <span class="fw-bold">{{ use }}</span>
+    <!-- Why Choose strip -->
+    <div class="ec-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="ec-why-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why vSuite E-Commerce?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for every kind of online business.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="ec-why-grid">
+            <div class="ec-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-lg-7 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="150">
-        <div class="brand-img-frame use-case-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(3).jpg" alt="vSuite E-Commerce">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="ec-impact section light-background overflow-hidden">
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="ec-impact-title">
+        "Build, Launch &amp; Grow<br>
+        <span class="ec-gradient-text">Your Online Business."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">From your first sale to enterprise scale—vSuite E-Commerce grows with you.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="ec-img-frame">
+          <div class="ec-img-glow"></div>
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(3).jpg" alt="vSuite E-Commerce Dashboard">
+          <div class="ec-float-badge ec-float-badge--tl">
+            <i class="bi bi-bag-check-fill me-1"></i>Multi-Domain Ready
+          </div>
+          <div class="ec-float-badge ec-float-badge--br">
+            <i class="bi bi-graph-up-arrow me-1"></i>+35% Conversion
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>

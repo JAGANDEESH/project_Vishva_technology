@@ -1,0 +1,143 @@
+<!-- ===== HERO ===== -->
+<section class="int-hero section overflow-hidden">
+  <div class="int-bg-mesh"></div>
+  <div class="int-bg-circle int-bg-circle--1"></div>
+  <div class="int-bg-circle int-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="int-badge">
+          <i class="bi bi-plug me-2"></i>System Integrations
+        </span>
+        <h1 class="int-hero-title mt-4">
+          Connect Every System.<br>
+          <span class="int-gradient-text">Unify Your Data Flow.</span>
+        </h1>
+        <p class="int-hero-lead mt-4 mb-5">
+          Connect your business applications seamlessly — from ERP and CRM to specialised platforms — eliminating data silos and powering a fully unified operation.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn int-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn int-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See It in Action
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="int-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="int-trust-item">
+            <i class="bi bi-plug"></i><span>100+ Connectors</span>
+          </div>
+          <div class="int-trust-item">
+            <i class="bi bi-arrow-repeat"></i><span>Real-Time Sync</span>
+          </div>
+          <div class="int-trust-item">
+            <i class="bi bi-shield-lock"></i><span>Enterprise-Grade</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="int-stats-grid">
+          <div class="int-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="int-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
+            </div>
+            <div class="int-stat-value">{{ stat.value }}</div>
+            <div class="int-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="int-capabilities section">
+  <div class="container">
+
+    <div class="int-section-head text-center" data-aos="fade-up">
+      <span class="int-section-tag">What We Offer</span>
+      <h2 class="int-section-title">Full-Spectrum Integration Capabilities</h2>
+      <p class="int-section-sub">Everything you need to connect, transform, and orchestrate data across your entire technology stack.</p>
+    </div>
+
+    <div class="int-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="int-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="int-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="int-cap-icon">
+          <i class="bi" [ngClass]="cap.icon"></i>
+        </div>
+        <h5 class="int-cap-title">{{ cap.title }}</h5>
+        <p class="int-cap-desc">{{ cap.description }}</p>
+        <div class="int-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose strip -->
+    <div class="int-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="int-why-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Choose Integrations?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for connected, data-driven businesses.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="int-why-grid">
+            <div class="int-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="int-impact section light-background overflow-hidden">
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="int-impact-title">
+        "Break Down Data Silos.<br>
+        <span class="int-gradient-text">Build a Connected Enterprise."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">One integration platform. Every system. Infinite possibilities.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="int-img-frame">
+          <div class="int-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="System Integrations Dashboard">
+          <div class="int-float-badge int-float-badge--tl">
+            <i class="bi bi-plug-fill me-1"></i>100+ Ready Connectors
+          </div>
+          <div class="int-float-badge int-float-badge--br">
+            <i class="bi bi-arrow-repeat me-1"></i>Real-Time Data Sync
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

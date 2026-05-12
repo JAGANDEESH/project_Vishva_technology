@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="llm-hero section overflow-hidden">
+  <div class="llm-bg-mesh"></div>
+  <div class="llm-bg-circle llm-bg-circle--1"></div>
+  <div class="llm-bg-circle llm-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="llm-badge">
+          <i class="bi bi-cpu me-2"></i>LLM Development
+        </span>
+        <h1 class="llm-hero-title mt-4">
+          Build Language Models That<br>
+          <span class="llm-gradient-text">Understand Your Business.</span>
+        </h1>
+        <p class="llm-hero-lead mt-4 mb-5">
+          Custom Large Language Models trained on your data — delivering domain-specific intelligence, cost efficiency, and complete data privacy at scale.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn llm-btn-primary btn-lg rounded-pill px-5">
+            Start a Project <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn llm-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See Demo
+          </a>
+        </div>
+        <div class="llm-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="llm-trust-item"><i class="bi bi-shield-lock"></i><span>Privacy-First</span></div>
+          <div class="llm-trust-item"><i class="bi bi-patch-check"></i><span>Custom-Trained</span></div>
+          <div class="llm-trust-item"><i class="bi bi-cloud-check"></i><span>Production-Ready</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="llm-stats-grid">
+          <div class="llm-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="llm-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="llm-stat-value">{{ stat.value }}</div>
+            <div class="llm-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="llm-capabilities section">
+  <div class="container">
+    <div class="llm-section-head text-center" data-aos="fade-up">
+      <span class="llm-section-tag">What We Offer</span>
+      <h2 class="llm-section-title">Full-Cycle LLM Development</h2>
+      <p class="llm-section-sub">From data preparation to production deployment — complete LLM engineering services tailored to your domain.</p>
+    </div>
+    <div class="llm-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="llm-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="llm-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="llm-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="llm-cap-title">{{ cap.title }}</h5>
+        <p class="llm-cap-desc">{{ cap.description }}</p>
+        <div class="llm-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="llm-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="llm-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Custom LLMs?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for domain-specific precision.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="llm-why-grid">
+            <div class="llm-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="llm-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="llm-impact-title">
+        "Your Data. Your Model.<br>
+        <span class="llm-gradient-text">Your Competitive Edge."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">Stop renting generic intelligence — build AI that truly knows your business.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="llm-img-frame">
+          <div class="llm-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="LLM Development Dashboard">
+          <div class="llm-float-badge llm-float-badge--tl">
+            <i class="bi bi-cpu me-1"></i>Custom-Trained Models
+          </div>
+          <div class="llm-float-badge llm-float-badge--br">
+            <i class="bi bi-shield-lock me-1"></i>100% Data Privacy
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

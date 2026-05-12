@@ -1,67 +1,67 @@
-// ===== Payroll Page — Accent: Indigo =====
-$pr:      #6366f1;
-$pr-dark: #4f46e5;
-$pr-glow: rgba(99, 102, 241, 0.22);
-$pr-soft: rgba(99, 102, 241, 0.09);
+// ===== Logistics Solutions — Accent: Teal =====
+$soll:      #0d9488;
+$soll-dark: #0f766e;
+$soll-glow: rgba(13, 148, 136, 0.22);
+$soll-soft: rgba(13, 148, 136, 0.09);
 
 // ===== Keyframes =====
-@keyframes pr-blob {
+@keyframes soll-blob {
   0%, 100% { border-radius: 62% 38% 46% 54% / 60% 44% 56% 40%; }
   50%       { border-radius: 40% 60% 55% 45% / 48% 62% 38% 52%; }
 }
-@keyframes pr-float {
+@keyframes soll-float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   40%       { transform: translateY(-14px) rotate(1.5deg); }
   70%       { transform: translateY(-7px) rotate(-1deg); }
 }
-@keyframes pr-shimmer {
+@keyframes soll-shimmer {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
 }
-@keyframes pr-slide-up {
+@keyframes soll-slide-up {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-@keyframes pr-pop {
+@keyframes soll-pop {
   from { opacity: 0; transform: scale(0.88) translateY(12px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 // ===== Hero =====
-.pr-hero {
+.soll-hero {
   position: relative;
   padding: clamp(90px, 12vw, 130px) 0 clamp(60px, 8vw, 90px);
   background:
-    radial-gradient(ellipse at 80% 10%, rgba($pr, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 10% 90%, rgba($pr, 0.06) 0%, transparent 45%),
-    linear-gradient(160deg, #f5f3ff 0%, #faf9ff 50%, #f0f4ff 100%);
+    radial-gradient(ellipse at 80% 10%, rgba($soll, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 90%, rgba($soll, 0.06) 0%, transparent 45%),
+    linear-gradient(160deg, #f0fdfa 0%, #f8fffe 50%, #ccfbf1 100%);
 
-  .pr-bg-mesh {
+  .soll-bg-mesh {
     position: absolute;
     inset: 0;
     background-image:
-      radial-gradient(circle at 20% 20%, rgba($pr, 0.05) 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, rgba($pr, 0.04) 0%, transparent 40%);
+      radial-gradient(circle at 20% 20%, rgba($soll, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba($soll, 0.04) 0%, transparent 40%);
     pointer-events: none;
   }
 
-  .pr-bg-circle {
+  .soll-bg-circle {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
-    animation: pr-blob 20s ease-in-out infinite;
+    animation: soll-blob 20s ease-in-out infinite;
 
     &--1 {
       width: min(480px, 60vw);
       height: min(480px, 60vw);
-      background: rgba($pr, 0.06);
+      background: rgba($soll, 0.06);
       top: -130px;
       right: -120px;
     }
     &--2 {
       width: min(240px, 35vw);
       height: min(240px, 35vw);
-      background: rgba($pr, 0.05);
+      background: rgba($soll, 0.05);
       bottom: -70px;
       left: 3%;
       animation-delay: -9s;
@@ -69,85 +69,85 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   }
 }
 
-.pr-badge {
+.soll-badge {
   display: inline-flex;
   align-items: center;
-  background: $pr-soft;
-  color: $pr;
-  border: 1px solid rgba($pr, 0.25);
+  background: $soll-soft;
+  color: $soll;
+  border: 1px solid rgba($soll, 0.25);
   border-radius: 50px;
   padding: 8px 20px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  animation: pr-slide-up 0.5s ease both;
+  animation: soll-slide-up 0.5s ease both;
 }
 
-.pr-hero-title {
+.soll-hero-title {
   font-size: clamp(1.85rem, 4vw, 3rem);
   font-weight: 800;
   line-height: 1.2;
   color: var(--heading-color);
-  animation: pr-slide-up 0.55s 0.08s ease both;
+  animation: soll-slide-up 0.55s 0.08s ease both;
 }
 
-.pr-gradient-text {
-  background: linear-gradient(120deg, $pr 0%, #a78bfa 50%, $pr 100%);
+.soll-gradient-text {
+  background: linear-gradient(120deg, $soll 0%, #2dd4bf 50%, $soll 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: pr-shimmer 5s linear infinite;
+  animation: soll-shimmer 5s linear infinite;
 }
 
-.pr-hero-lead {
+.soll-hero-lead {
   font-size: clamp(0.95rem, 1.4vw, 1.1rem);
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   line-height: 1.75;
-  animation: pr-slide-up 0.55s 0.16s ease both;
+  animation: soll-slide-up 0.55s 0.16s ease both;
 }
 
-.pr-btn-primary {
-  background: $pr;
-  border-color: $pr;
+.soll-btn-primary {
+  background: $soll;
+  border-color: $soll;
   color: #fff;
   font-weight: 700;
-  box-shadow: 0 8px 28px $pr-glow;
+  box-shadow: 0 8px 28px $soll-glow;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation: pr-slide-up 0.55s 0.24s ease both;
+  animation: soll-slide-up 0.55s 0.24s ease both;
 
   &:hover {
-    background: $pr-dark;
-    border-color: $pr-dark;
+    background: $soll-dark;
+    border-color: $soll-dark;
     color: #fff;
     transform: translateY(-3px);
-    box-shadow: 0 16px 40px rgba($pr, 0.42);
+    box-shadow: 0 16px 40px rgba($soll, 0.42);
   }
 }
 
-.pr-btn-ghost {
-  border: 2px solid rgba($pr, 0.4);
-  color: $pr;
-  background: rgba($pr, 0.04);
+.soll-btn-ghost {
+  border: 2px solid rgba($soll, 0.4);
+  color: $soll;
+  background: rgba($soll, 0.04);
   font-weight: 600;
   transition: all 0.3s ease;
-  animation: pr-slide-up 0.55s 0.28s ease both;
+  animation: soll-slide-up 0.55s 0.28s ease both;
 
   &:hover {
-    background: $pr;
-    border-color: $pr;
+    background: $soll;
+    border-color: $soll;
     color: #fff;
   }
 }
 
-.pr-trust-row {
-  border-top: 1px solid rgba($pr, 0.14);
+.soll-trust-row {
+  border-top: 1px solid rgba($soll, 0.14);
   padding-top: 24px;
-  animation: pr-slide-up 0.55s 0.36s ease both;
+  animation: soll-slide-up 0.55s 0.36s ease both;
 }
 
-.pr-trust-item {
+.soll-trust-item {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -157,12 +157,12 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 
   i {
     font-size: 17px;
-    color: $pr;
+    color: $soll;
   }
 }
 
 // ===== Stat Cards =====
-.pr-stats-grid {
+.soll-stats-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px;
@@ -170,56 +170,56 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   margin: 0 auto;
 }
 
-.pr-stat-card {
+.soll-stat-card {
   background: #fff;
-  border: 1px solid rgba($pr, 0.12);
+  border: 1px solid rgba($soll, 0.12);
   border-radius: 22px;
   padding: 28px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  animation: pr-pop 0.6s ease both;
+  animation: soll-pop 0.6s ease both;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba($pr, 0.06), transparent);
+    background: linear-gradient(135deg, rgba($soll, 0.06), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
-    border-color: rgba($pr, 0.28);
-    box-shadow: 0 24px 52px rgba($pr, 0.14);
+    border-color: rgba($soll, 0.28);
+    box-shadow: 0 24px 52px rgba($soll, 0.14);
 
     &::before { opacity: 1; }
 
-    .pr-stat-icon-wrap {
-      background: $pr;
+    .soll-stat-icon-wrap {
+      background: $soll;
       color: #fff;
       transform: scale(1.1) rotate(-8deg);
     }
   }
 }
 
-.pr-stat-icon-wrap {
+.soll-stat-icon-wrap {
   width: 50px;
   height: 50px;
-  background: $pr-soft;
+  background: $soll-soft;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $pr;
+  color: $soll;
   font-size: 22px;
   margin: 0 auto 14px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.pr-stat-value {
+.soll-stat-value {
   font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 800;
   color: var(--heading-color);
@@ -228,7 +228,7 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   margin-bottom: 6px;
 }
 
-.pr-stat-label {
+.soll-stat-label {
   font-size: 11.5px;
   color: color-mix(in srgb, var(--default-color), transparent 38%);
   font-weight: 500;
@@ -236,14 +236,14 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 }
 
 // ===== Section Head =====
-.pr-section-head {
+.soll-section-head {
   margin-bottom: 56px;
 }
 
-.pr-section-tag {
+.soll-section-tag {
   display: inline-block;
-  background: $pr-soft;
-  color: $pr;
+  background: $soll-soft;
+  color: $soll;
   border-radius: 50px;
   padding: 6px 18px;
   font-size: 11.5px;
@@ -253,7 +253,7 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   margin-bottom: 16px;
 }
 
-.pr-section-title {
+.soll-section-title {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
   color: var(--heading-color);
@@ -269,28 +269,28 @@ $pr-soft: rgba(99, 102, 241, 0.09);
     transform: translateX(-50%);
     width: 56px;
     height: 4px;
-    background: linear-gradient(90deg, $pr, rgba($pr, 0.2));
+    background: linear-gradient(90deg, $soll, rgba($soll, 0.2));
     border-radius: 4px;
   }
 }
 
-.pr-section-sub {
+.soll-section-sub {
   margin: 28px auto 0;
-  max-width: 540px;
+  max-width: 560px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   line-height: 1.7;
   font-size: 15px;
 }
 
 // ===== Capabilities Grid =====
-.pr-cap-grid {
+.soll-cap-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
   margin-bottom: 40px;
 }
 
-.pr-cap-card {
+.soll-cap-card {
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 22px;
@@ -298,14 +298,14 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  animation: pr-slide-up 0.5s ease both;
+  animation: soll-slide-up 0.5s ease both;
 
   &::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
-    background: linear-gradient(90deg, $pr, rgba($pr, 0.25));
+    background: linear-gradient(90deg, $soll, rgba($soll, 0.25));
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 22px 22px 0 0;
@@ -313,67 +313,67 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 
   &:hover {
     transform: translateY(-10px);
-    border-color: rgba($pr, 0.2);
-    box-shadow: 0 24px 60px rgba($pr, 0.11);
+    border-color: rgba($soll, 0.2);
+    box-shadow: 0 24px 60px rgba($soll, 0.11);
 
     &::before { opacity: 1; }
 
-    .pr-cap-icon {
-      background: $pr;
+    .soll-cap-icon {
+      background: $soll;
       color: #fff;
       transform: scale(1.1) rotate(-8deg);
     }
 
-    .pr-cap-arrow {
+    .soll-cap-arrow {
       opacity: 1;
       transform: translateX(0);
     }
   }
 }
 
-.pr-cap-num {
+.soll-cap-num {
   position: absolute;
   top: 18px;
   right: 20px;
   font-size: 44px;
   font-weight: 900;
-  color: rgba($pr, 0.06);
+  color: rgba($soll, 0.06);
   font-family: var(--heading-font);
   line-height: 1;
   user-select: none;
 }
 
-.pr-cap-icon {
+.soll-cap-icon {
   width: 56px;
   height: 56px;
-  background: $pr-soft;
+  background: $soll-soft;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $pr;
+  color: $soll;
   font-size: 26px;
   margin-bottom: 20px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.pr-cap-title {
+.soll-cap-title {
   font-size: 15.5px;
   font-weight: 700;
   color: var(--heading-color);
   margin-bottom: 10px;
 }
 
-.pr-cap-desc {
+.soll-cap-desc {
   font-size: 13.5px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   line-height: 1.65;
   margin-bottom: 0;
 }
 
-.pr-cap-arrow {
+.soll-cap-arrow {
   margin-top: 16px;
-  color: $pr;
+  color: $soll;
   font-size: 18px;
   opacity: 0;
   transform: translateX(-8px);
@@ -381,11 +381,11 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 }
 
 // ===== Why Choose Strip =====
-.pr-why-strip {
-  background: linear-gradient(135deg, $pr 0%, $pr-dark 100%);
+.soll-why-strip {
+  background: linear-gradient(135deg, $soll 0%, $soll-dark 100%);
   border-radius: 24px;
   padding: clamp(28px, 4vw, 44px) clamp(24px, 5vw, 52px);
-  box-shadow: 0 24px 64px rgba($pr, 0.3);
+  box-shadow: 0 24px 64px rgba($soll, 0.3);
   position: relative;
   overflow: hidden;
 
@@ -409,7 +409,7 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   }
 }
 
-.pr-why-icon {
+.soll-why-icon {
   width: 50px;
   height: 50px;
   background: rgba(255, 255, 255, 0.16);
@@ -422,13 +422,13 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   flex-shrink: 0;
 }
 
-.pr-why-grid {
+.soll-why-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
 
-.pr-why-point {
+.soll-why-point {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -448,26 +448,26 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 }
 
 // ===== Business Impact =====
-.pr-impact {
-  background: linear-gradient(160deg, #f5f3ff 0%, #faf9ff 100%);
+.soll-impact {
+  background: linear-gradient(160deg, #f0fdfa 0%, #f8fffe 100%);
 }
 
-.pr-impact-title {
+.soll-impact-title {
   font-size: clamp(1.6rem, 3.2vw, 2.5rem);
   font-weight: 800;
   color: var(--heading-color);
   line-height: 1.3;
 }
 
-.pr-img-frame {
+.soll-img-frame {
   position: relative;
   border-radius: 28px;
 
-  .pr-img-glow {
+  .soll-img-glow {
     position: absolute;
     inset: -24px;
     border-radius: 36px;
-    background: radial-gradient(ellipse at center, rgba($pr, 0.12) 0%, transparent 68%);
+    background: radial-gradient(ellipse at center, rgba($soll, 0.12) 0%, transparent 68%);
     z-index: 0;
     pointer-events: none;
   }
@@ -475,7 +475,7 @@ $pr-soft: rgba(99, 102, 241, 0.09);
   img {
     width: 100%;
     border-radius: 24px;
-    box-shadow: 0 32px 80px rgba($pr, 0.14), 0 4px 24px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 32px 80px rgba($soll, 0.14), 0 4px 24px rgba(0, 0, 0, 0.06);
     object-fit: cover;
     aspect-ratio: 16 / 9;
     position: relative;
@@ -486,7 +486,7 @@ $pr-soft: rgba(99, 102, 241, 0.09);
     &:hover { transform: scale(1.01); }
   }
 
-  .pr-float-badge {
+  .soll-float-badge {
     position: absolute;
     z-index: 2;
     background: #fff;
@@ -494,13 +494,13 @@ $pr-soft: rgba(99, 102, 241, 0.09);
     padding: 10px 20px;
     font-size: 12.5px;
     font-weight: 700;
-    color: $pr;
+    color: $soll;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba($pr, 0.15);
+    border: 1px solid rgba($soll, 0.15);
     display: flex;
     align-items: center;
     white-space: nowrap;
-    animation: pr-float 5s ease-in-out infinite;
+    animation: soll-float 5s ease-in-out infinite;
 
     i { font-size: 15px; }
 
@@ -511,21 +511,21 @@ $pr-soft: rgba(99, 102, 241, 0.09);
 
 // ===== Responsive =====
 @media (max-width: 1199px) {
-  .pr-cap-grid { grid-template-columns: repeat(2, 1fr); }
+  .soll-cap-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 991px) {
-  .pr-stats-grid { max-width: 100%; }
-  .pr-why-grid { grid-template-columns: 1fr; }
+  .soll-stats-grid { max-width: 100%; }
+  .soll-why-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 767px) {
-  .pr-cap-grid { grid-template-columns: 1fr; }
-  .pr-img-frame .pr-float-badge { display: none; }
+  .soll-cap-grid { grid-template-columns: 1fr; }
+  .soll-img-frame .soll-float-badge { display: none; }
 }
 
 @media (max-width: 575px) {
-  .pr-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .pr-cap-card { padding: 24px 20px; }
-  .pr-why-strip { padding: 28px 20px; }
+  .soll-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .soll-cap-card { padding: 24px 20px; }
+  .soll-why-strip { padding: 28px 20px; }
 }

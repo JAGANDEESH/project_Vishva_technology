@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="solw-hero section overflow-hidden">
+  <div class="solw-bg-mesh"></div>
+  <div class="solw-bg-circle solw-bg-circle--1"></div>
+  <div class="solw-bg-circle solw-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="solw-badge">
+          <i class="bi bi-people me-2"></i>Workforce Solutions
+        </span>
+        <h1 class="solw-hero-title mt-4">
+          Hire. Engage.<br>
+          <span class="solw-gradient-text">Retain Your Best.</span>
+        </h1>
+        <p class="solw-hero-lead mt-4 mb-5">
+          From automated payroll and compliance tracking to performance reviews and employee self-service — one platform to manage your entire workforce with confidence.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn solw-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn solw-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See a Demo
+          </a>
+        </div>
+        <div class="solw-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="solw-trust-item"><i class="bi bi-shield-check"></i><span>Statutory Compliant</span></div>
+          <div class="solw-trust-item"><i class="bi bi-phone"></i><span>Mobile-First ESS</span></div>
+          <div class="solw-trust-item"><i class="bi bi-cpu"></i><span>Auto-Payroll</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="solw-stats-grid">
+          <div class="solw-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="solw-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="solw-stat-value">{{ stat.value }}</div>
+            <div class="solw-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="solw-capabilities section">
+  <div class="container">
+    <div class="solw-section-head text-center" data-aos="fade-up">
+      <span class="solw-section-tag">What We Offer</span>
+      <h2 class="solw-section-title">Workforce Management Capabilities</h2>
+      <p class="solw-section-sub">End-to-end HR automation that keeps your team compliant, engaged, and productive — from first hire to final payslip.</p>
+    </div>
+    <div class="solw-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="solw-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="solw-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="solw-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="solw-cap-title">{{ cap.title }}</h5>
+        <p class="solw-cap-desc">{{ cap.description }}</p>
+        <div class="solw-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="solw-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="solw-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Workforce Solutions?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for people. Designed for compliance.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="solw-why-grid">
+            <div class="solw-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="solw-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="solw-impact-title">
+        "From Hire to Retire.<br>
+        <span class="solw-gradient-text">HR That Works for Your People."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">One platform for payroll, compliance, performance, recruitment, and employee self-service.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="solw-img-frame">
+          <div class="solw-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="Workforce Solutions Dashboard">
+          <div class="solw-float-badge solw-float-badge--tl">
+            <i class="bi bi-people me-1"></i>Complete HR Platform
+          </div>
+          <div class="solw-float-badge solw-float-badge--br">
+            <i class="bi bi-shield-check me-1"></i>100% Statutory Compliance
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

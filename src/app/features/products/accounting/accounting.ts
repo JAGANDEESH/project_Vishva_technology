@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-accounting',
@@ -13,7 +12,7 @@ export class AccountingComponent {
   capabilities = [
     {
       title: 'Smart Billing',
-      description: 'Create GST-compliant invoices, automate billing, and track payments effortlessly.',
+      description: 'Create GST-compliant invoices, automate billing cycles, and track every payment effortlessly.',
       icon: 'bi-receipt'
     },
     {
@@ -43,12 +42,14 @@ export class AccountingComponent {
     'Built for modern and growing businesses',
     'GST-ready and compliant (India 🇮🇳)',
     'Clean, intuitive, and powerful interface',
-    'Scalable and future-ready'
+    'Scalable and future-ready',
+    'Dedicated onboarding support'
   ];
 
   businessImpact = [
     { label: 'Manual Effort Reduction', value: '70%', icon: 'bi-clock-history' },
     { label: 'Cash Flow Visibility', value: '100%', icon: 'bi-eye' },
-    { label: 'Statutory Compliance', value: 'Zero-Risk', icon: 'bi-shield-check' }
+    { label: 'Statutory Compliance', value: 'Zero-Risk', icon: 'bi-shield-check' },
+    { label: 'Faster Invoice Cycle', value: '3×', icon: 'bi-lightning-charge' }
   ];
 }

@@ -1,96 +1,143 @@
-<section class="product-page-hero section light-background overflow-hidden">
-  <div class="container position-relative" data-aos="fade-up">
-    <div class="hero-bg-blob"></div>
-    <div class="row align-items-center">
-      <div class="col-lg-6 hero-text-col">
-        <div class="content-wrapper">
-          <span class="badge accounting-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Accounting</span>
-          <h1 class="display-4 fw-bold mb-4 text-gradient-accounting">One Platform to Manage<br>Your Business Finances</h1>
-          <p class="lead mb-5">
-            vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#appointment" class="btn btn-accounting btn-lg rounded-pill px-5 shadow-hover">Get Started Free <i class="bi bi-arrow-right ms-2"></i></a>
-            <a href="#contact" class="btn btn-outline-accounting btn-lg rounded-pill px-4">View Demo</a>
+<!-- ===== HERO ===== -->
+<section class="acc-hero section overflow-hidden">
+  <div class="acc-bg-mesh"></div>
+  <div class="acc-bg-circle acc-bg-circle--1"></div>
+  <div class="acc-bg-circle acc-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="acc-badge">
+          <i class="bi bi-calculator-fill me-2"></i>vSuite Accounting
+        </span>
+        <h1 class="acc-hero-title mt-4">
+          One Platform to Manage<br>
+          <span class="acc-gradient-text">Your Business Finances</span>
+        </h1>
+        <p class="acc-hero-lead mt-4 mb-5">
+          vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn acc-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn acc-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>View Demo
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="acc-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="acc-trust-item">
+            <i class="bi bi-shield-check"></i><span>GST Compliant</span>
+          </div>
+          <div class="acc-trust-item">
+            <i class="bi bi-lightning-charge"></i><span>Real-Time Sync</span>
+          </div>
+          <div class="acc-trust-item">
+            <i class="bi bi-cloud-check"></i><span>Cloud-Ready</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
-        <div class="impact-grid row g-3">
-          <div class="col-6" *ngFor="let stat of businessImpact; let i = index" [attr.data-aos-delay]="i * 80">
-            <div class="stat-card p-4 rounded-4 shadow-sm bg-white text-center">
-              <i class="bi mb-2 d-block fs-2 stat-icon" [ngClass]="stat.icon"></i>
-              <h3 class="fw-bold mb-1 stat-value">{{ stat.value }}</h3>
-              <p class="small text-muted mb-0">{{ stat.label }}</p>
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="acc-stats-grid">
+          <div class="acc-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="acc-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
             </div>
+            <div class="acc-stat-value">{{ stat.value }}</div>
+            <div class="acc-stat-label">{{ stat.label }}</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="core-capabilities section">
+<!-- ===== CORE CAPABILITIES ===== -->
+<section class="acc-capabilities section">
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">Core Capabilities</h2>
 
-      <p class="text-muted mt-3">Powerful tools designed to provide accuracy and clarity in financial management.</p>
+    <div class="acc-section-head text-center" data-aos="fade-up">
+      <span class="acc-section-tag">What We Offer</span>
+      <h2 class="acc-section-title">Core Capabilities</h2>
+      <p class="acc-section-sub">Powerful tools designed to provide accuracy and clarity in every aspect of financial management.</p>
     </div>
 
-    <!-- 5 capability cards — even 3+2 grid -->
-    <div class="row g-4 mb-4">
-      <div class="col-lg-4 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 80">
-        <div class="capability-item p-4 h-100 rounded-4">
-          <div class="cap-icon-box mb-3">
-            <i class="bi" [ngClass]="cap.icon"></i>
-          </div>
-          <h5 class="fw-bold mb-2">{{ cap.title }}</h5>
-          <p class="small text-muted mb-0">{{ cap.description }}</p>
+    <div class="acc-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="acc-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="acc-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="acc-cap-icon">
+          <i class="bi" [ngClass]="cap.icon"></i>
+        </div>
+        <h5 class="acc-cap-title">{{ cap.title }}</h5>
+        <p class="acc-cap-desc">{{ cap.description }}</p>
+        <div class="acc-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
         </div>
       </div>
     </div>
 
-    <!-- Why Choose — full-width strip below the grid -->
-    <div class="why-choose-strip rounded-4 p-4 p-lg-5" data-aos="fade-up" data-aos-delay="200">
+    <!-- Why Choose strip -->
+    <div class="acc-why-strip" data-aos="fade-up" data-aos-delay="200">
       <div class="row align-items-center g-4">
         <div class="col-lg-4">
           <div class="d-flex align-items-center gap-3 mb-2">
-            <div class="why-icon-box">
+            <div class="acc-why-icon">
               <i class="bi bi-stars"></i>
             </div>
-            <h4 class="fw-bold mb-0 text-white">Why Choose vSuite Accounting?</h4>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why vSuite Accounting?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for modern, growing businesses.</p>
+            </div>
           </div>
-          <p class="text-white opacity-75 small mb-0">Built for modern businesses that need precision and scale.</p>
         </div>
         <div class="col-lg-8">
-          <div class="row row-cols-1 row-cols-sm-2 g-3">
-            <div class="col" *ngFor="let point of whyChoose">
-              <div class="why-point d-flex align-items-center gap-2">
-                <i class="bi bi-check-circle-fill"></i>
-                <span class="small fw-semibold">{{ point }}</span>
-              </div>
+          <div class="acc-why-grid">
+            <div class="acc-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<section class="business-impact section light-background overflow-hidden">
-  <div class="container text-center">
-    <div class="impact-quote mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">"Turn Financial Data into Business Growth"</h2>
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="acc-impact section light-background overflow-hidden">
+  <div class="container">
 
-      <p class="lead mt-3">Empower your decision-making with real-time visibility and AI-ready insights.</p>
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="acc-impact-title">
+        "Turn Financial Data into<br>
+        <span class="acc-gradient-text">Business Growth"</span>
+      </h2>
+      <p class="lead mt-3 text-muted">Empower your decision-making with real-time visibility and AI-ready insights.</p>
     </div>
+
     <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
-      <div class="col-lg-7 col-md-9">
-        <div class="brand-img-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(5).jpg" alt="vSuite Accounting">
+      <div class="col-lg-9 col-md-11">
+        <div class="acc-img-frame">
+          <div class="acc-img-glow"></div>
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(5).jpg" alt="vSuite Accounting Dashboard">
+          <div class="acc-float-badge acc-float-badge--tl">
+            <i class="bi bi-check-circle-fill me-1"></i>GST-Ready
+          </div>
+          <div class="acc-float-badge acc-float-badge--br">
+            <i class="bi bi-graph-up-arrow me-1"></i>Real-Time Insights
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>

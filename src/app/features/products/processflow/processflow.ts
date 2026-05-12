@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-processflow',
@@ -33,9 +32,19 @@ export class ProcessflowComponent {
     }
   ];
 
-  impacts = [
-    { label: 'Processing Time reduction', value: '70%', icon: 'bi-lightning' },
-    { label: 'Manual errors minimized', value: '95%', icon: 'bi-bug-fill' },
-    { label: 'Reconciliation accuracy', value: '100%', icon: 'bi-graph-up' }
+  whyChoose = [
+    'Eliminates manual BL & invoice processing',
+    'Intelligent OCR extracts data instantly',
+    'Integrates with any ERP or payment system',
+    'Real-time reconciliation dashboard',
+    'Scales with your logistics volume',
+    'Dedicated onboarding and support'
+  ];
+
+  businessImpact = [
+    { label: 'Processing Time Cut',      value: '70%',  icon: 'bi-lightning-charge' },
+    { label: 'Manual Errors Reduced',    value: '95%',  icon: 'bi-bug'              },
+    { label: 'Reconciliation Accuracy',  value: '100%', icon: 'bi-check-all'        },
+    { label: 'Faster Document Turnaround', value: '10×', icon: 'bi-arrow-repeat'    }
   ];
 }

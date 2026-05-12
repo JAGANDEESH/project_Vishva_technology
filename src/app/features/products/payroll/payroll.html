@@ -1,71 +1,143 @@
-<section class="product-page-hero section light-background overflow-hidden">
-  <div class="container position-relative" data-aos="fade-up">
-    <div class="hero-bg-blob"></div>
-    <div class="row align-items-center">
-      <div class="col-lg-6 hero-text-col">
-        <div class="content-wrapper">
-          <span class="badge payroll-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Payroll</span>
-          <h1 class="display-4 fw-bold mb-4 text-gradient-payroll">Simplify Payroll.<br>Empower Your Workforce.</h1>
-          <p class="lead mb-5 text-muted-dark">
-            vSuite Payroll automates salary processing, ensures compliance, and streamlines employee payments—so you can manage your workforce with confidence and ease.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#appointment" class="btn btn-payroll btn-lg rounded-pill px-5 shadow-hover">Get Started <i class="bi bi-arrow-right ms-2"></i></a>
-            <a href="#contact" class="btn btn-outline-payroll btn-lg rounded-pill px-4">Request Demo</a>
+<!-- ===== HERO ===== -->
+<section class="pr-hero section overflow-hidden">
+  <div class="pr-bg-mesh"></div>
+  <div class="pr-bg-circle pr-bg-circle--1"></div>
+  <div class="pr-bg-circle pr-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="pr-badge">
+          <i class="bi bi-cash-stack me-2"></i>vSuite PayRoll
+        </span>
+        <h1 class="pr-hero-title mt-4">
+          Simplify Payroll.<br>
+          <span class="pr-gradient-text">Empower Your Workforce.</span>
+        </h1>
+        <p class="pr-hero-lead mt-4 mb-5">
+          vSuite PayRoll automates salary processing, ensures compliance, and streamlines employee payments—so you can manage your workforce with confidence and ease.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn pr-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn pr-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>View Demo
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="pr-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="pr-trust-item">
+            <i class="bi bi-shield-check"></i><span>PF &amp; ESI Ready</span>
+          </div>
+          <div class="pr-trust-item">
+            <i class="bi bi-receipt"></i><span>TDS Compliant</span>
+          </div>
+          <div class="pr-trust-item">
+            <i class="bi bi-cloud-check"></i><span>Audit-Ready</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
-        <div class="brand-img-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(1).jpg" alt="vSuite Payroll">
-          <div class="compliance-pill">
-            <i class="bi bi-shield-fill-check me-2"></i> India-Ready: PF · ESI · TDS
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="pr-stats-grid">
+          <div class="pr-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="pr-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
+            </div>
+            <div class="pr-stat-value">{{ stat.value }}</div>
+            <div class="pr-stat-label">{{ stat.label }}</div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="core-capabilities section">
+<!-- ===== CORE CAPABILITIES ===== -->
+<section class="pr-capabilities section">
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">End-to-End Payroll Capabilities</h2>
 
-      <p class="text-muted mt-3">A smart, scalable solution designed for startups and enterprises alike.</p>
+    <div class="pr-section-head text-center" data-aos="fade-up">
+      <span class="pr-section-tag">What We Offer</span>
+      <h2 class="pr-section-title">End-to-End Payroll Capabilities</h2>
+      <p class="pr-section-sub">A smart, scalable solution designed for startups and enterprises alike.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-3 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="cap-card p-4 h-100 rounded-4 shadow-sm border text-center">
-          <div class="icon-circle mb-3 mx-auto">
-            <i class="bi" [ngClass]="cap.icon"></i>
-          </div>
-          <h6 class="fw-bold mb-3">{{ cap.title }}</h6>
-          <p class="small text-muted mb-0">{{ cap.description }}</p>
+    <div class="pr-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="pr-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="pr-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="pr-cap-icon">
+          <i class="bi" [ngClass]="cap.icon"></i>
+        </div>
+        <h5 class="pr-cap-title">{{ cap.title }}</h5>
+        <p class="pr-cap-desc">{{ cap.description }}</p>
+        <div class="pr-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
         </div>
       </div>
     </div>
+
+    <!-- Why Choose strip -->
+    <div class="pr-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="pr-why-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why vSuite PayRoll?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for modern, growing teams.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="pr-why-grid">
+            <div class="pr-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<section class="why-payroll section light-background overflow-hidden">
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="pr-impact section light-background overflow-hidden">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
-        <div class="brand-img-frame why-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(1).jpg" alt="vSuite Payroll">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="pr-impact-title">
+        "Automate Payroll.<br>
+        <span class="pr-gradient-text">Focus on Growth."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">Run accurate, compliant payroll in minutes—not days.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="pr-img-frame">
+          <div class="pr-img-glow"></div>
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(1).jpg" alt="vSuite PayRoll Dashboard">
+          <div class="pr-float-badge pr-float-badge--tl">
+            <i class="bi bi-check-circle-fill me-1"></i>PF &amp; ESI Ready
+          </div>
+          <div class="pr-float-badge pr-float-badge--br">
+            <i class="bi bi-file-earmark-check me-1"></i>1-Click Payslips
+          </div>
         </div>
       </div>
-      <div class="col-lg-6 ps-lg-5" data-aos="fade-left" data-aos-delay="200">
-        <h2 class="fw-bold mb-4">Why Choose vSuite Payroll?</h2>
-        <ul class="list-unstyled why-list">
-          <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose" data-aos="fade-left">
-            <i class="bi bi-patch-check-fill text-primary me-3 fs-5 mt-1"></i>
-            <span class="fs-6">{{ point }}</span>
-          </li>
-        </ul>
-      </div>
     </div>
+
   </div>
 </section>

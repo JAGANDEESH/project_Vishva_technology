@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="aic-hero section overflow-hidden">
+  <div class="aic-bg-mesh"></div>
+  <div class="aic-bg-circle aic-bg-circle--1"></div>
+  <div class="aic-bg-circle aic-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="aic-badge">
+          <i class="bi bi-lightbulb me-2"></i>AI Consulting
+        </span>
+        <h1 class="aic-hero-title mt-4">
+          Turn AI Potential Into<br>
+          <span class="aic-gradient-text">Business Reality.</span>
+        </h1>
+        <p class="aic-hero-lead mt-4 mb-5">
+          Strategic, vendor-agnostic AI guidance — from readiness assessment and use-case discovery to roadmap planning and proof-of-concept delivery.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn aic-btn-primary btn-lg rounded-pill px-5">
+            Book a Consultation <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn aic-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See Our Process
+          </a>
+        </div>
+        <div class="aic-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="aic-trust-item"><i class="bi bi-ui-checks"></i><span>Vendor-Agnostic</span></div>
+          <div class="aic-trust-item"><i class="bi bi-graph-up-arrow"></i><span>ROI-Focused</span></div>
+          <div class="aic-trust-item"><i class="bi bi-people"></i><span>Expert-Led</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="aic-stats-grid">
+          <div class="aic-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="aic-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="aic-stat-value">{{ stat.value }}</div>
+            <div class="aic-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="aic-capabilities section">
+  <div class="container">
+    <div class="aic-section-head text-center" data-aos="fade-up">
+      <span class="aic-section-tag">What We Offer</span>
+      <h2 class="aic-section-title">Strategic AI Advisory Services</h2>
+      <p class="aic-section-sub">A structured consulting approach that takes you from AI ambiguity to a clear, actionable, high-ROI implementation plan.</p>
+    </div>
+    <div class="aic-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="aic-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="aic-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="aic-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="aic-cap-title">{{ cap.title }}</h5>
+        <p class="aic-cap-desc">{{ cap.description }}</p>
+        <div class="aic-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="aic-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="aic-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Our AI Consulting?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Strategy before technology, always.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="aic-why-grid">
+            <div class="aic-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="aic-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="aic-impact-title">
+        "The Right AI Strategy<br>
+        <span class="aic-gradient-text">Delivers 3× Faster ROI."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">Expert guidance that removes guesswork and accelerates your path to measurable AI returns.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="aic-img-frame">
+          <div class="aic-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="AI Consulting Dashboard">
+          <div class="aic-float-badge aic-float-badge--tl">
+            <i class="bi bi-map me-1"></i>Clear AI Roadmap
+          </div>
+          <div class="aic-float-badge aic-float-badge--br">
+            <i class="bi bi-graph-up-arrow me-1"></i>3× Faster ROI
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

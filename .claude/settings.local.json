@@ -6,7 +6,8 @@
       "Bash(find \"c:/Documents/Jagadeesh/VishvaTech\" -maxdepth 3 -type d -name \"*suitable*\" -o -type d -name \"*vs*\" 2>/dev/null | head -20)",
       "Read(//c/Documents/Jagadeesh/VishvaTech/**)",
       "Read(//c/Documents/Jagadeesh/**)",
-      "Bash(git ls-tree *)"
+      "Bash(git ls-tree *)",
+      "Bash(npx ng *)"
     ]
   }
 }

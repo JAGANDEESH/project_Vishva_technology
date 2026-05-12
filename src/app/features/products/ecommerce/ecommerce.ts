@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-ecommerce',
@@ -38,11 +37,19 @@ export class EcommerceComponent {
     }
   ];
 
-  useCases = [
-    'Retail & E-commerce',
-    'Digital Products',
-    'Subscription Services',
-    'B2B Platforms',
-    'Service Booking Systems'
+  whyChoose = [
+    'Retail & E-Commerce support built in',
+    'Supports digital products & subscriptions',
+    'B2B & wholesale marketplace-ready',
+    'Service booking systems integrated',
+    'Fully customizable to your workflow',
+    'Scales from startup to enterprise'
+  ];
+
+  businessImpact = [
+    { label: 'Faster Checkout',    value: '2×',    icon: 'bi-lightning-charge'  },
+    { label: 'Cart Conversion',    value: '+35%',  icon: 'bi-cart-check'        },
+    { label: 'Order Accuracy',     value: '99.9%', icon: 'bi-check-circle'      },
+    { label: 'Time to Launch',     value: '1 Day', icon: 'bi-clock-history'     }
   ];
 }

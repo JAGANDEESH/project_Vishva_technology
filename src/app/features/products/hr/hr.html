@@ -1,81 +1,143 @@
-<section class="product-page-hero section light-background overflow-hidden">
-  <div class="container position-relative" data-aos="fade-up">
-    <div class="hero-bg-blob"></div>
-    <div class="row align-items-center">
-      <div class="col-lg-6 hero-text-col">
-        <div class="content-wrapper">
-          <span class="badge hr-badge mb-3 px-3 py-2 text-uppercase tracking-wider">vSuite Human Resources</span>
-          <h1 class="display-4 fw-bold mb-4 text-gradient-hr">Manage People.<br>Build Better Workplaces.</h1>
-          <p class="lead mb-5">
-            vSuite Human Resources helps you manage the entire employee lifecycle—from hiring to performance—through one intelligent and connected platform.
-          </p>
-          <div class="d-flex flex-wrap gap-3">
-            <a href="#appointment" class="btn btn-hr btn-lg rounded-pill px-5 shadow-hover">Get Started <i class="bi bi-arrow-right ms-2"></i></a>
-            <a href="#contact" class="btn btn-outline-hr btn-lg rounded-pill px-4">Book a Demo</a>
+<!-- ===== HERO ===== -->
+<section class="hr-hero section overflow-hidden">
+  <div class="hr-bg-mesh"></div>
+  <div class="hr-bg-circle hr-bg-circle--1"></div>
+  <div class="hr-bg-circle hr-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+
+      <!-- Left: Text -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="hr-badge">
+          <i class="bi bi-person-badge me-2"></i>vSuite Human Resources
+        </span>
+        <h1 class="hr-hero-title mt-4">
+          Manage People.<br>
+          <span class="hr-gradient-text">Build Better Workplaces.</span>
+        </h1>
+        <p class="hr-hero-lead mt-4 mb-5">
+          vSuite Human Resources helps you manage the entire employee lifecycle—from hiring to performance—through one intelligent and connected platform.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn hr-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn hr-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>Book a Demo
+          </a>
+        </div>
+        <!-- Trust row -->
+        <div class="hr-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="hr-trust-item">
+            <i class="bi bi-people"></i><span>Employee Lifecycle</span>
+          </div>
+          <div class="hr-trust-item">
+            <i class="bi bi-graph-up"></i><span>Performance-Driven</span>
+          </div>
+          <div class="hr-trust-item">
+            <i class="bi bi-shield-check"></i><span>Compliance-Ready</span>
           </div>
         </div>
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0 hero-img-col" data-aos="fade-left" data-aos-delay="200">
-        <div class="brand-img-frame">
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(2).jpg" alt="vSuite Human Resources">
+
+      <!-- Right: Stats grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="hr-stats-grid">
+          <div class="hr-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="hr-stat-icon-wrap">
+              <i class="bi" [ngClass]="stat.icon"></i>
+            </div>
+            <div class="hr-stat-value">{{ stat.value }}</div>
+            <div class="hr-stat-label">{{ stat.label }}</div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<section class="core-capabilities section">
+<!-- ===== CORE CAPABILITIES ===== -->
+<section class="hr-capabilities section">
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">HR Transformation Tools</h2>
 
-      <p class="text-muted mt-3">Streamline HR operations, improve productivity, and make data-driven decisions.</p>
+    <div class="hr-section-head text-center" data-aos="fade-up">
+      <span class="hr-section-tag">What We Offer</span>
+      <h2 class="hr-section-title">HR Transformation Tools</h2>
+      <p class="hr-section-sub">Streamline HR operations, improve productivity, and make data-driven decisions.</p>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-6 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="hr-cap-card p-4 h-100 rounded-4 shadow-sm d-flex align-items-start bg-white border">
-          <div class="icon-wrap me-4">
-            <i class="bi text-info fs-1" [ngClass]="cap.icon"></i>
+    <div class="hr-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="hr-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="hr-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="hr-cap-icon">
+          <i class="bi" [ngClass]="cap.icon"></i>
+        </div>
+        <h5 class="hr-cap-title">{{ cap.title }}</h5>
+        <p class="hr-cap-desc">{{ cap.description }}</p>
+        <div class="hr-cap-arrow">
+          <i class="bi bi-arrow-right"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose strip -->
+    <div class="hr-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="hr-why-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why vSuite HR?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built for people-first organizations.</p>
+            </div>
           </div>
-          <div>
-            <h5 class="fw-bold mb-2">{{ cap.title }}</h5>
-            <p class="small text-muted mb-0">{{ cap.description }}</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="hr-why-grid">
+            <div class="hr-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>{{ point }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<section class="why-hr section light-background">
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="hr-impact section light-background overflow-hidden">
   <div class="container">
-    <div class="row align-items-center flex-row-reverse">
-      <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-        <div class="stats-mini-grid row g-3">
-          <div class="col-6">
-            <div class="p-4 bg-white rounded-3 shadow-sm">
-              <h2 class="fw-bold text-info mb-1">98%</h2>
-              <p class="small mb-0">Engagement</p>
-            </div>
+
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="hr-impact-title">
+        "Put People First.<br>
+        <span class="hr-gradient-text">Drive Business Forward."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">Empower your HR team with the tools to hire, retain, and grow talent.</p>
+    </div>
+
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="hr-img-frame">
+          <div class="hr-img-glow"></div>
+          <img src="assets/img/vs%20suitable%20image/shared%20image%20(2).jpg" alt="vSuite HR Dashboard">
+          <div class="hr-float-badge hr-float-badge--tl">
+            <i class="bi bi-people-fill me-1"></i>Complete Lifecycle
           </div>
-          <div class="col-6">
-            <div class="p-4 bg-white rounded-3 shadow-sm">
-              <h2 class="fw-bold text-info mb-1">50%</h2>
-              <p class="small mb-0">Faster Hiring</p>
-            </div>
+          <div class="hr-float-badge hr-float-badge--br">
+            <i class="bi bi-graph-up-arrow me-1"></i>98% Engagement
           </div>
         </div>
       </div>
-      <div class="col-lg-6 pe-lg-5">
-        <h2 class="fw-bold mb-4">Why Choose vSuite HR?</h2>
-        <ul class="list-unstyled">
-          <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose" data-aos="fade-right">
-            <i class="bi bi-check-circle-fill text-info me-3 fs-5"></i>
-            <span class="fs-6">{{ point }}</span>
-          </li>
-        </ul>
-      </div>
     </div>
+
   </div>
 </section>

@@ -1,0 +1,114 @@
+<!-- ===== HERO ===== -->
+<section class="solc-hero section overflow-hidden">
+  <div class="solc-bg-mesh"></div>
+  <div class="solc-bg-circle solc-bg-circle--1"></div>
+  <div class="solc-bg-circle solc-bg-circle--2"></div>
+
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="solc-badge">
+          <i class="bi bi-bag-check me-2"></i>Commerce Solutions
+        </span>
+        <h1 class="solc-hero-title mt-4">
+          Sell More. Faster.<br>
+          <span class="solc-gradient-text">Smarter Commerce.</span>
+        </h1>
+        <p class="solc-hero-lead mt-4 mb-5">
+          From multi-channel storefronts to AI-powered recommendations and real-time inventory sync — one unified platform to run, grow, and scale your entire commerce operation.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#appointment" class="btn solc-btn-primary btn-lg rounded-pill px-5">
+            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+          <a href="#contact" class="btn solc-btn-ghost btn-lg rounded-pill px-4">
+            <i class="bi bi-play-circle me-2"></i>See a Demo
+          </a>
+        </div>
+        <div class="solc-trust-row d-flex flex-wrap gap-4 mt-5">
+          <div class="solc-trust-item"><i class="bi bi-phone"></i><span>Mobile-First</span></div>
+          <div class="solc-trust-item"><i class="bi bi-stars"></i><span>AI-Powered</span></div>
+          <div class="solc-trust-item"><i class="bi bi-headset"></i><span>24/7 Support</span></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="solc-stats-grid">
+          <div class="solc-stat-card" *ngFor="let stat of businessImpact; let i = index"
+               [style.animation-delay]="(i * 0.1) + 's'">
+            <div class="solc-stat-icon-wrap"><i class="bi" [ngClass]="stat.icon"></i></div>
+            <div class="solc-stat-value">{{ stat.value }}</div>
+            <div class="solc-stat-label">{{ stat.label }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAPABILITIES ===== -->
+<section class="solc-capabilities section">
+  <div class="container">
+    <div class="solc-section-head text-center" data-aos="fade-up">
+      <span class="solc-section-tag">What We Offer</span>
+      <h2 class="solc-section-title">Commerce Management Capabilities</h2>
+      <p class="solc-section-sub">End-to-end commerce tools that unify your storefronts, orders, inventory, and customers into one powerful platform.</p>
+    </div>
+    <div class="solc-cap-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="solc-cap-card" *ngFor="let cap of capabilities; let i = index"
+           [style.animation-delay]="(i * 0.08) + 's'">
+        <div class="solc-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
+        <div class="solc-cap-icon"><i class="bi" [ngClass]="cap.icon"></i></div>
+        <h5 class="solc-cap-title">{{ cap.title }}</h5>
+        <p class="solc-cap-desc">{{ cap.description }}</p>
+        <div class="solc-cap-arrow"><i class="bi bi-arrow-right"></i></div>
+      </div>
+    </div>
+    <div class="solc-why-strip" data-aos="fade-up" data-aos-delay="200">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-3 mb-2">
+            <div class="solc-why-icon"><i class="bi bi-stars"></i></div>
+            <div>
+              <h4 class="fw-bold mb-0 text-white">Why Commerce Solutions?</h4>
+              <p class="text-white opacity-75 small mb-0 mt-1">Built to sell. Designed to scale.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="solc-why-grid">
+            <div class="solc-why-point" *ngFor="let point of whyChoose">
+              <i class="bi bi-check-circle-fill"></i><span>{{ point }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUSINESS IMPACT ===== -->
+<section class="solc-impact section light-background overflow-hidden">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="solc-impact-title">
+        "From Storefront to Fulfilment.<br>
+        <span class="solc-gradient-text">Commerce That Converts."</span>
+      </h2>
+      <p class="lead mt-3 text-muted">One platform for selling, inventory, orders, and customer loyalty — across every channel.</p>
+    </div>
+    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
+      <div class="col-lg-9 col-md-11">
+        <div class="solc-img-frame">
+          <div class="solc-img-glow"></div>
+          <img src="assets/img/AI image 1.jpg" alt="Commerce Solutions Dashboard">
+          <div class="solc-float-badge solc-float-badge--tl">
+            <i class="bi bi-bag-check me-1"></i>Omnichannel Commerce
+          </div>
+          <div class="solc-float-badge solc-float-badge--br">
+            <i class="bi bi-arrow-up-right-circle me-1"></i>2× Sales Growth
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

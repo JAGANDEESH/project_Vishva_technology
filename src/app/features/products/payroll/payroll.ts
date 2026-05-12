@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-payroll',
@@ -38,6 +37,14 @@ export class PayrollComponent {
     'Reduces manual errors and calculation risks',
     'Ensures 100% compliance with Indian regulations',
     'Integrated with the broader vSuite ecosystem',
-    'Scalable for growing organizations'
+    'Scalable for growing organizations',
+    'Dedicated payroll support team'
+  ];
+
+  businessImpact = [
+    { label: 'Time Saved on Payroll', value: '60%', icon: 'bi-clock-history' },
+    { label: 'Statutory Compliance', value: '100%', icon: 'bi-shield-check' },
+    { label: 'Payroll Errors', value: 'Zero', icon: 'bi-patch-check' },
+    { label: 'Faster Payslip Cycle', value: '1-Click', icon: 'bi-file-earmark-check' }
   ];
 }
