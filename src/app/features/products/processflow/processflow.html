@@ -1,110 +1,116 @@
+<!-- ===================================== -->
+<!-- vSuite ProcessFlow — Premium Modern UI -->
+<!-- ===================================== -->
+
 <!-- ===== HERO ===== -->
-<section class="pf-hero section overflow-hidden">
-  <div class="pf-bg-mesh"></div>
+<section class="product-page-hero section overflow-hidden">
   <div class="pf-bg-circle pf-bg-circle--1"></div>
   <div class="pf-bg-circle pf-bg-circle--2"></div>
 
   <div class="container position-relative">
-    <div class="row align-items-center g-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-8 col-lg-10">
 
-      <!-- Left: Text -->
-      <div class="col-lg-6" data-aos="fade-right">
-        <span class="pf-badge">
-          <i class="bi bi-arrow-repeat me-2"></i>vSuite ProcessFlow
+        <!-- Center Hero Image -->
+        <div class="pf-logo-wrap d-flex justify-content-center" data-aos="zoom-in">
+          <img src="assets/img/vs%20suitable%20image/shared image.jpg" alt="vSuite ProcessFlow" class="pf-hero-image" />
+        </div>
+
+        <!-- Badge -->
+        <span class="pf-badge mt-4 d-inline-flex" data-aos="fade-up">
+          <i class="bi bi-cpu me-2"></i> vSuite Process Automation
         </span>
-        <h1 class="pf-hero-title mt-4">
-          Automate Shipping Docs.<br>
-          <span class="pf-gradient-text">Simplify Operations.</span>
+
+        <!-- Title -->
+        <h1 class="pf-hero-title mt-4" data-aos="fade-up" data-aos-delay="100">
+          Automate Data.<br>Eliminate Manual Entry.
         </h1>
-        <p class="pf-hero-lead mt-4 mb-5">
-          vSuite ProcessFlow automates the retrieval, extraction, and integration of Bill of Lading (BL) and invoices—eliminating manual effort and accelerating your finance workflows.
+
+        <!-- Tagline -->
+        <p class="pf-tagline mt-3" data-aos="fade-up" data-aos-delay="150">
+          Intelligent Document Processing for Logistics & Beyond.
         </p>
-        <div class="d-flex flex-wrap gap-3">
+
+        <!-- Description -->
+        <p class="pf-hero-sub mt-4" data-aos="fade-up" data-aos-delay="200">
+          vSuite ProcessFlow harnesses AI-driven OCR to instantly extract, validate, and synchronize data from Bills of
+          Lading, invoices, and receipts, directly connecting your operational documents to your core ERP systems.
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5" data-aos="fade-up" data-aos-delay="250">
           <a href="#appointment" class="btn pf-btn-primary btn-lg rounded-pill px-5">
-            Request Demo <i class="bi bi-arrow-right ms-2"></i>
+            Start Automating <i class="bi bi-arrow-right ms-2"></i>
           </a>
-          <a href="#contact" class="btn pf-btn-ghost btn-lg rounded-pill px-4">
-            <i class="bi bi-play-circle me-2"></i>See How It Works
+          <a href="#contact" class="btn pf-btn-outline btn-lg rounded-pill px-5">
+            <i class="bi bi-play-circle me-2"></i> View Demo
           </a>
-        </div>
-        <!-- Trust row -->
-        <div class="pf-trust-row d-flex flex-wrap gap-4 mt-5">
-          <div class="pf-trust-item">
-            <i class="bi bi-cpu"></i><span>OCR-Powered</span>
-          </div>
-          <div class="pf-trust-item">
-            <i class="bi bi-check-all"></i><span>Auto-Reconciliation</span>
-          </div>
-          <div class="pf-trust-item">
-            <i class="bi bi-shield-check"></i><span>Zero Manual Entry</span>
-          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Right: Stats grid -->
-      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
-        <div class="pf-stats-grid">
-          <div class="pf-stat-card" *ngFor="let stat of businessImpact; let i = index"
-               [style.animation-delay]="(i * 0.1) + 's'">
-            <div class="pf-stat-icon-wrap">
-              <i class="bi" [ngClass]="stat.icon"></i>
-            </div>
-            <div class="pf-stat-value">{{ stat.value }}</div>
-            <div class="pf-stat-label">{{ stat.label }}</div>
-          </div>
-        </div>
+    <!-- ===== Floating Stats Strip ===== -->
+    <div class="pf-stats-strip" data-aos="fade-up" data-aos-delay="350">
+      <div class="pf-stat-item" *ngFor="let stat of businessImpact">
+        <h3>{{ stat.value }}</h3>
+        <p>{{ stat.label }}</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== CORE CAPABILITIES ===== -->
-<section class="pf-capabilities section">
-  <div class="container">
+<!-- ===== PROCESSFLOW CAPABILITIES ===== -->
+<section class="pf-pillars section">
+  <div class="container position-relative">
 
-    <div class="pf-section-head text-center" data-aos="fade-up">
-      <span class="pf-section-tag">What We Offer</span>
-      <h2 class="pf-section-title">Intelligent Workflow Automation</h2>
-      <p class="pf-section-sub">High-performance logistics operations through intelligent data extraction and reconciliation.</p>
-    </div>
-
-    <div class="pf-cap-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="pf-cap-card" *ngFor="let cap of capabilities; let i = index"
-           [style.animation-delay]="(i * 0.08) + 's'">
-        <div class="pf-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
-        <div class="pf-cap-icon">
-          <i class="bi" [ngClass]="cap.icon"></i>
+    <!-- Floating Badge Left -->
+    <div class="pf-floating-badge badge-left">
+      <div class="d-flex align-items-center gap-3">
+        <div class="pf-icon-wrap">
+          <i class="bi bi-robot"></i>
         </div>
-        <h5 class="pf-cap-title">{{ cap.title }}</h5>
-        <p class="pf-cap-desc">{{ cap.description }}</p>
-        <div class="pf-cap-arrow">
-          <i class="bi bi-arrow-right"></i>
+        <div>
+          <h6 class="mb-0 fw-bold">Smart OCR Engine</h6>
+          <p class="mb-0 small text-muted">99% Recognition Accuracy</p>
         </div>
       </div>
     </div>
 
-    <!-- Why Choose strip -->
-    <div class="pf-why-strip" data-aos="fade-up" data-aos-delay="200">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-3 mb-2">
-            <div class="pf-why-icon">
-              <i class="bi bi-stars"></i>
-            </div>
-            <div>
-              <h4 class="fw-bold mb-0 text-white">Why vSuite ProcessFlow?</h4>
-              <p class="text-white opacity-75 small mb-0 mt-1">Built for logistics-driven businesses.</p>
-            </div>
-          </div>
+    <!-- Floating Badge Right -->
+    <div class="pf-floating-badge badge-right">
+      <div class="d-flex align-items-center gap-3">
+        <div class="pf-icon-wrap">
+          <i class="bi bi-server"></i>
         </div>
-        <div class="col-lg-8">
-          <div class="pf-why-grid">
-            <div class="pf-why-point" *ngFor="let point of whyChoose">
-              <i class="bi bi-check-circle-fill"></i>
-              <span>{{ point }}</span>
-            </div>
+        <div>
+          <h6 class="mb-0 fw-bold">ERP Synced</h6>
+          <p class="mb-0 small text-muted">Instant Data Push</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <span class="pf-section-tag">Core Capabilities</span>
+      <h2 class="pf-section-title mt-4">End-to-End Automation</h2>
+      <p class="pf-section-sub mt-3">
+        Transform unstructured documents into actionable, synchronized digital assets.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-5">
+      <div class="col-lg-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 200">
+        <div class="pillar-card p-5 h-100">
+          <div class="pillar-icon-box mb-4">
+            <i class="bi" [ngClass]="cap.icon"></i>
           </div>
+          <h3 class="fw-bold mb-3">{{ cap.title }}</h3>
+          <p class="mb-4 text-muted">{{ cap.description }}</p>
+          <a href="#explore" class="pf-link-btn mt-auto">
+            Explore <i class="bi bi-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -112,32 +118,75 @@
   </div>
 </section>
 
-<!-- ===== BUSINESS IMPACT ===== -->
-<section class="pf-impact section light-background overflow-hidden">
-  <div class="container">
+<!-- ===== BENEFITS / WHY CHOOSE US ===== -->
+<section class="pf-benefits section overflow-hidden">
+  <div class="pf-benefits-bg"></div>
 
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="pf-impact-title">
-        "From Retrieval to Reconciliation—<br>
-        <span class="pf-gradient-text">Fully Automated."</span>
-      </h2>
-      <p class="lead mt-3 text-muted">Join logistics teams cutting document processing time by up to 70%.</p>
+  <div class="container position-relative">
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <span class="pf-section-tag">Business Impact</span>
+      <h2 class="pf-section-title mt-4">Why Choose vSuite ProcessFlow?</h2>
+      <p class="pf-section-sub mt-3">
+        Eliminate bottlenecks, reduce operational costs, and accelerate your document turnaround times.
+      </p>
     </div>
 
-    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
-      <div class="col-lg-9 col-md-11">
-        <div class="pf-img-frame">
-          <div class="pf-img-glow"></div>
-          <img src="assets/img/vs%20suitable%20image/shared%20image.jpg" alt="vSuite ProcessFlow Dashboard">
-          <div class="pf-float-badge pf-float-badge--tl">
-            <i class="bi bi-check-all me-1"></i>100% Accurate
+    <!-- Benefits Grid -->
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let point of whyChoose; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 150">
+        <div class="pf-benefit-card h-100">
+          <!-- Glow -->
+          <div class="pf-benefit-glow"></div>
+
+          <!-- Icon -->
+          <div class="pf-benefit-icon">
+            <i class="bi bi-check-circle-fill"></i>
           </div>
-          <div class="pf-float-badge pf-float-badge--br">
-            <i class="bi bi-lightning-charge me-1"></i>70% Faster Processing
-          </div>
+
+          <!-- Title -->
+          <h4 class="pf-benefit-title">{{ point }}</h4>
+
+          <!-- Desc -->
+          <p class="pf-benefit-desc">
+            Leverage state-of-the-art intelligent processing to secure 100% reconciliation accuracy without human
+            intervention.
+          </p>
+
+          <!-- Bottom Line -->
+          <div class="pf-benefit-line"></div>
         </div>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="integration-cta section overflow-hidden">
+  <div class="pf-cta-circle pf-cta-circle--1"></div>
+  <div class="pf-cta-circle pf-cta-circle--2"></div>
+
+  <div class="container text-center py-5 position-relative">
+    <span class="pf-cta-tag">Integrations</span>
+    <h2 class="pf-cta-title mt-4">Unify Your Workflow Systems</h2>
+    <p class="pf-cta-sub mt-4">
+      Integrate directly into your existing ERPs, Accounting Suites, and Transport Management Systems.
+    </p>
+
+    <!-- Icons -->
+    <div class="partner-logos">
+      <div class="partner-icon"><i class="bi bi-boxes"></i></div>
+      <div class="partner-icon"><i class="bi bi-database-check"></i></div>
+      <div class="partner-icon"><i class="bi bi-arrow-left-right"></i></div>
+      <div class="partner-icon"><i class="bi bi-shield-check"></i></div>
+    </div>
+
+    <div class="pf-cta-btn-wrap">
+      <a href="#appointment" class="btn pf-btn-light btn-lg rounded-pill px-5">
+        Request a Custom Demo
+      </a>
+    </div>
   </div>
 </section>

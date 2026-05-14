@@ -1,110 +1,118 @@
+<!-- ===================================== -->
+<!-- vSuite E-Commerce — Premium Modern UI -->
+<!-- ===================================== -->
+
 <!-- ===== HERO ===== -->
-<section class="ec-hero section overflow-hidden">
-  <div class="ec-bg-mesh"></div>
+<section class="product-page-hero section overflow-hidden">
   <div class="ec-bg-circle ec-bg-circle--1"></div>
   <div class="ec-bg-circle ec-bg-circle--2"></div>
 
   <div class="container position-relative">
-    <div class="row align-items-center g-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-8 col-lg-10">
 
-      <!-- Left: Text -->
-      <div class="col-lg-6" data-aos="fade-right">
-        <span class="ec-badge">
-          <i class="bi bi-cart4 me-2"></i>vSuite E-Commerce
+        <!-- Center Hero Image -->
+        <div class="ec-logo-wrap d-flex justify-content-center" data-aos="zoom-in">
+          <img src="assets/img/vs%20suitable%20image/shared image (3).jpg" alt="vSuite E-Commerce"
+            class="ec-hero-image" />
+        </div>
+
+        <!-- Badge -->
+        <span class="ec-badge mt-4 d-inline-flex" data-aos="fade-up">
+          <i class="bi bi-cart3 me-2"></i> vSuite Commerce Ecosystem
         </span>
-        <h1 class="ec-hero-title mt-4">
-          Sell Smarter.<br>
-          <span class="ec-gradient-text">Scale Faster Online.</span>
+
+        <!-- Title -->
+        <h1 class="ec-hero-title mt-4" data-aos="fade-up" data-aos-delay="100">
+          Scale Your Sales.<br>Deliver Seamless Shopping.
         </h1>
-        <p class="ec-hero-lead mt-4 mb-5">
-          A flexible and scalable commerce platform designed to power any business—from retail to services—with a seamless cart and checkout experience.
+
+        <!-- Tagline -->
+        <p class="ec-tagline mt-3" data-aos="fade-up" data-aos-delay="150">
+          Powerful Commerce Platform for Growing Brands.
         </p>
-        <div class="d-flex flex-wrap gap-3">
+
+        <!-- Description -->
+        <p class="ec-hero-sub mt-4" data-aos="fade-up" data-aos-delay="200">
+          vSuite E-Commerce provides a robust, customizable storefront and checkout experience optimized for high
+          conversions, empowering you to sell physical, digital, and B2B products globally.
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5" data-aos="fade-up" data-aos-delay="250">
           <a href="#appointment" class="btn ec-btn-primary btn-lg rounded-pill px-5">
-            Get Started Free <i class="bi bi-arrow-right ms-2"></i>
+            Launch Your Store <i class="bi bi-arrow-right ms-2"></i>
           </a>
-          <a href="#contact" class="btn ec-btn-ghost btn-lg rounded-pill px-4">
-            <i class="bi bi-play-circle me-2"></i>View Demo
+          <a href="#contact" class="btn ec-btn-outline btn-lg rounded-pill px-5">
+            <i class="bi bi-play-circle me-2"></i> View Demo
           </a>
-        </div>
-        <!-- Trust row -->
-        <div class="ec-trust-row d-flex flex-wrap gap-4 mt-5">
-          <div class="ec-trust-item">
-            <i class="bi bi-bag-check"></i><span>Multi-Domain Ready</span>
-          </div>
-          <div class="ec-trust-item">
-            <i class="bi bi-shield-lock"></i><span>Secure Checkout</span>
-          </div>
-          <div class="ec-trust-item">
-            <i class="bi bi-cloud-check"></i><span>Cloud-Scalable</span>
-          </div>
         </div>
       </div>
+    </div>
 
-      <!-- Right: Stats grid -->
-      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
-        <div class="ec-stats-grid">
-          <div class="ec-stat-card" *ngFor="let stat of businessImpact; let i = index"
-               [style.animation-delay]="(i * 0.1) + 's'">
-            <div class="ec-stat-icon-wrap">
-              <i class="bi" [ngClass]="stat.icon"></i>
-            </div>
-            <div class="ec-stat-value">{{ stat.value }}</div>
-            <div class="ec-stat-label">{{ stat.label }}</div>
-          </div>
-        </div>
+    <!-- ===== Floating Stats Strip ===== -->
+    <div class="ec-stats-strip" data-aos="fade-up" data-aos-delay="350">
+      <div class="ec-stat-item" *ngFor="let stat of businessImpact">
+        <h3>{{ stat.value }}</h3>
+        <p>{{ stat.label }}</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ===== PLATFORM FEATURES ===== -->
-<section class="ec-capabilities section">
-  <div class="container">
+<!-- ===== E-COMMERCE CAPABILITIES ===== -->
+<section class="ec-pillars section">
+  <div class="container position-relative">
 
-    <div class="ec-section-head text-center" data-aos="fade-up">
-      <span class="ec-section-tag">What We Offer</span>
-      <h2 class="ec-section-title">Platform Features</h2>
-      <p class="ec-section-sub">Modern tools built to simplify how you sell products and services online.</p>
-    </div>
-
-    <div class="ec-cap-grid" data-aos="fade-up" data-aos-delay="100">
-      <div class="ec-cap-card" *ngFor="let feat of features; let i = index"
-           [style.animation-delay]="(i * 0.08) + 's'">
-        <div class="ec-cap-num">{{ (i + 1).toString().padStart(2, '0') }}</div>
-        <div class="ec-cap-icon">
-          <i class="bi" [ngClass]="feat.icon"></i>
+    <!-- Floating Badge Left -->
+    <div class="ec-floating-badge badge-left">
+      <div class="d-flex align-items-center gap-3">
+        <div class="ec-icon-wrap">
+          <i class="bi bi-phone-vibrate"></i>
         </div>
-        <h5 class="ec-cap-title">{{ feat.title }}</h5>
-        <p class="ec-cap-desc">{{ feat.description }}</p>
-        <div class="ec-cap-arrow">
-          <i class="bi bi-arrow-right"></i>
+        <div>
+          <h6 class="mb-0 fw-bold">Mobile Optimized</h6>
+          <p class="mb-0 small text-muted">Lightning Fast Loading</p>
         </div>
       </div>
     </div>
 
-    <!-- Why Choose strip -->
-    <div class="ec-why-strip" data-aos="fade-up" data-aos-delay="200">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-4">
-          <div class="d-flex align-items-center gap-3 mb-2">
-            <div class="ec-why-icon">
-              <i class="bi bi-stars"></i>
-            </div>
-            <div>
-              <h4 class="fw-bold mb-0 text-white">Why vSuite E-Commerce?</h4>
-              <p class="text-white opacity-75 small mb-0 mt-1">Built for every kind of online business.</p>
-            </div>
-          </div>
+    <!-- Floating Badge Right -->
+    <div class="ec-floating-badge badge-right">
+      <div class="d-flex align-items-center gap-3">
+        <div class="ec-icon-wrap">
+          <i class="bi bi-shield-lock"></i>
         </div>
-        <div class="col-lg-8">
-          <div class="ec-why-grid">
-            <div class="ec-why-point" *ngFor="let point of whyChoose">
-              <i class="bi bi-check-circle-fill"></i>
-              <span>{{ point }}</span>
-            </div>
+        <div>
+          <h6 class="mb-0 fw-bold">Secure Checkout</h6>
+          <p class="mb-0 small text-muted">Bank-Level Security</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <span class="ec-section-tag">Core Features</span>
+      <h2 class="ec-section-title mt-4">Omnichannel Selling Power</h2>
+      <p class="ec-section-sub mt-3">
+        Flexible, feature-rich commerce engine that adapts to your unique business model.
+      </p>
+    </div>
+
+    <!-- Cards (ecommerce has 5 items in capabilities, mapped to features) -->
+    <!-- Note: Data mapping variable in ecommerce is 'features' instead of 'capabilities' -->
+    <div class="row g-5 justify-content-center">
+      <div class="col-lg-6 col-xl-4" *ngFor="let feat of features; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 150">
+        <div class="pillar-card p-5 h-100">
+          <div class="pillar-icon-box mb-4">
+            <i class="bi" [ngClass]="feat.icon"></i>
           </div>
+          <h3 class="fw-bold mb-3">{{ feat.title }}</h3>
+          <p class="mb-4 text-muted">{{ feat.description }}</p>
+          <a href="#explore" class="ec-link-btn mt-auto">
+            Explore <i class="bi bi-arrow-right ms-2"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -112,32 +120,74 @@
   </div>
 </section>
 
-<!-- ===== BUSINESS IMPACT ===== -->
-<section class="ec-impact section light-background overflow-hidden">
-  <div class="container">
+<!-- ===== BENEFITS / WHY CHOOSE US ===== -->
+<section class="ec-benefits section overflow-hidden">
+  <div class="ec-benefits-bg"></div>
 
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="ec-impact-title">
-        "Build, Launch &amp; Grow<br>
-        <span class="ec-gradient-text">Your Online Business."</span>
-      </h2>
-      <p class="lead mt-3 text-muted">From your first sale to enterprise scale—vSuite E-Commerce grows with you.</p>
+  <div class="container position-relative">
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+      <span class="ec-section-tag">Business Impact</span>
+      <h2 class="ec-section-title mt-4">Why Choose vSuite E-Commerce?</h2>
+      <p class="ec-section-sub mt-3">
+        Built for conversion, engineered for scale, and designed to minimize friction for your buyers.
+      </p>
     </div>
 
-    <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="150">
-      <div class="col-lg-9 col-md-11">
-        <div class="ec-img-frame">
-          <div class="ec-img-glow"></div>
-          <img src="assets/img/vs%20suitable%20image/shared%20image%20(3).jpg" alt="vSuite E-Commerce Dashboard">
-          <div class="ec-float-badge ec-float-badge--tl">
-            <i class="bi bi-bag-check-fill me-1"></i>Multi-Domain Ready
+    <!-- Benefits Grid -->
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let point of whyChoose; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 150">
+        <div class="ec-benefit-card h-100">
+          <!-- Glow -->
+          <div class="ec-benefit-glow"></div>
+
+          <!-- Icon -->
+          <div class="ec-benefit-icon">
+            <i class="bi bi-check-circle-fill"></i>
           </div>
-          <div class="ec-float-badge ec-float-badge--br">
-            <i class="bi bi-graph-up-arrow me-1"></i>+35% Conversion
-          </div>
+
+          <!-- Title -->
+          <h4 class="ec-benefit-title">{{ point }}</h4>
+
+          <!-- Desc -->
+          <p class="ec-benefit-desc">
+            Leverage robust analytics and optimized user journeys to turn visitors into loyal customers efficiently.
+          </p>
+
+          <!-- Bottom Line -->
+          <div class="ec-benefit-line"></div>
         </div>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="integration-cta section overflow-hidden">
+  <div class="ec-cta-circle ec-cta-circle--1"></div>
+  <div class="ec-cta-circle ec-cta-circle--2"></div>
+
+  <div class="container text-center py-5 position-relative">
+    <span class="ec-cta-tag">Integrations</span>
+    <h2 class="ec-cta-title mt-4">Connect Your Logistics & Payments</h2>
+    <p class="ec-cta-sub mt-4">
+      Sync seamlessly with global payment gateways, shipping providers, and marketing automation tools.
+    </p>
+
+    <!-- Icons -->
+    <div class="partner-logos">
+      <div class="partner-icon"><i class="bi bi-stripe"></i></div>
+      <div class="partner-icon"><i class="bi bi-paypal"></i></div>
+      <div class="partner-icon"><i class="bi bi-truck"></i></div>
+      <div class="partner-icon"><i class="bi bi-envelope-paper"></i></div>
+    </div>
+
+    <div class="ec-cta-btn-wrap">
+      <a href="#appointment" class="btn ec-btn-light btn-lg rounded-pill px-5">
+        Request a Custom Demo
+      </a>
+    </div>
   </div>
 </section>

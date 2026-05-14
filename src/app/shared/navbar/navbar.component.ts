@@ -1,12 +1,13 @@
 import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { PortfolioFilterService } from '../services/portfolio-filter.service';
 import { SharedMenuComponent, MenuItem } from './shared-menu/shared-menu';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [SharedMenuComponent],
+  imports: [SharedMenuComponent, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -21,6 +22,7 @@ export class NavbarComponent implements OnInit {
   productItems: MenuItem[] = [
     { title: 'vSuite Billing', description: 'Smart, fast, and GST-ready billing designed for modern businesses.', icon: 'bi-receipt', link: '/products/billing' },
     { title: 'vSuite Accounting', description: 'Comprehensive accounting made simple, intelligent, and scalable.', icon: 'bi-calculator', link: '/products/accounting' },
+    { title: 'vSuite Finance', description: 'Complete financial control with real-time reporting and cash flow visibility.', icon: 'bi-bank', link: '/products/finance' },
     { title: 'vSuite PayRoll', description: 'Accurate, automated, and compliant payroll for modern organizations.', icon: 'bi-cash-stack', link: '/products/payroll' },
     { title: 'vSuite Human Resources', description: 'Smart HR management to engage, manage, and grow your workforce.', icon: 'bi-person-badge', link: '/products/hr' },
     { title: 'vSuite E-Commerce', description: 'Build, manage, and grow your online business—effortlessly.', icon: 'bi-cart4', link: '/products/ecommerce' },
@@ -49,7 +51,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
-    private portfolioFilter: PortfolioFilterService
+    private portfolioFilter: PortfolioFilterService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
@@ -91,8 +94,22 @@ export class NavbarComponent implements OnInit {
   toggleAiOfferings(): void { this.aiOfferingsOpen = !this.aiOfferingsOpen; }
   toggleSolutions(): void { this.solutionsOpen = !this.solutionsOpen; }
 
-  scrollToSection(sectionId: string): void {
+  async scrollToSection(sectionId: string): Promise<void> {
     this.closeMobileNav();
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const currentPath = this.router.url.split('#')[0].split('?')[0];
+    if (currentPath !== '/') {
+      await this.router.navigate(['/'], { fragment: sectionId });
+      setTimeout(() => this.scrollElementIntoView(sectionId), 0);
+      return;
+    }
+
+    await this.router.navigate([], { fragment: sectionId });
+    this.scrollElementIntoView(sectionId);
+  }
+
+  private scrollElementIntoView(sectionId: string): void {
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });

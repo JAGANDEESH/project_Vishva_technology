@@ -462,7 +462,22 @@ section, .section {
   margin-right: auto;
   flex-shrink: 0;
 }
-.header .logo img { max-height: 36px; margin-right: 10px; }
+.header .logo img,
+.footer .logo img { 
+  max-height: 48px; 
+  margin-right: 12px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.header .logo:hover img,
+.footer .logo:hover img {
+  transform: scale(1.08) rotate(-3deg);
+  box-shadow: 0 6px 16px rgba(43, 112, 212, 0.15);
+  border-color: rgba(43, 112, 212, 0.2);
+}
 .header .logo h1 {
   font-size: 24px;
   margin: 0;
@@ -1669,7 +1684,8 @@ section, .section {
 
   /* Logo */
   .header .logo h1 { font-size: 18px; }
-  .header .logo img { max-height: 28px; }
+  .header .logo img,
+  .footer .logo img { max-height: 40px; }
 
   /* CTA button */
   .header .cta-btn,

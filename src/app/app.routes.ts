@@ -14,6 +14,10 @@ import { LlmDevelopmentComponent } from './features/service/ai/llm-development/l
 import { RagSolutionsComponent } from './features/service/ai/rag-solutions/rag-solutions';
 import { AiConsultingComponent } from './features/service/ai/ai-consulting/ai-consulting';
 import { AiAutomationComponent } from './features/service/ai/ai-automation/ai-automation';
+import { SolFinanceComponent } from './features/service/solutions/finance/sol-finance';
+import { SolCommerceComponent } from './features/service/solutions/commerce/sol-commerce';
+import { SolWorkforceComponent } from './features/service/solutions/workforce/sol-workforce';
+import { SolLogisticsComponent } from './features/service/solutions/logistics/sol-logistics';
 
 export const routes: Routes = [
   {
@@ -76,6 +80,22 @@ export const routes: Routes = [
   {
     path: 'service/ai/ai-automation',
     component: AiAutomationComponent
+  },
+  {
+    path: 'service/solutions/finance',
+    component: SolFinanceComponent
+  },
+  {
+    path: 'service/solutions/commerce',
+    component: SolCommerceComponent
+  },
+  {
+    path: 'service/solutions/workforce',
+    component: SolWorkforceComponent
+  },
+  {
+    path: 'service/solutions/logistics',
+    component: SolLogisticsComponent
   },
   {
     path: 'service/:category/:id',

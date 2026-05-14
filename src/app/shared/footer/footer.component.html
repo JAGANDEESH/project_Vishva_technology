@@ -4,12 +4,12 @@
 
       <!-- About Column -->
       <div class="col-lg-4 col-md-6 footer-about">
-        <a href="/" class="logo d-flex align-items-center">
+        <a routerLink="/" class="logo d-flex align-items-center">
           <img src="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg" alt="Vishva Technologies">
-          <span>Vishva Technologies</span>
+          <!-- <span>Vishva Technologies</span> -->
         </a>
         <p>
-          Helping businesses transform through product innovation, intelligent automation, and AI-driven scalability. 
+          Helping businesses transform through product innovation, intelligent automation, and AI-driven scalability.
           Innovate Smart. Automate Fast. Scale Limitlessly.
         </p>
         <div class="social-links">
@@ -24,25 +24,25 @@
       <div class="col-lg-2 col-md-3 footer-links">
         <h4>Useful Links</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#about">About Us</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services">Products</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Solutions</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#contact">Contact</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="hero">Home</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="about">About Us</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="services">Products</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="portfolio">Solutions</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="contact">Contact</a></li>
           <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a></li>
         </ul>
       </div>
 
       <!-- Our Products -->
       <div class="col-lg-2 col-md-3 footer-links">
-        <h4>Our Products</h4>
+        <h4>Our Solutions</h4>
         <ul>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services">vSuite Finance</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services">vSuite WorkForce</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services">vSuite Commerce</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#services">vSuite Logistics</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#ai-automation">AI Offerings</a></li>
-          <li><i class="bi bi-chevron-right"></i> <a href="#departments">Automation</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/products/finance">vSuite Finance</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="services">vSuite WorkForce</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="services">vSuite Commerce</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="services">vSuite Logistics</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="ai-automation">AI Offerings</a></li>
+          <li><i class="bi bi-chevron-right"></i> <a routerLink="/" fragment="departments">Automation</a></li>
         </ul>
       </div>
 
@@ -61,7 +61,8 @@
 
   <div class="container">
     <div class="copyright text-center">
-      <p>© <span>Copyright</span> <strong class="px-1">Vishva Technologies</strong> <span>{{ currentYear }}. All Rights Reserved.</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1">Vishva Technologies</strong> <span>{{ currentYear }}. All Rights
+          Reserved.</span></p>
     </div>
   </div>
 </footer>

@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class VsuiteFinanceComponent {
   tagline = 'Smarter Finance Starts Here.';
-  
+
   financePillars = [
     {
       title: 'vSuite Billing',
@@ -54,6 +54,11 @@ export class VsuiteFinanceComponent {
       title: 'Statutory Compliance',
       value: 'Zero-Risk',
       description: 'Stay worry-free with automated GST and tax reporting features.'
+    },
+    {
+      title: 'Secure Cloud Infrastructure',
+      value: '99.9%',
+      description: 'Enterprise-grade uptime, encrypted data protection, and reliable cloud accessibility.'
     }
   ];
 }
