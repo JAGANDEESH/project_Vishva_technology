@@ -59,13 +59,15 @@
   /* Logo */
   .logo {
     margin-bottom: 20px;
+
     img {
-      max-height: 48px;
+      max-height: 100px;
       border-radius: 50%;
       border: 2px solid rgba(255, 255, 255, 0.1);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
+
     &:hover img {
       transform: scale(1.08) rotate(-3deg);
       border-color: rgba(255, 255, 255, 0.3);
@@ -80,17 +82,20 @@
       padding: 0;
       margin: 0;
     }
+
     li {
       margin-bottom: 14px;
       display: flex;
       align-items: center;
     }
+
     i {
       font-size: 12px;
       color: var(--accent-color);
       margin-right: 10px;
       transition: all 0.3s ease;
     }
+
     a {
       color: #94a3b8;
       transition: all 0.3s ease;
@@ -103,6 +108,7 @@
         transform: translateX(6px);
       }
     }
+
     li:hover i {
       color: #ffffff;
       transform: translateX(4px);
@@ -115,6 +121,7 @@
       margin-bottom: 10px;
       color: #cbd5e1;
     }
+
     strong {
       color: #ffffff;
       font-weight: 600;
@@ -163,6 +170,7 @@
       color: #64748b;
       font-size: 13px;
     }
+
     strong {
       color: #e2e8f0;
       font-weight: 600;
@@ -174,7 +182,10 @@
 @media (max-width: 768px) {
   .footer {
     padding: 50px 0 0 0;
-    .footer-links, .footer-contact, .footer-about {
+
+    .footer-links,
+    .footer-contact,
+    .footer-about {
       margin-bottom: 40px;
     }
   }
