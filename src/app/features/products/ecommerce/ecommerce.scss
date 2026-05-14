@@ -301,14 +301,14 @@
 
   height: 100%;
 
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
 
   border-radius: 32px;
 
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   box-shadow:
-    0 20px 50px rgba(0,0,0,0.03);
+    0 20px 50px rgba(0, 0, 0, 0.03);
 
   transition: 0.4s ease;
 
@@ -318,7 +318,7 @@
     transform: translateY(-10px);
 
     box-shadow:
-      0 30px 80px rgba(0,0,0,0.06);
+      0 30px 80px rgba(0, 0, 0, 0.06);
   }
 }
 
@@ -344,18 +344,16 @@
   border-radius: 18px;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.9),
-      rgba(255,255,255,0.65)
-    );
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.65));
 
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   backdrop-filter: blur(12px);
 
   box-shadow:
-    0 10px 25px rgba(0,0,0,0.03);
+    0 10px 25px rgba(0, 0, 0, 0.03);
 
   transition: all 0.35s ease;
 
@@ -367,14 +365,12 @@
     transform: translateX(6px);
 
     box-shadow:
-      0 18px 40px rgba(0,0,0,0.06);
+      0 18px 40px rgba(0, 0, 0, 0.06);
 
     border-color:
-      color-mix(
-        in srgb,
+      color-mix(in srgb,
         #f97316,
-        transparent 70%
-      );
+        transparent 70%);
 
     .highlight-icon {
       transform: scale(1.08);
@@ -393,15 +389,11 @@
     inset: 0;
 
     background:
-      linear-gradient(
-        90deg,
-        color-mix(
-          in srgb,
+      linear-gradient(90deg,
+        color-mix(in srgb,
           #f97316,
-          transparent 94%
-        ),
-        transparent
-      );
+          transparent 94%),
+        transparent);
 
     opacity: 0;
 
@@ -424,11 +416,9 @@
   border-radius: 14px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       #f97316,
-      transparent 88%
-    );
+      transparent 88%);
 
   color: #f97316;
 
@@ -442,7 +432,7 @@
   transition: all 0.35s ease;
 
   box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.5);
+    inset 0 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 /* ===== Highlight Text ===== */
@@ -504,11 +494,9 @@
   border-radius: 16px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       #f97316,
-      transparent 92%
-    );
+      transparent 92%);
 
   color: #f97316;
 
@@ -622,11 +610,9 @@
   position: relative;
 
   background:
-    linear-gradient(
-      180deg,
+    linear-gradient(180deg,
       #f7faff 0%,
-      #ffffff 100%
-    );
+      #ffffff 100%);
 
   overflow: hidden;
 }
@@ -639,25 +625,17 @@
   inset: 0;
 
   background:
-    radial-gradient(
-      circle at top right,
-      color-mix(
-        in srgb,
+    radial-gradient(circle at top right,
+      color-mix(in srgb,
         #f97316,
-        transparent 94%
-      ),
-      transparent 40%
-    ),
+        transparent 94%),
+      transparent 40%),
 
-    radial-gradient(
-      circle at bottom left,
-      color-mix(
-        in srgb,
+    radial-gradient(circle at bottom left,
+      color-mix(in srgb,
         #f97316,
-        transparent 96%
-      ),
-      transparent 35%
-    );
+        transparent 96%),
+      transparent 35%);
 
   pointer-events: none;
 }
@@ -668,24 +646,22 @@
   position: relative;
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,0.92),
-      rgba(255,255,255,0.75)
-    );
+    linear-gradient(135deg,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.75));
 
   border-radius: 32px;
 
   padding: 48px 36px;
 
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 
   backdrop-filter: blur(18px);
 
   overflow: hidden;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.04);
+    0 20px 60px rgba(0, 0, 0, 0.04);
 
   transition: all 0.45s ease;
 
@@ -695,7 +671,7 @@
     transform: translateY(-12px);
 
     box-shadow:
-      0 35px 80px rgba(0,0,0,0.08);
+      0 35px 80px rgba(0, 0, 0, 0.08);
 
     .ec-benefit-icon {
       transform: scale(1.08);
@@ -726,11 +702,9 @@
   border-radius: 50%;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       #f97316,
-      transparent 88%
-    );
+      transparent 88%);
 
   top: -80px;
   right: -80px;
@@ -749,11 +723,9 @@
   border-radius: 24px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       #f97316,
-      transparent 90%
-    );
+      transparent 90%);
 
   color: #f97316;
 
@@ -772,7 +744,7 @@
 /* ===== Value ===== */
 
 .ec-benefit-value {
-  font-size: clamp(3rem,5vw,4.5rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
 
   font-weight: 800;
 
@@ -815,11 +787,9 @@
 
   margin-top: 28px;
 
-  background: linear-gradient(
-    90deg,
-    #f97316,
-    transparent
-  );
+  background: linear-gradient(90deg,
+      #f97316,
+      transparent);
 
   transition: 0.45s ease;
 }
@@ -952,6 +922,7 @@
 
   margin-bottom: 10px;
 }
+
 .ec-benefit-card {
   width: 100%;
 
@@ -1004,7 +975,7 @@
   padding-inline: 42px;
 
   box-shadow:
-    0 20px 50px rgba(0,0,0,0.12);
+    0 20px 50px rgba(0, 0, 0, 0.12);
 
   transition: all 0.35s ease;
 
@@ -1020,7 +991,7 @@
     color: #f97316;
 
     box-shadow:
-      0 30px 70px rgba(0,0,0,0.16);
+      0 30px 70px rgba(0, 0, 0, 0.16);
   }
 }
 
@@ -1056,4 +1027,3 @@
   }
 
 }
-
