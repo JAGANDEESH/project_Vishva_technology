@@ -1,0 +1,147 @@
+<section class="product-page-hero section overflow-hidden" *ngIf="data.hero">
+  <div class="container position-relative">
+    <div class="hero-layout">
+      <div class="hero-top-grid">
+        <div class="hero-intro">
+          <div class="billing-badge mb-3" *ngIf="data.hero.badgeText">
+            <i class="bi me-2" [ngClass]="data.hero.badgeIcon"></i>{{ data.hero.badgeText }}
+          </div>
+
+          <h1 class="hero-title mb-3" [innerHTML]="data.hero.title"></h1>
+
+          <p class="hero-para mb-0">
+            {{ data.hero.description }}
+          </p>
+        </div>
+
+        <div class="hero-preview-wrap" *ngIf="data.hero.imageSrc">
+          <div class="product-preview-frame">
+            <img [src]="data.hero.imageSrc" [alt]="data.hero.imageAlt">
+            <div class="preview-caption" *ngIf="data.hero.imageCaptionText">
+              <i class="bi bi-check-circle-fill" [ngClass]="data.hero.imageCaptionIcon || 'bi-check-circle-fill'"></i>
+              <span>{{ data.hero.imageCaptionText }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-feature-grid" *ngIf="data.hero.features.length">
+        <span class="feat-chip" *ngFor="let feat of data.hero.features">
+          <i class="bi" [ngClass]="feat.icon"></i>{{ feat.text }}
+        </span>
+      </div>
+
+      <div class="hero-actions">
+        <a [href]="data.hero.primaryButton.link" class="btn btn-billing">
+          {{ data.hero.primaryButton.text }} <i class="bi ms-2" [ngClass]="data.hero.primaryButton.icon || 'bi-arrow-right'"></i>
+        </a>
+        <a *ngIf="data.hero.secondaryButton" [href]="data.hero.secondaryButton.link" class="btn btn-outline-billing">
+          <i *ngIf="data.hero.secondaryButton.icon" class="bi me-2" [ngClass]="data.hero.secondaryButton.icon"></i>
+          {{ data.hero.secondaryButton.text }}
+        </a>
+      </div>
+
+      <div class="hero-stats" *ngIf="data.hero.stats.length">
+        <div class="stat-item" *ngFor="let stat of data.hero.stats">
+          <div class="stat-num">{{ stat.value }}</div>
+          <div class="stat-lbl">{{ stat.label }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="key-features section" *ngIf="data.keyFeatures">
+  <div class="container">
+    <div class="section-title text-center mb-4" data-aos="fade-up">
+      <h2 class="fw-bold h1">{{ data.keyFeatures.title }}</h2>
+      <p class="section-lead mx-auto">
+        {{ data.keyFeatures.description }}
+      </p>
+    </div>
+
+    <div class="row g-2 justify-content-center">
+      <div class="col-lg-4 col-md-6" *ngFor="let group of data.keyFeatures.groups; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 100">
+        <div class="feature-card-premium h-100">
+          <div class="icon-box-modern mb-3">
+            <i class="bi" [ngClass]="group.icon"></i>
+          </div>
+          <h4 class="fw-bold mb-3">{{ group.category }}</h4>
+          
+          <ul class="list-unstyled feature-list-modern" *ngIf="group.items?.length">
+            <li class="d-flex align-items-start" *ngFor="let item of group.items">
+              <i class="bi bi-check2 me-3 mt-1 check-icon"></i>
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+          
+          <p class="text-muted mb-0" *ngIf="group.description && !group.items?.length" style="font-size: 0.95rem; line-height: 1.6;">
+            {{ group.description }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="billing-workflow section" *ngIf="data.workflow">
+  <div class="container">
+    <div class="section-title text-center mb-4">
+      <span class="section-eyebrow" *ngIf="data.workflow.eyebrow">{{ data.workflow.eyebrow }}</span>
+      <h2 class="workflow-title">{{ data.workflow.title }}</h2>
+      <p class="section-lead mx-auto">
+        {{ data.workflow.description }}
+      </p>
+    </div>
+
+    <div class="workflow-grid justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="workflow-card" *ngFor="let step of data.workflow.steps; let i = index">
+        <div class="workflow-number">
+          {{ (i + 1).toString().padStart(2, '0') }}
+        </div>
+        <div class="workflow-icon">
+          <i class="bi" [ngClass]="step.icon"></i>
+        </div>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ai-features section light-background py-10 overflow-hidden" *ngIf="data.aiFeatures">
+  <div class="container">
+    <div class="section-title text-center mb-4" data-aos="fade-up">
+      <h2 class="fw-bold">{{ data.aiFeatures.title }}</h2>
+      <p class="section-lead mx-auto">
+        {{ data.aiFeatures.description }}
+      </p>
+    </div>
+
+    <div class="ai-feature-grid">
+      <div class="ai-glass-card" *ngFor="let ai of data.aiFeatures.features; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 100">
+        <div class="ai-card-top">
+          <div class="ai-icon">
+            <i class="bi" [ngClass]="ai.icon"></i>
+          </div>
+          <div class="ai-step-num">0{{ i + 1 }}</div>
+        </div>
+        <h5>{{ ai.title }}</h5>
+        <p class="ai-card-desc">{{ ai.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-modern section overflow-hidden" *ngIf="data.cta">
+  <div class="container text-center" data-aos="zoom-out">
+    <i class="bi cta-icon mb-4 d-block" [ngClass]="data.cta.icon"></i>
+    <h3 class="display-5 fw-bold mb-3">{{ data.cta.title }}</h3>
+    <p class="cta-sub mb-5">{{ data.cta.description }}</p>
+    <a [href]="data.cta.buttonLink" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+      {{ data.cta.buttonText }} <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+  </div>
+</section>
