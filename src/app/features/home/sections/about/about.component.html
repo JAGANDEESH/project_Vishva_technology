@@ -1,56 +1,60 @@
-<section id="about" class="about">
-  <div class="container">
-    <div class="row" style="align-items: center; gap: 30px 0;">
+<section id="about" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      <!-- Image Column -->
-      <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100" style="position:relative; padding-bottom:50px;">
-        <img src="assets/img/about.jpg" class="img-fluid" alt="About Vishva Technologies" style="border-radius:4px;">
-        <img src="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg" alt="Vishva Technologies" class="img-fluid"
-          style="position:absolute; bottom:0; right:0; width:200px; height:150px; object-fit:cover; border-radius:8px; border:4px solid #fff; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
-        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn" aria-label="Watch video"></a>
-      </div>
+    <!-- Image Column -->
+    <div class="relative pb-12" data-aos="zoom-in" data-aos-delay="100">
+      <img src="assets/img/about.jpg" class="w-full h-auto object-cover rounded-[24px] shadow-sm" alt="About Vishva Technologies">
+      <img src="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg" alt="Vishva Technologies" class="absolute bottom-0 right-0 w-48 h-36 object-cover rounded-[16px] border-[6px] border-surface shadow-lg">
+      <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" aria-label="Watch video"></a>
+    </div>
 
-      <!-- Content Column -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="content">
-          <h3>Forward-thinking technology experts driving business transformation</h3>
-          <p>
-            We are a team dedicated to helping businesses transform through product innovation,
-            intelligent automation, and AI-driven scalability. At our core, we believe that
-            automation is not just about efficiency—it's about enabling innovation.
-          </p>
-          <p style="margin-top:10px;">
-            By automating repetitive processes using Robotic Process Automation, we free up
-            valuable human potential to focus on creativity, strategy, and building impactful products.
-            We go a step further by integrating Artificial Intelligence to bring adaptability and
-            decision-making into the process — where true transformation happens.
-          </p>
-          <ul>
-            <li>
-              <i class="bi bi-box-seam"></i>
-              <div>
-                <h5>Innovate Products</h5>
-                <p>We design and build modern, high-quality software products tailored to business needs.</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-gear-wide-connected"></i>
-              <div>
-                <h5>Automate with RPA</h5>
-                <p>We reduce manual work by automating repetitive tasks using Robotic Process Automation, improving efficiency and accuracy.</p>
-              </div>
-            </li>
-            <li>
-              <i class="bi bi-graph-up-arrow"></i>
-              <div>
-                <h5>Scale with AI</h5>
-                <p>We use Artificial Intelligence to help your business grow faster, make smarter decisions, and handle increasing demand.</p>
-              </div>
-            </li>
-          </ul>
+    <!-- Content Column -->
+    <div data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-headline-md font-headline-md text-primary mb-6">Forward-thinking technology experts driving business transformation</h3>
+      <p class="text-body-md font-body-md text-text-muted mb-4">
+        We are a team dedicated to helping businesses transform through product innovation,
+        intelligent automation, and AI-driven scalability. At our core, we believe that
+        automation is not just about efficiency—it's about enabling innovation.
+      </p>
+      <p class="text-body-md font-body-md text-text-muted mb-8">
+        By automating repetitive processes using Robotic Process Automation, we free up
+        valuable human potential to focus on creativity, strategy, and building impactful products.
+        We go a step further by integrating Artificial Intelligence to bring adaptability and
+        decision-making into the process — where true transformation happens.
+      </p>
+      
+      <div class="space-y-4">
+        <div class="glass-panel p-4 rounded-xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+            <i class="bi bi-box-seam text-xl"></i>
+          </div>
+          <div>
+            <h5 class="text-headline-sm font-headline-sm text-primary mb-1 text-lg">Innovate Products</h5>
+            <p class="text-body-md font-body-md text-text-muted m-0">We design and build modern, high-quality software products tailored to business needs.</p>
+          </div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+            <i class="bi bi-gear-wide-connected text-xl"></i>
+          </div>
+          <div>
+            <h5 class="text-headline-sm font-headline-sm text-primary mb-1 text-lg">Automate with RPA</h5>
+            <p class="text-body-md font-body-md text-text-muted m-0">We reduce manual work by automating repetitive tasks using Robotic Process Automation, improving efficiency and accuracy.</p>
+          </div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-xl flex items-start gap-4">
+          <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
+            <i class="bi bi-graph-up-arrow text-xl"></i>
+          </div>
+          <div>
+            <h5 class="text-headline-sm font-headline-sm text-primary mb-1 text-lg">Scale with AI</h5>
+            <p class="text-body-md font-body-md text-text-muted m-0">We use Artificial Intelligence to help your business grow faster, make smarter decisions, and handle increasing demand.</p>
+          </div>
         </div>
       </div>
-
     </div>
+
   </div>
 </section>

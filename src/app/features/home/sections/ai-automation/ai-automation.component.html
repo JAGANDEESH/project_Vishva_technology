@@ -1,54 +1,54 @@
-<section id="ai-automation" class="ai-automation section">
+<section id="ai-automation" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
   <div class="container">
 
     <!-- Section Header -->
-    <div class="section-title" data-aos="fade-up">
-      <h2>AI Offerings</h2>
-      <p>An advanced AI capability layer designed to transform business operations with intelligence, automation, and decision-making power — enabling organizations to innovate, automate, and scale faster.</p>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">AI Offerings</h2>
+      <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">An advanced AI capability layer designed to transform business operations with intelligence, automation, and decision-making power — enabling organizations to innovate, automate, and scale faster.</p>
     </div>
 
     <!-- Headline Banner -->
-    <div class="ai-headline" data-aos="fade-up" data-aos-delay="100">
-      <div class="ai-headline-inner">
-        <div class="ai-headline-text">
-          <h3>Build Intelligent. Deploy Confidently. Scale with AI.</h3>
-          <p>
+    <div class="glass-panel rounded-[24px] overflow-hidden mb-16" data-aos="fade-up" data-aos-delay="100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+        <div class="p-8 md:p-12">
+          <h3 class="text-headline-md font-headline-md text-primary mb-4 leading-tight">Build Intelligent. Deploy Confidently. Scale with AI.</h3>
+          <p class="text-body-md font-body-md text-text-muted mb-8">
             From LLM development to RAG solutions and AI automation, our AI offerings guide you through every step —
             turning complex models into real business value that evolves with your organization.
           </p>
-          <a href="#appointment" class="ai-cta-btn" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'}); return false;">
-            Start Your AI Journey <i class="bi bi-arrow-right"></i>
+          <a href="#appointment" class="inline-flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-lg text-label-md font-label-md hover:opacity-90 transition-opacity w-fit shadow-sm" onclick="document.getElementById('appointment').scrollIntoView({behavior:'smooth'}); return false;">
+            Start Your AI Journey <i class="bi bi-arrow-right text-[12px]"></i>
           </a>
         </div>
-        <div class="ai-headline-visual">
-          <img src="assets/img/AI image 1.jpg" alt="AI Offerings" class="img-fluid"
-            style="width:100%; height:100%; object-fit:cover; border-radius:12px; box-shadow:0 0 0 4px rgba(255,255,255,0.18);">
+        <div class="h-full min-h-[300px]">
+          <img src="assets/img/AI image 1.jpg" alt="AI Offerings" class="w-full h-full object-cover">
         </div>
       </div>
     </div>
 
     <!-- Capabilities Grid -->
-    <div class="row" style="gap: 28px 0; margin-top: 20px;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
       <div
-        class="col-lg-4 col-md-6"
         *ngFor="let cap of capabilities; let i = index"
         data-aos="fade-up"
         [attr.data-aos-delay]="(i + 1) * 100">
-        <div class="capability-card">
-          <div class="capability-icon">
-            <i class="bi" [ngClass]="cap.icon"></i>
+        <div class="glass-panel p-8 rounded-[24px] h-full flex flex-col hover:scale-[1.02] transition-transform duration-300 group">
+          <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
+            <i class="bi text-2xl" [ngClass]="cap.icon"></i>
           </div>
-          <h4>{{ cap.title }}</h4>
-          <p>{{ cap.description }}</p>
+          <h4 class="text-headline-sm font-headline-sm text-primary mb-3">{{ cap.title }}</h4>
+          <p class="text-body-md font-body-md text-text-muted m-0">{{ cap.description }}</p>
         </div>
       </div>
     </div>
 
     <!-- AI Stats Bar -->
-    <div class="ai-stats-bar" #statsBar data-aos="fade-up" data-aos-delay="100">
-      <div class="ai-stat" *ngFor="let stat of stats">
-        <span class="ai-stat-value">{{ stat.display }}{{ stat.suffix }}</span>
-        <span class="ai-stat-label">{{ stat.label }}</span>
+    <div class="glass-panel rounded-[24px] p-8 md:p-12" #statsBar data-aos="fade-up" data-aos-delay="100">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border-subtle/50 text-center">
+        <div *ngFor="let stat of stats" class="flex flex-col justify-center items-center">
+          <span class="text-headline-lg font-headline-lg text-primary font-black tracking-tighter mb-2">{{ stat.display }}{{ stat.suffix }}</span>
+          <span class="text-label-md font-label-md text-text-muted uppercase tracking-wider">{{ stat.label }}</span>
+        </div>
       </div>
     </div>
 

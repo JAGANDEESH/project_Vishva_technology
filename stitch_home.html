@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vishva Technologies - Homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "secondary": "#0051d5",
+                        "primary-fixed": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#2d3133",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-container": "#131b2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "secondary-fixed": "#dbe1ff",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#0090a9",
+                        "surface-container-high": "#e6e8ea",
+                        "on-secondary-container": "#fefcff",
+                        "outline": "#76777d",
+                        "surface-dim": "#d8dadc",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#acedff",
+                        "on-primary-fixed": "#131b2e",
+                        "on-surface": "#191c1e",
+                        "surface-tint": "#565e74",
+                        "on-tertiary-fixed": "#001f26",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "outline-variant": "#c6c6cd",
+                        "on-secondary-fixed": "#00174b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#7c839b",
+                        "surface": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#004e5c",
+                        "surface-container": "#eceef0",
+                        "text-muted": "#64748B",
+                        "on-background": "#191c1e",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed-dim": "#4cd7f6",
+                        "on-surface-variant": "#45464d",
+                        "secondary-container": "#316bf3",
+                        "primary": "#000000",
+                        "tertiary": "#000000",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "text-main": "#1E293B",
+                        "border-subtle": "#E2E8F0",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-container": "#001f26",
+                        "surface-glass": "rgba(255, 255, 255, 0.7)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "margin-desktop": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #f7f9fb; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
+        }
+        .bg-grid-pattern {
+            background-size: 32px 32px;
+            background-image: 
+                linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+        }
+        .glow-effect {
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.05) 0%, transparent 70%);
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased bg-grid-pattern relative min-h-screen pt-20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop h-20 max-w-container-max mx-auto bg-surface-glass border-b border-white/20 shadow-sm backdrop-blur-xl md:px-margin-desktop px-margin-mobile">
+<div class="flex items-center gap-4">
+<span class="text-headline-sm font-headline-sm font-black text-primary">Vishva Technologies</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-secondary font-bold border-b-2 border-secondary pb-1 text-label-md font-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">Automation</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">AI Offerings</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg text-label-md font-label-md hover:scale-[1.02] transition-transform duration-300 ease-out hidden md:block">
+            Get Demo
+        </button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative max-w-container-max mx-auto px-margin-desktop py-24 md:py-32 grid md:grid-cols-2 gap-gutter items-center px-margin-mobile md:px-margin-desktop glow-effect">
+<div class="space-y-8 z-10">
+<h1 class="text-headline-xl-mobile font-headline-xl-mobile md:text-headline-xl md:font-headline-xl text-primary max-w-2xl">
+                Transform Business Through Products, Automation &amp; AI
+            </h1>
+<p class="text-body-lg font-body-lg text-text-muted max-w-xl">
+                Helping businesses innovate products, automate workflows, and scale using AI-powered systems.
+            </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg text-label-md font-label-md hover:scale-[1.02] transition-transform duration-300 ease-out shadow-sm">
+                    Get Demo
+                </button>
+<button class="border border-secondary text-secondary px-8 py-3 rounded-lg text-label-md font-label-md hover:bg-secondary/5 hover:scale-[1.02] transition-transform duration-300 ease-out">
+                    Explore Products
+                </button>
+</div>
+</div>
+<div class="relative z-10 hidden md:block">
+<div class="glass-panel p-8 rounded-[24px] relative aspect-[4/3] overflow-hidden flex flex-col justify-between items-center text-center">
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida/ADBb0ujFp1Ax_I5k4D4ZjSPs9Msw8dnOtyaN9eLQ-vuE6jxGHD8oTURgb8QAgX40vLOst8XAbJJ0k388IjENfkJW4bu3Atu899AjKIMmeErxoyUtn8mjOzc81y5-S5Ncea9TJXIlU018p6f_X_JVl7dQ1w0YN8Cdkm9JVSFL7F2NnoTKHi-uxLhziRZNUxuplBtAuHGM6-TDoJoY1Fr870-Z0g9-FG9Se4xX-BoIbWxjDePjCmxlGMRcSnfqGw"/>
+<div class="relative z-20 space-y-6 w-full">
+<div class="bg-surface/90 backdrop-blur-sm p-4 rounded-xl border border-border-subtle inline-block">
+<span class="text-label-md font-label-md text-primary block mb-1">Phase 1</span>
+<span class="text-body-md font-body-md font-semibold">Products</span>
+</div>
+<div class="w-1 h-8 bg-secondary mx-auto"></div>
+<div class="bg-surface/90 backdrop-blur-sm p-4 rounded-xl border border-border-subtle inline-block">
+<span class="text-label-md font-label-md text-primary block mb-1">Phase 2</span>
+<span class="text-body-md font-body-md font-semibold">Automation</span>
+</div>
+<div class="w-1 h-8 bg-secondary mx-auto"></div>
+<div class="bg-surface/90 backdrop-blur-sm p-4 rounded-xl border border-border-subtle inline-block">
+<span class="text-label-md font-label-md text-primary block mb-1">Phase 3</span>
+<span class="text-body-md font-body-md font-semibold">AI Capabilities</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-12 px-margin-mobile md:px-margin-desktop">
+<div class="glass-panel rounded-[24px] p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-border-subtle">
+<div class="pt-4 md:pt-0">
+<h3 class="text-headline-lg font-headline-lg text-secondary mb-2">50+</h3>
+<p class="text-label-md font-label-md text-text-muted">Projects Delivered</p>
+</div>
+<div class="pt-8 md:pt-0">
+<h3 class="text-headline-lg font-headline-lg text-secondary mb-2">100+</h3>
+<p class="text-label-md font-label-md text-text-muted">Automations Implemented</p>
+</div>
+<div class="pt-8 md:pt-0">
+<h3 class="text-headline-lg font-headline-lg text-secondary mb-2">95%</h3>
+<p class="text-label-md font-label-md text-text-muted">Customer Satisfaction</p>
+</div>
+</div>
+</section>
+<!-- Why Vishva Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24 px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="text-headline-md font-headline-md text-primary mb-4">Why Vishva Technologies</h2>
+<p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto">Architecting the future through precision engineering and intelligent systems.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Outcome Driven</h4>
+<p class="text-body-md font-body-md text-text-muted">Product Engineering focused on measurable business results.</p>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Intelligent</h4>
+<p class="text-body-md font-body-md text-text-muted">Automation that adapts and learns from your workflows.</p>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Agentic AI</h4>
+<p class="text-body-md font-body-md text-text-muted">Advanced capabilities for autonomous decision making.</p>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings_suggest</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Customized</h4>
+<p class="text-body-md font-body-md text-text-muted">Solutions tailored to your specific enterprise architecture.</p>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Speed + Quality</h4>
+<p class="text-body-md font-body-md text-text-muted">Rapid delivery without compromising code integrity.</p>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Partnership</h4>
+<p class="text-body-md font-body-md text-text-muted">Long-term collaboration for sustained growth.</p>
+</div>
+<!-- Card 7 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">lan</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Scalable</h4>
+<p class="text-body-md font-body-md text-text-muted">Architecture designed for enterprise scale.</p>
+</div>
+<!-- Card 8 -->
+<div class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined">lightbulb</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">Innovation First</h4>
+<p class="text-body-md font-body-md text-text-muted">A culture dedicated to pioneering new solutions.</p>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24 px-margin-mobile md:px-margin-desktop bg-surface-container-low rounded-[48px] my-12 mx-4 md:mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-headline-md font-headline-md text-primary mb-4">Our Ecosystem</h2>
+<p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto">Explore our suite of enterprise-grade solutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Product 1 -->
+<div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white">
+<div class="w-full md:w-2/5 relative h-48 md:h-auto">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiGGJuBsJ9pTvdGK8PbeO7pfoWlq0VZyzoMX5Ncu8wtiROlJf6w03mkn0XCEv8aMyxedrr4hpGbbQ80xAooZ_6xR2mfcRABFGSHAYZiS6jN__ZpIOebeLiMjK3AkiPrOK6_xp8IzXs9L_sEghY9D_sTqgEgI4CWb-N74PkBchZOB62KlSg3THm6ewqGU-CBI1uwXUAFNa_aWK8ht_DUUH6dCZ1GFrPdoBy2RH6BlTkrlSHt4S9gG_gwa48"/>
+</div>
+<div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">AI Nexus Core</h4>
+<span class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-md font-label-md mb-4 w-fit">Data Platform</span>
+<p class="text-body-md font-body-md text-text-muted mb-6">Centralized intelligence hub for managing enterprise data pipelines and machine learning models at scale.</p>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+                        Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white">
+<div class="w-full md:w-2/5 relative h-48 md:h-auto">
+<img alt="" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui9xdPG-vtvQ6XHA4INYIIjswCaXqZEjXbVhu80vPyyMrk7EtBIbnv_J0MXa3EOgqO1phPoZL7pTxVjI1Tr2ywr-BsBS-Z0OpkRMYATsJIvH_UKTnepWoSf6abZIbQ3AlRFys9Uu4ZzMmsjpXD9xfiqtjINWZdY2jQH7u4Wt5r1Vgz4ZcUdaCcSyQxu43EJwiNB5wGIlC0yZn-51LuIKcc7RDoZe8M3CRzRzziaNseSxt_x7z1IKJ5Bb3A"/>
+</div>
+<div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+<h4 class="text-headline-sm font-headline-sm text-primary mb-2">AutoFlow Engine</h4>
+<span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-label-md font-label-md mb-4 w-fit">Process Automation</span>
+<p class="text-body-md font-body-md text-text-muted mb-6">Visual workflow builder that translates complex business logic into automated, reliable processes.</p>
+<button class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+                        Learn More <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 px-margin-desktop grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-gutter max-w-container-max mx-auto border-t border-border-subtle bg-background px-margin-mobile md:px-margin-desktop mt-24">
+<div class="col-span-2 lg:col-span-2 space-y-4">
+<span class="text-headline-sm font-headline-sm font-black text-primary block">Vishva Technologies</span>
+<p class="text-body-md font-body-md text-text-muted">© 2024 Vishva Technologies. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">Products</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">Automation</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">AI</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">Solutions</a>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">About</a>
+<a class="text-text-muted hover:text-primary transition-colors duration-200 text-label-md font-label-md opacity-100 hover:opacity-80 transition-opacity" href="#">Contact</a>
+</div>
+</footer>
+</body></html>
