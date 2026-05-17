@@ -1,65 +1,62 @@
-<section id="appointment" class="appointment section light-background">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Get a Demo</h2>
-      <p>Experience the power of vSuite firsthand. Fill in your details and our team will reach out within 24 hours to schedule a personalized demo.</p>
+<section id="appointment" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
+  <div class="text-center mb-16" data-aos="fade-up">
+    <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Get a Demo</h2>
+    <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">Experience the power of vSuite firsthand. Fill in your details and our team will reach out within 24 hours to schedule a personalized demo.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
+      <img src="assets/img/appointment.jpg" class="w-full h-[300px] object-cover rounded-[24px] shadow-sm mb-8" alt="Get a Demo" onerror="this.src='assets/img/about.jpg'">
+      <div class="glass-panel rounded-[24px] p-8">
+        <h3 class="text-headline-sm font-headline-sm text-primary mb-6">Why Request a Demo?</h3>
+        <ul class="space-y-4 m-0 p-0 list-none">
+          <li class="flex items-center gap-3 text-body-md font-body-md text-text-muted">
+            <i class="bi bi-check-circle-fill text-tertiary shrink-0"></i>
+            <span>See vSuite products live in action</span>
+          </li>
+          <li class="flex items-center gap-3 text-body-md font-body-md text-text-muted">
+            <i class="bi bi-check-circle-fill text-tertiary shrink-0"></i>
+            <span>Personalized walkthrough for your industry</span>
+          </li>
+          <li class="flex items-center gap-3 text-body-md font-body-md text-text-muted">
+            <i class="bi bi-check-circle-fill text-tertiary shrink-0"></i>
+            <span>Understand RPA & AI automation benefits</span>
+          </li>
+          <li class="flex items-center gap-3 text-body-md font-body-md text-text-muted">
+            <i class="bi bi-check-circle-fill text-tertiary shrink-0"></i>
+            <span>No commitment — free initial consultation</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="row" style="gap: 30px 0;">
-      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets/img/appointment.jpg" class="img-fluid" alt="Get a Demo" style="border-radius:4px; display:block; width:100%; height:300px; object-fit:cover;" onerror="this.src='assets/img/about.jpg'">
-        <div style="margin-top:30px;">
-          <h3 style="color:var(--heading-color); font-family:var(--heading-font); font-size:20px; font-weight:700; margin-bottom:15px;">Why Request a Demo?</h3>
-          <ul style="list-style:none; padding:0;">
-            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
-              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>See vSuite products live in action</span>
-            </li>
-            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
-              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>Personalized walkthrough for your industry</span>
-            </li>
-            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
-              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>Understand RPA & AI automation benefits</span>
-            </li>
-            <li style="padding:8px 0; display:flex; align-items:center; gap:10px;">
-              <i class="bi bi-check-circle-fill" style="color:var(--accent-color);"></i>
-              <span>No commitment — free initial consultation</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-        <form class="php-email-form" (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
-          <div *ngIf="submitted" style="background:#059652; color:#fff; padding:15px; margin-bottom:20px; text-align:center; font-weight:600;">
+    <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="200">
+      <div class="glass-panel rounded-[24px] p-8 md:p-12">
+        <form (ngSubmit)="onSubmit()" #appointmentForm="ngForm">
+          <div *ngIf="submitted" class="bg-tertiary/10 text-tertiary p-4 rounded-xl mb-6 text-center font-semibold text-body-md font-body-md">
             Thank you! Our team will contact you within 24 hours.
           </div>
-          <div *ngIf="loading" style="text-align:center; padding:15px; margin-bottom:20px;">
+          <div *ngIf="loading" class="text-center p-4 mb-6 text-body-md font-body-md text-text-muted">
             Submitting your request...
           </div>
 
-          <div class="row" style="gap: 0;">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your Name" required>
-            </div>
-            <div class="col-md-6 form-group" style="padding-left:10px;">
-              <input type="email" name="email" [(ngModel)]="form.email" placeholder="Your Email" required>
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input type="text" name="name" [(ngModel)]="form.name" placeholder="Your Name" required
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all">
+            <input type="email" name="email" [(ngModel)]="form.email" placeholder="Your Email" required
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all">
           </div>
 
-          <div class="row" style="gap: 0; margin-top:8px;">
-            <div class="col-md-6 form-group">
-              <input type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Your Phone">
-            </div>
-            <div class="col-md-6 form-group" style="padding-left:10px;">
-              <input type="text" name="company" [(ngModel)]="form.date" placeholder="Company Name">
-            </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <input type="tel" name="phone" [(ngModel)]="form.phone" placeholder="Your Phone"
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all">
+            <input type="text" name="company" [(ngModel)]="form.date" placeholder="Company Name"
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all">
           </div>
 
-          <div class="form-group" style="margin-top:8px;">
-            <select name="service" [(ngModel)]="form.service">
+          <div class="mb-4">
+            <select name="service" [(ngModel)]="form.service"
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all">
               <option value="">Select Product / Area of Interest</option>
               <option value="vsuite-finance">vSuite Finance</option>
               <option value="vsuite-workforce">vSuite WorkForce</option>
@@ -71,12 +68,14 @@
             </select>
           </div>
 
-          <div class="form-group" style="margin-top:8px;">
-            <textarea name="message" [(ngModel)]="form.message" rows="5" placeholder="Tell us about your business and what you'd like to automate or improve..."></textarea>
+          <div class="mb-6">
+            <textarea name="message" [(ngModel)]="form.message" rows="5" placeholder="Tell us about your business and what you'd like to automate or improve..."
+              class="w-full px-4 py-3 rounded-xl border border-border-subtle bg-surface-container-lowest text-body-md font-body-md text-on-surface placeholder:text-text-muted/60 focus:outline-none focus:ring-2 focus:ring-secondary/30 transition-all resize-none"></textarea>
           </div>
 
-          <div style="text-align:center; margin-top:15px;">
-            <button type="submit" [disabled]="loading">
+          <div class="text-center">
+            <button type="submit" [disabled]="loading"
+              class="bg-primary text-on-primary px-8 py-3 rounded-xl text-label-md font-label-md hover:scale-[1.02] transition-transform duration-300 ease-out shadow-sm disabled:opacity-50 disabled:cursor-not-allowed">
               {{ loading ? 'Submitting...' : 'Request a Demo' }}
             </button>
           </div>

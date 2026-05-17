@@ -1,40 +1,42 @@
-<section id="testimonials" class="testimonials section">
+<section id="testimonials" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
   <div class="container">
-    <div class="row" style="align-items: center; gap: 30px 0;">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-      <div class="col-lg-5 info" data-aos="fade-up" data-aos-delay="100">
-        <h3>What Our Clients Say</h3>
-        <p>
+      <div class="lg:col-span-5" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-headline-lg font-headline-lg text-primary mb-4">What Our Clients Say</h3>
+        <p class="text-body-lg font-body-lg text-text-muted">
           Don't just take our word for it. Here's what clients from around the world say about
           working with Vishva Techno Labs.
         </p>
       </div>
 
-      <div class="col-lg-7" data-aos="fade-up" data-aos-delay="200">
-        <div class="swiper">
-          <div class="testimonial-item" [class.testimonial-hidden]="!isVisible">
-            <div style="display:flex; align-items:center;">
+      <div class="lg:col-span-7" data-aos="fade-up" data-aos-delay="200">
+        <div class="glass-panel rounded-[24px] p-8 md:p-12">
+          <div [class.opacity-0]="!isVisible" [class.opacity-100]="isVisible" class="transition-opacity duration-500">
+            <div class="flex items-center gap-4 mb-6">
               <img [src]="testimonials[currentIndex].img"
                    [alt]="testimonials[currentIndex].name"
-                   class="testimonial-img">
+                   class="w-16 h-16 rounded-full object-cover border-2 border-secondary shadow-sm">
               <div>
-                <h3>{{ testimonials[currentIndex].name }}</h3>
-                <h4>{{ testimonials[currentIndex].role }}</h4>
-                <div class="stars">
-                  <i *ngFor="let s of [1,2,3,4,5]" class="bi bi-star-fill"></i>
+                <h3 class="text-headline-sm font-headline-sm text-primary m-0 text-lg">{{ testimonials[currentIndex].name }}</h3>
+                <h4 class="text-label-md font-label-md text-text-muted m-0 mt-1">{{ testimonials[currentIndex].role }}</h4>
+                <div class="flex gap-1 mt-2">
+                  <i *ngFor="let s of [1,2,3,4,5]" class="bi bi-star-fill text-amber-400 text-sm"></i>
                 </div>
               </div>
             </div>
-            <p>
-              <i class="bi bi-quote quote-icon-left"></i>
+            <p class="text-body-lg font-body-lg text-text-muted italic leading-relaxed m-0">
+              <i class="bi bi-quote text-secondary/30 text-3xl align-top mr-2"></i>
               {{ testimonials[currentIndex].quote }}
-              <i class="bi bi-quote quote-icon-right"></i>
+              <i class="bi bi-quote text-secondary/30 text-3xl align-bottom ml-2 rotate-180 inline-block"></i>
             </p>
           </div>
-          <div class="swiper-pagination">
+          <div class="flex justify-center gap-2 mt-8">
             <span *ngFor="let t of testimonials; let i = index"
-                  class="swiper-pagination-bullet"
-                  [class.swiper-pagination-bullet-active]="i === currentIndex"
+                  class="w-3 h-3 rounded-full cursor-pointer transition-all duration-200"
+                  [class.bg-secondary]="i === currentIndex"
+                  [class.w-8]="i === currentIndex"
+                  [class.bg-outline-variant]="i !== currentIndex"
                   (click)="goToSlide(i)">
             </span>
           </div>

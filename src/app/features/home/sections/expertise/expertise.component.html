@@ -1,23 +1,23 @@
-<section id="departments" class="departments section" #sectionContainer>
+<section id="departments" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background" #sectionContainer>
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Automation</h2>
-      <p>An intelligent automation layer designed to eliminate manual work, streamline business processes, and connect systems seamlessly — empowering organizations to operate faster with less effort.</p>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Automation</h2>
+      <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">An intelligent automation layer designed to eliminate manual work, streamline business processes, and connect systems seamlessly — empowering organizations to operate faster with less effort.</p>
     </div>
 
-    <div class="departments-layout" data-aos="fade-up" data-aos-delay="100">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8" data-aos="fade-up" data-aos-delay="100">
 
       <!-- Vertical Tabs -->
-      <div class="departments-tabs">
-        <!-- Sliding indicator sits on the right border of departments-tabs -->
-        <div class="tab-indicator" [style.top.px]="indicatorTop"></div>
+      <div class="lg:col-span-3 relative">
+        <!-- Sliding indicator -->
+        <div class="absolute right-0 w-[3px] bg-secondary rounded-full h-10 transition-all duration-300 hidden lg:block" [style.top.px]="indicatorTop"></div>
 
-        <div class="nav-tabs">
+        <div class="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0">
           @for (tab of tabs; track i; let i = $index) {
             <button
               #tabBtn
-              class="nav-link"
-              [ngClass]="{ 'active': activeTab === i }"
+              class="text-left px-4 py-3 rounded-xl text-label-md font-label-md whitespace-nowrap transition-all duration-200 shrink-0"
+              [ngClass]="{ 'bg-secondary text-on-secondary shadow-sm': activeTab === i, 'text-text-muted hover:text-primary hover:bg-surface-container-high': activeTab !== i }"
               (click)="setActiveTab(i)">
               {{ tab.label }}
             </button>
@@ -25,32 +25,32 @@
         </div>
 
         <!-- Progress dots -->
-        <div class="tab-dots">
+        <div class="flex justify-center gap-2 mt-4 lg:mt-8">
           @for (tab of tabs; track i; let i = $index) {
-            <span class="tab-dot" [class.active]="activeTab === i" (click)="setActiveTab(i)"></span>
+            <span class="w-2 h-2 rounded-full cursor-pointer transition-all duration-200" [class.bg-secondary]="activeTab === i" [class.w-6]="activeTab === i" [class.bg-outline-variant]="activeTab !== i" (click)="setActiveTab(i)"></span>
           }
         </div>
 
-        <!-- Swipe hint (visible on mobile only) -->
-        <p class="swipe-hint">swipe to explore</p>
+        <!-- Swipe hint -->
+        <p class="text-label-md font-label-md text-text-muted text-center mt-2 lg:hidden">swipe to explore</p>
       </div>
 
       <!-- Tab Content -->
-      <div class="departments-content"
+      <div class="lg:col-span-9"
            [class.dir-down]="scrollDirection === 'down'"
            [class.dir-up]="scrollDirection === 'up'">
         @for (tab of tabs; track i; let i = $index) {
           <div class="tab-pane"
                [class.active]="activeTab === i"
                [class.exiting]="prevTab === i">
-            <div class="row" style="align-items: center; gap: 20px 0;">
-              <div class="col-lg-4 img-col order-1 order-lg-2">
-                <img [src]="tab.img" class="img-fluid" [alt]="tab.title" style="border-radius:4px;">
+            <div class="glass-panel rounded-[24px] p-8 md:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-4 order-1 lg:order-2">
+                <img [src]="tab.img" class="w-full h-auto rounded-[16px] shadow-sm" [alt]="tab.title">
               </div>
-              <div class="col-lg-8 details order-2 order-lg-1">
-                <h3>{{ tab.title }}</h3>
-                <p class="desc-1">{{ tab.description }}</p>
-                <p class="desc-2">{{ tab.description2 }}</p>
+              <div class="lg:col-span-8 order-2 lg:order-1">
+                <h3 class="text-headline-md font-headline-md text-primary mb-4">{{ tab.title }}</h3>
+                <p class="text-body-md font-body-md text-text-muted mb-4">{{ tab.description }}</p>
+                <p class="text-body-md font-body-md text-text-muted">{{ tab.description2 }}</p>
               </div>
             </div>
           </div>

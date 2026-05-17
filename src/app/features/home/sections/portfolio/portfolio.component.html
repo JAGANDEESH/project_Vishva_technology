@@ -1,39 +1,39 @@
-<section id="portfolio" class="portfolio section light-background">
+<section id="portfolio" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
   <div class="container">
 
-    <div class="section-title" data-aos="fade-up">
-      <h2>Solutions</h2>
-      <p>Industry-specific solutions built on the vSuite platform — designed to solve real business challenges across finance, commerce, workforce, and logistics.</p>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Solutions</h2>
+      <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">Industry-specific solutions built on the vSuite platform — designed to solve real business challenges across finance, commerce, workforce, and logistics.</p>
     </div>
 
     <!-- Filter Buttons -->
-    <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="100">
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
       <button
         *ngFor="let f of filters"
-        class="filter-btn"
-        [ngClass]="{ 'active': activeFilter === f.key }"
+        class="px-5 py-2 rounded-full text-label-md font-label-md transition-all duration-200"
+        [ngClass]="{ 'bg-primary text-on-primary shadow-sm': activeFilter === f.key, 'bg-surface-container-high text-text-muted hover:text-primary': activeFilter !== f.key }"
         (click)="setFilter(f.key)">
         {{ f.label }}
       </button>
     </div>
 
     <!-- Solution Cards -->
-    <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="200">
       <div
         *ngFor="let project of filteredProjects"
-        class="portfolio-card">
-        <div class="card-img-wrap">
-          <img [src]="project.img" [alt]="project.title" class="card-img">
-          <div class="card-overlay">
-            <div class="overlay-icon" [style.background]="project.color">
+        class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 group">
+        <div class="relative h-48 overflow-hidden">
+          <img [src]="project.img" [alt]="project.title" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center text-white text-xl" [style.background]="project.color">
               <i class="bi" [ngClass]="project.icon"></i>
             </div>
           </div>
         </div>
-        <div class="card-body">
-          <span class="card-tag" [style.color]="project.color">{{ project.tag }}</span>
-          <h4 class="card-title">{{ project.title }}</h4>
-          <p class="card-desc">{{ project.description }}</p>
+        <div class="p-6">
+          <span class="text-label-md font-label-md font-semibold mb-2 block" [style.color]="project.color">{{ project.tag }}</span>
+          <h4 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">{{ project.title }}</h4>
+          <p class="text-body-md font-body-md text-text-muted m-0">{{ project.description }}</p>
         </div>
       </div>
     </div>

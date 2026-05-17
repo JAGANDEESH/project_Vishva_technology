@@ -1,92 +1,70 @@
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300" [class.shadow-md]="isScrolled">
-  <!-- Topbar -->
-  <div class="hidden md:flex bg-secondary text-on-secondary h-10 items-center justify-center text-label-md w-full">
-    <div class="max-w-container-max w-full px-margin-mobile md:px-margin-desktop flex justify-between items-center">
-      <div class="flex items-center gap-6">
-        <span class="flex items-center gap-2"><i class="bi bi-phone"></i> <a href="tel:+919344964680" class="hover:underline">+91-9344964680</a></span>
-        <span class="flex items-center gap-2"><i class="bi bi-envelope"></i> <a href="mailto:info@vishvatechnologies.com" class="hover:underline">info@vishvatechnologies.com</a></span>
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="#" aria-label="Twitter" class="hover:text-primary-fixed transition-colors"><i class="bi bi-twitter-x"></i></a>
-        <a href="#" aria-label="Facebook" class="hover:text-primary-fixed transition-colors"><i class="bi bi-facebook"></i></a>
-        <a href="#" aria-label="Instagram" class="hover:text-primary-fixed transition-colors"><i class="bi bi-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn" class="hover:text-primary-fixed transition-colors"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Branding Row -->
-  <div class="bg-surface-glass backdrop-blur-xl border-b border-border-subtle/50 h-20 w-full">
-    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-full flex items-center justify-between">
-      
-      <!-- Logo -->
-      <a routerLink="/" class="flex items-center gap-4">
-        <img src="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg" alt="Vishva Technologies Logo" class="w-12 h-12 rounded-full border-2 border-secondary shadow-sm transition-transform hover:scale-105">
-        <span class="text-headline-sm font-headline-sm font-black text-primary hidden lg:block">Vishva Technologies</span>
+<header class="fixed top-0 left-0 w-full z-50">
+  <!-- Single Nav Bar matching Stitch exactly -->
+  <nav class="flex justify-between items-center h-20 max-w-container-max mx-auto bg-surface-glass border-b border-white/20 shadow-sm backdrop-blur-xl px-margin-mobile md:px-margin-desktop">
+    <div class="flex items-center gap-4">
+      <a routerLink="/" class="flex items-center gap-3">
+        <img src="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg" alt="Vishva Technologies Logo" class="w-10 h-10 rounded-full border border-border-subtle shadow-sm">
+        <span class="text-headline-sm font-headline-sm font-black text-primary">Vishva Technologies</span>
       </a>
+    </div>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden xl:flex items-center gap-6">
-        <ul class="flex items-center gap-6 m-0 p-0 list-none">
-          <li><a href="#hero" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" (click)="scrollToSection('hero'); $event.preventDefault()">Home</a></li>
+    <div class="hidden xl:flex items-center gap-8">
+      <a href="#hero" class="text-secondary font-bold border-b-2 border-secondary pb-1 text-label-md font-label-md" (click)="scrollToSection('hero'); $event.preventDefault()">Home</a>
 
-          <li class="relative group">
-            <a href="#services" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md flex items-center gap-1" (click)="scrollToSection('services'); $event.preventDefault()">
-              <span>Products</span> <i class="bi bi-chevron-down text-[12px]"></i>
-            </a>
-            <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <app-shared-menu heading="Our Products" [items]="productItems"
-                featuredImage="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg"
-                featuredCaption="Innovate. Automate. Scale!" (select)="productsOpen = false"></app-shared-menu>
-            </div>
-          </li>
-
-          <li class="relative group">
-            <a href="#departments" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md flex items-center gap-1" (click)="scrollToSection('departments'); $event.preventDefault()">
-              <span>Automation</span> <i class="bi bi-chevron-down text-[12px]"></i>
-            </a>
-            <div class="absolute left-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <app-shared-menu heading="Intelligent Automation" [items]="automationItems"
-                (select)="automationOpen = false"></app-shared-menu>
-            </div>
-          </li>
-
-          <li class="relative group">
-            <a href="#ai-automation" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md flex items-center gap-1" (click)="scrollToSection('ai-automation'); $event.preventDefault()">
-              <span>AI Offerings</span> <i class="bi bi-chevron-down text-[12px]"></i>
-            </a>
-            <div class="absolute right-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <app-shared-menu heading="AI Offerings" [items]="aiItems" (select)="aiOfferingsOpen = false">
-              </app-shared-menu>
-            </div>
-          </li>
-
-          <li class="relative group">
-            <a href="#portfolio" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md flex items-center gap-1" (click)="scrollToSection('portfolio'); $event.preventDefault()">
-              <span>Solutions</span> <i class="bi bi-chevron-down text-[12px]"></i>
-            </a>
-            <div class="absolute right-0 top-full pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <app-shared-menu heading="Industry Solutions" [items]="solutionItems"
-                featuredImage="assets/img/vs%20suitable%20image/shared%20image%20(8).jpg"
-                featuredCaption="Powering Every Part Of Your Business" (select)="solutionsOpen = false"></app-shared-menu>
-            </div>
-          </li>
-
-          <li><a href="#about" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" (click)="scrollToSection('about'); $event.preventDefault()">About Us</a></li>
-          <li><a href="#contact" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md" (click)="scrollToSection('contact'); $event.preventDefault()">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#appointment" class="bg-primary text-on-primary px-6 py-2 rounded-lg text-label-md font-label-md hover:scale-[1.02] transition-transform duration-300 ease-out shadow-sm" (click)="scrollToSection('appointment'); $event.preventDefault()">Get a Demo</a>
+      <div class="relative group">
+        <a href="#services" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200 flex items-center gap-1" (click)="scrollToSection('services'); $event.preventDefault()">
+          Products <i class="bi bi-chevron-down text-[10px]"></i>
+        </a>
+        <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <app-shared-menu heading="Our Products" [items]="productItems"
+            featuredImage="assets/img/vs%20suitable%20image/shared%20image%20(6).jpg"
+            featuredCaption="Innovate. Automate. Scale!" (select)="productsOpen = false"></app-shared-menu>
+        </div>
       </div>
 
-      <!-- Mobile Toggle -->
-      <button class="xl:hidden text-primary text-2xl" (click)="toggleMobileNav()" aria-label="Toggle navigation">
-        <i [class]="mobileNavOpen ? 'bi bi-x' : 'bi bi-list'"></i>
-      </button>
+      <div class="relative group">
+        <a href="#departments" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200 flex items-center gap-1" (click)="scrollToSection('departments'); $event.preventDefault()">
+          Automation <i class="bi bi-chevron-down text-[10px]"></i>
+        </a>
+        <div class="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <app-shared-menu heading="Intelligent Automation" [items]="automationItems"
+            (select)="automationOpen = false"></app-shared-menu>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <a href="#ai-automation" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200 flex items-center gap-1" (click)="scrollToSection('ai-automation'); $event.preventDefault()">
+          AI Offerings <i class="bi bi-chevron-down text-[10px]"></i>
+        </a>
+        <div class="absolute right-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <app-shared-menu heading="AI Offerings" [items]="aiItems" (select)="aiOfferingsOpen = false">
+          </app-shared-menu>
+        </div>
+      </div>
+
+      <div class="relative group">
+        <a href="#portfolio" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200 flex items-center gap-1" (click)="scrollToSection('portfolio'); $event.preventDefault()">
+          Solutions <i class="bi bi-chevron-down text-[10px]"></i>
+        </a>
+        <div class="absolute right-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+          <app-shared-menu heading="Industry Solutions" [items]="solutionItems"
+            featuredImage="assets/img/vs%20suitable%20image/shared%20image%20(8).jpg"
+            featuredCaption="Powering Every Part Of Your Business" (select)="solutionsOpen = false"></app-shared-menu>
+        </div>
+      </div>
+
+      <a href="#about" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" (click)="scrollToSection('about'); $event.preventDefault()">About Us</a>
+      <a href="#contact" class="text-on-surface-variant hover:text-primary transition-colors text-label-md font-label-md hover:opacity-80 transition-opacity duration-200" (click)="scrollToSection('contact'); $event.preventDefault()">Contact</a>
     </div>
-  </div>
+
+    <button class="bg-primary text-on-primary px-6 py-2 rounded-lg text-label-md font-label-md hover:scale-[1.02] transition-transform duration-300 ease-out hidden md:block" (click)="scrollToSection('appointment'); $event.preventDefault()">
+      Get Demo
+    </button>
+
+    <button class="xl:hidden text-primary text-2xl" (click)="toggleMobileNav()" aria-label="Toggle navigation">
+      <i [class]="mobileNavOpen ? 'bi bi-x' : 'bi bi-list'"></i>
+    </button>
+  </nav>
 </header>
 
 <!-- Mobile Backdrop -->

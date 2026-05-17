@@ -1,123 +1,76 @@
-<section id="services" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
-  <div class="mb-16 text-center" data-aos="fade-up">
-    <h2 class="text-headline-lg font-headline-lg text-primary mb-4">vSuite of Products</h2>
-    <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">An integrated ecosystem of business products designed to streamline finance, workforce, commerce, and logistics operations in one powerful platform.</p>
+<section id="services" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 bg-surface-container-low rounded-[48px] my-12 mx-4 md:mx-auto">
+  <div class="text-center mb-16" data-aos="fade-up">
+    <h2 class="text-headline-md font-headline-md text-primary mb-4">vSuite of Products</h2>
+    <p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto">An integrated ecosystem of business products designed to streamline finance, workforce, commerce, and logistics operations in one powerful platform.</p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter px-margin-mobile md:px-0">
 
-    <div data-aos="fade-up" data-aos-delay="100">
-      <div class="glass-panel p-8 rounded-[24px] h-full flex flex-col hover:scale-[1.01] transition-transform duration-300 group">
-        <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
-          <i class="bi bi-currency-dollar text-3xl"></i>
+    <!-- vSuite Finance -->
+    <div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white" data-aos="fade-up" data-aos-delay="100">
+      <div class="w-full md:w-2/5 relative h-48 md:h-auto bg-secondary/5 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+          <i class="bi bi-currency-dollar text-4xl"></i>
         </div>
-        <h3 class="text-headline-md font-headline-md text-primary mb-2">vSuite Finance</h3>
-        <p class="text-body-md font-body-md text-secondary font-medium mb-4"><em>Smarter Finance Starts Here.</em></p>
-        <p class="text-body-md font-body-md text-text-muted mb-8">vSuite Finance powers your business with smarter billing, seamless accounting, and automated payroll—so you can focus on growth, not complexity.</p>
-        
-        <div class="space-y-8 mt-auto">
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite Billing</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Smart, fast, and GST-ready billing designed for modern businesses. Built with automation and real-time tracking.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> GST compliant invoices</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> UPI / QR-based payment</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Automated reminders</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> AI-assisted invoice creation</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite Accounting</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Comprehensive accounting made simple, intelligent, and scalable. Designed for accuracy and clarity.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Ledger & journal records</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Profit & loss reports</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Bank reconciliation</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> AI-driven financial insights</li>
-            </ul>
-          </div>
-        </div>
+      </div>
+      <div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+        <h4 class="text-headline-sm font-headline-sm text-primary mb-2">vSuite Finance</h4>
+        <span class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-md font-label-md mb-4 w-fit">Billing · Accounting · Payroll</span>
+        <p class="text-body-md font-body-md text-text-muted mb-6">vSuite Finance powers your business with smarter billing, seamless accounting, and automated payroll — so you can focus on growth, not complexity.</p>
+        <a routerLink="/products/finance" class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+          Learn More <i class="bi bi-arrow-right text-sm"></i>
+        </a>
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="200">
-      <div class="glass-panel p-8 rounded-[24px] h-full flex flex-col hover:scale-[1.01] transition-transform duration-300 group">
-        <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
-          <i class="bi bi-people text-3xl"></i>
+    <!-- vSuite WorkForce -->
+    <div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white" data-aos="fade-up" data-aos-delay="200">
+      <div class="w-full md:w-2/5 relative h-48 md:h-auto bg-secondary/5 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+          <i class="bi bi-people text-4xl"></i>
         </div>
-        <h3 class="text-headline-md font-headline-md text-primary mb-4">vSuite WorkForce</h3>
-        <p class="text-body-md font-body-md text-text-muted mb-8">A unified workforce management solution designed to simplify people operations—from payroll processing to employee lifecycle management.</p>
-
-        <div class="space-y-8 mt-auto">
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite Payroll</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Accurate, automated, and compliant payroll built for modern organizations with precision and speed.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Automated salary calc</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Statutory compliance</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Payslip generation</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Anomaly detection</li>
-            </ul>
-          </div>
-
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite Human Resources</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Smart HR management to engage, manage, and grow your workforce with improved visibility.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Employee onboarding</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Attendance tracking</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Performance reviews</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> AI-driven hiring insights</li>
-            </ul>
-          </div>
-        </div>
+      </div>
+      <div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+        <h4 class="text-headline-sm font-headline-sm text-primary mb-2">vSuite WorkForce</h4>
+        <span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-label-md font-label-md mb-4 w-fit">HR · Payroll · Employee Mgmt</span>
+        <p class="text-body-md font-body-md text-text-muted mb-6">A unified workforce management solution designed to simplify people operations — from payroll processing to employee lifecycle management.</p>
+        <a href="#" class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+          Learn More <i class="bi bi-arrow-right text-sm"></i>
+        </a>
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="300">
-      <div class="glass-panel p-8 rounded-[24px] h-full flex flex-col hover:scale-[1.01] transition-transform duration-300 group">
-        <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
-          <i class="bi bi-shop text-3xl"></i>
+    <!-- vSuite Commerce -->
+    <div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white" data-aos="fade-up" data-aos-delay="300">
+      <div class="w-full md:w-2/5 relative h-48 md:h-auto bg-secondary/5 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+          <i class="bi bi-shop text-4xl"></i>
         </div>
-        <h3 class="text-headline-md font-headline-md text-primary mb-4">vSuite Commerce</h3>
-        <p class="text-body-md font-body-md text-text-muted mb-8">A unified commerce platform to help businesses sell smarter, scale faster, and deliver seamless customer experiences.</p>
-
-        <div class="space-y-8 mt-auto">
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite E-Commerce</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Build, manage, and grow your online business effortlessly with modern stores and exceptional shopping experiences.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Custom storefronts</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Multi-payment support</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> AI recommendations</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Abandoned cart recovery</li>
-            </ul>
-          </div>
-        </div>
+      </div>
+      <div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+        <h4 class="text-headline-sm font-headline-sm text-primary mb-2">vSuite Commerce</h4>
+        <span class="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-label-md font-label-md mb-4 w-fit">E-Commerce Platform</span>
+        <p class="text-body-md font-body-md text-text-muted mb-6">A unified commerce platform to help businesses sell smarter, scale faster, and deliver seamless customer experiences.</p>
+        <a href="#" class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+          Learn More <i class="bi bi-arrow-right text-sm"></i>
+        </a>
       </div>
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="400">
-      <div class="glass-panel p-8 rounded-[24px] h-full flex flex-col hover:scale-[1.01] transition-transform duration-300 group">
-        <div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-colors">
-          <i class="bi bi-truck text-3xl"></i>
+    <!-- vSuite Logistics -->
+    <div class="glass-panel rounded-[24px] overflow-hidden hover:scale-[1.02] transition-transform duration-300 ease-out flex flex-col md:flex-row bg-white" data-aos="fade-up" data-aos-delay="400">
+      <div class="w-full md:w-2/5 relative h-48 md:h-auto bg-secondary/5 flex items-center justify-center">
+        <div class="w-20 h-20 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+          <i class="bi bi-truck text-4xl"></i>
         </div>
-        <h3 class="text-headline-md font-headline-md text-primary mb-4">vSuite Logistics</h3>
-        <p class="text-body-md font-body-md text-text-muted mb-8">A smart logistics automation solution to streamline shipping operations and ensure accurate financial integration.</p>
-
-        <div class="space-y-8 mt-auto">
-          <div>
-            <h5 class="text-headline-sm font-headline-sm text-primary mb-2 text-lg">vSuite ProcessFlow</h5>
-            <p class="text-body-md font-body-md text-text-muted mb-4">Automate shipping documents from retrieval to reconciliation, eliminating manual effort and accelerating workflows.</p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-body-md font-body-md text-text-muted m-0 p-0 list-none">
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Auto-download BL/Inv</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Intelligent extraction</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> Data validation</li>
-              <li class="flex items-center gap-2"><i class="bi bi-check2-circle text-tertiary"></i> ERP integration</li>
-            </ul>
-          </div>
-        </div>
+      </div>
+      <div class="p-8 w-full md:w-3/5 flex flex-col justify-center">
+        <h4 class="text-headline-sm font-headline-sm text-primary mb-2">vSuite Logistics</h4>
+        <span class="inline-block px-3 py-1 rounded-full bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim text-label-md font-label-md mb-4 w-fit">Process Automation</span>
+        <p class="text-body-md font-body-md text-text-muted mb-6">A smart logistics automation solution to streamline shipping operations and ensure accurate financial integration.</p>
+        <a href="#" class="text-secondary font-label-md text-label-md flex items-center gap-2 hover:opacity-80 w-fit">
+          Learn More <i class="bi bi-arrow-right text-sm"></i>
+        </a>
       </div>
     </div>
 

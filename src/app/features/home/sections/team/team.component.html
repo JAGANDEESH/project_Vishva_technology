@@ -1,25 +1,25 @@
-<section id="doctors" class="doctors section">
+<section id="doctors" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Our Team</h2>
-      <p>Meet the talented professionals who bring your vision to life.</p>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Our Team</h2>
+      <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">Meet the talented professionals who bring your vision to life.</p>
     </div>
 
-    <div class="row" style="gap: 30px 0;">
-      <div class="col-lg-6" *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="(i+1)*100">
-        <div class="team-member">
-          <div class="pic">
-            <img [src]="member.img" [alt]="member.name" class="img-fluid">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div *ngFor="let member of teamMembers; let i = index" data-aos="fade-up" [attr.data-aos-delay]="(i+1)*100">
+        <div class="glass-panel rounded-[24px] overflow-hidden flex flex-col md:flex-row hover:scale-[1.01] transition-transform duration-300 group">
+          <div class="w-full md:w-48 h-48 md:h-auto shrink-0">
+            <img [src]="member.img" [alt]="member.name" class="w-full h-full object-cover">
           </div>
-          <div class="member-info">
-            <h4>{{ member.name }}</h4>
-            <span>{{ member.role }}</span>
-            <p>{{ member.bio }}</p>
-            <div class="social">
-              <a [href]="member.twitter" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-              <a [href]="member.facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-              <a [href]="member.instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-              <a [href]="member.linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <div class="p-6 flex flex-col justify-center">
+            <h4 class="text-headline-sm font-headline-sm text-primary mb-1 text-lg">{{ member.name }}</h4>
+            <span class="text-label-md font-label-md text-secondary font-medium mb-3">{{ member.role }}</span>
+            <p class="text-body-md font-body-md text-text-muted mb-4 m-0">{{ member.bio }}</p>
+            <div class="flex items-center gap-4">
+              <a [href]="member.twitter" aria-label="Twitter" class="text-text-muted hover:text-primary transition-colors"><i class="bi bi-twitter-x"></i></a>
+              <a [href]="member.facebook" aria-label="Facebook" class="text-text-muted hover:text-primary transition-colors"><i class="bi bi-facebook"></i></a>
+              <a [href]="member.instagram" aria-label="Instagram" class="text-text-muted hover:text-primary transition-colors"><i class="bi bi-instagram"></i></a>
+              <a [href]="member.linkedin" aria-label="LinkedIn" class="text-text-muted hover:text-primary transition-colors"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
         </div>

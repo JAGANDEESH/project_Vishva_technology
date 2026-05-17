@@ -1,50 +1,37 @@
-<section id="why-choose-us" class="why-choose-us section light-background">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Why Choose VISHVA Technologies?</h2>
-      <p>A team of forward-thinking technology experts dedicated to helping businesses transform through product innovation, intelligent automation, and AI-driven scalability.</p>
-    </div>
+<section id="why-choose-us" class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24">
+  <div class="text-center mb-16" data-aos="fade-up">
+    <h2 class="text-headline-md font-headline-md text-primary mb-4">Why Choose VISHVA Technologies?</h2>
+    <p class="text-body-lg font-body-lg text-text-muted max-w-2xl mx-auto">A team of forward-thinking technology experts dedicated to helping businesses transform through product innovation, intelligent automation, and AI-driven scalability.</p>
+  </div>
 
-    <div class="row g-4 justify-content-center">
-      <div class="col-lg-4 col-md-6" *ngFor="let reason of reasons; let i = index" data-aos="fade-up" [attr.data-aos-delay]="(i % 3) * 100">
-        <div class="reason-item">
-          <!-- Background Number -->
-          <div class="reason-number">0{{ i + 1 }}</div>
-          
-          <div class="reason-main">
-            <div class="reason-icon">
-              <i class="bi" [ngClass]="reason.icon"></i>
-            </div>
-            <h4>{{ reason.title }}</h4>
-            <p class="short-desc">{{ reason.description }}</p>
-          </div>
-
-          <!-- Hover Reveal Content -->
-          <div class="reason-details">
-            <ul class="highlight-list">
-              <li *ngFor="let item of reason.highlights">
-                <i class="bi bi-check2"></i> {{ item }}
-              </li>
-            </ul>
-
-            <div *ngIf="reason.benefits" class="badge-row">
-              <span class="badge" *ngFor="let b of reason.benefits">{{ b }}</span>
-            </div>
-
-            <div *ngIf="reason.useCases" class="badge-row">
-              <span class="badge ai-badge" *ngFor="let u of reason.useCases">{{ u }}</span>
-            </div>
-
-            <p class="promise" *ngIf="reason.promise">
-              {{ reason.promise }}
-            </p>
-          </div>
-
-          <div class="reason-footer">
-            <span class="explore-text">Explore More <i class="bi bi-arrow-right"></i></span>
-          </div>
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+    <div *ngFor="let reason of reasons; let i = index"
+         class="glass-panel p-6 rounded-[24px] hover:scale-[1.02] transition-transform duration-300 ease-out group"
+         data-aos="fade-up" [attr.data-aos-delay]="(i % 4) * 100">
+      <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-white transition-colors">
+        <i class="bi text-xl" [ngClass]="reason.icon"></i>
       </div>
+      <h4 class="text-headline-sm font-headline-sm text-primary mb-2">{{ reason.title }}</h4>
+      <p class="text-body-md font-body-md text-text-muted mb-4">{{ reason.description }}</p>
+
+      <!-- Highlights -->
+      <ul *ngIf="reason.highlights" class="space-y-1 mb-4 m-0 p-0 list-none">
+        <li *ngFor="let item of reason.highlights" class="flex items-start gap-2 text-body-md font-body-md text-text-muted text-sm">
+          <i class="bi bi-check2 text-secondary shrink-0 mt-0.5"></i> {{ item }}
+        </li>
+      </ul>
+
+      <div *ngIf="reason.benefits" class="flex flex-wrap gap-1 mb-3">
+        <span class="bg-secondary/10 text-secondary px-2 py-0.5 rounded-full text-[11px] font-medium" *ngFor="let b of reason.benefits">{{ b }}</span>
+      </div>
+
+      <div *ngIf="reason.useCases" class="flex flex-wrap gap-1 mb-3">
+        <span class="bg-tertiary-fixed-dim/20 text-tertiary-fixed-dim px-2 py-0.5 rounded-full text-[11px] font-medium" *ngFor="let u of reason.useCases">{{ u }}</span>
+      </div>
+
+      <p class="text-body-md font-body-md text-secondary font-medium italic text-sm" *ngIf="reason.promise">
+        {{ reason.promise }}
+      </p>
     </div>
   </div>
 </section>

@@ -1,25 +1,27 @@
-<section id="faq" class="faq section light-background">
+<section id="faq" class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop bg-background">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about working with us.</p>
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-headline-lg font-headline-lg text-primary mb-4">Frequently Asked Questions</h2>
+      <p class="text-body-lg font-body-lg text-text-muted max-w-3xl mx-auto">Everything you need to know about working with us.</p>
     </div>
 
-    <div class="faq-container" data-aos="fade-up" data-aos-delay="100">
+    <div class="max-w-3xl mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
       <div
         *ngFor="let faq of faqs; let i = index"
-        class="faq-item"
-        [ngClass]="{ 'faq-active': faq.active }"
+        class="glass-panel rounded-[16px] overflow-hidden transition-all duration-300 cursor-pointer group"
+        [ngClass]="{ 'ring-2 ring-secondary/20': faq.active }"
         (click)="toggleFaq(i)">
 
-        <h3>
-          <span class="num">{{ faq.num }}.</span>
-          {{ faq.question }}
-        </h3>
-        <div class="faq-content">
-          <p>{{ faq.answer }}</p>
+        <div class="flex items-center justify-between p-6">
+          <h3 class="text-body-lg font-body-lg text-primary font-semibold m-0 flex items-center gap-3">
+            <span class="text-secondary font-black text-headline-sm font-headline-sm">{{ faq.num }}.</span>
+            {{ faq.question }}
+          </h3>
+          <i class="bi bi-chevron-right text-secondary transition-transform duration-300 shrink-0 ml-4" [class.rotate-90]="faq.active"></i>
         </div>
-        <i class="faq-toggle bi bi-chevron-right"></i>
+        <div class="px-6 pb-6 transition-all duration-300" [class.hidden]="!faq.active">
+          <p class="text-body-md font-body-md text-text-muted m-0 pl-10">{{ faq.answer }}</p>
+        </div>
       </div>
     </div>
   </div>

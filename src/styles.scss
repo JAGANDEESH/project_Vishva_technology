@@ -2,7 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0f172a;
+  /* EXACT Stitch Design System colors */
+  --color-primary: #000000;
   --color-on-primary: #ffffff;
   --color-primary-container: #131b2e;
   --color-on-primary-container: #7c839b;
@@ -12,7 +13,7 @@
   --color-on-primary-fixed-variant: #3f465c;
   --color-inverse-primary: #bec6e0;
 
-  --color-secondary: #2563eb;
+  --color-secondary: #0051d5;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #316bf3;
   --color-on-secondary-container: #fefcff;
@@ -21,7 +22,7 @@
   --color-on-secondary-fixed: #00174b;
   --color-on-secondary-fixed-variant: #003ea8;
 
-  --color-tertiary: #06b6d4;
+  --color-tertiary: #000000;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #001f26;
   --color-on-tertiary-container: #0090a9;
@@ -37,7 +38,7 @@
 
   --color-background: #f7f9fb;
   --color-on-background: #191c1e;
-  
+
   --color-surface: #f7f9fb;
   --color-on-surface: #191c1e;
   --color-surface-variant: #e0e3e5;
@@ -67,15 +68,15 @@
   --spacing-container-max: 1280px;
   --spacing-gutter: 24px;
 
-  --font-headline-lg-mobile: Inter, sans-serif;
-  --font-headline-lg: Inter, sans-serif;
-  --font-body-md: Inter, sans-serif;
-  --font-headline-xl-mobile: Inter, sans-serif;
-  --font-headline-md: Inter, sans-serif;
-  --font-label-md: Inter, sans-serif;
-  --font-body-lg: Inter, sans-serif;
-  --font-headline-sm: Inter, sans-serif;
-  --font-headline-xl: Inter, sans-serif;
+  --font-headline-lg-mobile: 'Inter', sans-serif;
+  --font-headline-lg: 'Inter', sans-serif;
+  --font-body-md: 'Inter', sans-serif;
+  --font-headline-xl-mobile: 'Inter', sans-serif;
+  --font-headline-md: 'Inter', sans-serif;
+  --font-label-md: 'Inter', sans-serif;
+  --font-body-lg: 'Inter', sans-serif;
+  --font-headline-sm: 'Inter', sans-serif;
+  --font-headline-xl: 'Inter', sans-serif;
 }
 
 @layer utilities {
@@ -110,30 +111,30 @@ body {
   @apply text-on-surface antialiased bg-grid-pattern relative min-h-screen pt-20 bg-background;
 }
 /* ================================================
-   CSS Variables
+   Legacy CSS Variables (overridden by Stitch @theme)
    ================================================ */
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --heading-font: "Poppins", sans-serif;
-  --nav-font: "Raleway", sans-serif;
+  --default-font: 'Inter', sans-serif;
+  --heading-font: 'Inter', sans-serif;
+  --nav-font: 'Inter', sans-serif;
 
-  --background-color: #ffffff;
-  --default-color: #444444;
-  --heading-color: #1B2E5E;
-  --accent-color: #2B70D4;
+  --background-color: #f7f9fb;
+  --default-color: #191c1e;
+  --heading-color: #000000;
+  --accent-color: #0051d5;
   --surface-color: #ffffff;
   --contrast-color: #ffffff;
 
-  --nav-color: #1B2E5E;
-  --nav-hover-color: #2B70D4;
+  --nav-color: #000000;
+  --nav-hover-color: #0051d5;
   --nav-mobile-background-color: #ffffff;
   --nav-dropdown-background-color: #ffffff;
-  --nav-dropdown-color: #1B2E5E;
-  --nav-dropdown-hover-color: #2B70D4;
+  --nav-dropdown-color: #000000;
+  --nav-dropdown-hover-color: #0051d5;
 }
 
 .light-background {
-  --background-color: #f1f7fc;
+  --background-color: #f2f4f6;
   --surface-color: #ffffff;
 }
 
@@ -165,31 +166,25 @@ body {
 }
 
 body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
+  color: var(--color-on-surface, #191c1e);
+  background-color: var(--color-background, #f7f9fb);
+  font-family: 'Inter', sans-serif;
   margin: 0;
 }
 
 a {
-  color: var(--accent-color);
+  color: inherit;
   text-decoration: none;
   transition: 0.3s;
 }
 
 a:hover {
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
+h1, h2, h3, h4, h5, h6 {
+  color: inherit;
+  font-family: 'Inter', sans-serif;
 }
 
 /* ================================================
