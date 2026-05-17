@@ -2,12 +2,13 @@ import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/c
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { PortfolioFilterService } from '../services/portfolio-filter.service';
-import { SharedMenuComponent, MenuItem } from './shared-menu/shared-menu';
+import { NgClass } from '@angular/common';
+import { MenuItem } from './shared-menu/shared-menu';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [SharedMenuComponent, RouterLink],
+  imports: [NgClass, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
@@ -15,18 +16,48 @@ export class NavbarComponent implements OnInit {
   isScrolled = false;
   mobileNavOpen = false;
   productsOpen = false;
+  vSuiteOpen = false;
+  vSuiteFinanceOpen = false;
+  vSuiteWorkforceOpen = false;
+  vSuiteCommerceOpen = false;
+  vSuiteLogisticsOpen = false;
+
   automationOpen = false;
   aiOfferingsOpen = false;
   solutionsOpen = false;
 
   productItems: MenuItem[] = [
-    { title: 'vSuite Billing', description: 'Smart, fast, and GST-ready billing designed for modern businesses.', icon: 'bi-receipt', link: '/products/billing' },
-    { title: 'vSuite Accounting', description: 'Comprehensive accounting made simple, intelligent, and scalable.', icon: 'bi-calculator', link: '/products/accounting' },
-    { title: 'vSuite Finance', description: 'Complete financial control with real-time reporting and cash flow visibility.', icon: 'bi-bank', link: '/products/finance' },
-    { title: 'vSuite PayRoll', description: 'Accurate, automated, and compliant payroll for modern organizations.', icon: 'bi-cash-stack', link: '/products/payroll' },
-    { title: 'vSuite Human Resources', description: 'Smart HR management to engage, manage, and grow your workforce.', icon: 'bi-person-badge', link: '/products/hr' },
-    { title: 'vSuite E-Commerce', description: 'Build, manage, and grow your online business—effortlessly.', icon: 'bi-cart4', link: '/products/ecommerce' },
-    { title: 'vSuite ProcessFlow', description: 'Automate logistics documents—from retrieval to reconciliation.', icon: 'bi-arrow-repeat', link: '/products/processflow' }
+    {
+      title: 'vSuite',
+      children: [
+        {
+          title: 'vSuite Finance',
+          children: [
+            { title: 'vSuite Billing', link: '/products/billing' },
+            { title: 'vSuite Accounting', link: '/products/accounting' }
+          ]
+        },
+        {
+          title: 'vSuite Workforce',
+          children: [
+            { title: 'vSuite Payroll', link: '/products/payroll' },
+            { title: 'vSuite Workbench', link: '/products/hr' }
+          ]
+        },
+        {
+          title: 'vSuite Commerce',
+          children: [
+            { title: 'vSuite E-Commerce', link: '/products/ecommerce' }
+          ]
+        },
+        {
+          title: 'vSuite Logistics',
+          children: [
+            { title: 'vSuite ProcessFlow', link: '/products/processflow' }
+          ]
+        }
+      ]
+    }
   ];
 
   automationItems: MenuItem[] = [
@@ -84,12 +115,52 @@ export class NavbarComponent implements OnInit {
 
   private closeAllAccordions(): void {
     this.productsOpen = false;
+    this.vSuiteOpen = false;
+    this.vSuiteFinanceOpen = false;
+    this.vSuiteWorkforceOpen = false;
+    this.vSuiteCommerceOpen = false;
+    this.vSuiteLogisticsOpen = false;
     this.automationOpen = false;
     this.aiOfferingsOpen = false;
     this.solutionsOpen = false;
   }
 
   toggleProducts(): void { this.productsOpen = !this.productsOpen; }
+  toggleVSuite(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.vSuiteOpen = !this.vSuiteOpen;
+  }
+  toggleVSuiteFinance(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.vSuiteFinanceOpen = !this.vSuiteFinanceOpen;
+  }
+  toggleVSuiteWorkforce(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.vSuiteWorkforceOpen = !this.vSuiteWorkforceOpen;
+  }
+  toggleVSuiteCommerce(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.vSuiteCommerceOpen = !this.vSuiteCommerceOpen;
+  }
+  toggleVSuiteLogistics(event?: Event): void {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    this.vSuiteLogisticsOpen = !this.vSuiteLogisticsOpen;
+  }
   toggleAutomation(): void { this.automationOpen = !this.automationOpen; }
   toggleAiOfferings(): void { this.aiOfferingsOpen = !this.aiOfferingsOpen; }
   toggleSolutions(): void { this.solutionsOpen = !this.solutionsOpen; }

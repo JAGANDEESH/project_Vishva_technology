@@ -559,8 +559,8 @@ section,
 }
 
 .header .branding {
-  min-height: 80px;
-  padding: 10px 0;
+  min-height: auto;
+  padding: 8px 0;
   display: flex;
   align-items: center;
 }
@@ -574,22 +574,23 @@ section,
   flex-shrink: 0;
 }
 
-.header .logo img,
-.footer .logo img {
-  width: 120px;
+.header .logo img {
+  height: 80px;
+  width: auto;
   margin-right: 14px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  object-fit: contain;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.footer .logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .header .logo:hover img,
 .footer .logo:hover img {
-  transform: scale(1.08) rotate(-3deg);
-  box-shadow: 0 6px 16px rgba(43, 112, 212, 0.15);
-  border-color: rgba(43, 112, 212, 0.2);
+  transform: scale(1.08);
 }
 
 .header .logo h1 {
@@ -669,7 +670,7 @@ section,
 
   .navmenu>ul>li {
     white-space: nowrap;
-    padding: 15px 10px;
+    padding: 0 10px;
   }
 
   .navmenu>ul>li:last-child {
@@ -769,6 +770,51 @@ section,
   .navmenu ul>li:nth-child(5)>app-shared-menu {
     left: auto;
     right: 0;
+  }
+
+  /* Dropdown Item Styles for nested ul */
+  .navmenu .dropdown ul {
+    padding: 10px 0;
+    min-width: 240px;
+    border-radius: 12px;
+  }
+  .navmenu .dropdown ul li {
+    padding: 0;
+  }
+  .navmenu .dropdown ul li a {
+    padding: 10px 20px;
+    font-size: 15px;
+    color: var(--nav-dropdown-color);
+  }
+  .navmenu .dropdown ul li a i {
+    font-size: 14px;
+  }
+  .navmenu .dropdown ul li a:hover,
+  .navmenu .dropdown ul li:hover > a {
+    color: var(--nav-dropdown-hover-color);
+    background-color: rgba(43, 112, 212, 0.05);
+  }
+
+  /* Deep nested dropdown positioning */
+  .navmenu .dropdown .dropdown ul {
+    top: 0;
+    left: 100%;
+    transform: translateX(10px);
+
+    &::before {
+      top: 0;
+      left: -25px;
+      right: auto;
+      bottom: 0;
+      width: 30px;
+      height: 100%;
+    }
+  }
+
+  .navmenu .dropdown .dropdown:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
   }
 }
 
@@ -925,11 +971,8 @@ section,
 }
 
 .mnp-logo img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  width: 120px;
+  object-fit: contain;
 }
 
 .mnp-logo span {
