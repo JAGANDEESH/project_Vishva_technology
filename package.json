@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "concurrently \"npm run watch:tailwind\" \"ng serve\"",
+    "build": "npm run build:tailwind && ng build",
+    "watch:tailwind": "npx @tailwindcss/cli -i src/tailwind.css -o src/tailwind-output.css --watch",
+    "build:tailwind": "npx @tailwindcss/cli -i src/tailwind.css -o src/tailwind-output.css",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -33,6 +35,7 @@
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4.2.2",
     "autoprefixer": "^10.5.0",
+    "concurrently": "^9.2.1",
     "jsdom": "^28.0.0",
     "postcss": "^8.5.9",
     "prettier": "^3.8.1",

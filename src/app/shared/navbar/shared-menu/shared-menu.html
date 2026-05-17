@@ -1,34 +1,32 @@
-<div class="mega-menu">
-  <div class="container-fluid p-0">
-    <div class="row g-0">
+<div class="mega-menu glass-panel rounded-[16px] shadow-lg border border-border-subtle">
+  <div class="flex flex-col lg:flex-row">
 
-      <!-- Main Content Area -->
-      <div [class]="featuredImage ? 'col-lg-9 p-4 main-pane' : 'col-12 p-4 main-pane'">
-        <h6 class="menu-heading mb-3">{{ heading }}</h6>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col" *ngFor="let item of items">
-            <a
-              [routerLink]="item.link"
-              class="menu-item d-flex align-items-start"
-              (click)="onItemClick()">
-              <div class="item-icon">
-                <i class="bi" [ngClass]="item.icon"></i>
-              </div>
-              <div class="item-info">
-                <span class="item-name">{{ item.title }}</span>
-                <p class="item-desc">{{ item.description }}</p>
-              </div>
-            </a>
-          </div>
+    <!-- Main Content Area -->
+    <div class="flex-1 p-6" [class.lg:border-r]="featuredImage" [class.border-border-subtle]="featuredImage">
+      <h6 class="text-[10px] font-bold uppercase tracking-[1.5px] text-text-muted mb-5">{{ heading }}</h6>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div *ngFor="let item of items">
+          <a
+            [routerLink]="item.link"
+            class="menu-item flex items-start p-3 rounded-xl transition-all duration-300 hover:bg-secondary/5 border border-transparent hover:border-border-subtle"
+            (click)="onItemClick()">
+            <div class="w-10 h-10 rounded-[10px] bg-secondary/8 text-secondary flex items-center justify-center mr-4 shrink-0 transition-all duration-300">
+              <i class="bi text-xl" [ngClass]="item.icon"></i>
+            </div>
+            <div>
+              <span class="block font-bold text-[15px] text-primary mb-1">{{ item.title }}</span>
+              <p class="m-0 text-[12.5px] text-text-muted leading-relaxed">{{ item.description }}</p>
+            </div>
+          </a>
         </div>
       </div>
-
-      <!-- Featured Sidebar (optional) -->
-      <div class="col-lg-3 featured-pane" *ngIf="featuredImage">
-        <img [src]="featuredImage" alt="Featured" class="img-fluid rounded-3 mb-3" style="width:100%; object-fit:cover;">
-        <p class="small text-muted mb-0" style="font-size:11px; line-height:1.5;">{{ featuredCaption }}</p>
-      </div>
-
     </div>
+
+    <!-- Featured Sidebar (optional) -->
+    <div class="w-full lg:w-[240px] p-6 bg-surface-container-low rounded-r-[16px] flex flex-col justify-start" *ngIf="featuredImage">
+      <img [src]="featuredImage" alt="Featured" class="w-full h-auto rounded-xl mb-3 object-cover">
+      <p class="text-[11px] text-text-muted leading-relaxed m-0">{{ featuredCaption }}</p>
+    </div>
+
   </div>
 </div>

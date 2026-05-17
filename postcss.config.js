@@ -4,3 +4,5 @@ module.exports = {
     autoprefixer: {},
   },
 };
+
+console.log('PostCSS is running');
