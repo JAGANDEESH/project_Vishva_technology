@@ -11,12 +11,13 @@ import { ProductPageData } from '../../../../shared/components/product-layout/pr
 export class WorkflowsComponent {
   pageData: ProductPageData = {
     themeColor: '#059669',
+    pageClass: 'workflow-theme',
     hero: {
       badgeIcon: 'bi-diagram-3 me-2',
       badgeText: 'Workflow Automation',
       title: 'Build Smarter Processes. Automate Every Step.',
       description: 'Design, deploy, and manage structured workflows with approvals, conditions, and automated actions — connecting your entire organisation without a single line of code.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Workflow_process.jpg',
       imageAlt: 'Workflow Automation Dashboard',
       imageCaptionIcon: 'bi-diagram-3-fill',
       imageCaptionText: 'Visual Workflow Builder',

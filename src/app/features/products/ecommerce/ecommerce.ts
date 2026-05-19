@@ -10,7 +10,9 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 })
 export class EcommerceComponent {
   pageData: ProductPageData = {
-    themeColor: '#f97316',
+    themeColor: '#0D4FD8',
+    accentGold: '#B98423',
+    pageClass: 'ecommerce-theme',
     hero: {
       badgeIcon: 'bi-cart3',
       badgeText: 'vSuite Commerce Ecosystem',

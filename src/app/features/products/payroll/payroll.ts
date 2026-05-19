@@ -10,7 +10,9 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 })
 export class PayrollComponent {
   pageData: ProductPageData = {
-    themeColor: '#6366f1',
+    themeColor: '#5F5F5F',
+    accentGold: '#B98423',
+    pageClass: 'payroll-theme',
     hero: {
       badgeIcon: 'bi-cash-stack',
       badgeText: 'vSuite PayRoll Ecosystem',

@@ -16,7 +16,7 @@ export class AiConsultingComponent {
       badgeText: 'AI Consulting',
       title: 'Turn AI Potential Into Business Reality.',
       description: 'Strategic, vendor-agnostic AI guidance — from readiness assessment and use-case discovery to roadmap planning and proof-of-concept delivery.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/AI-Consulting-Services.jpg',
       imageAlt: 'AI Consulting Dashboard',
       imageCaptionIcon: 'bi-map',
       imageCaptionText: 'Clear AI Roadmap',

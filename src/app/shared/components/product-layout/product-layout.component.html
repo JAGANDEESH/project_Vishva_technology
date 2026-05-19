@@ -60,23 +60,23 @@
       </p>
     </div>
 
-    <div class="row g-2 justify-content-center">
-      <div class="col-lg-4 col-md-6" *ngFor="let group of data.keyFeatures.groups; let i = index" data-aos="fade-up"
+    <div class="feature-cards-grid">
+      <div class="feature-col" *ngFor="let group of data.keyFeatures.groups; let i = index" data-aos="fade-up"
         [attr.data-aos-delay]="i * 100">
-        <div class="feature-card-premium h-100">
+        <div class="feature-card-premium">
           <div class="icon-box-modern mb-3">
             <i class="bi" [ngClass]="group.icon"></i>
           </div>
           <h4 class="fw-bold mb-3">{{ group.category }}</h4>
-          
+
           <ul class="list-unstyled feature-list-modern" *ngIf="group.items?.length">
             <li class="d-flex align-items-start" *ngFor="let item of group.items">
               <i class="bi bi-check2 me-3 mt-1 check-icon"></i>
               <span>{{ item }}</span>
             </li>
           </ul>
-          
-          <p class="text-muted mb-0" *ngIf="group.description && !group.items?.length" style="font-size: 0.95rem; line-height: 1.6;">
+
+          <p class="feature-card-desc mb-0" *ngIf="group.description && !group.items?.length">
             {{ group.description }}
           </p>
         </div>

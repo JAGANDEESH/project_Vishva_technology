@@ -61,6 +61,8 @@ export interface ProductCta {
 
 export interface ProductPageData {
   themeColor?: string;
+  accentGold?: string;
+  pageClass?: string;
   hero: ProductHero;
   keyFeatures?: ProductKeyFeatures;
   workflow?: ProductWorkflow;

@@ -16,7 +16,7 @@ export class RagSolutionsComponent {
       badgeText: 'RAG Solutions',
       title: 'AI Answers Grounded in Your Actual Data.',
       description: 'Retrieval-Augmented Generation delivers accurate, cited, context-aware AI responses — powered by your private knowledge base, not generic training data.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Rag_image.webp',
       imageAlt: 'RAG Solutions Dashboard',
       imageCaptionIcon: 'bi-chat-quote-fill',
       imageCaptionText: 'Context-Aware AI',

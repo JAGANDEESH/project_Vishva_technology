@@ -10,7 +10,9 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 })
 export class HrComponent {
   pageData: ProductPageData = {
-    themeColor: '#f43f5e',
+    themeColor: '#6F2DBD',
+    accentGold: '#B98423',
+    pageClass: 'hr-theme',
     hero: {
       badgeIcon: 'bi-people',
       badgeText: 'vSuite HR Ecosystem',

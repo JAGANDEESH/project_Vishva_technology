@@ -16,7 +16,7 @@ export class SolFinanceComponent {
       badgeText: 'Finance Solutions',
       title: 'Complete Financial Control. Zero Complexity.',
       description: 'From invoice automation to GST filing and real-time cash flow forecasting — one integrated platform to manage every aspect of your business finances with confidence.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Financial_solution.jpg',
       imageAlt: 'Finance Solutions Dashboard',
       imageCaptionIcon: 'bi-bank',
       imageCaptionText: 'GST-Ready Finance',

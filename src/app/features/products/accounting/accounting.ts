@@ -10,13 +10,13 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 })
 export class AccountingComponent {
   pageData: ProductPageData = {
-    themeColor: '#16a39a',
+    themeColor: '#059ABC',
     hero: {
       badgeIcon: 'bi-calculator',
       badgeText: 'vSuite Accounting Platform',
       title: 'Comprehensive Accounting Made Simple & Scalable',
       description: 'A complete financial management system for modern businesses — manage ledgers, automate billing cycles, track expenses, and generate real-time insights.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/vs suitable image/Accounting.jpg',
       imageAlt: 'vSuite Accounting platform',
       imageCaptionText: 'Full-spectrum financial management workspace',
       features: [

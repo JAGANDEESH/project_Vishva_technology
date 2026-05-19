@@ -2,10 +2,10 @@
 /* vSuite Accounting Modern UI */
 /* ===================================== */
 
-$acc: #16a39a;
-$acc-dark: #0d8f86;
-$acc-glow: rgba(22, 163, 154, 0.18);
-$acc-soft: rgba(22, 163, 154, 0.08);
+$acc: #059ABC;
+$acc-dark: #047a96;
+$acc-glow: rgba(5, 154, 188, 0.18);
+$acc-soft: rgba(5, 154, 188, 0.08);
 
 /* ===== GLOBAL ===== */
 
@@ -15,13 +15,13 @@ section {
 }
 
 body {
-  background: #f5fbf9;
+  background: #f2fafc;
 }
 
 .acc-gradient-text {
   background: linear-gradient(90deg,
       $acc,
-      #1eb6aa);
+      #07c5ef);
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -81,7 +81,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.7);
 
   box-shadow:
-    0 30px 80px rgba(22, 163, 154, 0.15),
+    0 30px 80px rgba(5, 154, 188, 0.15),
     0 10px 30px rgba(0, 0, 0, 0.05);
 
   animation: floatLogo 5s ease-in-out infinite;
@@ -381,7 +381,7 @@ body {
 
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.08),
-    0 8px 20px rgba(22, 163, 154, 0.08);
+    0 8px 20px rgba(5, 154, 188, 0.08);
 
   z-index: 20;
 
@@ -484,7 +484,7 @@ body {
 
     background: linear-gradient(90deg,
         $acc,
-        #22c5b6);
+        #07c5ef);
 
     border-radius: inherit;
   }
@@ -636,7 +636,7 @@ body {
 
   overflow: hidden;
 
-  background: #eef8f5;
+  background: #edf8fb;
 
   border-radius: 32px;
 

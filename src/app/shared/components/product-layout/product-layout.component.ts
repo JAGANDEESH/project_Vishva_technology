@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ElementRef, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit, ElementRef } from '@angular/core';
 import { NgFor, NgIf, NgClass } from '@angular/common';
 import { ProductPageData } from './product-layout.model';
 
@@ -22,6 +22,16 @@ const COLOR_PRESETS: Record<string, { hover: string; badgeText: string; dark: st
   '#be185d': { hover: '#9d174d', badgeText: '#831843', dark: '#691234' },
   '#1d4ed8': { hover: '#1e40af', badgeText: '#1e3a8a', dark: '#172554' },
   '#7e22ce': { hover: '#6b21a8', badgeText: '#581c87', dark: '#3b0764' },
+  '#059abc': { hover: '#047a96', badgeText: '#036a83', dark: '#2A4C50' },
+  '#059ABC': { hover: '#047a96', badgeText: '#036a83', dark: '#2A4C50' },
+  '#5F5F5F': { hover: '#4A4A4A', badgeText: '#3D3D3D', dark: '#2A2A2A' },
+  '#8A8A8A': { hover: '#6B6B6B', badgeText: '#5F5F5F', dark: '#4A4A4A' },
+  '#6F2DBD': { hover: '#5E22A0', badgeText: '#4B1D8F', dark: '#3A1570' },
+  '#0D4FD8': { hover: '#0B42B8', badgeText: '#083A9B', dark: '#062C78' },
+  '#0EA5E9': { hover: '#0284C7', badgeText: '#0369A1', dark: '#0C4A6E' },
+  '#0D9488': { hover: '#0F766E', badgeText: '#115E59', dark: '#134E4A' },
+  '#00b4d0': { hover: '#0097b2', badgeText: '#007a91', dark: '#006070' },
+  '#2563a8': { hover: '#1a4f8e', badgeText: '#153f74', dark: '#0f2f5a' },
 };
 
 function deriveColors(hex: string): { hover: string; badgeText: string; dark: string } {
@@ -40,15 +50,21 @@ function deriveColors(hex: string): { hover: string; badgeText: string; dark: st
 export class ProductLayoutComponent implements OnInit {
   @Input() data!: ProductPageData;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     const accent = this.data?.themeColor || '#198754';
     const derived = deriveColors(accent);
-    const host = this.el.nativeElement;
-    this.renderer.setStyle(host, '--accent-color', accent);
-    this.renderer.setStyle(host, '--accent-hover', derived.hover);
-    this.renderer.setStyle(host, '--accent-badge-text', derived.badgeText);
-    this.renderer.setStyle(host, '--accent-dark', derived.dark);
+    const host: HTMLElement = this.el.nativeElement;
+    host.style.setProperty('--accent-color', accent);
+    host.style.setProperty('--accent-hover', derived.hover);
+    host.style.setProperty('--accent-badge-text', derived.badgeText);
+    host.style.setProperty('--accent-dark', derived.dark);
+    if (this.data?.accentGold) {
+      host.style.setProperty('--accent-gold', this.data.accentGold);
+    }
+    if (this.data?.pageClass) {
+      this.data.pageClass.split(' ').forEach(cls => host.classList.add(cls));
+    }
   }
 }

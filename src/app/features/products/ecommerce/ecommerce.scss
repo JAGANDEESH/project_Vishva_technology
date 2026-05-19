@@ -10,7 +10,7 @@
   background:
     radial-gradient(circle at top right,
       color-mix(in srgb,
-        #f97316,
+        #0D4FD8,
         transparent 94%),
       transparent 40%),
 
@@ -30,7 +30,7 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 92%);
 
   &--1 {
@@ -103,10 +103,10 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 88%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   font-weight: 700;
 
@@ -134,7 +134,7 @@
 
   font-weight: 700;
 
-  color: #f97316;
+  color: #0D4FD8;
 }
 
 .ec-hero-sub {
@@ -152,7 +152,7 @@
 /* ===== Buttons ===== */
 
 .ec-btn-primary {
-  background: #f97316;
+  background: #0D4FD8;
 
   border: none;
 
@@ -162,7 +162,7 @@
 
   box-shadow:
     0 12px 30px color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 70%);
 
   transition: 0.3s ease;
@@ -178,17 +178,17 @@
 
 .ec-btn-outline {
   border: 1px solid color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 70%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   background: rgba(255, 255, 255, 0.7);
 
   font-weight: 700;
 
   &:hover {
-    background: #f97316;
+    background: #0D4FD8;
 
     color: white;
   }
@@ -233,7 +233,7 @@
 
     font-weight: 800;
 
-    color: #f97316;
+    color: #0D4FD8;
   }
 
   p {
@@ -254,10 +254,10 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 90%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   font-size: 12px;
 
@@ -369,13 +369,13 @@
 
     border-color:
       color-mix(in srgb,
-        #f97316,
+        #0D4FD8,
         transparent 70%);
 
     .highlight-icon {
       transform: scale(1.08);
 
-      background: #f97316;
+      background: #0D4FD8;
 
       color: white;
     }
@@ -391,7 +391,7 @@
     background:
       linear-gradient(90deg,
         color-mix(in srgb,
-          #f97316,
+          #0D4FD8,
           transparent 94%),
         transparent);
 
@@ -417,10 +417,10 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 88%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   display: flex;
 
@@ -457,7 +457,7 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 90%);
 
   display: flex;
@@ -467,13 +467,13 @@
 
   font-size: 32px;
 
-  color: #f97316;
+  color: #0D4FD8;
 
   transition: 0.4s ease;
 }
 
 .pillar-card:hover .pillar-icon-box {
-  background: #f97316;
+  background: #0D4FD8;
 
   color: white;
 
@@ -495,10 +495,10 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 92%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   font-weight: 700;
 
@@ -517,7 +517,7 @@
   }
 
   &:hover {
-    background: #f97316;
+    background: #0D4FD8;
 
     color: white;
 
@@ -562,7 +562,7 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 88%);
 
   display: flex;
@@ -570,7 +570,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #f97316;
+  color: #0D4FD8;
 
   font-size: 22px;
 }
@@ -627,13 +627,13 @@
   background:
     radial-gradient(circle at top right,
       color-mix(in srgb,
-        #f97316,
+        #0D4FD8,
         transparent 94%),
       transparent 40%),
 
     radial-gradient(circle at bottom left,
       color-mix(in srgb,
-        #f97316,
+        #0D4FD8,
         transparent 96%),
       transparent 35%);
 
@@ -676,7 +676,7 @@
     .ec-benefit-icon {
       transform: scale(1.08);
 
-      background: #f97316;
+      background: #0D4FD8;
 
       color: white;
     }
@@ -703,7 +703,7 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 88%);
 
   top: -80px;
@@ -724,10 +724,10 @@
 
   background:
     color-mix(in srgb,
-      #f97316,
+      #0D4FD8,
       transparent 90%);
 
-  color: #f97316;
+  color: #0D4FD8;
 
   display: flex;
 
@@ -752,7 +752,7 @@
 
   margin-bottom: 18px;
 
-  color: #f97316;
+  color: #0D4FD8;
 }
 
 /* ===== Title ===== */
@@ -788,7 +788,7 @@
   margin-top: 28px;
 
   background: linear-gradient(90deg,
-      #f97316,
+      #0D4FD8,
       transparent);
 
   transition: 0.45s ease;
@@ -835,9 +835,9 @@
 
   background:
     linear-gradient(135deg,
-      #f97316 0%,
+      #0D4FD8 0%,
       color-mix(in srgb,
-        #f97316,
+        #0D4FD8,
         #000 20%) 100%);
 
   overflow: hidden;
@@ -964,7 +964,7 @@
 .ec-btn-light {
   background: white;
 
-  color: #f97316;
+  color: #0D4FD8;
 
   font-weight: 700;
 
@@ -988,7 +988,7 @@
   &:hover {
     transform: translateY(-4px);
 
-    color: #f97316;
+    color: #0D4FD8;
 
     box-shadow:
       0 30px 70px rgba(0, 0, 0, 0.16);

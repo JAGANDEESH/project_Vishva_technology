@@ -16,7 +16,7 @@ export class IntegrationsComponent {
       badgeText: 'System Integrations',
       title: 'Connect Every System. Unify Your Data Flow.',
       description: 'Connect your business applications seamlessly — from ERP and CRM to specialised platforms — eliminating data silos and powering a fully unified operation.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/System-Integration.png',
       imageAlt: 'System Integrations Dashboard',
       imageCaptionIcon: 'bi-plug-fill',
       imageCaptionText: '100+ Ready Connectors',

@@ -10,7 +10,7 @@
   background:
     radial-gradient(circle at top right,
       color-mix(in srgb,
-        #6366f1,
+        #5F5F5F,
         transparent 94%),
       transparent 40%),
 
@@ -30,7 +30,7 @@
 
   background:
     color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 92%);
 
   &--1 {
@@ -103,10 +103,10 @@
 
   background:
     color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 88%);
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   font-weight: 700;
 
@@ -134,7 +134,7 @@
 
   font-weight: 700;
 
-  color: #6366f1;
+  color: #5F5F5F;
 }
 
 .pr-hero-sub {
@@ -152,7 +152,7 @@
 /* ===== Buttons ===== */
 
 .pr-btn-primary {
-  background: #6366f1;
+  background: #5F5F5F;
 
   border: none;
 
@@ -162,7 +162,7 @@
 
   box-shadow:
     0 12px 30px color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 70%);
 
   transition: 0.3s ease;
@@ -178,17 +178,17 @@
 
 .pr-btn-outline {
   border: 1px solid color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 70%);
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   background: rgba(255, 255, 255, 0.7);
 
   font-weight: 700;
 
   &:hover {
-    background: #6366f1;
+    background: #5F5F5F;
 
     color: white;
   }
@@ -233,7 +233,7 @@
 
     font-weight: 800;
 
-    color: #6366f1;
+    color: #5F5F5F;
   }
 
   p {
@@ -254,10 +254,10 @@
 
   background:
     color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 90%);
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   font-size: 12px;
 
@@ -372,14 +372,14 @@
     border-color:
       color-mix(
         in srgb,
-        #6366f1,
+        #5F5F5F,
         transparent 70%
       );
 
     .highlight-icon {
       transform: scale(1.08);
 
-      background: #6366f1;
+      background: #5F5F5F;
 
       color: white;
     }
@@ -397,7 +397,7 @@
         90deg,
         color-mix(
           in srgb,
-          #6366f1,
+          #5F5F5F,
           transparent 94%
         ),
         transparent
@@ -426,11 +426,11 @@
   background:
     color-mix(
       in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 88%
     );
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   display: flex;
 
@@ -467,7 +467,7 @@
 
   background:
     color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 90%);
 
   display: flex;
@@ -477,13 +477,13 @@
 
   font-size: 32px;
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   transition: 0.4s ease;
 }
 
 .pillar-card:hover .pillar-icon-box {
-  background: #6366f1;
+  background: #5F5F5F;
 
   color: white;
 
@@ -506,11 +506,11 @@
   background:
     color-mix(
       in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 92%
     );
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   font-weight: 700;
 
@@ -529,7 +529,7 @@
   }
 
   &:hover {
-    background: #6366f1;
+    background: #5F5F5F;
 
     color: white;
 
@@ -574,7 +574,7 @@
 
   background:
     color-mix(in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 88%);
 
   display: flex;
@@ -582,7 +582,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   font-size: 22px;
 }
@@ -643,7 +643,7 @@
       circle at top right,
       color-mix(
         in srgb,
-        #6366f1,
+        #5F5F5F,
         transparent 94%
       ),
       transparent 40%
@@ -653,7 +653,7 @@
       circle at bottom left,
       color-mix(
         in srgb,
-        #6366f1,
+        #5F5F5F,
         transparent 96%
       ),
       transparent 35%
@@ -700,7 +700,7 @@
     .pr-benefit-icon {
       transform: scale(1.08);
 
-      background: #6366f1;
+      background: #5F5F5F;
 
       color: white;
     }
@@ -728,7 +728,7 @@
   background:
     color-mix(
       in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 88%
     );
 
@@ -751,11 +751,11 @@
   background:
     color-mix(
       in srgb,
-      #6366f1,
+      #5F5F5F,
       transparent 90%
     );
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   display: flex;
 
@@ -780,7 +780,7 @@
 
   margin-bottom: 18px;
 
-  color: #6366f1;
+  color: #5F5F5F;
 }
 
 /* ===== Title ===== */
@@ -817,7 +817,7 @@
 
   background: linear-gradient(
     90deg,
-    #6366f1,
+    #5F5F5F,
     transparent
   );
 
@@ -865,9 +865,9 @@
 
   background:
     linear-gradient(135deg,
-      #6366f1 0%,
+      #5F5F5F 0%,
       color-mix(in srgb,
-        #6366f1,
+        #5F5F5F,
         #000 20%) 100%);
 
   overflow: hidden;
@@ -993,7 +993,7 @@
 .pr-btn-light {
   background: white;
 
-  color: #6366f1;
+  color: #5F5F5F;
 
   font-weight: 700;
 
@@ -1017,7 +1017,7 @@
   &:hover {
     transform: translateY(-4px);
 
-    color: #6366f1;
+    color: #5F5F5F;
 
     box-shadow:
       0 30px 70px rgba(0,0,0,0.16);

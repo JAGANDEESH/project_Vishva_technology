@@ -16,7 +16,7 @@ export class SolLogisticsComponent {
       badgeText: 'Logistics Solutions',
       title: 'Deliver On Time. Every Single Time.',
       description: 'From real-time shipment tracking to AI-driven route optimization and automated carrier management — one platform to move goods faster, cheaper, and smarter.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Logistics-service-in-bangalore-jpg.webp',
       imageAlt: 'Logistics Solutions Dashboard',
       imageCaptionIcon: 'bi-truck',
       imageCaptionText: '100+ Carrier Integrations',

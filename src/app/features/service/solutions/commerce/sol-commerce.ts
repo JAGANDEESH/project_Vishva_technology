@@ -16,7 +16,7 @@ export class SolCommerceComponent {
       badgeText: 'Commerce Solutions',
       title: 'Sell More. Faster. Smarter Commerce.',
       description: 'From multi-channel storefronts to AI-powered recommendations and real-time inventory sync — one unified platform to run, grow, and scale your entire commerce operation.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Commerce.webp',
       imageAlt: 'Commerce Solutions Dashboard',
       imageCaptionIcon: 'bi-bag-check',
       imageCaptionText: 'Omnichannel Commerce',

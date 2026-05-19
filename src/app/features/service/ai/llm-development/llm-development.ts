@@ -16,7 +16,7 @@ export class LlmDevelopmentComponent {
       badgeText: 'LLM Development',
       title: 'Build Language Models That Understand Your Business.',
       description: 'Custom Large Language Models trained on your data — delivering domain-specific intelligence, cost efficiency, and complete data privacy at scale.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/llm-development-services.jpg',
       imageAlt: 'LLM Development Dashboard',
       imageCaptionIcon: 'bi-cpu',
       imageCaptionText: 'Custom-Trained Models',
