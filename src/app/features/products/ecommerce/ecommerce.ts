@@ -18,7 +18,7 @@ export class EcommerceComponent {
       badgeText: 'vSuite Commerce Ecosystem',
       title: 'Scale Your Sales.<br>Deliver Seamless Shopping.',
       description: 'vSuite E-Commerce provides a robust, customizable storefront and checkout experience optimized for high conversions, empowering you to sell physical, digital, and B2B products globally.',
-      imageSrc: 'assets/img/hero/ecommerce-hero.png',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared image (3).jpg',
       imageAlt: 'vSuite E-Commerce platform',
       imageCaptionText: 'Powerful commerce engine for modern brands',
       features: [

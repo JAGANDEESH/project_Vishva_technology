@@ -16,7 +16,7 @@ export class VsuiteFinanceComponent {
       badgeText: 'vSuite Finance Suite',
       title: 'Smarter Finance Starts Here.',
       description: 'Unified billing and accounting intelligence designed for modern businesses. Manage invoices, ledgers, compliance, and cash flow from one powerful platform.',
-      imageSrc: 'assets/img/hero/vsuite-finance-hero.png',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
       imageAlt: 'vSuite Finance platform',
       imageCaptionText: 'Unified finance workspace for modern businesses',
       features: [

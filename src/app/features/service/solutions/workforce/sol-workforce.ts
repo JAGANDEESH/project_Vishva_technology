@@ -16,7 +16,7 @@ export class SolWorkforceComponent {
       badgeText: 'Workforce Solutions',
       title: 'Hire. Engage. Retain Your Best.',
       description: 'From automated payroll and compliance tracking to performance reviews and employee self-service — one platform to manage your entire workforce with confidence.',
-      imageSrc: 'assets/img/hero/workforce-hero.png',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
       imageAlt: 'Workforce Solutions Dashboard',
       imageCaptionIcon: 'bi-people',
       imageCaptionText: 'Complete HR Platform',

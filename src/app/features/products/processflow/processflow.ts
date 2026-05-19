@@ -16,7 +16,7 @@ export class ProcessflowComponent {
       badgeText: 'vSuite Process Automation',
       title: 'Automate Data.<br>Eliminate Manual Entry.',
       description: 'vSuite ProcessFlow harnesses AI-driven OCR to instantly extract, validate, and synchronize data from Bills of Lading, invoices, and receipts, directly connecting your operational documents to your core ERP systems.',
-      imageSrc: 'assets/img/hero/processflow-hero.png',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared image.jpg',
       imageAlt: 'vSuite ProcessFlow platform',
       imageCaptionText: 'Intelligent document processing for logistics',
       features: [

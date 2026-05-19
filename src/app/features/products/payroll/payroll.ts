@@ -18,7 +18,7 @@ export class PayrollComponent {
       badgeText: 'vSuite PayRoll Ecosystem',
       title: 'Simplify Payroll.<br>Empower Your Workforce.',
       description: 'vSuite PayRoll automates salary processing, ensures compliance, and streamlines employee payments — so you can manage your workforce with confidence and ease.',
-      imageSrc: 'assets/img/hero/payroll-hero.png',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(1).jpg',
       imageAlt: 'vSuite PayRoll platform',
       imageCaptionText: 'Automated payroll with full compliance',
       features: [

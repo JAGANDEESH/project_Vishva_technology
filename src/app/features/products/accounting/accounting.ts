@@ -16,7 +16,7 @@ export class AccountingComponent {
       badgeText: 'vSuite Accounting Platform',
       title: 'Comprehensive Accounting Made Simple & Scalable',
       description: 'A complete financial management system for modern businesses — manage ledgers, automate billing cycles, track expenses, and generate real-time insights.',
-      imageSrc: 'assets/img/hero/accounting-hero.png',
+      imageSrc: 'assets/img/vs suitable image/Accounting.jpg',
       imageAlt: 'vSuite Accounting platform',
       imageCaptionText: 'Full-spectrum financial management workspace',
       features: [
