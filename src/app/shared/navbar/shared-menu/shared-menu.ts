@@ -4,9 +4,10 @@ import { RouterLink } from '@angular/router';
 
 export interface MenuItem {
   title: string;
-  description: string;
-  icon: string;
-  link: string;
+  description?: string;
+  icon?: string;
+  link?: string;
+  children?: MenuItem[];
 }
 
 @Component({

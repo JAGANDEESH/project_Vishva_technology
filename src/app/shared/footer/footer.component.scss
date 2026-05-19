@@ -61,17 +61,14 @@
     margin-bottom: 20px;
 
     img {
-      max-height: 100px;
-      border-radius: 50%;
-      border: 2px solid var(--accent-color);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      max-height: 80px;
+      width: auto;
+      object-fit: contain;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     &:hover img {
-      transform: scale(1.08) rotate(-3deg);
-      border-color: rgba(255, 255, 255, 0.3);
-      box-shadow: 0 6px 20px rgba(43, 112, 212, 0.2);
+      transform: scale(1.05);
     }
   }
 
