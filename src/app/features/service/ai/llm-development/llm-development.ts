@@ -1,60 +1,53 @@
 import { Component } from '@angular/core';
-import { NgFor, NgClass } from '@angular/common';
+import { ProductLayoutComponent } from '../../../../shared/components/product-layout/product-layout.component';
+import { ProductPageData } from '../../../../shared/components/product-layout/product-layout.model';
 
 @Component({
   selector: 'app-llm-development',
   standalone: true,
-  imports: [NgFor, NgClass],
-  templateUrl: './llm-development.html',
-  styleUrl: './llm-development.scss'
+  imports: [ProductLayoutComponent],
+  template: '<app-product-layout [data]="pageData"></app-product-layout>',
 })
 export class LlmDevelopmentComponent {
-  capabilities = [
-    {
-      title: 'Custom Model Training',
-      description: 'Train domain-specific LLMs on your proprietary data for unmatched accuracy and contextual relevance.',
-      icon: 'bi-cpu'
+  pageData: ProductPageData = {
+    themeColor: '#1d4ed8',
+    hero: {
+      badgeIcon: 'bi-cpu me-2',
+      badgeText: 'LLM Development',
+      title: 'Build Language Models That Understand Your Business.',
+      description: 'Custom Large Language Models trained on your data — delivering domain-specific intelligence, cost efficiency, and complete data privacy at scale.',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageAlt: 'LLM Development Dashboard',
+      imageCaptionIcon: 'bi-cpu',
+      imageCaptionText: 'Custom-Trained Models',
+      features: [{"icon":"bi-shield-lock","text":"Privacy-First"},{"icon":"bi-patch-check","text":"Custom-Trained"},{"icon":"bi-cloud-check","text":"Production-Ready"}],
+      primaryButton: { text: 'Get Started Free', link: '#appointment', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'See a Demo', link: '#contact', icon: 'bi-play-circle' },
+      stats: [{"label":"Response Accuracy","value":"95%+","icon":"bi-patch-check"},{"label":"Cost vs. GPT-4 API","value":"60% ↓","icon":"bi-piggy-bank"},{"label":"Avg. Inference Speed","value":"<1s","icon":"bi-lightning-charge"},{"label":"Time to Deploy","value":"4 Wks","icon":"bi-clock-history"}]
     },
-    {
-      title: 'Fine-Tuning & Adaptation',
-      description: 'Fine-tune foundation models like GPT, LLaMA, or Mistral to align precisely with your business domain.',
-      icon: 'bi-sliders'
+    keyFeatures: {
+      title: 'What We Offer',
+      description: 'From data preparation to production deployment — complete LLM engineering services tailored to your domain.',
+      groups: [
+        {
+          category: 'Core Capabilities',
+          icon: 'bi-stars',
+          items: ["Custom Model Training: Train domain-specific LLMs on your proprietary data for unmatched accuracy and contextual relevance.","Fine-Tuning & Adaptation: Fine-tune foundation models like GPT, LLaMA, or Mistral to align precisely with your business domain.","Prompt Engineering: Design, test, and optimise prompts for consistent, high-quality outputs across all use cases.","LLM API Integration: Embed powerful language capabilities into your applications via clean, scalable API interfaces.","Model Evaluation: Benchmark model performance using rigorous evaluation frameworks, human feedback, and automated metrics.","Deployment & MLOps: Deploy models to production with full CI/CD pipelines, monitoring, and lifecycle management."]
+        }
+      ]
     },
-    {
-      title: 'Prompt Engineering',
-      description: 'Design, test, and optimise prompts for consistent, high-quality outputs across all use cases.',
-      icon: 'bi-chat-dots'
+    workflow: {
+      eyebrow: 'Built for domain-specific precision.',
+      title: 'Why Custom LLMs?',
+      description: 'See why our platform is the best choice for your organization.',
+      steps: [{"title":"Advantage","icon":"bi-check-circle","description":"Models trained on your private, proprietary data"},{"title":"Advantage","icon":"bi-check-circle","description":"Significantly lower cost vs. GPT-4 API at scale"},{"title":"Advantage","icon":"bi-check-circle","description":"Full data privacy — no third-party data sharing"},{"title":"Advantage","icon":"bi-check-circle","description":"Rapid iteration from prototype to production"},{"title":"Advantage","icon":"bi-check-circle","description":"Ongoing model retraining and performance tuning"},{"title":"Advantage","icon":"bi-check-circle","description":"Expert team with proven LLM deployments"}]
     },
-    {
-      title: 'LLM API Integration',
-      description: 'Embed powerful language capabilities into your applications via clean, scalable API interfaces.',
-      icon: 'bi-plug'
-    },
-    {
-      title: 'Model Evaluation',
-      description: 'Benchmark model performance using rigorous evaluation frameworks, human feedback, and automated metrics.',
-      icon: 'bi-bar-chart-line'
-    },
-    {
-      title: 'Deployment & MLOps',
-      description: 'Deploy models to production with full CI/CD pipelines, monitoring, and lifecycle management.',
-      icon: 'bi-cloud-upload'
+    cta: {
+      icon: 'bi-lightning-charge',
+      title: 'Ready to Get Started?',
+      description: '',
+      buttonText: 'Start Free Trial',
+      buttonLink: '#appointment'
     }
-  ];
-
-  whyChoose = [
-    'Models trained on your private, proprietary data',
-    'Significantly lower cost vs. GPT-4 API at scale',
-    'Full data privacy — no third-party data sharing',
-    'Rapid iteration from prototype to production',
-    'Ongoing model retraining and performance tuning',
-    'Expert team with proven LLM deployments'
-  ];
-
-  businessImpact = [
-    { label: 'Response Accuracy',    value: '95%+', icon: 'bi-patch-check'      },
-    { label: 'Cost vs. GPT-4 API',   value: '60% ↓', icon: 'bi-piggy-bank'     },
-    { label: 'Avg. Inference Speed', value: '<1s',  icon: 'bi-lightning-charge' },
-    { label: 'Time to Deploy',       value: '4 Wks', icon: 'bi-clock-history'   }
-  ];
+  };
 }

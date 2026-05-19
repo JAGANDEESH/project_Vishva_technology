@@ -1,60 +1,53 @@
 import { Component } from '@angular/core';
-import { NgFor, NgClass } from '@angular/common';
+import { ProductLayoutComponent } from '../../../../shared/components/product-layout/product-layout.component';
+import { ProductPageData } from '../../../../shared/components/product-layout/product-layout.model';
 
 @Component({
   selector: 'app-rag-solutions',
   standalone: true,
-  imports: [NgFor, NgClass],
-  templateUrl: './rag-solutions.html',
-  styleUrl: './rag-solutions.scss'
+  imports: [ProductLayoutComponent],
+  template: '<app-product-layout [data]="pageData"></app-product-layout>',
 })
 export class RagSolutionsComponent {
-  capabilities = [
-    {
-      title: 'Knowledge Base Construction',
-      description: 'Ingest, chunk, and index documents, PDFs, wikis, and databases into a structured, queryable knowledge base.',
-      icon: 'bi-database'
+  pageData: ProductPageData = {
+    themeColor: '#7e22ce',
+    hero: {
+      badgeIcon: 'bi-search me-2',
+      badgeText: 'RAG Solutions',
+      title: 'AI Answers Grounded in Your Actual Data.',
+      description: 'Retrieval-Augmented Generation delivers accurate, cited, context-aware AI responses — powered by your private knowledge base, not generic training data.',
+      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageAlt: 'RAG Solutions Dashboard',
+      imageCaptionIcon: 'bi-chat-quote-fill',
+      imageCaptionText: 'Context-Aware AI',
+      features: [{"icon":"bi-chat-quote","text":"Source-Cited"},{"icon":"bi-shield-check","text":"Private Data"},{"icon":"bi-arrow-repeat","text":"Real-Time Updates"}],
+      primaryButton: { text: 'Get Started Free', link: '#appointment', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'See a Demo', link: '#contact', icon: 'bi-play-circle' },
+      stats: [{"label":"Answer Accuracy","value":"97%","icon":"bi-patch-check"},{"label":"Hallucination Reduction","value":"90%","icon":"bi-shield-check"},{"label":"Query Response Time","value":"<2s","icon":"bi-lightning-charge"},{"label":"Data Sources Supported","value":"50+","icon":"bi-database"}]
     },
-    {
-      title: 'Semantic Search',
-      description: 'Find the most relevant content using vector similarity search — beyond keywords, by meaning.',
-      icon: 'bi-search'
+    keyFeatures: {
+      title: 'What We Offer',
+      description: 'Everything needed to build a knowledge-grounded AI assistant — from ingestion to intelligent response generation.',
+      groups: [
+        {
+          category: 'Core Capabilities',
+          icon: 'bi-stars',
+          items: ["Knowledge Base Construction: Ingest, chunk, and index documents, PDFs, wikis, and databases into a structured, queryable knowledge base.","Semantic Search: Find the most relevant content using vector similarity search — beyond keywords, by meaning.","Vector Database Integration: Seamlessly connect with Pinecone, Weaviate, Chroma, or pgvector for scalable embedding storage.","Document Ingestion Pipeline: Automated pipelines to continuously ingest, process, and refresh your knowledge sources.","Context-Aware Responses: Deliver precise, cited answers by grounding every LLM response in your actual data.","Hallucination Reduction: Constrain model outputs to verified sources, dramatically reducing fabricated or incorrect answers."]
+        }
+      ]
     },
-    {
-      title: 'Vector Database Integration',
-      description: 'Seamlessly connect with Pinecone, Weaviate, Chroma, or pgvector for scalable embedding storage.',
-      icon: 'bi-grid-3x3-gap'
+    workflow: {
+      eyebrow: 'Knowledge that stays current, always.',
+      title: 'Why RAG over Fine-Tuning?',
+      description: 'See why our platform is the best choice for your organization.',
+      steps: [{"title":"Advantage","icon":"bi-check-circle","description":"Answers grounded in your real, up-to-date data"},{"title":"Advantage","icon":"bi-check-circle","description":"Every response includes traceable source citations"},{"title":"Advantage","icon":"bi-check-circle","description":"Works with private, on-premise data securely"},{"title":"Advantage","icon":"bi-check-circle","description":"Integrates with any LLM provider or custom model"},{"title":"Advantage","icon":"bi-check-circle","description":"Continuously updated as your knowledge evolves"},{"title":"Advantage","icon":"bi-check-circle","description":"Dramatically reduces hallucination risk"}]
     },
-    {
-      title: 'Document Ingestion Pipeline',
-      description: 'Automated pipelines to continuously ingest, process, and refresh your knowledge sources.',
-      icon: 'bi-file-earmark-arrow-up'
-    },
-    {
-      title: 'Context-Aware Responses',
-      description: 'Deliver precise, cited answers by grounding every LLM response in your actual data.',
-      icon: 'bi-chat-quote'
-    },
-    {
-      title: 'Hallucination Reduction',
-      description: 'Constrain model outputs to verified sources, dramatically reducing fabricated or incorrect answers.',
-      icon: 'bi-shield-check'
+    cta: {
+      icon: 'bi-lightning-charge',
+      title: 'Ready to Get Started?',
+      description: '',
+      buttonText: 'Start Free Trial',
+      buttonLink: '#appointment'
     }
-  ];
-
-  whyChoose = [
-    'Answers grounded in your real, up-to-date data',
-    'Every response includes traceable source citations',
-    'Works with private, on-premise data securely',
-    'Integrates with any LLM provider or custom model',
-    'Continuously updated as your knowledge evolves',
-    'Dramatically reduces hallucination risk'
-  ];
-
-  businessImpact = [
-    { label: 'Answer Accuracy',          value: '97%',  icon: 'bi-patch-check'   },
-    { label: 'Hallucination Reduction',  value: '90%',  icon: 'bi-shield-check'  },
-    { label: 'Query Response Time',      value: '<2s',  icon: 'bi-lightning-charge' },
-    { label: 'Data Sources Supported',   value: '50+',  icon: 'bi-database'      }
-  ];
+  };
 }
