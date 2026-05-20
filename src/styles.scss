@@ -714,12 +714,14 @@ section,
 
   .navmenu a:hover:before,
   .navmenu li:hover>a:before,
+  .navmenu li.menu-open>a:before,
   .navmenu .active:before {
     visibility: visible;
     width: 100%;
   }
 
   .navmenu li:hover>a,
+  .navmenu li.menu-open>a,
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
@@ -744,20 +746,20 @@ section,
     border: 1px solid rgba(0, 0, 0, 0.04);
     pointer-events: none;
 
-    /* Hover Bridge: Keeps menu open while moving cursor from link to dropdown */
+    /* Thin bridge to cover the transform gap so mouseleave doesn't fire mid-travel */
     &::before {
       content: "";
       position: absolute;
-      top: -25px;
+      top: -8px;
       left: 0;
       right: 0;
-      height: 30px;
+      height: 8px;
       background: transparent;
     }
   }
 
-  .navmenu .dropdown:hover>ul,
-  .navmenu .dropdown:hover>app-shared-menu {
+  .navmenu .dropdown.menu-open>ul,
+  .navmenu .dropdown.menu-open>app-shared-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(5px);
@@ -785,9 +787,13 @@ section,
     padding: 10px 20px;
     font-size: 15px;
     color: var(--nav-dropdown-color);
+    justify-content: flex-start;
+    gap: 8px;
   }
   .navmenu .dropdown ul li a i {
     font-size: 14px;
+    margin-left: 0;
+    flex-shrink: 0;
   }
   .navmenu .dropdown ul li a:hover,
   .navmenu .dropdown ul li:hover > a {
@@ -801,12 +807,13 @@ section,
     left: 100%;
     transform: translateX(10px);
 
+    /* Left bridge covers the gap and gives a generous diagonal safe corridor */
     &::before {
       top: 0;
-      left: -25px;
+      left: -40px;
       right: auto;
       bottom: 0;
-      width: 30px;
+      width: 44px;
       height: 100%;
     }
   }
@@ -815,6 +822,7 @@ section,
     opacity: 1;
     visibility: visible;
     transform: translateX(0);
+    pointer-events: all;
   }
 }
 
@@ -1249,7 +1257,7 @@ section,
   content: "";
   position: absolute;
   inset: 0;
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
   z-index: 2;
 }
 

@@ -15,8 +15,9 @@ import { MenuItem } from './shared-menu/shared-menu';
 export class NavbarComponent implements OnInit {
   isScrolled = false;
   mobileNavOpen = false;
+  activeMenu: string | null = null;
+  private menuTimer: any = null;
   productsOpen = false;
-  vSuiteOpen = false;
   vSuiteFinanceOpen = false;
   vSuiteWorkforceOpen = false;
   vSuiteCommerceOpen = false;
@@ -28,34 +29,33 @@ export class NavbarComponent implements OnInit {
 
   productItems: MenuItem[] = [
     {
-      title: 'vSuite',
+      title: 'vSuite Finance',
+      icon: 'bi-wallet2',
       children: [
-        {
-          title: 'vSuite Finance',
-          children: [
-            { title: 'vSuite Billing', link: '/products/billing' },
-            { title: 'vSuite Accounting', link: '/products/accounting' }
-          ]
-        },
-        {
-          title: 'vSuite Workforce',
-          children: [
-            { title: 'vSuite Payroll', link: '/products/payroll' },
-            { title: 'vSuite Workbench', link: '/products/hr' }
-          ]
-        },
-        {
-          title: 'vSuite Commerce',
-          children: [
-            { title: 'vSuite E-Commerce', link: '/products/ecommerce' }
-          ]
-        },
-        {
-          title: 'vSuite Logistics',
-          children: [
-            { title: 'vSuite ProcessFlow', link: '/products/processflow' }
-          ]
-        }
+        { title: 'vSuite Billing',    icon: 'bi-receipt',    link: '/products/billing' },
+        { title: 'vSuite Accounting', icon: 'bi-calculator', link: '/products/accounting' }
+      ]
+    },
+    {
+      title: 'vSuite Workforce',
+      icon: 'bi-people',
+      children: [
+        { title: 'vSuite Payroll',    icon: 'bi-cash-stack',   link: '/products/payroll' },
+        { title: 'vSuite Workbench',  icon: 'bi-person-badge', link: '/products/hr' }
+      ]
+    },
+    {
+      title: 'vSuite Commerce',
+      icon: 'bi-bag',
+      children: [
+        { title: 'vSuite E-Commerce', icon: 'bi-cart3', link: '/products/ecommerce' }
+      ]
+    },
+    {
+      title: 'vSuite Logistics',
+      icon: 'bi-truck',
+      children: [
+        { title: 'vSuite ProcessFlow', icon: 'bi-diagram-3', link: '/products/processflow' }
       ]
     }
   ];
@@ -115,7 +115,6 @@ export class NavbarComponent implements OnInit {
 
   private closeAllAccordions(): void {
     this.productsOpen = false;
-    this.vSuiteOpen = false;
     this.vSuiteFinanceOpen = false;
     this.vSuiteWorkforceOpen = false;
     this.vSuiteCommerceOpen = false;
@@ -125,14 +124,16 @@ export class NavbarComponent implements OnInit {
     this.solutionsOpen = false;
   }
 
-  toggleProducts(): void { this.productsOpen = !this.productsOpen; }
-  toggleVSuite(event?: Event): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.vSuiteOpen = !this.vSuiteOpen;
+  onMenuEnter(menu: string): void {
+    if (this.menuTimer) { clearTimeout(this.menuTimer); this.menuTimer = null; }
+    this.activeMenu = menu;
   }
+
+  onMenuLeave(): void {
+    this.menuTimer = setTimeout(() => { this.activeMenu = null; }, 120);
+  }
+
+  toggleProducts(): void { this.productsOpen = !this.productsOpen; }
   toggleVSuiteFinance(event?: Event): void {
     if (event) {
       event.preventDefault();
