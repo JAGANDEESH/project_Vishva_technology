@@ -18,7 +18,7 @@ export class HrComponent {
       badgeText: 'vSuite HR Ecosystem',
       title: 'Empower Your Team.<br>Simplify HR Operations.',
       description: 'vSuite HR streamlines everything from onboarding to performance tracking, enabling you to build a culture of growth, efficiency, and continuous engagement.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared image (2).jpg',
+      imageSrc: 'assets/img/hero/hr-hero.png',
       imageAlt: 'vSuite HR platform',
       imageCaptionText: 'Complete employee lifecycle management',
       features: [

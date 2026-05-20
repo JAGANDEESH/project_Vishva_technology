@@ -16,7 +16,7 @@ export class BillingComponent {
       badgeText: 'Trusted Billing Platform',
       title: 'Smart Billing Software for Modern Businesses',
       description: 'Manage invoices, automate GST calculations, track payments, and streamline financial operations with an intelligent cloud-based billing platform built for growing businesses.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/hero/billing-hero.png',
       imageAlt: 'vSuite Billing software preview',
       imageCaptionText: 'Cloud billing workspace with GST-ready workflows',
       features: [
