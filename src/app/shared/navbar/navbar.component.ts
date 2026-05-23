@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
       icon: 'bi-people',
       children: [
         { title: 'vSuite Payroll',    icon: 'bi-cash-stack',   link: '/products/payroll' },
-        { title: 'vSuite Workbench',  icon: 'bi-person-badge', link: '/products/hr' }
+        { title: 'vSuite Human-Resource',  icon: 'bi-person-badge', link: '/products/hr' }
       ]
     },
     {
@@ -186,5 +186,9 @@ export class NavbarComponent implements OnInit {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  isHome(): boolean {
+    return this.router.url === '/' || this.router.url.split('#')[0] === '/' || this.router.url === '';
   }
 }

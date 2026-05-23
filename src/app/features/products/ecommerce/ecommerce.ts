@@ -27,8 +27,8 @@ export class EcommerceComponent {
         { icon: 'bi-graph-up-arrow', text: 'Smart Analytics' },
         { icon: 'bi-shield-lock', text: 'Secure & Reliable' }
       ],
-      primaryButton: { text: 'Launch Your Store', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'View Demo', link: '#contact', icon: 'bi-play-circle' },
+      primaryButton: { text: 'Launch Your Store', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'View Demo', link: '', icon: 'bi-play-circle' },
       stats: [
         { value: '2×', label: 'Faster Checkout' },
         { value: '+35%', label: 'Cart Conversion' },
@@ -72,7 +72,7 @@ export class EcommerceComponent {
       title: 'Ready to launch your online store?',
       description: 'Join forward-thinking brands using vSuite to scale faster and smarter.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

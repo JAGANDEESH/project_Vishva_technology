@@ -27,8 +27,8 @@ export class PayrollComponent {
         { icon: 'bi-people', text: 'Employee Portal' },
         { icon: 'bi-bar-chart', text: 'Reports & Analytics' }
       ],
-      primaryButton: { text: 'Get Started Free', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'View Demo', link: '#contact', icon: 'bi-play-circle' },
+      primaryButton: { text: 'Get Started Free', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'View Demo', link: '', icon: 'bi-play-circle' },
       stats: [
         { value: '60%', label: 'Time Saved on Payroll' },
         { value: '100%', label: 'Statutory Compliance' },
@@ -71,7 +71,7 @@ export class PayrollComponent {
       title: 'Ready to automate your payroll?',
       description: 'Join organizations using vSuite PayRoll to process salaries faster and smarter.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

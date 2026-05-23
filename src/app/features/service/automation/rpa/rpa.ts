@@ -28,8 +28,8 @@ export class RpaComponent {
         { icon: 'bi-file-earmark-text', text: 'Smart Extraction' },
         { icon: 'bi-bar-chart-line', text: 'Bot Analytics'      }
       ],
-      primaryButton:   { text: 'Request a Demo',   link: '#appointment', icon: 'bi-calendar-check' },
-      secondaryButton: { text: 'See How It Works', link: '#contact',     icon: 'bi-play-circle'    },
+      primaryButton:   { text: 'Request a Demo',   link: '', icon: 'bi-calendar-check' },
+      secondaryButton: { text: 'See How It Works', link: '',     icon: 'bi-play-circle'    },
       stats: [
         { label: 'Process Speed Increase', value: '10×'   },
         { label: 'Operational Cost Cut',   value: '60%'   },
@@ -116,7 +116,7 @@ export class RpaComponent {
       title: 'Ready to Automate Your Operations?',
       description: 'Join enterprises using vSuite RPA to eliminate manual work, reduce errors, and achieve 24/7 operational efficiency at scale.',
       buttonText: 'Request a Demo',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

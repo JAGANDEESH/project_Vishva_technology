@@ -39,9 +39,9 @@ import { ContactComponent } from './sections/contact/contact.component';
     <app-stats></app-stats>
     <app-why-choose-us></app-why-choose-us>
     <app-services></app-services>
+    <app-expertise></app-expertise>
     <app-ai-automation></app-ai-automation>
     <app-quote></app-quote>
-    <app-expertise></app-expertise>
     <app-portfolio></app-portfolio>
     <app-team></app-team>
     <app-faq></app-faq>

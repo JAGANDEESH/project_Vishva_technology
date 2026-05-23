@@ -27,8 +27,8 @@ export class HrComponent {
         { icon: 'bi-person-plus', text: 'Recruitment' },
         { icon: 'bi-award', text: 'Performance Reviews' }
       ],
-      primaryButton: { text: 'Get Started Free', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'View Demo', link: '#contact', icon: 'bi-play-circle' },
+      primaryButton: { text: 'Get Started Free', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'View Demo', link: '', icon: 'bi-play-circle' },
       stats: [
         { value: '50%', label: 'Faster Hiring' },
         { value: '98%', label: 'Employee Engagement' },
@@ -71,7 +71,7 @@ export class HrComponent {
       title: 'Ready to transform your HR operations?',
       description: 'Join organizations using vSuite HR to build engaged, productive teams.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

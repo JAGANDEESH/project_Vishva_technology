@@ -25,8 +25,8 @@ export class AccountingComponent {
         { icon: 'bi-cash-coin', text: 'Cash Flow' },
         { icon: 'bi-graph-up', text: 'Business Insights' }
       ],
-      primaryButton: { text: 'Start Free Trial', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'View Demo', link: '#contact', icon: 'bi-play-circle' },
+      primaryButton: { text: 'Start Free Trial', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'View Demo', link: '', icon: 'bi-play-circle' },
       stats: [
         { value: '70%', label: 'Manual Effort Reduction' },
         { value: '100%', label: 'Cash Flow Visibility' },
@@ -70,7 +70,7 @@ export class AccountingComponent {
       title: 'Ready to simplify your accounting?',
       description: 'Join businesses using vSuite Accounting for complete financial clarity.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

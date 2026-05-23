@@ -32,10 +32,27 @@
       </div>
 
       <div class="hero-actions">
-        <a [href]="data.hero.primaryButton.link" class="btn btn-billing">
+        <!-- Primary Button -->
+        <a *ngIf="data.hero.primaryButton.link && isAnchorLink(data.hero.primaryButton.link)" href="javascript:void(0)" class="btn btn-billing" (click)="navigateToAnchor(data.hero.primaryButton.link, $event)">
           {{ data.hero.primaryButton.text }} <i class="bi ms-2" [ngClass]="data.hero.primaryButton.icon || 'bi-arrow-right'"></i>
         </a>
-        <a *ngIf="data.hero.secondaryButton" [href]="data.hero.secondaryButton.link" class="btn btn-outline-billing">
+        <a *ngIf="data.hero.primaryButton.link && !isAnchorLink(data.hero.primaryButton.link)" [routerLink]="data.hero.primaryButton.link" class="btn btn-billing">
+          {{ data.hero.primaryButton.text }} <i class="bi ms-2" [ngClass]="data.hero.primaryButton.icon || 'bi-arrow-right'"></i>
+        </a>
+        <a *ngIf="!data.hero.primaryButton.link" href="javascript:void(0)" class="btn btn-billing opacity-75 cursor-default" (click)="$event.preventDefault()">
+          {{ data.hero.primaryButton.text }} <i class="bi ms-2" [ngClass]="data.hero.primaryButton.icon || 'bi-arrow-right'"></i>
+        </a>
+
+        <!-- Secondary Button -->
+        <a *ngIf="data.hero.secondaryButton && data.hero.secondaryButton.link && isAnchorLink(data.hero.secondaryButton.link)" href="javascript:void(0)" class="btn btn-outline-billing" (click)="navigateToAnchor(data.hero.secondaryButton.link, $event)">
+          <i *ngIf="data.hero.secondaryButton.icon" class="bi me-2" [ngClass]="data.hero.secondaryButton.icon"></i>
+          {{ data.hero.secondaryButton.text }}
+        </a>
+        <a *ngIf="data.hero.secondaryButton && data.hero.secondaryButton.link && !isAnchorLink(data.hero.secondaryButton.link)" [routerLink]="data.hero.secondaryButton.link" class="btn btn-outline-billing">
+          <i *ngIf="data.hero.secondaryButton.icon" class="bi me-2" [ngClass]="data.hero.secondaryButton.icon"></i>
+          {{ data.hero.secondaryButton.text }}
+        </a>
+        <a *ngIf="data.hero.secondaryButton && !data.hero.secondaryButton.link" href="javascript:void(0)" class="btn btn-outline-billing opacity-75 cursor-default" (click)="$event.preventDefault()">
           <i *ngIf="data.hero.secondaryButton.icon" class="bi me-2" [ngClass]="data.hero.secondaryButton.icon"></i>
           {{ data.hero.secondaryButton.text }}
         </a>
@@ -140,7 +157,13 @@
     <i class="bi cta-icon mb-4 d-block" [ngClass]="data.cta.icon"></i>
     <h3 class="display-5 fw-bold mb-3">{{ data.cta.title }}</h3>
     <p class="cta-sub mb-5">{{ data.cta.description }}</p>
-    <a [href]="data.cta.buttonLink" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+    <a *ngIf="data.cta.buttonLink && isAnchorLink(data.cta.buttonLink)" href="javascript:void(0)" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold" (click)="navigateToAnchor(data.cta.buttonLink, $event)">
+      {{ data.cta.buttonText }} <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+    <a *ngIf="data.cta.buttonLink && !isAnchorLink(data.cta.buttonLink)" [routerLink]="data.cta.buttonLink" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold">
+      {{ data.cta.buttonText }} <i class="bi bi-arrow-right ms-2"></i>
+    </a>
+    <a *ngIf="!data.cta.buttonLink" href="javascript:void(0)" class="btn btn-white-primary btn-lg rounded-pill px-5 py-3 fw-bold opacity-75 cursor-default" (click)="$event.preventDefault()">
       {{ data.cta.buttonText }} <i class="bi bi-arrow-right ms-2"></i>
     </a>
   </div>

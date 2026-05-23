@@ -39,6 +39,9 @@
           <div *ngIf="loading" style="text-align:center; padding:15px; margin-bottom:20px;">
             Submitting your request...
           </div>
+          <div *ngIf="errorMessage" style="background:#e74c3c; color:#fff; padding:15px; margin-bottom:20px; text-align:center; font-weight:600; border-radius:4px;">
+            {{ errorMessage }}
+          </div>
 
           <div class="row" style="gap: 0;">
             <div class="col-md-6 form-group">

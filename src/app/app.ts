@@ -13,14 +13,8 @@ import { FooterComponent } from './shared/footer/footer.component';
       <div class="preloader-glow preloader-glow-1"></div>
       <div class="preloader-glow preloader-glow-2"></div>
       <div class="preloader-inner">
-        <div class="preloader-orbit-container">
-          <div class="orbit orbit-3"></div>
-          <div class="orbit orbit-2"></div>
-          <div class="orbit orbit-1"></div>
-          <div class="preloader-core">VT</div>
-        </div>
+        <img src="assets/Logo3.jpeg" alt="Vishva Technologies" class="preloader-logo">
         <div class="preloader-progress"><div class="preloader-progress-bar"></div></div>
-        // <p class="preloader-tagline">Vishva Technologies</p>
         <p class="preloader-sub">Building Tomorrow's Solutions</p>
       </div>
     </div>

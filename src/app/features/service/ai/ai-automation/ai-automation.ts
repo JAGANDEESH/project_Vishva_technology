@@ -28,8 +28,8 @@ export class AiAutomationComponent {
         { icon: 'bi-cpu',              text: 'Self-Learning Models'  },
         { icon: 'bi-person-check',     text: 'Human-in-the-Loop'    }
       ],
-      primaryButton:   { text: 'Request a Demo',   link: '#appointment', icon: 'bi-calendar-check' },
-      secondaryButton: { text: 'See How It Works', link: '#contact',     icon: 'bi-play-circle'    },
+      primaryButton:   { text: 'Request a Demo',   link: '', icon: 'bi-calendar-check' },
+      secondaryButton: { text: 'See How It Works', link: '',     icon: 'bi-play-circle'    },
       stats: [
         { label: 'Process Automation Rate', value: '85%'   },
         { label: 'Human Effort Reduced',    value: '80%'   },
@@ -116,7 +116,7 @@ export class AiAutomationComponent {
       title: 'Ready to Automate Smarter?',
       description: 'Join leading enterprises using Vishva AI Automation to eliminate manual work, reduce errors, and unlock operational efficiency at scale.',
       buttonText: 'Request a Demo',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

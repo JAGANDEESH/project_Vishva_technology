@@ -16,7 +16,7 @@ export class VsuiteFinanceComponent {
       badgeText: 'vSuite Finance Suite',
       title: 'Smarter Finance Starts Here.',
       description: 'Unified billing and accounting intelligence designed for modern businesses. Manage invoices, ledgers, compliance, and cash flow from one powerful platform.',
-      imageSrc: 'assets/img/vs%20suitable%20image/shared%20image%20(4).jpg',
+      imageSrc: 'assets/img/Financial_solution.jpg',
       imageAlt: 'vSuite Finance platform',
       imageCaptionText: 'Unified finance workspace for modern businesses',
       features: [
@@ -25,7 +25,7 @@ export class VsuiteFinanceComponent {
         { icon: 'bi-graph-up', text: 'Real-time Insights' },
         { icon: 'bi-shield-check', text: 'Compliance Ready' }
       ],
-      primaryButton: { text: 'Start Free Trial', link: '#appointment', icon: 'bi-arrow-right' },
+      primaryButton: { text: 'Start Free Trial', link: '', icon: 'bi-arrow-right' },
       secondaryButton: { text: 'Explore Products', link: '/products/billing' },
       stats: [
         { value: '70%', label: 'Reduce Manual Effort' },
@@ -75,7 +75,7 @@ export class VsuiteFinanceComponent {
       title: 'Ready to transform your financial operations?',
       description: 'Join businesses using vSuite Finance to automate, analyze, and grow smarter.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

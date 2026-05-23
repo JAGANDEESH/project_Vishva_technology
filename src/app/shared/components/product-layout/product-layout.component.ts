@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ElementRef } from '@angular/core';
-import { NgFor, NgIf, NgClass } from '@angular/common';
+import { Component, Input, OnInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { NgFor, NgIf, NgClass, isPlatformBrowser } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { ProductPageData } from './product-layout.model';
 
 // Color presets mapping accent hex to derived values
@@ -43,14 +44,18 @@ function deriveColors(hex: string): { hover: string; badgeText: string; dark: st
 @Component({
   selector: 'app-product-layout',
   standalone: true,
-  imports: [NgFor, NgIf, NgClass],
+  imports: [NgFor, NgIf, NgClass, RouterLink],
   templateUrl: './product-layout.component.html',
   styleUrl: './product-layout.component.scss'
 })
 export class ProductLayoutComponent implements OnInit {
   @Input() data!: ProductPageData;
 
-  constructor(private el: ElementRef) {}
+  constructor(
+    private el: ElementRef,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     const accent = this.data?.themeColor || '#198754';
@@ -66,5 +71,28 @@ export class ProductLayoutComponent implements OnInit {
     if (this.data?.pageClass) {
       this.data.pageClass.split(' ').forEach(cls => host.classList.add(cls));
     }
+  }
+
+  /** Check if a link is an anchor hash (e.g. #appointment) */
+  isAnchorLink(link: string): boolean {
+    return link?.startsWith('#') ?? false;
+  }
+
+  /** Navigate to an anchor link - goes to home page with fragment */
+  navigateToAnchor(link: string, event: Event): void {
+    event.preventDefault();
+    if (!link) return;
+    const fragment = link.replace('#', '');
+
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.router.navigate(['/'], { fragment }).then(() => {
+      setTimeout(() => {
+        const el = document.getElementById(fragment);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    });
   }
 }

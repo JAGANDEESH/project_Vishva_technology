@@ -25,8 +25,8 @@ export class ProcessflowComponent {
         { icon: 'bi-shuffle', text: 'System Integration' },
         { icon: 'bi-check-all', text: 'Reconciliation' }
       ],
-      primaryButton: { text: 'Start Automating', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'View Demo', link: '#contact', icon: 'bi-play-circle' },
+      primaryButton: { text: 'Start Automating', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'View Demo', link: '', icon: 'bi-play-circle' },
       stats: [
         { value: '70%', label: 'Processing Time Cut' },
         { value: '95%', label: 'Manual Errors Reduced' },
@@ -69,7 +69,7 @@ export class ProcessflowComponent {
       title: 'Ready to automate your document workflows?',
       description: 'Join logistics teams using vSuite ProcessFlow to eliminate manual data entry.',
       buttonText: 'Get Started Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }

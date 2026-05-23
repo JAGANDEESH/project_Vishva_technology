@@ -18,6 +18,7 @@ import { SolFinanceComponent } from './features/service/solutions/finance/sol-fi
 import { SolCommerceComponent } from './features/service/solutions/commerce/sol-commerce';
 import { SolWorkforceComponent } from './features/service/solutions/workforce/sol-workforce';
 import { SolLogisticsComponent } from './features/service/solutions/logistics/sol-logistics';
+import { PrivacyPolicyComponent } from './features/shared/privacy-policy/privacy-policy';
 
 export const routes: Routes = [
   {
@@ -96,6 +97,10 @@ export const routes: Routes = [
   {
     path: 'service/solutions/logistics',
     component: SolLogisticsComponent
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
   },
   {
     path: 'service/:category/:id',

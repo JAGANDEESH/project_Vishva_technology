@@ -25,8 +25,8 @@ export class BillingComponent {
         { icon: 'bi-lightning-charge', text: 'Automated Invoicing' },
         { icon: 'bi-cloud-check', text: 'Secure Cloud Access' }
       ],
-      primaryButton: { text: 'Start Free Trial', link: '#appointment', icon: 'bi-arrow-right' },
-      secondaryButton: { text: 'Schedule Demo', link: '#contact' },
+      primaryButton: { text: 'Start Free Trial', link: '', icon: 'bi-arrow-right' },
+      secondaryButton: { text: 'Schedule Demo', link: '' },
       stats: [
         { value: '500+', label: 'Businesses' },
         { value: '99.9%', label: 'Uptime' },
@@ -98,7 +98,7 @@ export class BillingComponent {
       title: 'Ready to simplify your billing process?',
       description: 'Join hundreds of forward-thinking businesses using vSuite to scale faster and smarter.',
       buttonText: 'Join vSuite Today',
-      buttonLink: '#appointment'
+      buttonLink: ''
     }
   };
 }
