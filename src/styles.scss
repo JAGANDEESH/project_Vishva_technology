@@ -416,13 +416,23 @@ h6 {
   line-height: 0;
 }
 
+@keyframes scroll-top-bounce-in {
+  0%   { opacity: 0; transform: translateY(10px) scale(0.75); }
+  55%  { transform: translateY(-4px) scale(1.12); }
+  80%  { transform: translateY(2px)  scale(0.96); }
+  100% { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
 .scroll-top:hover {
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 8px 20px rgba(43, 112, 212, 0.45);
 }
 
 .scroll-top.active {
   visibility: visible;
   opacity: 1;
+  animation: scroll-top-bounce-in 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 /* ================================================
@@ -500,8 +510,11 @@ section,
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .header .topbar {
@@ -576,6 +589,13 @@ section,
   background-color: var(--background-color);
 }
 
+/* Stretch the inner container edge-to-edge with breathing room */
+.header .branding .container {
+  max-width: 100%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 /* --- Logo Container --- */
 .header .logo {
   line-height: 1;
@@ -644,13 +664,29 @@ section,
   font-weight: 500;
   letter-spacing: 0.3px;
   box-shadow: 0 2px 8px rgba(43, 112, 212, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.header .cta-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.5s ease;
+  border-radius: inherit;
+}
+
+.header .cta-btn:hover::after {
+  transform: translateX(110%);
 }
 
 .header .cta-btn:hover {
   background: linear-gradient(135deg, #1a5bb5 0%, var(--accent-color) 100%);
   color: var(--contrast-color);
-  box-shadow: 0 4px 14px rgba(43, 112, 212, 0.35);
-  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(43, 112, 212, 0.45);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1200px) {
@@ -669,14 +705,32 @@ section,
   }
 }
 
-/* --- Scrolled State --- */
+/* Desktop: true 3-column layout — Logo | Nav (centered) | CTA (far right) */
+@media (min-width: 1200px) {
+  .header .branding .container {
+    display: grid !important;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+
+  .header .logo {
+    margin-right: 0;
+    justify-self: start;
+  }
+
+  .header .cta-btn {
+    margin-left: 0;
+    justify-self: end;
+  }
+}
+
+/* --- Scrolled State with Glassmorphism --- */
 .header.scrolled {
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid transparent;
-  background-image: linear-gradient(var(--background-color), var(--background-color)),
-    linear-gradient(90deg, transparent, rgba(43, 112, 212, 0.15), transparent);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
+  background: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 4px 28px rgba(27, 46, 94, 0.13);
+  border-bottom: 1px solid rgba(43, 112, 212, 0.1);
 }
 
 .header.scrolled .branding {
@@ -697,6 +751,59 @@ section,
   height: 0;
   visibility: hidden;
   overflow: hidden;
+}
+
+/* ---- Navbar Animations ---- */
+@keyframes headerSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+@keyframes logoEntrance {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes ctaEntrance {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes navItemFade {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  animation: headerSlideDown 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.header .logo {
+  animation: logoEntrance 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.12s both;
+}
+
+.header .cta-btn {
+  animation: ctaEntrance 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.18s both;
+}
+
+@media (min-width: 1200px) {
+  .navmenu > ul > li { animation: navItemFade 0.4s ease both; }
+  .navmenu > ul > li:nth-child(1) { animation-delay: 0.15s; }
+  .navmenu > ul > li:nth-child(2) { animation-delay: 0.20s; }
+  .navmenu > ul > li:nth-child(3) { animation-delay: 0.25s; }
+  .navmenu > ul > li:nth-child(4) { animation-delay: 0.30s; }
+  .navmenu > ul > li:nth-child(5) { animation-delay: 0.35s; }
+  .navmenu > ul > li:nth-child(6) { animation-delay: 0.40s; }
+
+  /* Staggered fade-in for dropdown items when menu opens */
+  .navmenu .dropdown.menu-open > ul li {
+    animation: navItemFade 0.22s ease both;
+  }
+  .navmenu .dropdown.menu-open > ul li:nth-child(1) { animation-delay: 0.02s; }
+  .navmenu .dropdown.menu-open > ul li:nth-child(2) { animation-delay: 0.06s; }
+  .navmenu .dropdown.menu-open > ul li:nth-child(3) { animation-delay: 0.10s; }
+  .navmenu .dropdown.menu-open > ul li:nth-child(4) { animation-delay: 0.14s; }
+  .navmenu .dropdown.menu-open > ul li:nth-child(5) { animation-delay: 0.18s; }
 }
 
 /* --- Responsive Logo Adjustments --- */
@@ -993,10 +1100,12 @@ section,
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(15, 39, 66, 0.65);
+  background: rgba(15, 39, 66, 0.70);
   z-index: 9998;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 .mobile-backdrop.show {
@@ -1238,7 +1347,7 @@ section,
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color) 0%, #1a5bb5 100%);
   color: #fff;
   font-family: var(--nav-font);
   font-size: 14px;
@@ -1246,13 +1355,31 @@ section,
   padding: 12px 20px;
   border-radius: 50px;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
   margin-bottom: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mnp-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.28) 50%, transparent 70%);
+  transform: translateX(-110%);
+  transition: transform 0.5s ease;
+  border-radius: inherit;
 }
 
 .mnp-cta:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: linear-gradient(135deg, #1a5bb5 0%, var(--accent-color) 100%);
   color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(43, 112, 212, 0.4);
+}
+
+.mnp-cta:hover::after {
+  transform: translateX(110%);
 }
 
 .mnp-contact-row {
@@ -1309,7 +1436,7 @@ section,
    ================================================ */
 .hero {
   width: 100%;
-  min-height: calc(100vh - 112px);
+  min-height: 100vh;
   padding: 80px 0;
   display: flex;
   align-items: center;
@@ -2416,14 +2543,24 @@ section,
   }
 }
 
-/* Services — card lift + icon float */
+/* Services — card lift + icon float + glow */
 .services .service-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 16px 48px rgba(43, 112, 212, 0.22);
 }
 
 .services .service-item:hover .icon i {
   animation: float-icon 0.55s ease-in-out;
+}
+
+/* Section title — animated underline expand */
+@keyframes section-underline-in {
+  from { width: 0; opacity: 0; }
+  to   { width: 60px; opacity: 1; }
+}
+
+.section-title h2::after {
+  animation: section-underline-in 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s both;
 }
 
 /* Team — image zoom on card hover */
