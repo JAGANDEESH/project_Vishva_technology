@@ -20,7 +20,7 @@
   <div class="branding">
     <div class="container d-flex align-items-center justify-content-between">
       <!-- Logo -->
-      <a routerLink="/" class="logo d-flex align-items-center">
+      <a href="/" class="logo d-flex align-items-center" (click)="onLogoClick($event)">
         <img src="assets/logo9.png" alt="Vishva Technologies Logo">
         <!-- <h1>Vishva Technologies</h1> -->
       </a>
@@ -133,10 +133,10 @@
 
   <!-- Drawer Header -->
   <div class="mnp-header">
-    <div class="mnp-logo">
-      <img src="/assets/Logo3.jpeg" alt="Vishva Technologies Logo">
+    <a href="/" class="mnp-logo" (click)="onLogoClick($event)">
+      <img src="assets/logo9.png" alt="Vishva Technologies Logo">
       <span>Vishva Technologies</span>
-    </div>
+    </a>
     <button class="mnp-close" (click)="closeMobileNav()" aria-label="Close menu">
       <i class="bi bi-x-lg"></i>
     </button>

@@ -42,4 +42,11 @@ export class FooterComponent {
       }
     }
   }
+
+  onLogoClick(event: MouseEvent): void {
+    event.preventDefault();
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.href = '/';
+    }
+  }
 }

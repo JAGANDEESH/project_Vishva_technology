@@ -191,4 +191,11 @@ export class NavbarComponent implements OnInit {
   isHome(): boolean {
     return this.router.url === '/' || this.router.url.split('#')[0] === '/' || this.router.url === '';
   }
+
+  onLogoClick(event: MouseEvent): void {
+    event.preventDefault();
+    if (isPlatformBrowser(this.platformId)) {
+      window.location.href = '/';
+    }
+  }
 }
