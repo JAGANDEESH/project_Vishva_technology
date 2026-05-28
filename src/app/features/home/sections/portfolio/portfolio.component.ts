@@ -22,7 +22,9 @@ interface SolutionItem {
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
   activeFilter = 'all';
+  gridVisible = true;
   private filterSub!: Subscription;
+  private filterTimer: any;
 
   constructor(private portfolioFilter: PortfolioFilterService) {}
 
@@ -34,6 +36,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.filterSub.unsubscribe();
+    clearTimeout(this.filterTimer);
   }
 
   filters = [
@@ -125,6 +128,12 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   setFilter(key: string): void {
-    this.portfolioFilter.setFilter(key);
+    if (this.activeFilter === key) return;
+    clearTimeout(this.filterTimer);
+    this.gridVisible = false;
+    this.filterTimer = setTimeout(() => {
+      this.portfolioFilter.setFilter(key);
+      this.gridVisible = true;
+    }, 300);
   }
 }

@@ -1,1 +1,374 @@
-// Hero component styles — global styles handled in styles.scss
+/* ═══════════════════════════════════════════════════════════
+   HERO — Premium SaaS Entrance & Interaction Animations
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. VIDEO — Slow zoom-in with brightness fade ─────────── */
+.hero-video {
+  animation: heroBgZoom 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes heroBgZoom {
+  from {
+    transform: scale(1.14);
+    opacity: 0.5;
+    filter: brightness(0.7) blur(3px);
+  }
+  to {
+    transform: scale(1.03);
+    opacity: 1;
+    filter: brightness(1) blur(0px);
+  }
+}
+
+
+/* ── 2. FLOATING AMBIENT ORBS ─────────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.hero-orb--1 {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.28) 0%, transparent 68%);
+  top: 5%;
+  left: -100px;
+  filter: blur(48px);
+  animation: orbFloat1 9s ease-in-out infinite;
+}
+
+.hero-orb--2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, transparent 68%);
+  bottom: 10%;
+  right: -70px;
+  filter: blur(40px);
+  animation: orbFloat2 11s ease-in-out infinite 2s;
+}
+
+.hero-orb--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.2) 0%, transparent 68%);
+  top: 40%;
+  left: 52%;
+  filter: blur(32px);
+  animation: orbFloat3 7.5s ease-in-out infinite 4s;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0,   0)     scale(1);    }
+  35%       { transform: translate(32px, -28px) scale(1.06); }
+  68%       { transform: translate(-18px, 22px) scale(0.96); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0,   0)     scale(1);    }
+  42%       { transform: translate(-28px, -22px) scale(1.05); }
+  72%       { transform: translate(20px, 18px)  scale(0.97); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0,   0);   }
+  50%       { transform: translate(-22px, -32px); }
+}
+
+
+/* ── 3. HEADING — Slide down from top + blur fade ──────────── */
+.welcome h2 {
+  animation: heroHeadingIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  will-change: transform, opacity, filter;
+}
+
+.welcome p {
+  animation: heroTaglineIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both;
+  will-change: transform, opacity;
+}
+
+@keyframes heroHeadingIn {
+  from {
+    opacity: 0;
+    transform: translateY(-42px);
+    filter: blur(6px);
+    letter-spacing: 0.08em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    letter-spacing: inherit;
+  }
+}
+
+@keyframes heroTaglineIn {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ── 4. TYPEWRITER cursor ──────────────────────────────────── */
+.typewriter-cursor {
+  display: inline-block;
+  font-weight: 300;
+  margin-left: 2px;
+  color: inherit;
+  animation: cursorBlink 0.8s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+
+/* ── 5. WHY-BOX — Slide from left, inner text staggers in ──── */
+.why-box {
+  animation: heroSlideLeft 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+  will-change: transform, opacity;
+}
+
+.why-box h3 {
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.62s both;
+}
+
+.why-box p {
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
+}
+
+.why-box .more-btn {
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.97s both;
+}
+
+@keyframes heroSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-56px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ── 6. FEATURE CARDS — Stagger up from bottom with scale ─── */
+.hero-icon-row > div:nth-child(1) .icon-box {
+  animation: heroCardUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.68s both;
+}
+
+.hero-icon-row > div:nth-child(2) .icon-box {
+  animation: heroCardUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.86s both;
+}
+
+.hero-icon-row > div:nth-child(3) .icon-box {
+  animation: heroCardUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 1.04s both;
+}
+
+@keyframes heroCardUp {
+  from {
+    opacity: 0;
+    transform: translateY(48px) scale(0.90);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+
+/* ── 7. ICON-BOX HOVER — lift + glow + shine sweep + icon pop  */
+.icon-box {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.42s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.42s ease;
+  will-change: transform, box-shadow;
+
+  /* Shine sweep overlay */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.16) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.55s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    transform: translateY(-10px) scale(1.03) !important;
+    box-shadow:
+      0 24px 52px rgba(0, 0, 0, 0.2),
+      0 8px 20px rgba(99, 102, 241, 0.18),
+      0 0 0 1px rgba(99, 102, 241, 0.12) !important;
+
+    &::after {
+      transform: translateX(200%);
+    }
+
+    i {
+      animation: heroIconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+    }
+  }
+
+  i {
+    display: inline-block;
+    transition: none;
+    will-change: transform;
+  }
+}
+
+@keyframes heroIconPop {
+  0%   { transform: scale(1)    rotate(0deg);   }
+  35%  { transform: scale(1.38) rotate(-14deg); }
+  65%  { transform: scale(1.22) rotate(8deg);   }
+  100% { transform: scale(1.25) rotate(0deg);   }
+}
+
+
+/* ── 8. MORE-BTN (CTA) — shine + arrow glide on hover ──────── */
+.more-btn {
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    filter 0.35s ease !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.28) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.48s ease;
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  &:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.24) !important;
+    filter: brightness(1.1);
+
+    &::after {
+      transform: translateX(200%);
+    }
+
+    i {
+      animation: ctaArrowGlide 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+  }
+
+  i {
+    display: inline-block;
+    transition: none;
+  }
+}
+
+@keyframes ctaArrowGlide {
+  0%   { transform: translateX(0); }
+  40%  { transform: translateX(7px); }
+  70%  { transform: translateX(4px); }
+  100% { transform: translateX(6px); }
+}
+
+
+/* ── 9. SCROLL INDICATOR ───────────────────────────────────── */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  z-index: 10;
+  /* translateX(-50%) must live inside every keyframe so it never gets dropped */
+  animation:
+    scrollFadeIn  0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both,
+    scrollBounce  1.7s ease-in-out 2.2s infinite;
+  transition: border-color 0.3s, background 0.3s;
+
+  &:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+  }
+}
+
+@keyframes scrollFadeIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(10px); }
+}
+
+
+/* ── 10. RESPONSIVE — scale down orbs on mobile ────────────── */
+@media (max-width: 768px) {
+  .hero-orb--1 { width: 240px; height: 240px; }
+  .hero-orb--2 { width: 180px; height: 180px; }
+  .hero-orb--3 { display: none; }
+}
+
+
+/* ── 11. REDUCED MOTION — respect user preference ──────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-video,
+  .hero-orb,
+  .welcome h2,
+  .welcome p,
+  .why-box,
+  .why-box h3,
+  .why-box p,
+  .why-box .more-btn,
+  .hero-icon-row > div .icon-box,
+  .hero-scroll-indicator {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
