@@ -120,15 +120,22 @@
 <section class="billing-workflow section" *ngIf="data.workflow">
   <div class="container">
     <div class="section-title text-center mb-4">
-      <span class="section-eyebrow" *ngIf="data.workflow.eyebrow">{{ data.workflow.eyebrow }}</span>
-      <h2 class="workflow-title">{{ data.workflow.title }}</h2>
-      <p class="section-lead mx-auto">
+      <span class="section-eyebrow" *ngIf="data.workflow.eyebrow"
+            data-aos="fade-down" data-aos-duration="700">{{ data.workflow.eyebrow }}</span>
+      <h2 class="workflow-title"
+          data-aos="fade-up" data-aos-delay="80" data-aos-duration="800">{{ data.workflow.title }}</h2>
+      <p class="section-lead mx-auto"
+         data-aos="fade-up" data-aos-delay="180" data-aos-duration="800">
         {{ data.workflow.description }}
       </p>
     </div>
 
-    <div class="workflow-grid justify-content-center" data-aos="fade-up" data-aos-delay="100">
-      <div class="workflow-card" *ngFor="let step of data.workflow.steps; let i = index">
+    <div class="workflow-grid justify-content-center">
+      <div class="workflow-card"
+           *ngFor="let step of data.workflow.steps; let i = index"
+           data-aos="fade-up"
+           [attr.data-aos-delay]="i * 130"
+           data-aos-duration="700">
         <div class="workflow-number">
           {{ (i + 1).toString().padStart(2, '0') }}
         </div>

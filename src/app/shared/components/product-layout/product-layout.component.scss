@@ -398,10 +398,32 @@
   padding: 36px 30px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035);
   text-align: left;
-  transition: 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+  overflow: hidden;
+
+  // Accent line that sweeps in on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+      var(--accent-color),
+      color-mix(in srgb, var(--accent-color), transparent 60%));
+    border-radius: 0 0 28px 28px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.40s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
   &:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+    box-shadow: 0 28px 64px rgba(15, 23, 42, 0.10);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 75%);
+
+    &::after { transform: scaleX(1); }
   }
 
   .workflow-number {
@@ -1891,17 +1913,22 @@
 // =====================================================
 
 @keyframes hero-intro-slide {
-  from { opacity: 0; transform: translateX(-30px); }
+  from { opacity: 0; transform: translateX(-48px); }
   to   { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes hero-preview-slide {
-  from { opacity: 0; transform: translateX(30px) scale(0.96); }
+  from { opacity: 0; transform: translateX(48px) scale(0.93); }
   to   { opacity: 1; transform: translateX(18px) scale(1); }
 }
 
 @keyframes hero-rise {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 0; transform: translateY(34px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stat-item-reveal {
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -1927,14 +1954,14 @@
   to   { opacity: 1; transform: scale(1)    translateY(0);   }
 }
 
-// Hero section entrance
-.billing-badge      { animation: badge-pop      0.50s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.06s  both; }
-.hero-intro         { animation: hero-intro-slide 0.70s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.10s  both; }
-.hero-feature-grid  { animation: hero-rise       0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.22s  both; }
-.hero-actions       { animation: hero-rise       0.60s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.30s  both; }
-.hero-stats         { animation: hero-rise       0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.40s  both; }
+// Hero section entrance — expo-out easing (0.22, 1, 0.36, 1) for premium SaaS feel
+.billing-badge      { animation: badge-pop          0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s both; }
+.hero-intro         { animation: hero-intro-slide    1.10s cubic-bezier(0.22, 1, 0.36, 1)          0.18s both; }
+.hero-feature-grid  { animation: hero-rise           0.90s cubic-bezier(0.22, 1, 0.36, 1)          0.40s both; }
+.hero-actions       { animation: hero-rise           1.00s cubic-bezier(0.22, 1, 0.36, 1)          0.54s both; }
+.hero-stats         { animation: hero-rise           1.05s cubic-bezier(0.22, 1, 0.36, 1)          0.68s both; }
 
-.hero-preview-wrap  { animation: hero-preview-slide 0.80s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.16s both; }
+.hero-preview-wrap  { animation: hero-preview-slide  1.20s cubic-bezier(0.22, 1, 0.36, 1)          0.22s both; }
 
 @media (max-width: 991px) {
   .hero-preview-wrap { animation-name: hero-rise; }
@@ -2063,8 +2090,8 @@
 @media (min-width: 992px) {
   .hero-preview-wrap {
     animation:
-      hero-preview-slide 0.80s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.16s both,
-      preview-levitate   6s   ease-in-out                             1.2s  infinite;
+      hero-preview-slide 1.20s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both,
+      preview-levitate   6s   ease-in-out                       1.6s  infinite;
   }
 }
 
@@ -2073,13 +2100,13 @@
   animation: none;
 
   .feat-chip {
-    animation: chip-entrance 0.46s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-    &:nth-child(1) { animation-delay: 0.26s; }
-    &:nth-child(2) { animation-delay: 0.34s; }
-    &:nth-child(3) { animation-delay: 0.42s; }
-    &:nth-child(4) { animation-delay: 0.50s; }
-    &:nth-child(5) { animation-delay: 0.58s; }
-    &:nth-child(6) { animation-delay: 0.66s; }
+    animation: chip-entrance 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    &:nth-child(1) { animation-delay: 0.44s; }
+    &:nth-child(2) { animation-delay: 0.54s; }
+    &:nth-child(3) { animation-delay: 0.64s; }
+    &:nth-child(4) { animation-delay: 0.74s; }
+    &:nth-child(5) { animation-delay: 0.84s; }
+    &:nth-child(6) { animation-delay: 0.94s; }
   }
 }
 
@@ -2180,12 +2207,70 @@
   }
 }
 
-// ─── Workflow cards — staggered entrance ─────────────────────
-.workflow-grid {
-  .workflow-card {
-    &:nth-child(1) { animation: hero-rise 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.08s both; }
-    &:nth-child(2) { animation: hero-rise 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.20s both; }
-    &:nth-child(3) { animation: hero-rise 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.32s both; }
+// ─── Workflow cards — scroll-triggered internal animations ────
+// These fire the moment AOS adds .aos-animate to each card,
+// so they coordinate correctly with on-scroll entrance.
+
+@keyframes wf-icon-pop {
+  0%   { opacity: 0; transform: scale(0.55) rotate(-12deg); }
+  65%  { opacity: 1; transform: scale(1.14) rotate(4deg);   }
+  100% { opacity: 1; transform: scale(1)    rotate(0deg);   }
+}
+
+@keyframes wf-num-slide {
+  from { opacity: 0; transform: translateX(22px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+@keyframes wf-text-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes wf-card-glow {
+  from { box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035); }
+  to   { box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035),
+                     0 0 0 1.5px color-mix(in srgb, var(--accent-color), transparent 80%); }
+}
+
+// Internal element animations — fire only after AOS shows the card
+.workflow-card.aos-animate {
+  animation: wf-card-glow 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+
+  .workflow-number {
+    animation: wf-num-slide 0.70s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both;
+  }
+
+  .workflow-icon {
+    animation: wf-icon-pop  0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.20s both;
+  }
+
+  h3 {
+    animation: wf-text-rise 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both;
+  }
+
+  p {
+    animation: wf-text-rise 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+  }
+}
+
+// Workflow icon — subtle continuous pulse after entrance (desktop)
+@media (min-width: 992px) {
+  .workflow-card.aos-animate .workflow-icon {
+    animation:
+      wf-icon-pop  0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.20s both;
+  }
+}
+
+// ─── Reduced-motion: skip internal card animations ────────────
+@media (prefers-reduced-motion: reduce) {
+  .workflow-card.aos-animate .workflow-number,
+  .workflow-card.aos-animate .workflow-icon,
+  .workflow-card.aos-animate h3,
+  .workflow-card.aos-animate p {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -2202,12 +2287,38 @@
   }
 }
 
+// ─── Stats strip — staggered per-item reveal ─────────────────
+.hero-stats .stat-item {
+  animation: stat-item-reveal 0.80s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  &:nth-child(1) { animation-delay: 0.78s; }
+  &:nth-child(2) { animation-delay: 0.94s; }
+  &:nth-child(3) { animation-delay: 1.10s; }
+  &:nth-child(4) { animation-delay: 1.26s; }
+}
+
 // ─── Mobile: disable orbs + levitate ─────────────────────────
 @media (max-width: 991px) {
   .hero-layout::before,
   .hero-layout::after { display: none; }
 
   .hero-preview-wrap { animation-name: hero-rise; }
+}
+
+// ─── Respect reduced-motion preference ───────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro,
+  .hero-preview-wrap,
+  .hero-feature-grid,
+  .hero-actions,
+  .hero-stats,
+  .billing-badge,
+  .feat-chip,
+  .hero-stats .stat-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 // ─────────────────────────────────────────────────────────────

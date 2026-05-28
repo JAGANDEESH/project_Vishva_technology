@@ -20,7 +20,7 @@
   <div class="branding">
     <div class="container d-flex align-items-center justify-content-between">
       <!-- Logo -->
-      <a href="/" class="logo d-flex align-items-center" (click)="onLogoClick($event)">
+      <a routerLink="/" class="logo d-flex align-items-center">
         <img src="assets/logo9.png" alt="Vishva Technologies Logo">
         <!-- <h1>Vishva Technologies</h1> -->
       </a>
@@ -32,7 +32,7 @@
 
           <li class="dropdown" [class.menu-open]="activeMenu === 'products'" (mouseenter)="onMenuEnter('products')"
             (mouseleave)="onMenuLeave()">
-            <a href="#services">Products <i class="bi bi-chevron-down"></i></a>
+            <a style="cursor: pointer;">Products <i class="bi bi-chevron-down"></i></a>
             <ul>
               @for (item of productItems; track item.title) {
               <li class="dropdown">
@@ -73,7 +73,7 @@
 
           <li class="dropdown" [class.menu-open]="activeMenu === 'automation'" (mouseenter)="onMenuEnter('automation')"
             (mouseleave)="onMenuLeave()">
-            <a href="#departments">Automation <i class="bi bi-chevron-down"></i></a>
+            <a style="cursor: pointer;">Automation <i class="bi bi-chevron-down"></i></a>
             <ul>
               @for (item of automationItems; track item.title) {
               <li><a [routerLink]="item.link">
@@ -85,7 +85,7 @@
 
           <li class="dropdown" [class.menu-open]="activeMenu === 'ai-offerings'"
             (mouseenter)="onMenuEnter('ai-offerings')" (mouseleave)="onMenuLeave()">
-            <a href="#ai-automation" $event.preventDefault()>AI
+            <a style="cursor: pointer;">AI
               Offerings<i class="bi bi-chevron-down"></i></a>
             <ul>
               @for (item of aiItems; track item.title) {
@@ -98,7 +98,7 @@
 
           <li class="dropdown" [class.menu-open]="activeMenu === 'solutions'" (mouseenter)="onMenuEnter('solutions')"
             (mouseleave)="onMenuLeave()">
-            <a href="#portfolio" (click)="scrollToSection('portfolio'); $event.preventDefault()">Solutions
+            <a style="cursor: pointer;">Solutions
               <i class="bi bi-chevron-down"></i></a>
             <ul>
               @for (item of solutionItems; track item.title) {
@@ -133,10 +133,10 @@
 
   <!-- Drawer Header -->
   <div class="mnp-header">
-    <a href="/" class="mnp-logo" (click)="onLogoClick($event)">
-      <img src="assets/logo9.png" alt="Vishva Technologies Logo">
+    <div class="mnp-logo">
+      <img src="/assets/Logo3.jpeg" alt="Vishva Technologies Logo">
       <span>Vishva Technologies</span>
-    </a>
+    </div>
     <button class="mnp-close" (click)="closeMobileNav()" aria-label="Close menu">
       <i class="bi bi-x-lg"></i>
     </button>
