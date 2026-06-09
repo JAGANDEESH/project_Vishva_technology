@@ -1437,7 +1437,8 @@ section,
 .hero {
   width: 100%;
   min-height: 100vh;
-  padding: 180px 0 80px;
+  min-height: 100svh;
+  padding: 160px 0 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1470,7 +1471,7 @@ section,
 }
 
 .hero .welcome h2 {
-  margin: 0;
+  margin: -20px;
   font-size: 48px;
   font-weight: 700;
   text-align: center;
