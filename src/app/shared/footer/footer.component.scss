@@ -166,7 +166,7 @@
   line-height: 0;
 
   img {
-    height: clamp(80px, 10vw, 150px);
+    height: clamp(52px, 6vw, 78px);
     width: auto;
     object-fit: contain;
     filter: brightness(1.1) contrast(1.05)
@@ -532,7 +532,7 @@
     grid-column: 1 / -1;
   }
 
-  .f-logo img { height: 80px; }
+  .f-logo img { height: 48px; }
 
   .f-tagline { font-size: 13px; }
 

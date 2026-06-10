@@ -583,7 +583,7 @@ section,
 /* --- Branding Row --- */
 .header .branding {
   min-height: auto;
-  padding: 10px 0;
+  padding: 1px 0;
   display: flex;
   align-items: center;
   background-color: var(--background-color);
@@ -618,7 +618,7 @@ section,
 }
 
 .header .logo img {
-  height: 105px;
+  height: 80px;
   width: auto;
   object-fit: contain;
   filter: contrast(1.2) saturate(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
@@ -649,6 +649,7 @@ section,
 
 .header .navmenu {
   padding: 0;
+  margin-right: -115px;
 }
 
 .header .cta-btn,
@@ -734,11 +735,11 @@ section,
 }
 
 .header.scrolled .branding {
-  padding: 6px 0;
+  padding: 1px 0;
 }
 
 .header.scrolled .logo img {
-  height: 58px;
+  height: 52px;
 }
 
 /* --- Non-home State (clear visual separation from page content) --- */
@@ -809,21 +810,21 @@ section,
 /* --- Responsive Logo Adjustments --- */
 @media (max-width: 991px) {
   .header .logo img {
-    height: 66px;
+    height: 60px;
   }
 
   .header .branding {
-    padding: 8px 0;
+    padding: 1px 0;
   }
 }
 
 @media (max-width: 575px) {
   .header .logo img {
-    height: 56px;
+    height: 48px;
   }
 
   .header .branding {
-    padding: 6px 0;
+    padding: 1px 0;
   }
 }
 
@@ -1472,13 +1473,13 @@ section,
 
 .hero .welcome h2 {
   margin: -20px;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   text-align: center;
 }
 
 .hero .welcome p {
-  font-size: 24px;
+  font-size: 14px;
   margin: 0;
   text-align: center;
 }
@@ -2987,7 +2988,7 @@ section,
 
 /* Ensure images never overflow */
 img {
-  max-width: 100%;
+  max-width: 75%;
   height: auto;
 }
 
