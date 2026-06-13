@@ -618,7 +618,7 @@ section,
 }
 
 .header .logo img {
-  height: 80px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   filter: contrast(1.2) saturate(1.1) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.06));
@@ -3027,7 +3027,7 @@ section,
 
 /* Ensure images never overflow */
 img {
-  max-width: 75%;
+  max-width: 100%;
   height: auto;
 }
 

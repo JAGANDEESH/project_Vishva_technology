@@ -5,40 +5,89 @@
 // ── Keyframes ──────────────────────────────────────────────
 
 @keyframes f-col-rise {
-  from { opacity: 0; transform: translateY(36px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes f-orb-tl {
-  0%   { transform: translate(0, 0)   scale(1);    }
-  100% { transform: translate(4%, 6%) scale(1.14); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(4%, 6%) scale(1.14);
+  }
 }
 
 @keyframes f-orb-br {
-  0%   { transform: translate(0, 0)     scale(1);   }
-  100% { transform: translate(-5%, -4%) scale(1.10); }
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-5%, -4%) scale(1.10);
+  }
 }
 
 @keyframes f-orb-mid {
-  0%,  100% { opacity: 0.45; transform: translate(-50%, 0) scale(1);    }
-  50%        { opacity: 0.85; transform: translate(-50%, 0) scale(1.18); }
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, 0) scale(1.18);
+  }
 }
 
 @keyframes f-glow-line {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
 }
 
 @keyframes f-link-appear {
-  from { opacity: 0; transform: translateX(-10px); }
-  to   { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes f-social-bounce {
-  0%   { transform: translateY(0)    scale(1);    }
-  35%  { transform: translateY(-8px) scale(1.22); }
-  65%  { transform: translateY(-3px) scale(1.08); }
-  100% { transform: translateY(-4px) scale(1.12); }
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  35% {
+    transform: translateY(-8px) scale(1.22);
+  }
+
+  65% {
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(-4px) scale(1.12);
+  }
 }
 
 // ── Root shell ─────────────────────────────────────────────
@@ -109,16 +158,14 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(43, 112, 212, 0.0) 10%,
-    rgba(127, 179, 245, 0.6) 40%,
-    rgba(43, 112, 212, 1)   50%,
-    rgba(127, 179, 245, 0.6) 60%,
-    rgba(43, 112, 212, 0.0) 90%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(43, 112, 212, 0.0) 10%,
+      rgba(127, 179, 245, 0.6) 40%,
+      rgba(43, 112, 212, 1) 50%,
+      rgba(127, 179, 245, 0.6) 60%,
+      rgba(43, 112, 212, 0.0) 90%,
+      transparent 100%);
   background-size: 200% 100%;
   animation: f-glow-line 4s linear infinite;
   pointer-events: none;
@@ -153,10 +200,21 @@
 
 // ── Column stagger entrance ────────────────────────────────
 
-.f-col--about    { animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.08s both; }
-.f-col--links    { animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.18s both; }
-.f-col--products { animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.28s both; }
-.f-col--contact  { animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both; }
+.f-col--about {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.08s both;
+}
+
+.f-col--links {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.18s both;
+}
+
+.f-col--products {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.28s both;
+}
+
+.f-col--contact {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both;
+}
 
 // ── Logo ───────────────────────────────────────────────────
 
@@ -166,19 +224,17 @@
   line-height: 0;
 
   img {
-    height: clamp(52px, 6vw, 78px);
-    width: auto;
+    height: auto;
+    width: clamp(200px, 24vw, 350px);
     object-fit: contain;
-    filter: brightness(1.1) contrast(1.05)
-            drop-shadow(0 4px 12px rgba(43, 112, 212, 0.20));
+    filter: brightness(1.1) contrast(1.05) drop-shadow(0 4px 12px rgba(43, 112, 212, 0.20));
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-                filter     0.4s ease;
+      filter 0.4s ease;
   }
 
   &:hover img {
     transform: scale(1.07) translateY(-3px);
-    filter: brightness(1.18) contrast(1.12)
-            drop-shadow(0 10px 24px rgba(43, 112, 212, 0.40));
+    filter: brightness(1.18) contrast(1.12) drop-shadow(0 10px 24px rgba(43, 112, 212, 0.40));
   }
 }
 
@@ -189,6 +245,9 @@
   line-height: 1.85;
   color: #94a3b8;
   margin-bottom: 0;
+  max-width: clamp(200px, 24vw, 350px);
+  text-align: justify;
+  text-justify: inter-word;
 
   strong {
     color: #7FB3F5;
@@ -223,10 +282,10 @@
   font-size: 16px;
   text-decoration: none;
   overflow: hidden;
-  transition: color       0.3s ease,
-              border-color 0.3s ease,
-              box-shadow   0.3s ease,
-              transform    0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   // Ripple fill
   &::before {
@@ -240,26 +299,54 @@
     z-index: 0;
   }
 
-  i { position: relative; z-index: 1; }
+  i {
+    position: relative;
+    z-index: 1;
+  }
 
   &:hover {
     color: #fff;
     transform: translateY(-4px);
     border-color: var(--f-social-color, var(--accent-color));
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
-    &::before { transform: scale(1); }
+
+    &::before {
+      transform: scale(1);
+    }
   }
 
   // Platform colours
-  &[aria-label="Twitter"]   { --f-social-color: #1d9bf0; }
-  &[aria-label="Facebook"]  { --f-social-color: #1877f2; }
-  &[aria-label="Instagram"] { --f-social-color: #e1306c; }
-  &[aria-label="LinkedIn"]  { --f-social-color: #0a66c2; }
+  &[aria-label="Twitter"] {
+    --f-social-color: #1d9bf0;
+  }
 
-  &[aria-label="Twitter"]:hover   { box-shadow: 0 8px 22px rgba(29,155,240,0.45); }
-  &[aria-label="Facebook"]:hover  { box-shadow: 0 8px 22px rgba(24,119,242,0.45); }
-  &[aria-label="Instagram"]:hover { box-shadow: 0 8px 22px rgba(225,48,108,0.45); }
-  &[aria-label="LinkedIn"]:hover  { box-shadow: 0 8px 22px rgba(10,102,194,0.45);  }
+  &[aria-label="Facebook"] {
+    --f-social-color: #1877f2;
+  }
+
+  &[aria-label="Instagram"] {
+    --f-social-color: #e1306c;
+  }
+
+  &[aria-label="LinkedIn"] {
+    --f-social-color: #0a66c2;
+  }
+
+  &[aria-label="Twitter"]:hover {
+    box-shadow: 0 8px 22px rgba(29, 155, 240, 0.45);
+  }
+
+  &[aria-label="Facebook"]:hover {
+    box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
+  }
+
+  &[aria-label="Instagram"]:hover {
+    box-shadow: 0 8px 22px rgba(225, 48, 108, 0.45);
+  }
+
+  &[aria-label="LinkedIn"]:hover {
+    box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+  }
 }
 
 // ── Section headings ───────────────────────────────────────
@@ -298,7 +385,9 @@
   }
 }
 
-.f-col:hover .f-heading::after { width: 52px; }
+.f-col:hover .f-heading::after {
+  width: 52px;
+}
 
 // ── Nav link lists ─────────────────────────────────────────
 
@@ -344,7 +433,9 @@
     }
   }
 
-  li:last-child a { border-bottom: none; }
+  li:last-child a {
+    border-bottom: none;
+  }
 }
 
 // ── Contact card items ─────────────────────────────────────
@@ -364,8 +455,8 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   transition: background 0.25s ease,
-              border-color 0.25s ease,
-              transform    0.25s ease;
+    border-color 0.25s ease,
+    transform 0.25s ease;
 
   &:hover {
     background: rgba(43, 112, 212, 0.07);
@@ -419,7 +510,10 @@
   text-decoration: none;
   color: #94a3b8;
   transition: color 0.25s ease;
-  &:hover { color: #7FB3F5; }
+
+  &:hover {
+    color: #7FB3F5;
+  }
 }
 
 // ── Bottom bar ─────────────────────────────────────────────
@@ -484,19 +578,27 @@
 
 // Tablet landscape (768–991px): 2 + 2 grid
 @media (max-width: 991px) {
-  .f-top { padding: 56px 0 44px; }
+  .f-top {
+    padding: 56px 0 44px;
+  }
 
   .f-grid {
     grid-template-columns: 1fr 1fr;
     gap: 36px 40px;
   }
 
-  .f-col--about    { grid-column: 1 / -1; } // full width on top
+  .f-col--about {
+    grid-column: 1 / -1;
+  }
+
+  // full width on top
 }
 
 // Tablet portrait (576–767px): About full, then 2+2
 @media (max-width: 767px) {
-  .f-top { padding: 48px 0 36px; }
+  .f-top {
+    padding: 48px 0 36px;
+  }
 
   .f-grid {
     grid-template-columns: 1fr 1fr;
@@ -520,7 +622,9 @@
     padding: 0 20px;
   }
 
-  .f-top { padding: 40px 0 30px; }
+  .f-top {
+    padding: 40px 0 30px;
+  }
 
   .f-grid {
     grid-template-columns: 1fr 1fr;
@@ -532,9 +636,14 @@
     grid-column: 1 / -1;
   }
 
-  .f-logo img { height: 48px; }
+  .f-logo img {
+    width: clamp(180px, 50vw, 280px);
+  }
 
-  .f-tagline { font-size: 13px; }
+  .f-tagline {
+    font-size: 13px;
+    max-width: clamp(180px, 50vw, 280px);
+  }
 
   .f-social-btn {
     width: 36px;
