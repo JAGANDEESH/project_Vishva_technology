@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { EmailService } from '../../../../shared/services/email.service';
 
 interface ContactForm {
   name: string;
@@ -24,6 +25,8 @@ export class ContactComponent {
 
   @ViewChild('contactForm') contactFormRef!: NgForm;
 
+  constructor(private emailService: EmailService) {}
+
   onSubmit(): void {
     // Prevent submission if required fields are empty
     if (this.contactFormRef && !this.contactFormRef.valid) {
@@ -36,13 +39,24 @@ export class ContactComponent {
 
     this.loading = true;
     this.errorMessage = '';
-    setTimeout(() => {
+
+    this.emailService.sendContactMessage({
+      name: this.form.name,
+      email: this.form.email,
+      subject: this.form.subject,
+      message: this.form.message
+    })
+    .then(() => {
       this.loading = false;
       this.submitted = true;
       this.form = { name: '', email: '', subject: '', message: '' };
       if (this.contactFormRef) {
         this.contactFormRef.resetForm();
       }
-    }, 1500);
+    })
+    .catch((error) => {
+      this.loading = false;
+      this.errorMessage = error?.text || error?.message || 'Failed to send your message. Please try again later.';
+    });
   }
 }
