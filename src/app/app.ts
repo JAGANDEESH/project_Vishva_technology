@@ -13,7 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
       <div class="preloader-glow preloader-glow-1"></div>
       <div class="preloader-glow preloader-glow-2"></div>
       <div class="preloader-inner">
-        <img src="assets/logo7.jpeg" alt="Vishva Technologies" class="preloader-logo">
+        <img src="assets/Lotus.svg" alt="Vishva Technologies" class="preloader-logo">
         <div class="preloader-progress"><div class="preloader-progress-bar"></div></div>
         <p class="preloader-sub">Building Tomorrow's Solutions</p>
       </div>

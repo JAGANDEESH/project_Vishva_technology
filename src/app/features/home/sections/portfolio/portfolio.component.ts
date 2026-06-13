@@ -55,7 +55,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
       description: 'Instant GST-compliant invoice generation with UPI/QR payment support, automated reminders, recurring billing, and real-time sales dashboard for modern businesses.',
       img: 'assets/img/gallery/gallery-1.jpg',
       icon: 'bi-receipt',
-      color: '#2B70D4'
+      color: '#224773'
     },
     {
       title: 'Intelligent Accounting',
@@ -64,7 +64,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
       description: 'Complete financial management with general ledger, journal entries, expense tracking, GST compliance, bank reconciliation, and AI-driven financial forecasting.',
       img: 'assets/img/gallery/gallery-2.jpg',
       icon: 'bi-calculator',
-      color: '#2B70D4'
+      color: '#224773'
     },
     {
       title: 'Automated Payroll',

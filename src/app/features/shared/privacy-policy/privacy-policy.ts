@@ -186,7 +186,7 @@ import { Component } from '@angular/core';
       content: '\\2022';
       position: absolute;
       left: 8px;
-      color: var(--accent-color, #2b70d4);
+      color: var(--accent-color, #224773);
       font-weight: bold;
     }
 
