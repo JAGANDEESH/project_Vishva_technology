@@ -59,12 +59,33 @@
   }
 
   .service-item:hover {
-    .product-subsection {
-      border-top-color: color-mix(in srgb, var(--contrast-color), transparent 80%);
-    }
-    .highlight-grid li {
+    h3 {
       color: var(--contrast-color);
-      i { color: var(--contrast-color); }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    p em {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .product-subsection {
+      border-top-color: color-mix(in srgb, var(--contrast-color), transparent 70%);
+
+      h5 {
+        color: var(--contrast-color);
+      }
+
+      p {
+        color: rgba(255, 255, 255, 0.80);
+      }
+    }
+
+    .highlight-grid li {
+      color: rgba(255, 255, 255, 0.85);
+      i { color: rgba(255, 255, 255, 0.9); }
     }
 
     .icon i {
