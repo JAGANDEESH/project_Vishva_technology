@@ -11,8 +11,48 @@
 }
 
 .contact-map-wrap {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative; // ensures absolute children are contained
+
+  // "Open in Maps" overlay pill button
+  .map-open-btn {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--heading-color);
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 7px 14px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    z-index: 10;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+    letter-spacing: 0.01em;
+
+    i {
+      font-size: 14px;
+      color: #e74c3c;  // red pin icon — matches Google pin colour
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    &:hover {
+      background: var(--accent-color);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(34, 71, 115, 0.35);
+
+      i {
+        color: #fff;
+        transform: translateY(-3px) scale(1.2);
+      }
+    }
+  }
 }
 
 // ===== Contact Info Grid =====
