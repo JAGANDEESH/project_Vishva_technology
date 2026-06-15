@@ -784,33 +784,12 @@ section,
   }
 }
 
-/* --- Scrolled State with Glassmorphism --- */
-.header.scrolled {
-  background: rgba(255, 255, 255, 0.90) !important;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 4px 28px rgba(27, 46, 94, 0.13);
-  border-bottom: 1px solid rgba(43, 112, 212, 0.1);
-}
-
-.header.scrolled .branding {
-  padding: 1px 0;
-}
-
-.header.scrolled .logo img {
-  height: 52px;
-}
+/* --- Scrolled State removed — navbar height stays constant --- */
 
 /* --- Non-home State (clear visual separation from page content) --- */
 .header.non-home {
   border-bottom: 1px solid rgba(27, 46, 94, 0.1);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-}
-
-.header.scrolled .topbar {
-  height: 0;
-  visibility: hidden;
-  overflow: hidden;
 }
 
 /* ---- Navbar Animations ---- */
@@ -1042,6 +1021,11 @@ section,
   .navmenu .dropdown ul li:hover>a {
     color: var(--nav-dropdown-hover-color);
     background-color: rgba(43, 112, 212, 0.05);
+  }
+
+  .navmenu .dropdown ul li a:hover i,
+  .navmenu .dropdown ul li:hover>a i {
+    color: #2b70d4;
   }
 
   /* Deep nested dropdown positioning */

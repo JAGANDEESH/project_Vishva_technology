@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { PortfolioFilterService } from '../services/portfolio-filter.service';
@@ -13,7 +13,6 @@ import { MenuItem } from './shared-menu/shared-menu';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent implements OnInit {
-  isScrolled = false;
   mobileNavOpen = false;
   activeMenu: string | null = null;
   private menuTimer: any = null;
@@ -88,10 +87,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  @HostListener('window:scroll', [])
-  onWindowScroll(): void {
-    this.isScrolled = window.scrollY > 100;
-  }
 
   toggleMobileNav(): void {
     this.mobileNavOpen = !this.mobileNavOpen;
