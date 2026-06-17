@@ -17,46 +17,19 @@ export class NavbarComponent implements OnInit {
   activeMenu: string | null = null;
   private menuTimer: any = null;
   productsOpen = false;
-  vSuiteFinanceOpen = false;
-  vSuiteWorkforceOpen = false;
-  vSuiteCommerceOpen = false;
-  vSuiteLogisticsOpen = false;
+
 
   automationOpen = false;
   aiOfferingsOpen = false;
   solutionsOpen = false;
 
   productItems: MenuItem[] = [
-    {
-      title: 'vSuite Finance',
-      icon: 'bi-wallet2',
-      children: [
-        { title: 'vSuite Billing',    icon: 'bi-receipt',    link: '/products/billing' },
-        { title: 'vSuite Accounting', icon: 'bi-calculator', link: '/products/accounting' }
-      ]
-    },
-    {
-      title: 'vSuite Workforce',
-      icon: 'bi-people',
-      children: [
-        { title: 'vSuite Payroll',    icon: 'bi-cash-stack',   link: '/products/payroll' },
-        { title: 'vSuite Human-Resource',  icon: 'bi-person-badge', link: '/products/hr' }
-      ]
-    },
-    {
-      title: 'vSuite Commerce',
-      icon: 'bi-bag',
-      children: [
-        { title: 'vSuite E-Commerce', icon: 'bi-cart3', link: '/products/ecommerce' }
-      ]
-    },
-    {
-      title: 'vSuite Logistics',
-      icon: 'bi-truck',
-      children: [
-        { title: 'vSuite ProcessFlow', icon: 'bi-diagram-3', link: '/products/processflow' }
-      ]
-    }
+    { title: 'vSuite Billing',        icon: 'bi-receipt',      link: '/products/billing' },
+    { title: 'vSuite Accounting',     icon: 'bi-calculator',   link: '/products/accounting' },
+    { title: 'vSuite Payroll',        icon: 'bi-cash-stack',   link: '/products/payroll' },
+    { title: 'vSuite Human Resource', icon: 'bi-person-badge', link: '/products/hr' },
+    { title: 'vSuite Ecommerce',      icon: 'bi-cart3',        link: '/products/ecommerce' },
+    { title: 'vSuite Process Flow',   icon: 'bi-diagram-3',    link: '/products/processflow' }
   ];
 
   automationItems: MenuItem[] = [
@@ -110,10 +83,6 @@ export class NavbarComponent implements OnInit {
 
   private closeAllAccordions(): void {
     this.productsOpen = false;
-    this.vSuiteFinanceOpen = false;
-    this.vSuiteWorkforceOpen = false;
-    this.vSuiteCommerceOpen = false;
-    this.vSuiteLogisticsOpen = false;
     this.automationOpen = false;
     this.aiOfferingsOpen = false;
     this.solutionsOpen = false;
@@ -129,34 +98,6 @@ export class NavbarComponent implements OnInit {
   }
 
   toggleProducts(): void { this.productsOpen = !this.productsOpen; }
-  toggleVSuiteFinance(event?: Event): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.vSuiteFinanceOpen = !this.vSuiteFinanceOpen;
-  }
-  toggleVSuiteWorkforce(event?: Event): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.vSuiteWorkforceOpen = !this.vSuiteWorkforceOpen;
-  }
-  toggleVSuiteCommerce(event?: Event): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.vSuiteCommerceOpen = !this.vSuiteCommerceOpen;
-  }
-  toggleVSuiteLogistics(event?: Event): void {
-    if (event) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.vSuiteLogisticsOpen = !this.vSuiteLogisticsOpen;
-  }
   toggleAutomation(): void { this.automationOpen = !this.automationOpen; }
   toggleAiOfferings(): void { this.aiOfferingsOpen = !this.aiOfferingsOpen; }
   toggleSolutions(): void { this.solutionsOpen = !this.solutionsOpen; }

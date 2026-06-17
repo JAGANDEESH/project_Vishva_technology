@@ -36,37 +36,11 @@
             <a style="cursor: pointer;">Products <i class="bi bi-chevron-down"></i></a>
             <ul>
               @for (item of productItems; track item.title) {
-              <li class="dropdown">
-                <a href="#" (click)="$event.preventDefault()">
+              <li>
+                <a [routerLink]="item.link" (click)="closeMobileNav()">
                   @if (item.icon) {<i class="bi me-2" [ngClass]="item.icon"></i>}
-                  <span>{{ item.title }}</span> <i class="bi bi-chevron-right"></i>
+                  <span>{{ item.title }}</span>
                 </a>
-                @if (item.children) {
-                <ul>
-                  @for (subItem of item.children; track subItem.title) {
-                  @if (subItem.children) {
-                  <li class="dropdown">
-                    <a href="#" (click)="$event.preventDefault()">
-                      @if (subItem.icon) {<i class="bi me-2" [ngClass]="subItem.icon"></i>}
-                      <span>{{ subItem.title }}</span> <i class="bi bi-chevron-right"></i>
-                    </a>
-                    <ul>
-                      @for (leafItem of subItem.children; track leafItem.title) {
-                      <li><a [routerLink]="leafItem.link" (click)="closeMobileNav()">
-                          @if (leafItem.icon) {<i class="bi me-2" [ngClass]="leafItem.icon"></i>}{{ leafItem.title }}
-                        </a></li>
-                      }
-                    </ul>
-                  </li>
-                  } @else {
-                  <li><a [routerLink]="subItem.link" (click)="closeMobileNav()">
-                      @if (subItem.icon) {<i class="bi me-2" [ngClass]="subItem.icon"></i>}
-                      <span>{{ subItem.title }}</span>
-                    </a></li>
-                  }
-                  }
-                </ul>
-                }
               </li>
               }
             </ul>
@@ -159,67 +133,11 @@
         <i class="bi bi-chevron-down mnp-chevron"></i>
       </button>
       <div class="mnp-accordion-body">
-
-        <!-- vSuite Finance -->
-        <div class="mnp-accordion" [class.open]="vSuiteFinanceOpen"
-          style="border-bottom: none; background: rgba(0,0,0,0.02);">
-          <button class="mnp-link mnp-accordion-toggle" style="padding-left: 30px;"
-            (click)="toggleVSuiteFinance($event)">
-            <span class="mnp-label">vSuite Finance</span>
-            <i class="bi bi-chevron-down mnp-chevron"></i>
-          </button>
-          <div class="mnp-accordion-body">
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/billing"
-              (click)="closeMobileNav()">vSuite Billing</a>
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/accounting"
-              (click)="closeMobileNav()">vSuite Accounting</a>
-          </div>
-        </div>
-
-        <!-- vSuite Workforce -->
-        <div class="mnp-accordion" [class.open]="vSuiteWorkforceOpen"
-          style="border-bottom: none; background: rgba(0,0,0,0.02);">
-          <button class="mnp-link mnp-accordion-toggle" style="padding-left: 30px;"
-            (click)="toggleVSuiteWorkforce($event)">
-            <span class="mnp-label">vSuite Workforce</span>
-            <i class="bi bi-chevron-down mnp-chevron"></i>
-          </button>
-          <div class="mnp-accordion-body">
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/payroll"
-              (click)="closeMobileNav()">vSuite Payroll</a>
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/hr"
-              (click)="closeMobileNav()">vSuite Workbench</a>
-          </div>
-        </div>
-
-        <!-- vSuite Commerce -->
-        <div class="mnp-accordion" [class.open]="vSuiteCommerceOpen"
-          style="border-bottom: none; background: rgba(0,0,0,0.02);">
-          <button class="mnp-link mnp-accordion-toggle" style="padding-left: 30px;"
-            (click)="toggleVSuiteCommerce($event)">
-            <span class="mnp-label">vSuite Commerce</span>
-            <i class="bi bi-chevron-down mnp-chevron"></i>
-          </button>
-          <div class="mnp-accordion-body">
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/ecommerce"
-              (click)="closeMobileNav()">vSuite E-Commerce</a>
-          </div>
-        </div>
-
-        <!-- vSuite Logistics -->
-        <div class="mnp-accordion" [class.open]="vSuiteLogisticsOpen"
-          style="border-bottom: none; background: rgba(0,0,0,0.02);">
-          <button class="mnp-link mnp-accordion-toggle" style="padding-left: 30px;"
-            (click)="toggleVSuiteLogistics($event)">
-            <span class="mnp-label">vSuite Logistics</span>
-            <i class="bi bi-chevron-down mnp-chevron"></i>
-          </button>
-          <div class="mnp-accordion-body">
-            <a class="mnp-sub-link" style="padding-left: 45px;" routerLink="/products/processflow"
-              (click)="closeMobileNav()">vSuite ProcessFlow</a>
-          </div>
-        </div>
-
+        @for (item of productItems; track item.title) {
+        <a class="mnp-sub-link" [routerLink]="item.link" (click)="closeMobileNav()">
+          <i class="bi" [ngClass]="item.icon"></i> {{ item.title }}
+        </a>
+        }
       </div>
     </div>
 
