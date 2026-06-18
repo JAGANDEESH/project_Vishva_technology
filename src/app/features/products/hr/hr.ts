@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class HrComponent {
   pageData: ProductPageData = {
     themeColor: '#6F2DBD',
+    pageBgColor: '#f4eef7',
     accentGold: '#B98423',
     pageClass: 'hr-theme',
     hero: {

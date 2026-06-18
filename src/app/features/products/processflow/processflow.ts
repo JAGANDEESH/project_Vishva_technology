@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class ProcessflowComponent {
   pageData: ProductPageData = {
     themeColor: '#0891b2',
+    pageBgColor: '#f4f2f0',
     hero: {
       badgeIcon: 'bi-cpu',
       badgeText: 'vSuite Process Automation',

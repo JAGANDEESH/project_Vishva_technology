@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class EcommerceComponent {
   pageData: ProductPageData = {
     themeColor: '#0D4FD8',
+    pageBgColor: '#ecf2fb',
     accentGold: '#B98423',
     pageClass: 'ecommerce-theme',
     hero: {

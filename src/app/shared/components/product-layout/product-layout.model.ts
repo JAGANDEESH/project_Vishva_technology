@@ -63,6 +63,7 @@ export interface ProductPageData {
   themeColor?: string;
   accentGold?: string;
   pageClass?: string;
+  pageBgColor?: string;
   hero: ProductHero;
   keyFeatures?: ProductKeyFeatures;
   workflow?: ProductWorkflow;

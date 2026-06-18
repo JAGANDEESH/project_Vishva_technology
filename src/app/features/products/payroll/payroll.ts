@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class PayrollComponent {
   pageData: ProductPageData = {
     themeColor: '#5F5F5F',
+    pageBgColor: '#f5f3f2',
     accentGold: '#B98423',
     pageClass: 'payroll-theme',
     hero: {

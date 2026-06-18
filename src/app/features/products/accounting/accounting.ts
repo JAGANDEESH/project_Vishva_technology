@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class AccountingComponent {
   pageData: ProductPageData = {
     themeColor: '#059ABC',
+    pageBgColor: '#f1f1f1',
     hero: {
       badgeIcon: 'bi-calculator',
       badgeText: 'vSuite Accounting Platform',

@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class VsuiteFinanceComponent {
   pageData: ProductPageData = {
     themeColor: '#0d6efd',
+    pageBgColor: '#eef2ff',
     hero: {
       badgeIcon: 'bi-bank',
       badgeText: 'vSuite Finance Suite',

@@ -11,6 +11,7 @@ import { ProductPageData } from '../../../shared/components/product-layout/produ
 export class BillingComponent {
   pageData: ProductPageData = {
     themeColor: '#198754',
+    pageBgColor: '#94d673ff',
     hero: {
       badgeIcon: 'bi-shield-check',
       badgeText: 'Trusted Billing Platform',

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
-import { NgFor, NgIf, NgClass, isPlatformBrowser } from '@angular/common';
+import { Component, Input, OnInit, OnDestroy, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
+import { NgFor, NgIf, NgClass, isPlatformBrowser, DOCUMENT } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ProductPageData } from './product-layout.model';
 
@@ -48,13 +48,16 @@ function deriveColors(hex: string): { hover: string; badgeText: string; dark: st
   templateUrl: './product-layout.component.html',
   styleUrl: './product-layout.component.scss'
 })
-export class ProductLayoutComponent implements OnInit {
+export class ProductLayoutComponent implements OnInit, OnDestroy {
   @Input() data!: ProductPageData;
+
+  private previousBodyBg: string = '';
 
   constructor(
     private el: ElementRef,
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   ngOnInit(): void {
@@ -70,6 +73,19 @@ export class ProductLayoutComponent implements OnInit {
     }
     if (this.data?.pageClass) {
       this.data.pageClass.split(' ').forEach(cls => host.classList.add(cls));
+    }
+
+    // Apply page background color to body
+    if (this.data?.pageBgColor && isPlatformBrowser(this.platformId)) {
+      this.previousBodyBg = this.document.body.style.background || '';
+      this.document.body.style.background = this.data.pageBgColor;
+    }
+  }
+
+  ngOnDestroy(): void {
+    // Reset body background when leaving the product page
+    if (this.data?.pageBgColor && isPlatformBrowser(this.platformId)) {
+      this.document.body.style.background = this.previousBodyBg;
     }
   }
 
@@ -96,3 +112,4 @@ export class ProductLayoutComponent implements OnInit {
     });
   }
 }
+
