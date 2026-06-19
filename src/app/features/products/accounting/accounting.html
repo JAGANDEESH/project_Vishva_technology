@@ -1,76 +1,527 @@
-<section class="product-page-hero section light-background">
-  <div class="container" data-aos="fade-up">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <span class="badge bg-success mb-3 px-3 py-2 text-uppercase">vSuite Accounting</span>
-        <h1 class="display-4 fw-bold mb-3">One Platform to Manage Your Business Finances</h1>
-        <p class="lead mb-4">
-          vSuite Accounting simplifies billing, accounting, GST, and financial insights—so you can focus on growing your business with confidence.
+<!-- ========================= -->
+<!-- vSuite Accounting Landing -->
+<!-- ========================= -->
+
+<!-- ===== HERO ===== -->
+<section class="acc-hero section overflow-hidden">
+
+  <div class="acc-bg-mesh"></div>
+
+  <div class="acc-bg-circle acc-bg-circle--1"></div>
+  <div class="acc-bg-circle acc-bg-circle--2"></div>
+
+  <div class="container position-relative">
+
+    <div class="row justify-content-center text-center">
+
+      <div class="col-xl-8 col-lg-10" data-aos="fade-up">
+
+        <!-- Center Logo -->
+        <div class="acc-logo-wrap d-flex justify-content-center" data-aos="zoom-in">
+
+          <img src="assets/img/vs images/Accounting.jpeg" alt="vSuite Accounting" class="acc-logo-img" />
+
+        </div>
+
+        <!-- Heading -->
+        <h1 class="acc-hero-title mt-4">
+
+          One Platform to Manage
+          <br />
+
+          <span class="acc-gradient-text">
+            Your Business Finances
+          </span>
+
+        </h1>
+
+        <!-- Sub -->
+        <p class="acc-hero-lead mt-4 mb-5">
+
+          vSuite Accounting simplifies billing,
+          accounting, GST, and financial insights —
+          helping businesses automate operations
+          with confidence and clarity.
+
         </p>
-        <div class="d-flex gap-3">
-          <a href="#appointment" class="btn btn-success btn-lg rounded-pill px-4 text-white">Get Started Free</a>
-          <a href="#contact" class="btn btn-outline-success btn-lg rounded-pill px-4">View Demo</a>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+
+          <a href="#appointment" class="btn acc-btn-primary btn-lg rounded-pill px-5">
+
+            Get Started Free
+
+            <i class="bi bi-arrow-right ms-2"></i>
+
+          </a>
+
+          <a href="#contact" class="btn acc-btn-ghost btn-lg rounded-pill px-4">
+
+            <i class="bi bi-play-circle me-2"></i>
+
+            View Demo
+
+          </a>
+
         </div>
+
       </div>
-      <div class="col-lg-6 mt-5 mt-lg-0">
-        <div class="impact-grid row g-3">
-          <div class="col-6" *ngFor="let stat of businessImpact">
-            <div class="stat-card p-4 rounded-4 shadow-sm bg-white text-center">
-              <i class="bi mb-2 d-block text-success fs-2" [ngClass]="stat.icon"></i>
-              <h3 class="fw-bold mb-1">{{ stat.value }}</h3>
-              <p class="small text-muted mb-0">{{ stat.label }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
+
+    <!-- ===== STATS STRIP ===== -->
+
+    <div class="acc-stats-strip mt-5" data-aos="fade-up" data-aos-delay="250">
+
+      <div class="acc-stat-item" *ngFor="let stat of businessImpact">
+
+        <div class="acc-stat-value">
+          {{ stat.value }}
+        </div>
+
+        <div class="acc-stat-label">
+          {{ stat.label }}
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<section class="core-capabilities section">
+<!-- ===== DASHBOARD SHOWCASE ===== -->
+
+<section class="acc-showcase section overflow-hidden">
+
   <div class="container">
-    <div class="section-title text-center mb-5" data-aos="fade-up">
-      <h2>Core Capabilities</h2>
-      <p>Powerful tools designed to provide accuracy and clarity in financial management.</p>
+
+    <!-- Section Head -->
+    <div class="text-center mb-5" data-aos="fade-up">
+
+      <span class="acc-section-tag">
+        Dashboard Preview
+      </span>
+
+      <h2 class="acc-section-title">
+        Powerful Financial Dashboard
+      </h2>
+
+      <p class="acc-section-sub">
+
+        Get a bird's-eye view of your finances.
+        Track revenue, invoices, expenses,
+        and cash flow — all in one place.
+
+      </p>
+
+    </div>
+
+    <!-- Showcase -->
+    <div class="acc-showcase-wrap" data-aos="zoom-in" data-aos-delay="100">
+
+      <!-- Floating Badges -->
+
+      <!-- GST -->
+      <div class="floating-badge badge-1" data-aos="fade-up" data-aos-delay="300">
+
+        <div class="d-flex align-items-center gap-3">
+
+          <div class="icon-wrap">
+            <i class="bi bi-shield-check"></i>
+          </div>
+
+          <div>
+
+            <h6 class="mb-0 fw-bold">
+              GST Ready
+            </h6>
+
+            <p class="mb-0 small text-muted">
+              100% Compliant
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Analytics -->
+      <div class="floating-badge badge-2" data-aos="fade-up" data-aos-delay="500">
+
+        <div class="d-flex align-items-center gap-3">
+
+          <div class="icon-wrap">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+
+          <div>
+
+            <h6 class="mb-0 fw-bold">
+              Real-Time Analytics
+            </h6>
+
+            <p class="mb-0 small text-muted">
+              Live dashboard insights
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Security -->
+      <div class="floating-badge badge-3" data-aos="fade-up" data-aos-delay="700">
+
+        <div class="d-flex align-items-center gap-3">
+
+          <div class="icon-wrap">
+            <i class="bi bi-lock-fill"></i>
+          </div>
+
+          <div>
+
+            <h6 class="mb-0 fw-bold">
+              Bank-Grade Security
+            </h6>
+
+            <p class="mb-0 small text-muted">
+              Protected & encrypted
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Glow -->
+      <div class="acc-showcase-glow"></div>
+
+      <!-- Dashboard Window -->
+      <div class="acc-showcase-card">
+
+        <!-- Browser -->
+        <div class="acc-showcase-toolbar">
+
+          <div class="acc-toolbar-dots">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+          <div class="acc-browser-url">
+
+            <i class="bi bi-lock-fill"></i>
+
+            app.vsuite.in/accounting
+
+          </div>
+
+        </div>
+
+        <!-- Image -->
+        <div class="acc-showcase-img">
+
+          <img src="assets/img/vs images/Accounting.jpeg" alt="vSuite Accounting Dashboard" loading="lazy">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== PERFORMANCE ===== -->
+
+<section class="acc-performance section">
+
+  <div class="container">
+
+    <div class="text-center mb-5" data-aos="fade-up">
+
+      <span class="acc-section-tag">
+        Performance Impact
+      </span>
+
+      <h2 class="acc-section-title">
+        Measurable Business Results
+      </h2>
+
     </div>
 
     <div class="row g-4">
-      <div class="col-lg-4 col-md-6" *ngFor="let cap of capabilities; let i = index" data-aos="fade-up" [attr.data-aos-delay]="i * 100">
-        <div class="capability-item p-4 h-100 rounded-4 border">
-          <div class="icon-wrap mb-3 text-success fs-3">
-            <i class="bi" [ngClass]="cap.icon"></i>
+
+      <div class="col-lg-6">
+
+        <div class="acc-progress-item">
+
+          <div class="acc-progress-head">
+
+            <span>Invoice Processing Speed</span>
+
+            <strong>92%</strong>
+
           </div>
-          <h5 class="fw-bold mb-3">{{ cap.title }}</h5>
-          <p class="small text-muted mb-0">{{ cap.description }}</p>
+
+          <div class="acc-progress-bar">
+            <div style="width:92%"></div>
+          </div>
+
         </div>
+
       </div>
-      
-      <!-- Special Why Choose Block -->
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-        <div class="why-choose-box p-4 h-100 rounded-4 bg-success text-white">
-          <h5 class="fw-bold mb-4">Why Choose vSuite Accounting?</h5>
-          <ul class="list-unstyled">
-            <li class="mb-3 d-flex align-items-start" *ngFor="let point of whyChoose">
-              <i class="bi bi-check-lg me-2 mt-1"></i>
-              <span class="small">{{ point }}</span>
-            </li>
-          </ul>
+
+      <div class="col-lg-6">
+
+        <div class="acc-progress-item">
+
+          <div class="acc-progress-head">
+
+            <span>GST Filing Accuracy</span>
+
+            <strong>99.8%</strong>
+
+          </div>
+
+          <div class="acc-progress-bar">
+            <div style="width:99%"></div>
+          </div>
+
         </div>
+
       </div>
+
+      <div class="col-lg-6">
+
+        <div class="acc-progress-item">
+
+          <div class="acc-progress-head">
+
+            <span>Manual Work Reduction</span>
+
+            <strong>75%</strong>
+
+          </div>
+
+          <div class="acc-progress-bar">
+            <div style="width:75%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="acc-progress-item">
+
+          <div class="acc-progress-head">
+
+            <span>Customer Satisfaction</span>
+
+            <strong>96%</strong>
+
+          </div>
+
+          <div class="acc-progress-bar">
+            <div style="width:96%"></div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<section class="business-impact section light-background">
-  <div class="container text-center">
-    <div class="impact-quote mb-5" data-aos="fade-up">
-      <h2 class="fw-bold">"Turn Financial Data into Business Growth"</h2>
-      <p class="lead">Empower your decision-making with real-time visibility and AI-ready insights.</p>
+<!-- ===== CORE CAPABILITIES ===== -->
+
+<section class="acc-capabilities section light-background">
+
+  <div class="container">
+
+    <div class="acc-section-head text-center" data-aos="fade-up">
+
+      <span class="acc-section-tag">
+        What We Offer
+      </span>
+
+      <h2 class="acc-section-title">
+        Core Capabilities
+      </h2>
+
+      <p class="acc-section-sub">
+
+        Powerful tools designed to provide
+        accuracy and clarity in every aspect
+        of financial management.
+
+      </p>
+
     </div>
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <img src="assets/img/hero-bg.jpg" alt="Dashboard Preview" class="img-fluid rounded-4 shadow-lg">
+
+    <!-- Grid -->
+    <div class="acc-cap-grid" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="acc-cap-card" *ngFor="let cap of capabilities; let i = index">
+
+        <div class="acc-cap-num">
+
+          {{ (i + 1).toString().padStart(2, '0') }}
+
+        </div>
+
+        <div class="acc-cap-icon">
+
+          <i class="bi" [ngClass]="cap.icon"></i>
+
+        </div>
+
+        <h5 class="acc-cap-title">
+          {{ cap.title }}
+        </h5>
+
+        <p class="acc-cap-desc">
+          {{ cap.description }}
+        </p>
+
       </div>
+
     </div>
+
+    <!-- WHY CHOOSE -->
+    <div class="acc-why-strip" data-aos="fade-up" data-aos-delay="200">
+
+      <div class="row align-items-center g-4">
+
+        <div class="col-lg-4">
+
+          <div class="d-flex align-items-center gap-3 mb-2">
+
+            <div class="acc-why-icon">
+
+              <i class="bi bi-stars"></i>
+
+            </div>
+
+            <div>
+
+              <h4 class="fw-bold mb-0 text-white">
+                Why vSuite Accounting?
+              </h4>
+
+              <p class="text-white opacity-75 small mb-0 mt-1">
+
+                Built for modern businesses.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-8">
+
+          <div class="acc-why-grid">
+
+            <div class="acc-why-point" *ngFor="let point of whyChoose">
+
+              <i class="bi bi-check-circle-fill"></i>
+
+              <span>
+                {{ point }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
+
+</section>
+
+<!-- ===== CTA ===== -->
+
+<section class="acc-cta section overflow-hidden">
+
+  <div class="container">
+
+    <div class="acc-cta-card" data-aos="fade-up">
+
+      <div class="acc-cta-bg-circle acc-cta-bg-circle--1"></div>
+
+      <div class="acc-cta-bg-circle acc-cta-bg-circle--2"></div>
+
+      <div class="row align-items-center">
+
+        <div class="col-lg-8 text-center text-lg-start">
+
+          <h2 class="acc-cta-title">
+
+            Ready to Transform Your
+            <br />
+
+            <span class="acc-gradient-text">
+              Financial Management?
+            </span>
+
+          </h2>
+
+          <p class="acc-cta-sub mt-3">
+
+            Join hundreds of businesses already
+            using vSuite Accounting to streamline
+            their finances.
+
+          </p>
+
+        </div>
+
+        <div class="col-lg-4 text-center text-lg-end mt-4 mt-lg-0">
+
+          <a href="#appointment" class="btn acc-btn-primary btn-lg rounded-pill px-5">
+
+            Start Free Trial
+
+            <i class="bi bi-arrow-right ms-2"></i>
+
+          </a>
+
+          <p class="acc-cta-note mt-3">
+
+            <i class="bi bi-shield-check me-1"></i>
+
+            No credit card required
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>

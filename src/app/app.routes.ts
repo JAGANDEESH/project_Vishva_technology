@@ -7,6 +7,18 @@ import { HrComponent } from './features/products/hr/hr';
 import { EcommerceComponent } from './features/products/ecommerce/ecommerce';
 import { ProcessflowComponent } from './features/products/processflow/processflow';
 import { VsuiteFinanceComponent } from './features/products/vsuite-finance/vsuite-finance';
+import { RpaComponent } from './features/service/automation/rpa/rpa';
+import { WorkflowsComponent } from './features/service/automation/workflows/workflows';
+import { IntegrationsComponent } from './features/service/automation/integrations/integrations';
+import { LlmDevelopmentComponent } from './features/service/ai/llm-development/llm-development';
+import { RagSolutionsComponent } from './features/service/ai/rag-solutions/rag-solutions';
+import { AiConsultingComponent } from './features/service/ai/ai-consulting/ai-consulting';
+import { AiAutomationComponent } from './features/service/ai/ai-automation/ai-automation';
+import { SolFinanceComponent } from './features/service/solutions/finance/sol-finance';
+import { SolCommerceComponent } from './features/service/solutions/commerce/sol-commerce';
+import { SolWorkforceComponent } from './features/service/solutions/workforce/sol-workforce';
+import { SolLogisticsComponent } from './features/service/solutions/logistics/sol-logistics';
+import { PrivacyPolicyComponent } from './features/shared/privacy-policy/privacy-policy';
 
 export const routes: Routes = [
   {
@@ -41,6 +53,54 @@ export const routes: Routes = [
   {
     path: 'products/processflow',
     component: ProcessflowComponent
+  },
+  {
+    path: 'service/automation/rpa',
+    component: RpaComponent
+  },
+  {
+    path: 'service/automation/workflows',
+    component: WorkflowsComponent
+  },
+  {
+    path: 'service/automation/integrations',
+    component: IntegrationsComponent
+  },
+  {
+    path: 'service/ai/llm-development',
+    component: LlmDevelopmentComponent
+  },
+  {
+    path: 'service/ai/rag-solutions',
+    component: RagSolutionsComponent
+  },
+  {
+    path: 'service/ai/ai-consulting',
+    component: AiConsultingComponent
+  },
+  {
+    path: 'service/ai/ai-automation',
+    component: AiAutomationComponent
+  },
+  {
+    path: 'service/solutions/finance',
+    component: SolFinanceComponent
+  },
+  {
+    path: 'service/solutions/commerce',
+    component: SolCommerceComponent
+  },
+  {
+    path: 'service/solutions/workforce',
+    component: SolWorkforceComponent
+  },
+  {
+    path: 'service/solutions/logistics',
+    component: SolLogisticsComponent
+  },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
   },
   {
     path: 'service/:category/:id',

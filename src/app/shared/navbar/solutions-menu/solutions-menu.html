@@ -1,17 +1,16 @@
 <div class="mega-menu">
   <div class="container-fluid p-0">
     <div class="row g-0">
-
-      <!-- Main Content Area: Solution Grid -->
-      <div class="col-lg-9 p-4 main-pane">
+      
+      <div class="col-lg-12 p-4 main-pane">
         <h6 class="menu-heading mb-3">Industry Solutions</h6>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
           <div class="col" *ngFor="let item of items">
             <a 
               [routerLink]="item.link" 
-              class="menu-item d-flex align-items-start"
+              class="menu-item d-flex flex-column align-items-center text-center"
               (click)="onItemClick()">
-              <div class="icon-wrap">
+              <div class="icon-wrap solution-icon mb-3">
                 <i class="bi" [ngClass]="item.icon"></i>
               </div>
               <div class="info">
@@ -22,6 +21,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </div>

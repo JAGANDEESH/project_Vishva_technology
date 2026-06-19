@@ -1,1 +1,666 @@
-/* Footer styles defined in global styles.scss */
+// ============================================================
+// Footer — Full-width Design, Rich Animations & Responsiveness
+// ============================================================
+
+// ── Keyframes ──────────────────────────────────────────────
+
+@keyframes f-col-rise {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes f-orb-tl {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(4%, 6%) scale(1.14);
+  }
+}
+
+@keyframes f-orb-br {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  100% {
+    transform: translate(-5%, -4%) scale(1.10);
+  }
+}
+
+@keyframes f-orb-mid {
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, 0) scale(1.18);
+  }
+}
+
+@keyframes f-glow-line {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@keyframes f-link-appear {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes f-social-bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  35% {
+    transform: translateY(-8px) scale(1.22);
+  }
+
+  65% {
+    transform: translateY(-3px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(-4px) scale(1.12);
+  }
+}
+
+// ── Root shell ─────────────────────────────────────────────
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(170deg, #050d1c 0%, #09162b 40%, #0c1e3a 70%, #0a1628 100%);
+  color: #e2e8f0;
+  font-family: var(--default-font);
+  border-top: 1px solid rgba(43, 112, 212, 0.12);
+}
+
+// ── Decorative background layers ───────────────────────────
+
+// Dot grid spanning the full width
+.f-bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(43, 112, 212, 0.18) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+// Floating glow orbs — fill wide sides
+.f-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.f-orb-tl {
+  width: clamp(300px, 32vw, 600px);
+  height: clamp(300px, 32vw, 600px);
+  background: radial-gradient(circle, rgba(43, 112, 212, 0.12) 0%, transparent 70%);
+  top: -15%;
+  left: -8%;
+  animation: f-orb-tl 16s ease-in-out infinite alternate;
+}
+
+.f-orb-br {
+  width: clamp(250px, 28vw, 520px);
+  height: clamp(250px, 28vw, 520px);
+  background: radial-gradient(circle, rgba(43, 112, 212, 0.09) 0%, transparent 70%);
+  bottom: -10%;
+  right: -6%;
+  animation: f-orb-br 13s ease-in-out infinite alternate;
+}
+
+.f-orb-mid {
+  width: clamp(400px, 55vw, 900px);
+  height: clamp(400px, 55vw, 900px);
+  background: radial-gradient(circle, rgba(43, 112, 212, 0.055) 0%, transparent 65%);
+  top: -30%;
+  left: 50%;
+  animation: f-orb-mid 11s ease-in-out infinite;
+}
+
+// Animated gradient strip at top edge
+.f-glow-strip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(43, 112, 212, 0.0) 10%,
+      rgba(127, 179, 245, 0.6) 40%,
+      rgba(43, 112, 212, 1) 50%,
+      rgba(127, 179, 245, 0.6) 60%,
+      rgba(43, 112, 212, 0.0) 90%,
+      transparent 100%);
+  background-size: 200% 100%;
+  animation: f-glow-line 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// ── Inner content wrapper (full-width with generous padding) ─
+
+.f-wrap {
+  max-width: 1520px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5.5vw, 100px);
+  position: relative;
+  z-index: 2;
+}
+
+// ── Top section ────────────────────────────────────────────
+
+.f-top {
+  padding: 72px 0 56px;
+}
+
+// ── 4-column grid ──────────────────────────────────────────
+
+.f-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1.4fr;
+  gap: clamp(24px, 3.5vw, 60px);
+  align-items: start;
+}
+
+// ── Column stagger entrance ────────────────────────────────
+
+.f-col--about {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.08s both;
+}
+
+.f-col--links {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.18s both;
+}
+
+.f-col--products {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.28s both;
+}
+
+.f-col--contact {
+  animation: f-col-rise 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.38s both;
+}
+
+// ── Logo ───────────────────────────────────────────────────
+
+.f-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+  line-height: 0;
+
+  img {
+    height: auto;
+    width: clamp(200px, 24vw, 350px);
+    object-fit: contain;
+    filter: brightness(1.1) contrast(1.05) drop-shadow(0 4px 12px rgba(43, 112, 212, 0.20));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      filter 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.07) translateY(-3px);
+    filter: brightness(1.18) contrast(1.12) drop-shadow(0 10px 24px rgba(43, 112, 212, 0.40));
+  }
+}
+
+// ── About tagline ──────────────────────────────────────────
+
+.f-tagline {
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: #94a3b8;
+  margin-bottom: 0;
+  max-width: clamp(200px, 24vw, 350px);
+  text-align: justify;
+  text-justify: inter-word;
+
+  strong {
+    color: #7FB3F5;
+    font-weight: 500;
+    display: block;
+    margin-top: 8px;
+    font-size: 12.5px;
+    letter-spacing: 0.2px;
+  }
+}
+
+// ── Social buttons ─────────────────────────────────────────
+
+.f-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.f-social-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 16px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // Ripple fill
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--f-social-color, var(--accent-color));
+    transform: scale(0);
+    transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 0;
+  }
+
+  i {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    color: #fff;
+    transform: translateY(-4px);
+    border-color: var(--f-social-color, var(--accent-color));
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  // Platform colours
+  &[aria-label="Twitter"] {
+    --f-social-color: #1d9bf0;
+  }
+
+  &[aria-label="Facebook"] {
+    --f-social-color: #1877f2;
+  }
+
+  &[aria-label="Instagram"] {
+    --f-social-color: #e1306c;
+  }
+
+  &[aria-label="LinkedIn"] {
+    --f-social-color: #0a66c2;
+  }
+
+  &[aria-label="Twitter"]:hover {
+    box-shadow: 0 8px 22px rgba(29, 155, 240, 0.45);
+  }
+
+  &[aria-label="Facebook"]:hover {
+    box-shadow: 0 8px 22px rgba(24, 119, 242, 0.45);
+  }
+
+  &[aria-label="Instagram"]:hover {
+    box-shadow: 0 8px 22px rgba(225, 48, 108, 0.45);
+  }
+
+  &[aria-label="LinkedIn"]:hover {
+    box-shadow: 0 8px 22px rgba(10, 102, 194, 0.45);
+  }
+}
+
+// ── Section headings ───────────────────────────────────────
+
+.f-heading {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, #224773, #7FB3F5);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(43, 112, 212, 0.6);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+.f-col:hover .f-heading::after {
+  width: 52px;
+}
+
+// ── Nav link lists ─────────────────────────────────────────
+
+.f-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    margin-bottom: 0;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 0;
+    color: #8899b3;
+    font-size: 13.5px;
+    font-weight: 400;
+    text-decoration: none;
+    // border-bottom: 1px solid rgba(255, 255, 255, 0.035);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+
+    &::before {
+      content: '›';
+      font-size: 16px;
+      color: var(--accent-color);
+      line-height: 1;
+      flex-shrink: 0;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    &:hover {
+      color: #e2e8f0;
+      padding-left: 6px;
+
+      &::before {
+        transform: translateX(3px);
+        color: #7FB3F5;
+      }
+    }
+  }
+
+  li:last-child a {
+    border-bottom: none;
+  }
+}
+
+// ── Contact card items ─────────────────────────────────────
+
+.f-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.f-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+
+  &:hover {
+    background: rgba(43, 112, 212, 0.07);
+    border-color: rgba(43, 112, 212, 0.2);
+    transform: translateX(4px);
+  }
+}
+
+.f-contact-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: rgba(43, 112, 212, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7FB3F5;
+  font-size: 14px;
+  transition: background 0.25s ease, color 0.25s ease;
+
+  .f-contact-item:hover & {
+    background: rgba(43, 112, 212, 0.22);
+    color: #fff;
+  }
+}
+
+.f-contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.f-contact-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(127, 179, 245, 0.6);
+}
+
+.f-contact-val {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.f-contact-link {
+  text-decoration: none;
+  color: #94a3b8;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: #7FB3F5;
+  }
+}
+
+// ── Bottom bar ─────────────────────────────────────────────
+
+.f-bottom {
+  background: rgba(0, 0, 0, 0.30);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 2;
+
+  // Glowing line above bottom bar
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(600px, 60%);
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(43, 112, 212, 0.5), transparent);
+  }
+}
+
+.f-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 0;
+}
+
+.f-copy {
+  margin: 0;
+  font-size: 12.5px;
+  color: #475569;
+  letter-spacing: 0.3px;
+
+  strong {
+    color: #7FB3F5;
+    font-weight: 600;
+  }
+}
+
+.f-copy-right {
+  margin: 0;
+  font-size: 11.5px;
+  color: #334155;
+  letter-spacing: 0.5px;
+}
+
+// ── Responsive ─────────────────────────────────────────────
+
+// Large desktop  (1400px +): 4 columns — handled by default
+
+// Laptop (992–1399px): 4 columns tighter
+@media (max-width: 1399px) {
+  .f-grid {
+    gap: clamp(20px, 3vw, 40px);
+  }
+}
+
+// Tablet landscape (768–991px): 2 + 2 grid
+@media (max-width: 991px) {
+  .f-top {
+    padding: 56px 0 44px;
+  }
+
+  .f-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 40px;
+  }
+
+  .f-col--about {
+    grid-column: 1 / -1;
+  }
+
+  // full width on top
+}
+
+// Tablet portrait (576–767px): About full, then 2+2
+@media (max-width: 767px) {
+  .f-top {
+    padding: 48px 0 36px;
+  }
+
+  .f-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 28px;
+  }
+
+  .f-col--about {
+    grid-column: 1 / -1;
+  }
+
+  .f-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}
+
+// Large phone (480–575px): 2-col links, stacked contact
+@media (max-width: 575px) {
+  .f-wrap {
+    padding: 0 20px;
+  }
+
+  .f-top {
+    padding: 40px 0 30px;
+  }
+
+  .f-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .f-col--about,
+  .f-col--contact {
+    grid-column: 1 / -1;
+  }
+
+  .f-logo img {
+    width: clamp(180px, 50vw, 280px);
+  }
+
+  .f-tagline {
+    font-size: 13px;
+    max-width: clamp(180px, 50vw, 280px);
+  }
+
+  .f-social-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+}
+
+// Small phone (< 400px): fully stacked
+@media (max-width: 399px) {
+  .f-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .f-col--links,
+  .f-col--products {
+    grid-column: 1 / -1;
+  }
+}

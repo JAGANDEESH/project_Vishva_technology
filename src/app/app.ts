@@ -10,18 +10,55 @@ import { FooterComponent } from './shared/footer/footer.component';
   imports: [RouterOutlet, NavbarComponent, FooterComponent],
   template: `
     <div id="preloader" [class.hide]="preloaderDone">
+      <!-- Ambient glow blobs -->
       <div class="preloader-glow preloader-glow-1"></div>
       <div class="preloader-glow preloader-glow-2"></div>
+      <div class="preloader-glow preloader-glow-3"></div>
+
+      <!-- Floating particles -->
+      <div class="preloader-particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+      </div>
+
       <div class="preloader-inner">
-        <div class="preloader-orbit-container">
-          <div class="orbit orbit-3"></div>
-          <div class="orbit orbit-2"></div>
-          <div class="orbit orbit-1"></div>
-          <div class="preloader-core">VTL</div>
+        <!-- Orbital spinner rings around logo -->
+        <div class="preloader-orbit-wrap">
+          <div class="preloader-ring ring-outer"></div>
+          <div class="preloader-ring ring-middle"></div>
+          <div class="preloader-ring ring-inner"></div>
+          <!-- Logo centred inside rings -->
+          <div class="preloader-logo-wrap">
+            <img src="assets/Lotus.svg" alt="Vishva Technologies" class="preloader-logo">
+          </div>
         </div>
-        <div class="preloader-progress"><div class="preloader-progress-bar"></div></div>
-        <p class="preloader-tagline">Vishva Techno Labs</p>
-        <p class="preloader-sub">Building Tomorrow's Solutions</p>
+
+        <!-- Brand text -->
+        <div class="preloader-brand">
+          <p class="preloader-tagline">VISHVA TECHNOLOGIES</p>
+          <p class="preloader-sub">Building Tomorrow's Solutions</p>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="preloader-progress">
+          <div class="preloader-progress-bar"></div>
+          <div class="preloader-progress-glow"></div>
+        </div>
+
+        <!-- Loading dots -->
+        <div class="preloader-dots">
+          <span></span><span></span><span></span>
+        </div>
       </div>
     </div>
     <app-navbar></app-navbar>
@@ -43,7 +80,7 @@ export class App implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      setTimeout(() => { this.preloaderDone = true; }, 2200);
+      setTimeout(() => { this.preloaderDone = true; }, 2800);
       this.initAOS();
     }
   }
@@ -59,11 +96,18 @@ export class App implements OnInit {
 
   private initAOS(): void {
     const win = window as any;
+    const aosConfig = {
+      duration: 500,
+      easing: 'ease-out-cubic',
+      once: true,
+      mirror: false,
+      offset: 40,
+    };
     if (win.AOS) {
-      win.AOS.init({ duration: 600, easing: 'ease-in-out', once: true, mirror: false });
+      win.AOS.init(aosConfig);
     } else {
       window.addEventListener('load', () => {
-        if (win.AOS) win.AOS.init({ duration: 600, easing: 'ease-in-out', once: true, mirror: false });
+        if (win.AOS) win.AOS.init(aosConfig);
       });
     }
   }

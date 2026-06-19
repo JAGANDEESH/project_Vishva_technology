@@ -1,12 +1,1059 @@
-.hr-cap-card {
-  transition: all 0.4s ease;
-  &:hover {
-    border-color: var(--bs-info) !important;
-    transform: translateY(-5px);
+/* ===================================== */
+/* vSuite Finance — Premium Modern UI */
+/* ===================================== */
+
+.product-page-hero {
+  position: relative;
+
+  padding: 120px 0 90px;
+
+  background:
+    radial-gradient(circle at top right,
+      color-mix(in srgb,
+        #6F2DBD,
+        transparent 94%),
+      transparent 40%),
+
+    linear-gradient(160deg,
+      #f5f8ff 0%,
+      #f9fbff 100%);
+
+  overflow: hidden;
+}
+
+/* ===== Background Circles ===== */
+
+.hr-bg-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    color-mix(in srgb,
+      #6F2DBD,
+      transparent 92%);
+
+  &--1 {
+    width: 520px;
+    height: 520px;
+
+    top: -180px;
+    right: -120px;
+  }
+
+  &--2 {
+    width: 240px;
+    height: 240px;
+
+    bottom: -80px;
+    left: -60px;
   }
 }
 
-.stats-mini-grid {
-  max-width: 400px;
-  margin: 0 auto;
+/* ===== Hero Image ===== */
+
+.hr-logo-wrap {
+  position: relative;
+  z-index: 2;
 }
+
+.hr-hero-image {
+  width: 240px;
+
+  max-width: 100%;
+
+  border-radius: 30px;
+
+  object-fit: cover;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.08),
+    0 10px 30px rgba(0, 0, 0, 0.04);
+
+  animation: hrFloat 5s ease-in-out infinite;
+
+  transition: 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hrFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-14px);
+  }
+
+}
+
+/* ===== Badge ===== */
+
+.hr-badge {
+  padding: 10px 20px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(in srgb,
+      #6F2DBD,
+      transparent 88%);
+
+  color: #6F2DBD;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  font-size: 12px;
+}
+
+/* ===== Typography ===== */
+
+.hr-hero-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+
+  font-weight: 800;
+
+  line-height: 1.1;
+
+  color: var(--heading-color);
+}
+
+.hr-tagline {
+  font-size: 1.2rem;
+
+  font-weight: 700;
+
+  color: #6F2DBD;
+}
+
+.hr-hero-sub {
+  max-width: 760px;
+
+  margin-inline: auto;
+
+  line-height: 1.9;
+
+  color: #607277;
+
+  font-size: 18px;
+}
+
+/* ===== Buttons ===== */
+
+.hr-btn-primary {
+  background: #6F2DBD;
+
+  border: none;
+
+  color: white;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 30px color-mix(in srgb,
+      #6F2DBD,
+      transparent 70%);
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+
+    filter: brightness(0.95);
+
+    color: white;
+  }
+}
+
+.hr-btn-outline {
+  border: 1px solid color-mix(in srgb,
+      #6F2DBD,
+      transparent 70%);
+
+  color: #6F2DBD;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  font-weight: 700;
+
+  &:hover {
+    background: #6F2DBD;
+
+    color: white;
+  }
+}
+
+/* ===== Stats Strip ===== */
+
+.hr-stats-strip {
+  margin-top: 70px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.04);
+}
+
+.hr-stat-item {
+  padding: 30px 20px;
+
+  text-align: center;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  h3 {
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    color: #6F2DBD;
+  }
+
+  p {
+    margin-top: 8px;
+
+    color: #607277;
+  }
+}
+
+/* ===== Sections ===== */
+
+.hr-section-tag {
+  display: inline-flex;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(in srgb,
+      #6F2DBD,
+      transparent 90%);
+
+  color: #6F2DBD;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.hr-section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  font-weight: 800;
+
+  color: var(--heading-color);
+}
+
+.hr-section-sub {
+  max-width: 680px;
+
+  margin-inline: auto;
+
+  color: #607277;
+
+  line-height: 1.8;
+}
+
+/* ===== Finance Pillars ===== */
+
+.hr-pillars {
+  position: relative;
+}
+
+.pillar-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  height: 100%;
+
+  background: rgba(255,255,255,0.85);
+
+  border-radius: 32px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.03);
+
+  transition: 0.4s ease;
+
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+      0 30px 80px rgba(0,0,0,0.06);
+  }
+}
+
+/* ===== Premium Highlight List ===== */
+
+.pillar-highlights {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.pillar-highlight-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 16px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.9),
+      rgba(255,255,255,0.65)
+    );
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.03);
+
+  transition: all 0.35s ease;
+
+  position: relative;
+
+  overflow: hidden;
+
+  &:hover {
+    transform: translateX(6px);
+
+    box-shadow:
+      0 18px 40px rgba(0,0,0,0.06);
+
+    border-color:
+      color-mix(
+        in srgb,
+        #6F2DBD,
+        transparent 70%
+      );
+
+    .highlight-icon {
+      transform: scale(1.08);
+
+      background: #6F2DBD;
+
+      color: white;
+    }
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+      linear-gradient(
+        90deg,
+        color-mix(
+          in srgb,
+          #6F2DBD,
+          transparent 94%
+        ),
+        transparent
+      );
+
+    opacity: 0;
+
+    transition: 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+/* ===== Highlight Icon ===== */
+
+.highlight-icon {
+  width: 42px;
+  height: 42px;
+
+  min-width: 42px;
+
+  border-radius: 14px;
+
+  background:
+    color-mix(
+      in srgb,
+      #6F2DBD,
+      transparent 88%
+    );
+
+  color: #6F2DBD;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  transition: all 0.35s ease;
+
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.5);
+}
+
+/* ===== Highlight Text ===== */
+
+.highlight-content {
+  span {
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #243336;
+
+    line-height: 1.5;
+  }
+}
+
+.pillar-icon-box {
+  width: 70px;
+  height: 70px;
+
+  border-radius: 22px;
+
+  background:
+    color-mix(in srgb,
+      #6F2DBD,
+      transparent 90%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  color: #6F2DBD;
+
+  transition: 0.4s ease;
+}
+
+.pillar-card:hover .pillar-icon-box {
+  background: #6F2DBD;
+
+  color: white;
+
+  transform: scale(1.08);
+}
+
+.hr-link-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: fit-content;
+
+  padding: 14px 20px;
+
+  border-radius: 16px;
+
+  background:
+    color-mix(
+      in srgb,
+      #6F2DBD,
+      transparent 92%
+    );
+
+  color: #6F2DBD;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: all 0.35s ease;
+
+  margin-top: auto;
+
+  position: relative;
+
+  overflow: hidden;
+
+  i {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    background: #6F2DBD;
+
+    color: white;
+
+    transform: translateX(4px);
+
+    i {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* ===== Floating Badges ===== */
+
+.hr-floating-badge {
+  position: absolute;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 22px;
+
+  padding: 16px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.08);
+
+  z-index: 20;
+
+  min-width: 250px;
+
+  animation: hrBadgeFloat 5s ease-in-out infinite;
+}
+
+.hr-icon-wrap {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 16px;
+
+  background:
+    color-mix(in srgb,
+      #6F2DBD,
+      transparent 88%);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #6F2DBD;
+
+  font-size: 22px;
+}
+
+.badge-left {
+  top: -40px;
+  left: 0;
+}
+
+.badge-right {
+  top: -40px;
+  right: 0;
+
+  animation-delay: 1s;
+}
+
+@keyframes hrBadgeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+}
+
+/* ===== Benefits ===== */
+
+/* ===================================== */
+/* PREMIUM BENEFITS SECTION */
+/* ===================================== */
+
+.hr-benefits {
+  position: relative;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f7faff 0%,
+      #ffffff 100%
+    );
+
+  overflow: hidden;
+}
+
+/* ===== Background ===== */
+
+.hr-benefits-bg {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      color-mix(
+        in srgb,
+        #6F2DBD,
+        transparent 94%
+      ),
+      transparent 40%
+    ),
+
+    radial-gradient(
+      circle at bottom left,
+      color-mix(
+        in srgb,
+        #6F2DBD,
+        transparent 96%
+      ),
+      transparent 35%
+    );
+
+  pointer-events: none;
+}
+
+/* ===== Card ===== */
+
+.hr-benefit-card {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.92),
+      rgba(255,255,255,0.75)
+    );
+
+  border-radius: 32px;
+
+  padding: 48px 36px;
+
+  border: 1px solid rgba(0,0,0,0.05);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.04);
+
+  transition: all 0.45s ease;
+
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+      0 35px 80px rgba(0,0,0,0.08);
+
+    .hr-benefit-icon {
+      transform: scale(1.08);
+
+      background: #6F2DBD;
+
+      color: white;
+    }
+
+    .hr-benefit-glow {
+      opacity: 1;
+    }
+
+    .hr-benefit-line {
+      width: 100%;
+    }
+  }
+}
+
+/* ===== Glow ===== */
+
+.hr-benefit-glow {
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    color-mix(
+      in srgb,
+      #6F2DBD,
+      transparent 88%
+    );
+
+  top: -80px;
+  right: -80px;
+
+  opacity: 0;
+
+  transition: 0.5s ease;
+}
+
+/* ===== Icon ===== */
+
+.hr-benefit-icon {
+  width: 74px;
+  height: 74px;
+
+  border-radius: 24px;
+
+  background:
+    color-mix(
+      in srgb,
+      #6F2DBD,
+      transparent 90%
+    );
+
+  color: #6F2DBD;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  transition: all 0.4s ease;
+
+  margin-bottom: 32px;
+}
+
+/* ===== Value ===== */
+
+.hr-benefit-value {
+  font-size: clamp(3rem,5vw,4.5rem);
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  margin-bottom: 18px;
+
+  color: #6F2DBD;
+}
+
+/* ===== Title ===== */
+
+.hr-benefit-title {
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  color: var(--heading-color);
+
+  margin-bottom: 18px;
+}
+
+/* ===== Desc ===== */
+
+.hr-benefit-desc {
+  color: #607277;
+
+  line-height: 1.8;
+
+  font-size: 15px;
+}
+
+/* ===== Animated Bottom Line ===== */
+
+.hr-benefit-line {
+  width: 70px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  margin-top: 28px;
+
+  background: linear-gradient(
+    90deg,
+    #6F2DBD,
+    transparent
+  );
+
+  transition: 0.45s ease;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 991px) {
+
+  .hr-benefit-card {
+    padding: 40px 28px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .hr-benefit-value {
+    font-size: 3rem;
+  }
+
+}
+
+/* ===== CTA Button Wrapper ===== */
+
+.hr-cta-btn-wrap {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 60px;
+
+  position: relative;
+
+  z-index: 5;
+}
+
+/* ===== CTA ===== */
+
+.integration-cta {
+  position: relative;
+
+  background:
+    linear-gradient(135deg,
+      #6F2DBD 0%,
+      color-mix(in srgb,
+        #6F2DBD,
+        #000 20%) 100%);
+
+  overflow: hidden;
+}
+
+.hr-cta-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  &--1 {
+    width: 360px;
+    height: 360px;
+
+    top: -120px;
+    right: -80px;
+  }
+
+  &--2 {
+    width: 180px;
+    height: 180px;
+
+    bottom: -50px;
+    left: 10%;
+  }
+}
+
+.hr-cta-tag {
+  display: inline-flex;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.hr-cta-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  font-weight: 800;
+
+  color: white;
+}
+
+.hr-cta-sub {
+  max-width: 700px;
+
+  margin-inline: auto;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  line-height: 1.8;
+
+  font-size: 18px;
+}
+
+/* ===== Partner Icons ===== */
+
+.partner-logos {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+
+  margin-top: 50px;
+
+  margin-bottom: 10px;
+}
+.hr-benefit-card {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-height: 100%;
+}
+
+.partner-icon {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 34px;
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.4s ease;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.05);
+
+    background: rgba(255, 255, 255, 0.14);
+  }
+}
+
+/* ===== CTA Button ===== */
+
+.hr-btn-light {
+  background: white;
+
+  color: #6F2DBD;
+
+  font-weight: 700;
+
+  border: none;
+
+  min-height: 60px;
+
+  padding-inline: 42px;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.12);
+
+  transition: all 0.35s ease;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(-4px);
+
+    color: #6F2DBD;
+
+    box-shadow:
+      0 30px 70px rgba(0,0,0,0.16);
+  }
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 991px) {
+
+  .hr-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hr-floating-badge {
+    display: none;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .product-page-hero {
+    padding: 90px 0 70px;
+  }
+
+  .hr-stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .partner-icon {
+    width: 70px;
+    height: 70px;
+
+    font-size: 28px;
+  }
+
+}
+
