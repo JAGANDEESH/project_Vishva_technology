@@ -97,11 +97,11 @@ export class App implements OnInit {
   private initAOS(): void {
     const win = window as any;
     const aosConfig = {
-      duration: 700,
+      duration: 500,
       easing: 'ease-out-cubic',
-      once: false,
-      mirror: true,
-      offset: 60,
+      once: true,
+      mirror: false,
+      offset: 40,
     };
     if (win.AOS) {
       win.AOS.init(aosConfig);
