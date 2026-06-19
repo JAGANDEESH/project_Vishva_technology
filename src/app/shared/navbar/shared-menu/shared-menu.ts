@@ -6,6 +6,7 @@ export interface MenuItem {
   title: string;
   description?: string;
   icon?: string;
+  iconColor?: string;
   link?: string;
   children?: MenuItem[];
 }

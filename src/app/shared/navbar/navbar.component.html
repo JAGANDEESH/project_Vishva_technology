@@ -38,7 +38,7 @@
               @for (item of productItems; track item.title) {
               <li>
                 <a [routerLink]="item.link" (click)="closeMobileNav()">
-                  @if (item.icon) {<i class="bi me-2" [ngClass]="item.icon"></i>}
+                  @if (item.icon) {<span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span>}
                   <span>{{ item.title }}</span>
                 </a>
               </li>
@@ -52,7 +52,7 @@
             <ul>
               @for (item of automationItems; track item.title) {
               <li><a [routerLink]="item.link">
-                  @if (item.icon) {<i class="bi me-2" [ngClass]="item.icon"></i>}{{ item.title }}
+                  @if (item.icon) {<span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span>}<span>{{ item.title }}</span>
                 </a></li>
               }
             </ul>
@@ -65,7 +65,7 @@
             <ul>
               @for (item of aiItems; track item.title) {
               <li><a [routerLink]="item.link">
-                  @if (item.icon) {<i class="bi me-2" [ngClass]="item.icon"></i>}{{ item.title }}
+                  @if (item.icon) {<span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span>}<span>{{ item.title }}</span>
                 </a></li>
               }
             </ul>
@@ -78,7 +78,7 @@
             <ul>
               @for (item of solutionItems; track item.title) {
               <li><a [routerLink]="item.link">
-                  @if (item.icon) {<i class="bi me-2" [ngClass]="item.icon"></i>}{{ item.title }}
+                  @if (item.icon) {<span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span>}<span>{{ item.title }}</span>
                 </a></li>
               }
             </ul>
@@ -135,7 +135,7 @@
       <div class="mnp-accordion-body">
         @for (item of productItems; track item.title) {
         <a class="mnp-sub-link" [routerLink]="item.link" (click)="closeMobileNav()">
-          <i class="bi" [ngClass]="item.icon"></i> {{ item.title }}
+          <span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span> {{ item.title }}
         </a>
         }
       </div>
@@ -151,7 +151,7 @@
       <div class="mnp-accordion-body">
         @for (item of automationItems; track item.title) {
         <a class="mnp-sub-link" [routerLink]="item.link" (click)="closeMobileNav()">
-          <i class="bi" [ngClass]="item.icon"></i> {{ item.title }}
+          <span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span> {{ item.title }}
         </a>
         }
       </div>
@@ -167,7 +167,7 @@
       <div class="mnp-accordion-body">
         @for (item of aiItems; track item.title) {
         <a class="mnp-sub-link" [routerLink]="item.link" (click)="closeMobileNav()">
-          <i class="bi" [ngClass]="item.icon"></i> {{ item.title }}
+          <span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span> {{ item.title }}
         </a>
         }
       </div>
@@ -183,7 +183,7 @@
       <div class="mnp-accordion-body">
         @for (item of solutionItems; track item.title) {
         <a class="mnp-sub-link" [routerLink]="item.link" (click)="closeMobileNav()">
-          <i class="bi" [ngClass]="item.icon"></i> {{ item.title }}
+          <span class="menu-icon-bg" [style.background-color]="item.iconColor + '1a'" [style.color]="item.iconColor"><i class="bi" [ngClass]="item.icon"></i></span> {{ item.title }}
         </a>
         }
       </div>

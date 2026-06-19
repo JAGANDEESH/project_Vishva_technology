@@ -24,32 +24,32 @@ export class NavbarComponent implements OnInit {
   solutionsOpen = false;
 
   productItems: MenuItem[] = [
-    { title: 'vSuite Billing',        icon: 'bi-receipt',      link: '/products/billing' },
-    { title: 'vSuite Accounting',     icon: 'bi-calculator',   link: '/products/accounting' },
-    { title: 'vSuite Payroll',        icon: 'bi-cash-stack',   link: '/products/payroll' },
-    { title: 'vSuite Human Resource', icon: 'bi-person-badge', link: '/products/hr' },
-    { title: 'vSuite Ecommerce',      icon: 'bi-cart3',        link: '/products/ecommerce' },
-    { title: 'vSuite Process Flow',   icon: 'bi-diagram-3',    link: '/products/processflow' }
+    { title: 'vSuite Billing',        icon: 'bi-receipt',      iconColor: '#2563eb', link: '/products/billing' },
+    { title: 'vSuite Accounting',     icon: 'bi-calculator',   iconColor: '#16a34a', link: '/products/accounting' },
+    { title: 'vSuite Payroll',        icon: 'bi-cash-stack',   iconColor: '#059669', link: '/products/payroll' },
+    { title: 'vSuite Human Resource', icon: 'bi-person-badge', iconColor: '#7c3aed', link: '/products/hr' },
+    { title: 'vSuite Ecommerce',      icon: 'bi-cart3',        iconColor: '#ea580c', link: '/products/ecommerce' },
+    { title: 'vSuite Process Flow',   icon: 'bi-diagram-3',    iconColor: '#0891b2', link: '/products/processflow' }
   ];
 
   automationItems: MenuItem[] = [
-    { title: 'RPA', description: 'Automate rule-based, repetitive activities such as data entry and system interactions.', icon: 'bi-robot', link: '/service/automation/rpa' },
-    { title: 'Workflows', description: 'Define structured processes with approvals, conditions, and automated consistency.', icon: 'bi-diagram-3', link: '/service/automation/workflows' },
-    { title: 'Integrations', description: 'Connect your business systems seamlessly from ERP and CRM to specialized platforms.', icon: 'bi-plug', link: '/service/automation/integrations' }
+    { title: 'RPA', description: 'Automate rule-based, repetitive activities such as data entry and system interactions.', icon: 'bi-robot', iconColor: '#4f46e5', link: '/service/automation/rpa' },
+    { title: 'Workflows', description: 'Define structured processes with approvals, conditions, and automated consistency.', icon: 'bi-diagram-3', iconColor: '#0891b2', link: '/service/automation/workflows' },
+    { title: 'Integrations', description: 'Connect your business systems seamlessly from ERP and CRM to specialized platforms.', icon: 'bi-plug', iconColor: '#d97706', link: '/service/automation/integrations' }
   ];
 
   aiItems: MenuItem[] = [
-    { title: 'LLM Development', description: 'Build intelligent applications powered by custom Large Language Models.', icon: 'bi-chat-dots', link: '/service/ai/llm-development' },
-    { title: 'RAG Solutions', description: 'Deliver accurate, context-aware AI responses using your specific data.', icon: 'bi-search', link: '/service/ai/rag-solutions' },
-    { title: 'AI Consulting', description: 'Strategic guidance to identify AI opportunities and define implementation roadmaps.', icon: 'bi-lightbulb', link: '/service/ai/ai-consulting' },
-    { title: 'AI Automation', description: 'Combine AI with automation to handle complex and unstructured business tasks.', icon: 'bi-gear', link: '/service/ai/ai-automation' }
+    { title: 'LLM Development', description: 'Build intelligent applications powered by custom Large Language Models.', icon: 'bi-chat-dots', iconColor: '#9333ea', link: '/service/ai/llm-development' },
+    { title: 'RAG Solutions', description: 'Deliver accurate, context-aware AI responses using your specific data.', icon: 'bi-search', iconColor: '#db2777', link: '/service/ai/rag-solutions' },
+    { title: 'AI Consulting', description: 'Strategic guidance to identify AI opportunities and define implementation roadmaps.', icon: 'bi-lightbulb', iconColor: '#ca8a04', link: '/service/ai/ai-consulting' },
+    { title: 'AI Automation', description: 'Combine AI with automation to handle complex and unstructured business tasks.', icon: 'bi-gear', iconColor: '#2563eb', link: '/service/ai/ai-automation' }
   ];
 
   solutionItems: MenuItem[] = [
-    { title: 'Finance', description: 'Streamline billing, accounting, and cash flow visibility with GST-ready solutions.', icon: 'bi-bank', link: '/service/solutions/finance' },
-    { title: 'Commerce', description: 'Sell smarter and scale faster with modern storefronts and omnichannel management.', icon: 'bi-bag', link: '/service/solutions/commerce' },
-    { title: 'Workforce', description: 'Simplify people operations from payroll processing to employee lifecycle management.', icon: 'bi-person-workspace', link: '/service/solutions/workforce' },
-    { title: 'Logistics', description: 'Optimize shipping operations through intelligent document retrieval and reconciliation.', icon: 'bi-box-seam', link: '/service/solutions/logistics' }
+    { title: 'Finance', description: 'Streamline billing, accounting, and cash flow visibility with GST-ready solutions.', icon: 'bi-bank', iconColor: '#1d4ed8', link: '/service/solutions/finance' },
+    { title: 'Commerce', description: 'Sell smarter and scale faster with modern storefronts and omnichannel management.', icon: 'bi-bag', iconColor: '#e11d48', link: '/service/solutions/commerce' },
+    { title: 'Workforce', description: 'Simplify people operations from payroll processing to employee lifecycle management.', icon: 'bi-person-workspace', iconColor: '#16a34a', link: '/service/solutions/workforce' },
+    { title: 'Logistics', description: 'Optimize shipping operations through intelligent document retrieval and reconciliation.', icon: 'bi-box-seam', iconColor: '#92400e', link: '/service/solutions/logistics' }
   ];
 
   constructor(

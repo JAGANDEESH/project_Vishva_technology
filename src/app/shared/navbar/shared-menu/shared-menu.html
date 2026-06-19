@@ -11,7 +11,9 @@
               [routerLink]="item.link"
               class="menu-item d-flex align-items-start"
               (click)="onItemClick()">
-              <div class="item-icon">
+              <div class="item-icon"
+                [style.background-color]="item.iconColor ? item.iconColor + '1a' : null"
+                [style.color]="item.iconColor || null">
                 <i class="bi" [ngClass]="item.icon"></i>
               </div>
               <div class="item-info">

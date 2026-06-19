@@ -1025,7 +1025,31 @@ section,
 
   .navmenu .dropdown ul li a:hover i,
   .navmenu .dropdown ul li:hover>a i {
-    color: #2b70d4;
+    color: inherit;
+  }
+
+  /* ---- Submenu Icon Background ---- */
+  .navmenu .dropdown ul li a .menu-icon-bg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.25s ease;
+  }
+
+  .navmenu .dropdown ul li a .menu-icon-bg i {
+    font-size: 15px;
+    color: inherit;
+    margin-left: 0;
+  }
+
+  .navmenu .dropdown ul li a:hover .menu-icon-bg {
+    transform: scale(1.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   /* Deep nested dropdown positioning */
@@ -1380,7 +1404,7 @@ section,
 
 .mnp-sub-link i {
   font-size: 14px;
-  color: var(--accent-color);
+  color: inherit;
   width: 18px;
   flex-shrink: 0;
 }
@@ -1396,6 +1420,28 @@ section,
 
 .mnp-sub-link.ai-item:hover {
   color: #6f42c1;
+}
+
+/* ---- Mobile Menu Icon Background ---- */
+.mnp-sub-link .menu-icon-bg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.mnp-sub-link .menu-icon-bg i {
+  font-size: 13px;
+  color: inherit;
+  width: auto;
+}
+
+.mnp-sub-link:hover .menu-icon-bg {
+  transform: scale(1.1);
 }
 
 /* ---- Drawer Footer ---- */
