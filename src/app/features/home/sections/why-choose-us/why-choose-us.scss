@@ -194,6 +194,7 @@
   display: grid !important;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin: 0 !important;
 
   > [class*="col-"] {
     width: 100% !important;
