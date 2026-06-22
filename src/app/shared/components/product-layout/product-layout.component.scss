@@ -1,0 +1,2462 @@
+:host {
+  display: block;
+  --accent-color: #198754;
+  --accent-hover: #157347;
+  --accent-badge-text: #146c43;
+  --accent-dark: #0f5132;
+  // Falls back to accent when no accentGold is supplied — no visual change for non-gold pages
+  --accent-gold: var(--accent-color);
+}
+
+// ===== Billing Product Page — Accent: Green (#198754) =====
+
+
+// ===== Hero Section =====
+.product-page-hero {
+  background: linear-gradient(180deg, #fbfdfc 0%, #f6faf8 100%);
+  min-height: 100vh;
+  padding: 130px 0 58px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .container {
+    max-width: 1200px;
+    width: 100%;
+  }
+
+  .hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+// ===== Hero Content =====
+.hero-top-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  align-items: center;
+  gap: 58px;
+  margin-bottom: 26px;
+}
+
+.hero-intro {
+  max-width: 610px;
+  text-align: left;
+}
+
+.billing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #ffffff;
+  color: var(--accent-badge-text);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+
+  i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+  }
+}
+
+.hero-title {
+  max-width: 620px;
+  color: #0f172a;
+  font-size: clamp(2rem, 3.6vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.hero-para {
+  max-width: 590px;
+  color: #475569;
+  font-size: 1rem;
+  line-height: 1.68;
+}
+
+.hero-feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 760px;
+  margin: 24px auto 20px;
+}
+
+.feat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ffffff;
+  color: var(--accent-badge-text);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 84%);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: 0.8rem;
+  font-weight: 650;
+  line-height: 1;
+
+  i {
+    color: var(--accent-color);
+    font-size: 0.92rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.btn-billing,
+.btn-outline-billing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-billing {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+  }
+}
+
+.btn-outline-billing {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+
+  &:hover,
+  &:focus {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #0f172a;
+    transform: translateY(-1px);
+  }
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(100%, 940px);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+
+  .stat-item {
+    padding: 24px 22px;
+    text-align: center;
+    border-right: 1px solid #edf2f7;
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .stat-num {
+    color: #0f172a;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .stat-lbl {
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 9px;
+  }
+}
+
+// ===== Product Image Preview =====
+.hero-preview-wrap {
+  width: 100%;
+  transform: translateX(18px);
+}
+
+.product-preview-frame {
+  width: fit-content;
+  max-width: 600px;
+  margin: 0 0 0 auto;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.11);
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    max-height: 390px;
+    object-fit: contain;
+    object-position: center center;
+    border-radius: 14px;
+    border: 1px solid #eef2f7;
+  }
+}
+
+.preview-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 4px 2px;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 650;
+
+  i {
+    color: var(--accent-color);
+    font-size: 0.9rem;
+  }
+}
+
+// ===== Key Features Section =====
+.key-features {
+  padding-top: 66px;
+  padding-bottom: 64px;
+
+  .section-title h2 {
+    padding-bottom: 14px;
+    margin-bottom: 8px;
+
+    &::before { display: none; }
+
+    &::after {
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 75%));
+      border-radius: 6px;
+      bottom: 0;
+    }
+  }
+}
+
+.feature-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.feature-col {
+  flex: 0 1 calc(33.333% - 20px);
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card-premium {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  .icon-box-modern {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--accent-color), transparent 88%),
+      color-mix(in srgb, var(--accent-color), transparent 93%));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-size: 24px;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+
+  h4 {
+    color: #0f172a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .feature-card-desc {
+    font-size: 0.92rem;
+    color: #64748b;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .feature-list-modern {
+    flex: 1;
+
+    li {
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:last-child { border-bottom: none; }
+
+      .check-icon { color: var(--accent-color); font-size: 15px; }
+
+      span { font-size: 0.9rem; color: #475569; line-height: 1.6; }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 48px color-mix(in srgb, var(--accent-color), transparent 87%);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 68%);
+
+    .icon-box-modern {
+      background: var(--accent-color);
+      color: #fff;
+      transform: scale(1.06);
+    }
+  }
+}
+
+// ===== Workflow Section =====
+.billing-workflow {
+  background: #ffffff;
+  padding: 68px 0;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  color: var(--accent-gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.workflow-title {
+  max-width: 900px;
+  margin: 0 auto 12px;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.14;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 75%));
+  }
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1080px;
+  margin: 34px auto 0;
+}
+
+.workflow-card {
+  position: relative;
+  min-height: 260px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 28px;
+  padding: 36px 30px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035);
+  text-align: left;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+  overflow: hidden;
+
+  // Accent line that sweeps in on hover
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0;
+    height: 3px;
+    background: linear-gradient(90deg,
+      var(--accent-color),
+      color-mix(in srgb, var(--accent-color), transparent 60%));
+    border-radius: 0 0 28px 28px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.40s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 28px 64px rgba(15, 23, 42, 0.10);
+    border-color: color-mix(in srgb, var(--accent-color), transparent 75%);
+
+    &::after { transform: scaleX(1); }
+  }
+
+  .workflow-number {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    color: color-mix(in srgb, var(--accent-gold), transparent 85%);
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .workflow-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--accent-color), transparent 92%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    color: #172426;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  p {
+    color: #607277;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin: 0;
+  }
+}
+
+// ===== AI Features Section =====
+.ai-features {
+  background: linear-gradient(180deg, #f8fafc 0%, color-mix(in srgb, var(--accent-color), #f8fafc 90%) 100%);
+  position: relative;
+
+  .section-title h2 {
+    padding-bottom: 14px;
+    &::before { display: none; }
+    &::after {
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 75%));
+      border-radius: 6px;
+    }
+  }
+
+  .container {
+    max-width: 1180px;
+  }
+
+  .ai-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+    margin-top: 34px;
+  }
+
+  .ai-glass-card {
+    position: relative;
+    min-height: 230px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.055);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 88%));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .ai-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .ai-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+      font-size: 24px;
+    }
+
+    .ai-step-num {
+      color: color-mix(in srgb, var(--accent-gold), transparent 80%);
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    h5 {
+      color: #0f172a;
+      font-size: 1.16rem;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .ai-card-desc {
+      font-size: 0.94rem;
+      line-height: 1.75;
+      color: #64748b;
+      margin: 0;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.09);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 76%);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// ===== CTA Section =====
+.cta-modern {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-dark) 100%);
+  padding: 80px 0;
+
+  .cta-icon {
+    font-size: 2.4rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  h3 {
+    color: #fff;
+  }
+
+  .cta-sub {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-white-primary {
+    background: #fff;
+    color: var(--accent-color);
+    border: 2px solid #fff;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.22);
+    }
+  }
+}
+
+// ===== Shared Utilities =====
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gold), color-mix(in srgb, var(--accent-gold), transparent 65%));
+  border-radius: 10px;
+  margin: 12px auto 0;
+  display: block;
+}
+
+.py-10 { padding-top: 72px; padding-bottom: 72px; }
+.max-w-2xl { max-width: 650px; }
+
+.section-title h2 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #0f172a;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 800;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.section-lead {
+  max-width: 1100px;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+// ===== Responsive =====
+@media (max-width: 991px) {
+  .py-10 { padding-top: 56px; padding-bottom: 56px; }
+
+  .product-page-hero {
+    min-height: auto;
+    padding: 96px 0 48px;
+
+    .hero-layout {
+      min-height: auto;
+    }
+  }
+
+  .section-lead {
+    max-width: 720px;
+  }
+
+  .hero-title,
+  .hero-para,
+  .hero-stats {
+    max-width: 100%;
+  }
+
+  .hero-top-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-intro {
+    max-width: 720px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero-title,
+  .hero-para {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-preview-wrap {
+    transform: none;
+  }
+
+  .product-preview-frame {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .feature-cards-grid {
+    gap: 20px;
+  }
+
+  .feature-col {
+    flex: 0 1 calc(50% - 12px);
+    min-width: 240px;
+  }
+
+  .workflow-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-features .ai-feature-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-page-hero {
+    min-height: auto;
+    padding: 80px 0 38px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .btn-billing,
+  .btn-outline-billing {
+    width: 100%;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .stat-item {
+      border-right: 0;
+      border-bottom: 1px solid #edf2f7;
+
+      &:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  .product-preview-frame {
+    border-radius: 18px;
+    padding: 10px;
+
+    img {
+      max-height: 300px;
+    }
+  }
+
+  .billing-workflow {
+    padding: 48px 0;
+  }
+
+  .feature-cards-grid {
+    gap: 14px;
+  }
+
+  .feature-col {
+    flex: 1 1 100%;
+    min-width: unset;
+  }
+
+  .workflow-card,
+  .ai-glass-card,
+  .feature-card-premium { padding: 24px 20px !important; }
+}
+
+// =====================================================
+// PAYROLL — Metallic Silver / Gold theme
+// =====================================================
+:host.payroll-theme {
+  --silver-primary:  #8A8A8A;
+  --silver-dark:     #5F5F5F;
+  --silver-soft:     #C9C9C9;
+  --silver-bg:       #F6F6F6;
+  --silver-border:   rgba(143, 143, 143, 0.22);
+  --gold:            #B98423;
+  --gold-dark:       #966B1C;
+  --text-primary:    #2A2A2A;
+  --text-muted:      #6B6B6B;
+
+  // ── Page background ──────────────────────────────
+  .product-page-hero {
+    background: linear-gradient(180deg, #fafafa 0%, #f3f3f3 100%);
+  }
+
+  // ── Top badge ────────────────────────────────────
+  .billing-badge {
+    background: #ffffff;
+    border-color: var(--silver-border);
+    color: var(--silver-dark);
+
+    i { color: var(--gold); }
+  }
+
+  // ── Feature chips ────────────────────────────────
+  .feat-chip {
+    background: #ffffff;
+    border-color: var(--silver-border);
+    color: var(--silver-dark);
+
+    i { color: var(--gold); }
+
+    &:hover {
+      background: var(--silver-bg);
+      border-color: var(--silver-primary);
+    }
+  }
+
+  // ── Primary button — metallic gradient ───────────
+  .btn-billing {
+    background: linear-gradient(135deg, #707070 0%, #3D3D3D 100%);
+    border: 1px solid #5F5F5F;
+    color: #ffffff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.02em;
+
+    &:hover, &:focus {
+      background: linear-gradient(135deg, #5A5A5A 0%, #2A2A2A 100%);
+      border-color: #4A4A4A;
+      color: #ffffff;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.26);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Outline / secondary button ───────────────────
+  .btn-outline-billing {
+    border-color: var(--silver-soft);
+    color: var(--silver-dark);
+
+    &:hover, &:focus {
+      background: var(--silver-bg);
+      border-color: var(--silver-primary);
+      color: var(--text-primary);
+    }
+  }
+
+  // ── Image preview card ───────────────────────────
+  .product-preview-frame {
+    border-color: var(--silver-border);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.09);
+  }
+
+  // ── Caption check icon ───────────────────────────
+  .preview-caption i { color: var(--gold); }
+
+  // ── Stats strip ──────────────────────────────────
+  .hero-stats {
+    border-color: var(--silver-border);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.05);
+
+    .stat-item { border-color: var(--silver-border); }
+
+    .stat-num {
+      color: var(--text-primary);
+      font-weight: 800;
+    }
+
+    .stat-lbl { color: var(--text-muted); }
+  }
+
+  // ── Section title underline ───────────────────────
+  .title-underline,
+  .key-features .section-title h2::after {
+    background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.3));
+  }
+
+  // ── Eyebrow label ─────────────────────────────────
+  .section-eyebrow { color: var(--gold); }
+
+  // ── Feature cards ────────────────────────────────
+  .feature-card-premium {
+    border-color: var(--silver-border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+
+    .icon-box-modern {
+      background: linear-gradient(135deg, #f2f2f2, #e8e8e8);
+      color: var(--silver-dark);
+    }
+
+    h4 { color: var(--text-primary); }
+
+    &:hover {
+      border-color: var(--silver-primary);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.10);
+
+      .icon-box-modern {
+        background: linear-gradient(135deg, #5F5F5F, #3D3D3D);
+        color: #fff;
+      }
+    }
+  }
+
+  // ── Workflow section ─────────────────────────────
+  .billing-workflow {
+    background: #f8f8f8;
+    border-color: #ebebeb;
+  }
+
+  .workflow-card {
+    border-color: var(--silver-border);
+
+    .workflow-number { color: rgba(185, 132, 35, 0.15); }
+
+    .workflow-icon {
+      background: linear-gradient(135deg, #efefef, #e4e4e4);
+      color: var(--silver-dark);
+    }
+
+    h3 { color: var(--text-primary); }
+
+    &:hover {
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.10);
+      border-color: var(--silver-primary);
+
+      .workflow-icon {
+        background: linear-gradient(135deg, #5F5F5F, #3D3D3D);
+        color: #fff;
+      }
+    }
+  }
+
+  // ── AI/Why section ───────────────────────────────
+  .ai-features {
+    background: linear-gradient(180deg, #f8f8f8 0%, #f0f0f0 100%);
+  }
+
+  .ai-glass-card {
+    border-color: var(--silver-border);
+
+    .ai-icon {
+      background: linear-gradient(135deg, #efefef, #e4e4e4);
+      color: var(--silver-dark);
+    }
+
+    .ai-step-num { color: rgba(185, 132, 35, 0.18); }
+
+    h5 { color: var(--text-primary); }
+
+    &:hover {
+      border-color: var(--silver-primary);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.10);
+
+      &::after {
+        background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.3));
+        opacity: 1;
+      }
+    }
+  }
+
+  // ── CTA section ──────────────────────────────────
+  .cta-modern {
+    background: linear-gradient(135deg, #4A4A4A 0%, #2A2A2A 100%);
+  }
+
+  .btn-white-primary {
+    color: #3D3D3D;
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+// =====================================================
+// HR — Violet / Gold theme
+// =====================================================
+:host.hr-theme {
+  --violet:          #6F2DBD;
+  --violet-hover:    #5E22A0;
+  --violet-dark:     #4B1D8F;
+  --violet-deeper:   #3A1570;
+  --lavender-soft:   #E9DDF7;
+  --lavender-bg:     #F7F2FD;
+  --lavender-border: rgba(111, 45, 189, 0.15);
+  --gold:            #B98423;
+  --gold-dark:       #966B1C;
+  --text-primary:    #1A0A33;
+  --text-muted:      #6B5B8A;
+
+  // ── Page background ──────────────────────────────
+  .product-page-hero {
+    background: linear-gradient(180deg, #fdfbff 0%, #f7f2fd 100%);
+  }
+
+  // ── Top badge ────────────────────────────────────
+  .billing-badge {
+    background: #ffffff;
+    border-color: var(--lavender-border);
+    color: var(--violet-dark);
+
+    i { color: var(--violet); }
+  }
+
+  // ── Feature chips ────────────────────────────────
+  .feat-chip {
+    background: #ffffff;
+    border-color: var(--lavender-border);
+    color: var(--violet-dark);
+
+    i { color: var(--violet); }
+
+    &:hover {
+      background: var(--lavender-bg);
+      border-color: var(--violet);
+    }
+  }
+
+  // ── Primary button — violet gradient ─────────────
+  .btn-billing {
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-dark) 100%);
+    border: 1px solid var(--violet-dark);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(111, 45, 189, 0.30);
+    letter-spacing: 0.02em;
+
+    &:hover, &:focus {
+      background: linear-gradient(135deg, var(--violet-hover) 0%, var(--violet-deeper) 100%);
+      border-color: var(--violet-deeper);
+      color: #ffffff;
+      box-shadow: 0 8px 30px rgba(111, 45, 189, 0.40);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Outline / secondary button ───────────────────
+  .btn-outline-billing {
+    border-color: var(--lavender-border);
+    color: var(--violet-dark);
+
+    &:hover, &:focus {
+      background: var(--lavender-bg);
+      border-color: var(--violet);
+      color: var(--violet);
+    }
+  }
+
+  // ── Image preview card ───────────────────────────
+  .product-preview-frame {
+    border-color: var(--lavender-border);
+    box-shadow:
+      0 24px 60px rgba(111, 45, 189, 0.10),
+      0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .preview-caption i { color: var(--violet); }
+
+  // ── Stats strip ──────────────────────────────────
+  .hero-stats {
+    border-color: var(--lavender-border);
+    box-shadow: 0 16px 44px rgba(111, 45, 189, 0.07);
+
+    .stat-item { border-color: rgba(111, 45, 189, 0.08); }
+    .stat-num  { color: var(--text-primary); font-weight: 800; }
+    .stat-lbl  { color: var(--text-muted); }
+  }
+
+  // ── Section title underline + eyebrow ────────────
+  .title-underline,
+  .key-features .section-title h2::after {
+    background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.25));
+  }
+
+  .section-eyebrow { color: var(--gold); }
+
+  // ── Feature cards ────────────────────────────────
+  .feature-card-premium {
+    border-color: var(--lavender-border);
+    box-shadow: 0 4px 24px rgba(111, 45, 189, 0.06);
+
+    .icon-box-modern {
+      background: linear-gradient(135deg,
+        rgba(111, 45, 189, 0.10),
+        rgba(111, 45, 189, 0.06));
+      color: var(--violet);
+    }
+
+    h4 { color: var(--text-primary); }
+
+    &:hover {
+      border-color: rgba(111, 45, 189, 0.35);
+      box-shadow: 0 18px 48px rgba(111, 45, 189, 0.13);
+
+      .icon-box-modern {
+        background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── Workflow section ─────────────────────────────
+  .billing-workflow {
+    background: #faf7fe;
+    border-color: rgba(111, 45, 189, 0.08);
+  }
+
+  .workflow-card {
+    border-color: var(--lavender-border);
+
+    .workflow-number { color: rgba(185, 132, 35, 0.14); }
+
+    .workflow-icon {
+      background: linear-gradient(135deg,
+        rgba(111, 45, 189, 0.10),
+        rgba(111, 45, 189, 0.06));
+      color: var(--violet);
+    }
+
+    h3 { color: var(--text-primary); }
+    p  { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(111, 45, 189, 0.35);
+      box-shadow: 0 20px 50px rgba(111, 45, 189, 0.12);
+
+      .workflow-icon {
+        background: linear-gradient(135deg, var(--violet), var(--violet-dark));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── AI / Why section ─────────────────────────────
+  .ai-features {
+    background: linear-gradient(180deg, #faf7fe 0%, #f3ecfc 100%);
+  }
+
+  .ai-glass-card {
+    border-color: var(--lavender-border);
+
+    .ai-icon {
+      background: linear-gradient(135deg,
+        rgba(111, 45, 189, 0.10),
+        rgba(111, 45, 189, 0.06));
+      color: var(--violet);
+    }
+
+    .ai-step-num { color: rgba(185, 132, 35, 0.16); }
+
+    h5 { color: var(--text-primary); }
+
+    &::after {
+      background: linear-gradient(90deg, var(--violet), rgba(111, 45, 189, 0.15));
+    }
+
+    &:hover {
+      border-color: rgba(111, 45, 189, 0.35);
+      box-shadow: 0 24px 60px rgba(111, 45, 189, 0.12);
+
+      &::after { opacity: 1; }
+    }
+  }
+
+  // ── CTA section ──────────────────────────────────
+  .cta-modern {
+    background: linear-gradient(135deg, var(--violet) 0%, var(--violet-deeper) 100%);
+  }
+
+  .btn-white-primary {
+    color: var(--violet);
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+// =====================================================
+// E-COMMERCE — Royal Blue / Gold theme
+// =====================================================
+:host.ecommerce-theme {
+  --royal-blue:       #0D4FD8;
+  --royal-hover:      #0B42B8;
+  --deep-blue:        #083A9B;
+  --deeper-blue:      #062C78;
+  --blue-bg:          #F0F5FF;
+  --blue-soft:        #EAF1FF;
+  --blue-border:      rgba(13, 79, 216, 0.15);
+  --gold:             #B98423;
+  --gold-dark:        #966B1C;
+  --text-primary:     #071A40;
+  --text-muted:       #3A5080;
+
+  // ── Page background ──────────────────────────────
+  .product-page-hero {
+    background: linear-gradient(180deg, #fafcff 0%, #f0f5ff 100%);
+  }
+
+  // ── Top badge ────────────────────────────────────
+  .billing-badge {
+    background: #ffffff;
+    border-color: var(--blue-border);
+    color: var(--deep-blue);
+
+    i { color: var(--royal-blue); }
+  }
+
+  // ── Feature chips ─────────────────────────────────
+  .feat-chip {
+    background: #ffffff;
+    border-color: var(--blue-border);
+    color: var(--deep-blue);
+
+    i { color: var(--royal-blue); }
+
+    &:hover {
+      background: var(--blue-bg);
+      border-color: var(--royal-blue);
+    }
+  }
+
+  // ── Primary button — royal blue gradient ──────────
+  .btn-billing {
+    background: linear-gradient(135deg, var(--royal-blue) 0%, var(--deep-blue) 100%);
+    border: 1px solid var(--deep-blue);
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(13, 79, 216, 0.30);
+    letter-spacing: 0.02em;
+
+    &:hover, &:focus {
+      background: linear-gradient(135deg, var(--royal-hover) 0%, var(--deeper-blue) 100%);
+      border-color: var(--deeper-blue);
+      color: #ffffff;
+      box-shadow: 0 8px 30px rgba(13, 79, 216, 0.40);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Outline / secondary button ───────────────────
+  .btn-outline-billing {
+    border-color: var(--blue-border);
+    color: var(--deep-blue);
+
+    &:hover, &:focus {
+      background: var(--blue-bg);
+      border-color: var(--royal-blue);
+      color: var(--royal-blue);
+    }
+  }
+
+  // ── Image preview card ────────────────────────────
+  .product-preview-frame {
+    border-color: var(--blue-border);
+    box-shadow:
+      0 24px 60px rgba(13, 79, 216, 0.10),
+      0 8px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .preview-caption i { color: var(--royal-blue); }
+
+  // ── Stats strip ───────────────────────────────────
+  .hero-stats {
+    border-color: var(--blue-border);
+    box-shadow: 0 16px 44px rgba(13, 79, 216, 0.07);
+
+    .stat-item { border-color: rgba(13, 79, 216, 0.08); }
+    .stat-num  { color: var(--text-primary); font-weight: 800; }
+    .stat-lbl  { color: var(--text-muted); }
+  }
+
+  // ── Section title underline + eyebrow ─────────────
+  .title-underline,
+  .key-features .section-title h2::after {
+    background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.25));
+  }
+
+  .section-eyebrow { color: var(--gold); }
+
+  // ── Feature cards ─────────────────────────────────
+  .feature-card-premium {
+    border-color: var(--blue-border);
+    box-shadow: 0 4px 24px rgba(13, 79, 216, 0.06);
+
+    .icon-box-modern {
+      background: linear-gradient(135deg,
+        rgba(13, 79, 216, 0.10),
+        rgba(13, 79, 216, 0.06));
+      color: var(--royal-blue);
+    }
+
+    h4 { color: var(--text-primary); }
+
+    &:hover {
+      border-color: rgba(13, 79, 216, 0.35);
+      box-shadow: 0 18px 48px rgba(13, 79, 216, 0.13);
+
+      .icon-box-modern {
+        background: linear-gradient(135deg, var(--royal-blue), var(--deep-blue));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── Workflow section ──────────────────────────────
+  .billing-workflow {
+    background: #f5f8ff;
+    border-color: rgba(13, 79, 216, 0.08);
+  }
+
+  .workflow-card {
+    border-color: var(--blue-border);
+
+    .workflow-number { color: rgba(185, 132, 35, 0.14); }
+
+    .workflow-icon {
+      background: linear-gradient(135deg,
+        rgba(13, 79, 216, 0.10),
+        rgba(13, 79, 216, 0.06));
+      color: var(--royal-blue);
+    }
+
+    h3 { color: var(--text-primary); }
+    p  { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(13, 79, 216, 0.35);
+      box-shadow: 0 20px 50px rgba(13, 79, 216, 0.12);
+
+      .workflow-icon {
+        background: linear-gradient(135deg, var(--royal-blue), var(--deep-blue));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── AI / Why section ──────────────────────────────
+  .ai-features {
+    background: linear-gradient(180deg, #f5f8ff 0%, #eaf1ff 100%);
+  }
+
+  .ai-glass-card {
+    border-color: var(--blue-border);
+
+    .ai-icon {
+      background: linear-gradient(135deg,
+        rgba(13, 79, 216, 0.10),
+        rgba(13, 79, 216, 0.06));
+      color: var(--royal-blue);
+    }
+
+    .ai-step-num { color: rgba(185, 132, 35, 0.16); }
+
+    h5 { color: var(--text-primary); }
+
+    &::after {
+      background: linear-gradient(90deg, var(--royal-blue), rgba(13, 79, 216, 0.15));
+    }
+
+    &:hover {
+      border-color: rgba(13, 79, 216, 0.35);
+      box-shadow: 0 24px 60px rgba(13, 79, 216, 0.12);
+
+      &::after { opacity: 1; }
+    }
+  }
+
+  // ── CTA section ───────────────────────────────────
+  .cta-modern {
+    background: linear-gradient(135deg, var(--royal-blue) 0%, var(--deeper-blue) 100%);
+  }
+
+  .btn-white-primary {
+    color: var(--royal-blue);
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+// =====================================================
+// AI AUTOMATION — Electric Blue / Navy / Gold theme
+// =====================================================
+:host.ai-automation-theme {
+  --ai-blue:         #0EA5E9;
+  --ai-hover:        #0284C7;
+  --ai-dark:         #0369A1;
+  --ai-deep:         #0C4A6E;
+  --ai-bg:           #F0F9FF;
+  --ai-soft:         #E0F2FE;
+  --ai-border:       rgba(14, 165, 233, 0.16);
+  --gold:            #B98423;
+  --text-primary:    #0A1628;
+  --text-muted:      #334E68;
+
+  // ── Page background ──────────────────────────────
+  .product-page-hero {
+    background: linear-gradient(160deg, #f8fcff 0%, #e8f5ff 50%, #f0f9ff 100%);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(14, 165, 233, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 10% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+  }
+
+  // ── Top badge ────────────────────────────────────
+  .billing-badge {
+    background: #ffffff;
+    border-color: var(--ai-border);
+    color: var(--ai-dark);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+
+    i { color: var(--ai-blue); }
+  }
+
+  // ── Feature chips ─────────────────────────────────
+  .feat-chip {
+    background: #ffffff;
+    border-color: var(--ai-border);
+    color: var(--ai-dark);
+    font-weight: 650;
+
+    i { color: var(--ai-blue); }
+
+    &:hover {
+      background: var(--ai-bg);
+      border-color: var(--ai-blue);
+      color: var(--ai-dark);
+    }
+  }
+
+  // ── Primary button ────────────────────────────────
+  .btn-billing {
+    background: linear-gradient(135deg, var(--ai-blue) 0%, var(--ai-dark) 100%);
+    border: 1px solid var(--ai-dark);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 22px rgba(14, 165, 233, 0.32);
+
+    &:hover, &:focus {
+      background: linear-gradient(135deg, var(--ai-hover) 0%, var(--ai-deep) 100%);
+      border-color: var(--ai-deep);
+      color: #ffffff;
+      box-shadow: 0 8px 32px rgba(14, 165, 233, 0.42);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Outline / secondary button ────────────────────
+  .btn-outline-billing {
+    border-color: rgba(14, 165, 233, 0.30);
+    color: var(--ai-dark);
+    font-weight: 600;
+
+    &:hover, &:focus {
+      background: var(--ai-bg);
+      border-color: var(--ai-blue);
+      color: var(--ai-blue);
+    }
+  }
+
+  // ── Image preview card ────────────────────────────
+  .product-preview-frame {
+    border-color: var(--ai-border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 80px rgba(14, 165, 233, 0.12),
+      0 8px 24px rgba(0, 0, 0, 0.06);
+
+    img {
+      border-radius: 18px;
+      object-fit: cover;
+    }
+  }
+
+  .preview-caption {
+    color: var(--text-muted);
+    font-weight: 700;
+    i { color: var(--gold); }
+  }
+
+  // ── Stats strip ───────────────────────────────────
+  .hero-stats {
+    border-color: var(--ai-border);
+    box-shadow: 0 16px 44px rgba(14, 165, 233, 0.08);
+
+    .stat-item { border-color: rgba(14, 165, 233, 0.09); }
+
+    .stat-num {
+      color: var(--text-primary);
+      font-weight: 800;
+    }
+
+    .stat-lbl { color: var(--text-muted); }
+  }
+
+  // ── Section title underline + eyebrow ─────────────
+  .title-underline,
+  .key-features .section-title h2::after {
+    background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.22));
+  }
+
+  .section-eyebrow {
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: 0.10em;
+  }
+
+  // ── Feature cards ─────────────────────────────────
+  .feature-card-premium {
+    border-color: var(--ai-border);
+    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.06);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .icon-box-modern {
+      background: linear-gradient(135deg,
+        rgba(14, 165, 233, 0.12),
+        rgba(14, 165, 233, 0.06));
+      color: var(--ai-blue);
+    }
+
+    h4 {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    p { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(14, 165, 233, 0.38);
+      box-shadow:
+        0 20px 50px rgba(14, 165, 233, 0.14),
+        0 4px 16px rgba(0, 0, 0, 0.04);
+      transform: translateY(-6px);
+
+      .icon-box-modern {
+        background: linear-gradient(135deg, var(--ai-blue), var(--ai-dark));
+        color: #fff;
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  // ── Workflow section ──────────────────────────────
+  .billing-workflow {
+    background: #f4faff;
+    border-color: rgba(14, 165, 233, 0.08);
+  }
+
+  .workflow-card {
+    border-color: var(--ai-border);
+    background: rgba(255, 255, 255, 0.92);
+
+    .workflow-number { color: rgba(185, 132, 35, 0.13); }
+
+    .workflow-icon {
+      background: linear-gradient(135deg,
+        rgba(14, 165, 233, 0.12),
+        rgba(14, 165, 233, 0.06));
+      color: var(--ai-blue);
+    }
+
+    h3 {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    p { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(14, 165, 233, 0.38);
+      box-shadow: 0 20px 50px rgba(14, 165, 233, 0.13);
+
+      .workflow-icon {
+        background: linear-gradient(135deg, var(--ai-blue), var(--ai-dark));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── AI / Why section ──────────────────────────────
+  .ai-features {
+    background: linear-gradient(180deg, #f4faff 0%, #e8f5ff 100%);
+  }
+
+  .ai-glass-card {
+    border-color: var(--ai-border);
+    background: rgba(255, 255, 255, 0.92);
+
+    .ai-icon {
+      background: linear-gradient(135deg,
+        rgba(14, 165, 233, 0.12),
+        rgba(14, 165, 233, 0.06));
+      color: var(--ai-blue);
+    }
+
+    .ai-step-num { color: rgba(185, 132, 35, 0.15); }
+
+    h5 {
+      color: var(--text-primary);
+      font-weight: 800;
+    }
+
+    p { color: var(--text-muted); }
+
+    &::after {
+      background: linear-gradient(90deg, var(--ai-blue), rgba(14, 165, 233, 0.12));
+    }
+
+    &:hover {
+      border-color: rgba(14, 165, 233, 0.38);
+      box-shadow: 0 24px 60px rgba(14, 165, 233, 0.13);
+
+      &::after { opacity: 1; }
+    }
+  }
+
+  // ── CTA section ───────────────────────────────────
+  .cta-modern {
+    background: linear-gradient(135deg, var(--ai-dark) 0%, var(--ai-deep) 100%);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(14, 165, 233, 0.20) 0%, transparent 65%);
+      pointer-events: none;
+    }
+  }
+
+  .btn-white-primary {
+    color: var(--ai-dark);
+    font-weight: 700;
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+// =====================================================
+// RPA — Teal / Process Flow / Gold theme
+// =====================================================
+:host.rpa-theme {
+  --teal:          #0D9488;
+  --teal-hover:    #0F766E;
+  --teal-dark:     #115E59;
+  --teal-deep:     #134E4A;
+  --teal-bg:       #F0FDFA;
+  --teal-soft:     #CCFBF1;
+  --teal-border:   rgba(13, 148, 136, 0.16);
+  --gold:          #B98423;
+  --text-primary:  #042F2E;
+  --text-muted:    #2D6A66;
+
+  // ── Page background ──────────────────────────────
+  .product-page-hero {
+    background: linear-gradient(160deg, #f8fffe 0%, #edfaf8 50%, #f0fdfa 100%);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 40% at 80% 20%, rgba(13, 148, 136, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 10% 80%, rgba(6, 182, 166, 0.05) 0%, transparent 55%);
+      pointer-events: none;
+    }
+  }
+
+  // ── Top badge ────────────────────────────────────
+  .billing-badge {
+    background: #ffffff;
+    border-color: var(--teal-border);
+    color: var(--teal-dark);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+
+    i { color: var(--teal); }
+  }
+
+  // ── Feature chips ─────────────────────────────────
+  .feat-chip {
+    background: #ffffff;
+    border-color: var(--teal-border);
+    color: var(--teal-dark);
+    font-weight: 650;
+
+    i { color: var(--teal); }
+
+    &:hover {
+      background: var(--teal-bg);
+      border-color: var(--teal);
+    }
+  }
+
+  // ── Primary button — teal gradient ───────────────
+  .btn-billing {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
+    border: 1px solid var(--teal-dark);
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 22px rgba(13, 148, 136, 0.30);
+
+    &:hover, &:focus {
+      background: linear-gradient(135deg, var(--teal-hover) 0%, var(--teal-deep) 100%);
+      border-color: var(--teal-deep);
+      color: #ffffff;
+      box-shadow: 0 8px 32px rgba(13, 148, 136, 0.40);
+      transform: translateY(-2px);
+    }
+  }
+
+  // ── Outline / secondary button ────────────────────
+  .btn-outline-billing {
+    border-color: rgba(13, 148, 136, 0.28);
+    color: var(--teal-dark);
+    font-weight: 600;
+
+    &:hover, &:focus {
+      background: var(--teal-bg);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+  }
+
+  // ── Image preview card ────────────────────────────
+  .product-preview-frame {
+    border-color: var(--teal-border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow:
+      0 30px 80px rgba(13, 148, 136, 0.12),
+      0 8px 24px rgba(0, 0, 0, 0.05);
+
+    img {
+      border-radius: 18px;
+      object-fit: cover;
+    }
+  }
+
+  .preview-caption {
+    color: var(--text-muted);
+    font-weight: 700;
+    i { color: var(--gold); }
+  }
+
+  // ── Stats strip ───────────────────────────────────
+  .hero-stats {
+    border-color: var(--teal-border);
+    box-shadow: 0 16px 44px rgba(13, 148, 136, 0.08);
+
+    .stat-item { border-color: rgba(13, 148, 136, 0.09); }
+    .stat-num  { color: var(--text-primary); font-weight: 800; }
+    .stat-lbl  { color: var(--text-muted); }
+  }
+
+  // ── Section title underline + eyebrow ─────────────
+  .title-underline,
+  .key-features .section-title h2::after {
+    background: linear-gradient(90deg, var(--gold), rgba(185, 132, 35, 0.22));
+  }
+
+  .section-eyebrow {
+    color: var(--gold);
+    font-weight: 800;
+    letter-spacing: 0.10em;
+  }
+
+  // ── Feature cards ─────────────────────────────────
+  .feature-card-premium {
+    border-color: var(--teal-border);
+    box-shadow: 0 4px 24px rgba(13, 148, 136, 0.06);
+
+    .icon-box-modern {
+      background: linear-gradient(135deg,
+        rgba(13, 148, 136, 0.12),
+        rgba(13, 148, 136, 0.06));
+      color: var(--teal);
+    }
+
+    h4 { color: var(--text-primary); font-weight: 700; }
+    p  { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(13, 148, 136, 0.38);
+      box-shadow: 0 20px 50px rgba(13, 148, 136, 0.14);
+      transform: translateY(-6px);
+
+      .icon-box-modern {
+        background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+        color: #fff;
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  // ── Workflow section ──────────────────────────────
+  .billing-workflow {
+    background: #f2fdfb;
+    border-color: rgba(13, 148, 136, 0.08);
+  }
+
+  .workflow-card {
+    border-color: var(--teal-border);
+    background: rgba(255, 255, 255, 0.92);
+
+    .workflow-number { color: rgba(185, 132, 35, 0.13); }
+
+    .workflow-icon {
+      background: linear-gradient(135deg,
+        rgba(13, 148, 136, 0.12),
+        rgba(13, 148, 136, 0.06));
+      color: var(--teal);
+    }
+
+    h3 { color: var(--text-primary); font-weight: 700; }
+    p  { color: var(--text-muted); }
+
+    &:hover {
+      border-color: rgba(13, 148, 136, 0.38);
+      box-shadow: 0 20px 50px rgba(13, 148, 136, 0.13);
+
+      .workflow-icon {
+        background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+        color: #fff;
+      }
+    }
+  }
+
+  // ── AI / Why section ──────────────────────────────
+  .ai-features {
+    background: linear-gradient(180deg, #f2fdfb 0%, #e6faf7 100%);
+  }
+
+  .ai-glass-card {
+    border-color: var(--teal-border);
+    background: rgba(255, 255, 255, 0.92);
+
+    .ai-icon {
+      background: linear-gradient(135deg,
+        rgba(13, 148, 136, 0.12),
+        rgba(13, 148, 136, 0.06));
+      color: var(--teal);
+    }
+
+    .ai-step-num { color: rgba(185, 132, 35, 0.15); }
+
+    h5 { color: var(--text-primary); font-weight: 800; }
+    p  { color: var(--text-muted); }
+
+    &::after {
+      background: linear-gradient(90deg, var(--teal), rgba(13, 148, 136, 0.12));
+    }
+
+    &:hover {
+      border-color: rgba(13, 148, 136, 0.38);
+      box-shadow: 0 24px 60px rgba(13, 148, 136, 0.13);
+
+      &::after { opacity: 1; }
+    }
+  }
+
+  // ── CTA section ───────────────────────────────────
+  .cta-modern {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal-deep) 100%);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(13, 148, 136, 0.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+  }
+
+  .btn-white-primary {
+    color: var(--teal-dark);
+    font-weight: 700;
+
+    &:hover, &:focus {
+      background: transparent;
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+}
+
+:host.workflow-theme {
+  .product-preview-frame img {
+    object-position: left center;
+  }
+}
+
+// =====================================================
+// Enhanced Animations — Product Layout
+// =====================================================
+
+@keyframes hero-intro-slide {
+  from { opacity: 0; transform: translateX(-48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hero-preview-slide {
+  from { opacity: 0; transform: translateX(48px) scale(0.93); }
+  to   { opacity: 1; transform: translateX(18px) scale(1); }
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(34px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes stat-item-reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes icon-bounce {
+  0%   { transform: scale(1)    rotate(0deg);  }
+  30%  { transform: scale(1.24) rotate(-6deg); }
+  60%  { transform: scale(0.94) rotate(2deg);  }
+  100% { transform: scale(1.06) rotate(0deg);  }
+}
+
+@keyframes cta-float {
+  0%,  100% { transform: translateY(0)   scale(1);    opacity: 0.5;  }
+  50%        { transform: translateY(-9px) scale(1.12); opacity: 0.72; }
+}
+
+@keyframes arrow-bounce {
+  0%,  100% { transform: translateX(0);  }
+  50%        { transform: translateX(5px); }
+}
+
+@keyframes badge-pop {
+  from { opacity: 0; transform: scale(0.88) translateY(6px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);   }
+}
+
+// Hero section entrance — expo-out easing (0.22, 1, 0.36, 1) for premium SaaS feel
+.billing-badge      { animation: badge-pop          0.75s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.12s both; }
+.hero-intro         { animation: hero-intro-slide    1.10s cubic-bezier(0.22, 1, 0.36, 1)          0.18s both; }
+.hero-feature-grid  { animation: hero-rise           0.90s cubic-bezier(0.22, 1, 0.36, 1)          0.40s both; }
+.hero-actions       { animation: hero-rise           1.00s cubic-bezier(0.22, 1, 0.36, 1)          0.54s both; }
+.hero-stats         { animation: hero-rise           1.05s cubic-bezier(0.22, 1, 0.36, 1)          0.68s both; }
+
+.hero-preview-wrap  { animation: hero-preview-slide  1.20s cubic-bezier(0.22, 1, 0.36, 1)          0.22s both; }
+
+@media (max-width: 991px) {
+  .hero-preview-wrap { animation-name: hero-rise; }
+}
+
+// Feat-chip hover
+.feat-chip {
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  &:hover {
+    transform: scale(1.06) translateY(-1px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+}
+
+// Feature card icon bounce on hover
+.feature-card-premium:hover .icon-box-modern i {
+  display: inline-block;
+  animation: icon-bounce 0.48s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+// Workflow card icon bounce on hover
+.workflow-card:hover .workflow-icon i {
+  display: inline-block;
+  animation: icon-bounce 0.44s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+// CTA icon float
+.cta-modern .cta-icon {
+  display: inline-block;
+  animation: cta-float 3.2s ease-in-out infinite;
+}
+
+// CTA button arrow on hover
+.cta-modern .btn-white-primary:hover i {
+  display: inline-block;
+  animation: arrow-bounce 0.55s ease-in-out;
+}
+
+// Stat item hover highlight (base)
+.hero-stats .stat-item {
+  transition: background 0.25s ease;
+  cursor: default;
+}
+
+// ─────────────────────────────────────────────────────────────
+// ENHANCED ANIMATIONS — Extended Feature Set
+// ─────────────────────────────────────────────────────────────
+
+@keyframes orb-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  38%       { transform: translate(22px, -18px) scale(1.07); }
+  68%       { transform: translate(-14px, 12px) scale(0.96); }
+}
+
+@keyframes orb-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  42%       { transform: translate(-20px, 16px) scale(1.09); }
+  72%       { transform: translate(14px, -10px) scale(0.94); }
+}
+
+@keyframes preview-levitate {
+  0%, 100% { transform: translateX(18px) translateY(0px); }
+  50%       { transform: translateX(18px) translateY(-11px); }
+}
+
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-color), transparent 58%); }
+  50%       { box-shadow: 0 8px 32px color-mix(in srgb, var(--accent-color), transparent 30%); }
+}
+
+@keyframes chip-entrance {
+  from { opacity: 0; transform: scale(0.78) translateY(14px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0);    }
+}
+
+@keyframes stat-count-pop {
+  0%   { transform: scale(1);   }
+  40%  { transform: scale(1.2); color: var(--accent-color); }
+  100% { transform: scale(1);   }
+}
+
+@keyframes shimmer-entry {
+  from { background-position: -300% center; }
+  to   { background-position:  300% center; }
+}
+
+// ─── Decorative orbs behind hero content ─────────────────────
+.hero-layout {
+  position: relative;
+  isolation: isolate;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  &::before {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle,
+      color-mix(in srgb, var(--accent-color), transparent 84%) 0%,
+      transparent 68%);
+    top: -70px;
+    right: -40px;
+    animation: orb-drift-a 11s ease-in-out infinite;
+  }
+
+  &::after {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle,
+      color-mix(in srgb, var(--accent-color), transparent 90%) 0%,
+      transparent 70%);
+    bottom: 10px;
+    left: -30px;
+    animation: orb-drift-b 14s ease-in-out infinite;
+  }
+}
+
+// ─── Preview frame — entrance + continuous levitation (desktop) ─
+@media (min-width: 992px) {
+  .hero-preview-wrap {
+    animation:
+      hero-preview-slide 1.20s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both,
+      preview-levitate   6s   ease-in-out                       1.6s  infinite;
+  }
+}
+
+// ─── Feature chips — staggered entrance ──────────────────────
+.hero-feature-grid {
+  animation: none;
+
+  .feat-chip {
+    animation: chip-entrance 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    &:nth-child(1) { animation-delay: 0.44s; }
+    &:nth-child(2) { animation-delay: 0.54s; }
+    &:nth-child(3) { animation-delay: 0.64s; }
+    &:nth-child(4) { animation-delay: 0.74s; }
+    &:nth-child(5) { animation-delay: 0.84s; }
+    &:nth-child(6) { animation-delay: 0.94s; }
+  }
+}
+
+// ─── Primary button — ambient glow pulse ─────────────────────
+.btn-billing {
+  animation: btn-glow-pulse 2.8s ease-in-out infinite;
+
+  &:hover,
+  &:focus { animation-play-state: paused; }
+}
+
+// ─── Stats strip — enhanced hover + count-pop ────────────────
+.hero-stats .stat-item {
+  transition: background 0.25s ease, transform 0.22s ease;
+
+  &:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 94%);
+    transform: translateY(-3px);
+
+    .stat-num { color: var(--accent-color); }
+  }
+
+  .stat-num {
+    transition: color 0.25s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      border-radius: 4px;
+      margin: 5px auto 0;
+      transition: width 0.35s ease;
+    }
+
+    &.stat-popped {
+      animation: stat-count-pop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+  }
+
+  &:hover .stat-num::after { width: 30px; }
+}
+
+// ─── Feature cards — shimmer sweep on hover ──────────────────
+.feature-card-premium {
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      color-mix(in srgb, var(--accent-color), transparent 91%) 50%,
+      transparent 60%
+    );
+    background-size: 300% 100%;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation: shimmer-entry 0.7s ease forwards;
+  }
+}
+
+// ─── AI glass cards — shimmer on hover ───────────────────────
+.ai-glass-card {
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      color-mix(in srgb, var(--accent-color), transparent 91%) 50%,
+      transparent 60%
+    );
+    background-size: 300% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    animation: shimmer-entry 0.7s ease forwards;
+  }
+}
+
+// ─── Workflow cards — scroll-triggered internal animations ────
+// These fire the moment AOS adds .aos-animate to each card,
+// so they coordinate correctly with on-scroll entrance.
+
+@keyframes wf-icon-pop {
+  0%   { opacity: 0; transform: scale(0.55) rotate(-12deg); }
+  65%  { opacity: 1; transform: scale(1.14) rotate(4deg);   }
+  100% { opacity: 1; transform: scale(1)    rotate(0deg);   }
+}
+
+@keyframes wf-num-slide {
+  from { opacity: 0; transform: translateX(22px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+@keyframes wf-text-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes wf-card-glow {
+  from { box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035); }
+  to   { box-shadow: 0 20px 50px rgba(15, 23, 42, 0.035),
+                     0 0 0 1.5px color-mix(in srgb, var(--accent-color), transparent 80%); }
+}
+
+// Internal element animations — fire only after AOS shows the card
+.workflow-card.aos-animate {
+  animation: wf-card-glow 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+
+  .workflow-number {
+    animation: wf-num-slide 0.70s cubic-bezier(0.22, 1, 0.36, 1) 0.10s both;
+  }
+
+  .workflow-icon {
+    animation: wf-icon-pop  0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.20s both;
+  }
+
+  h3 {
+    animation: wf-text-rise 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.30s both;
+  }
+
+  p {
+    animation: wf-text-rise 0.60s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both;
+  }
+}
+
+// Workflow icon — subtle continuous pulse after entrance (desktop)
+@media (min-width: 992px) {
+  .workflow-card.aos-animate .workflow-icon {
+    animation:
+      wf-icon-pop  0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.20s both;
+  }
+}
+
+// ─── Reduced-motion: skip internal card animations ────────────
+@media (prefers-reduced-motion: reduce) {
+  .workflow-card.aos-animate .workflow-number,
+  .workflow-card.aos-animate .workflow-icon,
+  .workflow-card.aos-animate h3,
+  .workflow-card.aos-animate p {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// ─── CTA section — top radial glow ───────────────────────────
+.cta-modern {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% -10%,
+      rgba(255, 255, 255, 0.12) 0%,
+      transparent 60%);
+    pointer-events: none;
+  }
+}
+
+// ─── Stats strip — staggered per-item reveal ─────────────────
+.hero-stats .stat-item {
+  animation: stat-item-reveal 0.80s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  &:nth-child(1) { animation-delay: 0.78s; }
+  &:nth-child(2) { animation-delay: 0.94s; }
+  &:nth-child(3) { animation-delay: 1.10s; }
+  &:nth-child(4) { animation-delay: 1.26s; }
+}
+
+// ─── Mobile: disable orbs + levitate ─────────────────────────
+@media (max-width: 991px) {
+  .hero-layout::before,
+  .hero-layout::after { display: none; }
+
+  .hero-preview-wrap { animation-name: hero-rise; }
+}
+
+// ─── Respect reduced-motion preference ───────────────────────
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro,
+  .hero-preview-wrap,
+  .hero-feature-grid,
+  .hero-actions,
+  .hero-stats,
+  .billing-badge,
+  .feat-chip,
+  .hero-stats .stat-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// 3D TILT CARD — Product Preview (Uiverse.io)
+// ─────────────────────────────────────────────────────────────
+
+.preview-tilt-outer {
+  perspective: 800px;
+  position: relative;
+  width: fit-content;
+  max-width: 600px;
+  margin: 40px 0 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+
+  &:active .product-preview-frame {
+    transform: scale(0.978) !important;
+    transition: 120ms ease-in-out !important;
+  }
+
+  // Override sizing styles from standalone .product-preview-frame
+  .product-preview-frame {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    position: relative;
+    transition: 700ms;
+  }
+}
+
+// Trackers: 25 invisible hit-zones in a 5×5 grid (position absolute)
+.tracker {
+  position: absolute;
+  z-index: 200;
+  width: 20%;
+  height: 20%;
+
+  &:hover { cursor: pointer; }
+}
+
+// Row 1
+.tr-1  { top: 0%;   left: 0%;   }
+.tr-2  { top: 0%;   left: 20%;  }
+.tr-3  { top: 0%;   left: 40%;  }
+.tr-4  { top: 0%;   left: 60%;  }
+.tr-5  { top: 0%;   left: 80%;  }
+// Row 2
+.tr-6  { top: 20%;  left: 0%;   }
+.tr-7  { top: 20%;  left: 20%;  }
+.tr-8  { top: 20%;  left: 40%;  }
+.tr-9  { top: 20%;  left: 60%;  }
+.tr-10 { top: 20%;  left: 80%;  }
+// Row 3
+.tr-11 { top: 40%;  left: 0%;   }
+.tr-12 { top: 40%;  left: 20%;  }
+.tr-13 { top: 40%;  left: 40%;  }
+.tr-14 { top: 40%;  left: 60%;  }
+.tr-15 { top: 40%;  left: 80%;  }
+// Row 4
+.tr-16 { top: 60%;  left: 0%;   }
+.tr-17 { top: 60%;  left: 20%;  }
+.tr-18 { top: 60%;  left: 40%;  }
+.tr-19 { top: 60%;  left: 60%;  }
+.tr-20 { top: 60%;  left: 80%;  }
+// Row 5
+.tr-21 { top: 80%;  left: 0%;   }
+.tr-22 { top: 80%;  left: 20%;  }
+.tr-23 { top: 80%;  left: 40%;  }
+.tr-24 { top: 80%;  left: 60%;  }
+.tr-25 { top: 80%;  left: 80%;  }
+
+// Brightness lift when any tracker is hovered
+.tracker:hover ~ .product-preview-frame {
+  filter: brightness(1.06);
+}
+
+// 3D tilt per zone (rotateX: top=+20° → bottom=-20°, rotateY: left=-10° → right=+10°)
+.tr-1:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(20deg)  rotateY(-10deg); }
+.tr-2:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(20deg)  rotateY(-5deg);  }
+.tr-3:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(20deg)  rotateY(0deg);   }
+.tr-4:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(20deg)  rotateY(5deg);   }
+.tr-5:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(20deg)  rotateY(10deg);  }
+.tr-6:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(10deg)  rotateY(-10deg); }
+.tr-7:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(10deg)  rotateY(-5deg);  }
+.tr-8:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(10deg)  rotateY(0deg);   }
+.tr-9:hover  ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(10deg)  rotateY(5deg);   }
+.tr-10:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(10deg)  rotateY(10deg);  }
+.tr-11:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(0deg)   rotateY(-10deg); }
+.tr-12:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(0deg)   rotateY(-5deg);  }
+.tr-13:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(0deg)   rotateY(0deg);   }
+.tr-14:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(0deg)   rotateY(5deg);   }
+.tr-15:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(0deg)   rotateY(10deg);  }
+.tr-16:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-10deg); }
+.tr-17:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(-5deg);  }
+.tr-18:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(0deg);   }
+.tr-19:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(5deg);   }
+.tr-20:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-10deg) rotateY(10deg);  }
+.tr-21:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-10deg); }
+.tr-22:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(-5deg);  }
+.tr-23:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(0deg);   }
+.tr-24:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(5deg);   }
+.tr-25:hover ~ .product-preview-frame { transition: 125ms ease-in-out; transform: rotateX(-20deg) rotateY(10deg);  }
+
+// Glow bloom behind card when tilting
+.preview-tilt-outer .product-preview-frame {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 60%,
+      color-mix(in srgb, var(--accent-color), transparent 60%) 0%,
+      transparent 68%);
+    filter: blur(1.6rem);
+    opacity: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transition: opacity 200ms ease;
+    pointer-events: none;
+  }
+}
+
+.tracker:hover ~ .product-preview-frame::after {
+  opacity: 0.38;
+}
+
+// Disable tilt on mobile (touch devices)
+@media (max-width: 991px) {
+  .tracker { display: none; }
+
+  .preview-tilt-outer {
+    perspective: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+
+    .product-preview-frame {
+      transition: 700ms;
+    }
+  }
+}
+

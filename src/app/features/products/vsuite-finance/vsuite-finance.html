@@ -1,0 +1,397 @@
+<!-- ===================================== -->
+<!-- vSuite Finance — Premium Modern UI -->
+<!-- ===================================== -->
+
+<!-- ===== HERO ===== -->
+<section class="product-page-hero section overflow-hidden">
+
+  <div class="finance-bg-circle finance-bg-circle--1"></div>
+  <div class="finance-bg-circle finance-bg-circle--2"></div>
+
+  <div class="container position-relative">
+
+    <div class="row justify-content-center text-center">
+
+      <div class="col-xl-8 col-lg-10">
+
+        <!-- Center Hero Image -->
+        <div class="finance-logo-wrap d-flex justify-content-center" data-aos="zoom-in">
+
+          <img src="assets/img/vs suitable image/Accounting.jpg" alt="vSuite Finance" class="finance-hero-image" />
+
+        </div>
+
+        <!-- Badge -->
+        <span class="finance-badge mt-4 d-inline-flex" data-aos="fade-up">
+          vSuite Ecosystem
+        </span>
+
+        <!-- Title -->
+        <h1 class="finance-hero-title mt-4" data-aos="fade-up" data-aos-delay="100">
+          vSuite Finance
+        </h1>
+
+        <!-- Tagline -->
+        <p class="finance-tagline mt-3" data-aos="fade-up" data-aos-delay="150">
+          {{ tagline }}
+        </p>
+
+        <!-- Description -->
+        <p class="finance-hero-sub mt-4" data-aos="fade-up" data-aos-delay="200">
+
+          Transform your core financial operations
+          with intelligent automation.
+
+          vSuite Finance powers your business
+          with smarter billing, seamless accounting,
+          and automated payroll — so you can focus
+          on growth, not complexity.
+
+        </p>
+
+        <!-- Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-5" data-aos="fade-up" data-aos-delay="250">
+
+          <a href="#appointment" class="btn finance-btn-primary btn-lg rounded-pill px-5">
+
+            Get Started
+
+            <i class="bi bi-arrow-right ms-2"></i>
+
+          </a>
+
+          <a href="#contact" class="btn finance-btn-outline btn-lg rounded-pill px-5">
+
+            Contact Sales
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ===== Floating Stats Strip ===== -->
+
+    <div class="finance-stats-strip" data-aos="fade-up" data-aos-delay="350">
+
+      <div class="finance-stat-item">
+
+        <h3>70%</h3>
+        <p>Efficiency Increase</p>
+
+      </div>
+
+      <div class="finance-stat-item">
+
+        <h3>100%</h3>
+        <p>GST Compliance</p>
+
+      </div>
+
+      <div class="finance-stat-item">
+
+        <h3>24/7</h3>
+        <p>Automation Support</p>
+
+      </div>
+
+      <div class="finance-stat-item">
+
+        <h3>AI</h3>
+        <p>Driven Insights</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== FINANCE PILLARS ===== -->
+
+<section class="finance-pillars section">
+
+  <div class="container position-relative">
+
+    <!-- Floating Badge Left -->
+    <div class="finance-floating-badge badge-left">
+
+      <div class="d-flex align-items-center gap-3">
+
+        <div class="finance-icon-wrap">
+          <i class="bi bi-shield-check"></i>
+        </div>
+
+        <div>
+
+          <h6 class="mb-0 fw-bold">
+            Smart Automation
+          </h6>
+
+          <p class="mb-0 small text-muted">
+            AI-powered finance operations
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Floating Badge Right -->
+    <div class="finance-floating-badge badge-right">
+
+      <div class="d-flex align-items-center gap-3">
+
+        <div class="finance-icon-wrap">
+          <i class="bi bi-graph-up-arrow"></i>
+        </div>
+
+        <div>
+
+          <h6 class="mb-0 fw-bold">
+            Real-Time Reports
+          </h6>
+
+          <p class="mb-0 small text-muted">
+            Live business visibility
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+
+      <span class="finance-section-tag">
+        Core Finance Pillars
+      </span>
+
+      <h2 class="finance-section-title mt-4">
+
+        Unified Financial Solutions
+
+      </h2>
+
+      <p class="finance-section-sub mt-3">
+
+        Modular solutions that work together
+        to provide a unified financial view.
+
+      </p>
+
+    </div>
+
+    <!-- Cards -->
+    <div class="row g-5">
+
+      <div class="col-lg-6" *ngFor="let pillar of financePillars; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 200">
+
+        <div class="pillar-card p-5 h-100">
+
+          <div class="pillar-icon-box mb-4">
+
+            <i class="bi" [ngClass]="pillar.icon"></i>
+
+          </div>
+
+          <h3 class="fw-bold mb-3">
+            {{ pillar.title }}
+          </h3>
+
+          <p class="mb-4 text-muted">
+            {{ pillar.description }}
+          </p>
+
+          <ul class="pillar-highlights list-unstyled mb-5">
+
+            <li class="pillar-highlight-item" *ngFor="let highlight of pillar.highlights">
+
+              <div class="highlight-icon">
+
+                <i class="bi bi-check2"></i>
+
+              </div>
+
+              <div class="highlight-content">
+
+                <span>
+                  {{ highlight }}
+                </span>
+
+              </div>
+
+            </li>
+
+          </ul>
+          <a [routerLink]="pillar.link" class="finance-link-btn mt-auto">
+
+            Explore {{ pillar.title }}
+
+            <i class="bi bi-arrow-right ms-2"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== BENEFITS ===== -->
+
+<section class="finance-benefits section overflow-hidden">
+
+  <div class="finance-benefits-bg"></div>
+
+  <div class="container position-relative">
+
+    <!-- Section Title -->
+    <div class="section-title text-center mb-5" data-aos="fade-up">
+
+      <span class="finance-section-tag">
+        Business Impact
+      </span>
+
+      <h2 class="finance-section-title mt-4">
+
+        Measurable Financial Results
+
+      </h2>
+
+      <p class="finance-section-sub mt-3">
+
+        Transform financial operations with
+        automation, real-time visibility,
+        and intelligent workflows.
+
+      </p>
+
+    </div>
+
+    <!-- Benefits Grid -->
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-12 col-md-6" *ngFor="let benefit of benefits; let i = index" data-aos="fade-up"
+        [attr.data-aos-delay]="i * 150">
+
+        <div class="finance-benefit-card h-100 ">
+
+          <!-- Glow -->
+          <div class="finance-benefit-glow"></div>
+
+          <!-- Icon -->
+          <div class="finance-benefit-icon">
+
+            <i class="bi" [ngClass]="
+                i === 0
+                  ? 'bi-lightning-charge'
+                  : i === 1
+                  ? 'bi-graph-up-arrow'
+                  : i === 2
+                  ? 'bi-shield-check'
+                  : 'bi-cloud-check'
+              "></i>
+
+          </div>
+
+          <!-- Value -->
+          <h2 class="finance-benefit-value">
+            {{ benefit.value }}
+          </h2>
+
+          <!-- Title -->
+          <h4 class="finance-benefit-title">
+            {{ benefit.title }}
+          </h4>
+
+          <!-- Desc -->
+          <p class="finance-benefit-desc">
+            {{ benefit.description }}
+          </p>
+
+          <!-- Bottom Line -->
+          <div class="finance-benefit-line"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== CTA ===== -->
+
+<section class="integration-cta section overflow-hidden">
+
+  <div class="finance-cta-circle finance-cta-circle--1"></div>
+  <div class="finance-cta-circle finance-cta-circle--2"></div>
+
+  <div class="container text-center py-5 position-relative">
+
+    <span class="finance-cta-tag">
+      Integrations
+    </span>
+
+    <h2 class="finance-cta-title mt-4">
+
+      Integrate with Your Favorite Tools
+
+    </h2>
+
+    <p class="finance-cta-sub mt-4">
+
+      Connect vSuite Finance seamlessly with
+      Tally, QuickBooks, Razorpay, Stripe,
+      and more.
+
+    </p>
+
+    <!-- Icons -->
+    <div class="partner-logos">
+
+      <div class="partner-icon">
+        <i class="bi bi-bank"></i>
+      </div>
+
+      <div class="partner-icon">
+        <i class="bi bi-credit-card"></i>
+      </div>
+
+      <div class="partner-icon">
+        <i class="bi bi-wallet2"></i>
+      </div>
+
+      <div class="partner-icon">
+        <i class="bi bi-shield-check"></i>
+      </div>
+
+    </div>
+    <div class="finance-cta-btn-wrap">
+
+      <a href="#appointment" class="btn finance-btn-light btn-lg rounded-pill px-5">
+
+        Request a Custom Demo
+
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>

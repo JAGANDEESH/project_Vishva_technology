@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { EmailService } from '../../../../shared/services/email.service';
 
 interface ContactForm {
   name: string;
@@ -20,13 +21,42 @@ export class ContactComponent {
   form: ContactForm = { name: '', email: '', subject: '', message: '' };
   submitted = false;
   loading = false;
+  errorMessage = '';
+
+  @ViewChild('contactForm') contactFormRef!: NgForm;
+
+  constructor(private emailService: EmailService) {}
 
   onSubmit(): void {
+    // Prevent submission if required fields are empty
+    if (this.contactFormRef && !this.contactFormRef.valid) {
+      Object.values(this.contactFormRef.controls).forEach(control => {
+        control.markAsTouched();
+      });
+      this.errorMessage = 'Please fill in all required fields before sending.';
+      return;
+    }
+
     this.loading = true;
-    setTimeout(() => {
+    this.errorMessage = '';
+
+    this.emailService.sendContactMessage({
+      name: this.form.name,
+      email: this.form.email,
+      subject: this.form.subject,
+      message: this.form.message
+    })
+    .then(() => {
       this.loading = false;
       this.submitted = true;
       this.form = { name: '', email: '', subject: '', message: '' };
-    }, 1500);
+      if (this.contactFormRef) {
+        this.contactFormRef.resetForm();
+      }
+    })
+    .catch((error) => {
+      this.loading = false;
+      this.errorMessage = error?.text || error?.message || 'Failed to send your message. Please try again later.';
+    });
   }
 }

@@ -4,7 +4,7 @@
 
 /* ---- Headline Banner ---- */
 .ai-headline {
-  background: linear-gradient(135deg, #0f2742 0%, #1a4a8a 60%, #2094E7 100%);
+  background: linear-gradient(135deg, #0A1428 0%, #1B2E5E 60%, #224773 100%);
   border-radius: 12px;
   padding: 50px 50px;
   margin-bottom: 50px;
@@ -55,7 +55,7 @@
   align-items: center;
   gap: 8px;
   background: #fff;
-  color: #1a4a8a;
+  color: #1B2E5E;
   font-weight: 700;
   font-size: 14px;
   padding: 12px 28px;
@@ -67,8 +67,8 @@
   i { transition: transform 0.3s; }
 
   &:hover {
-    background: #e8f3ff;
-    color: #0f2742;
+    background: #EEF4FF;
+    color: #0A1428;
 
     i { transform: translateX(4px); }
   }
@@ -198,7 +198,7 @@
 
   &:hover {
     border-color: var(--accent-color);
-    box-shadow: 0 8px 28px rgba(32, 148, 231, 0.12);
+    box-shadow: 0 8px 28px rgba(43, 112, 212, 0.12);
     transform: translateY(-4px);
 
     .capability-icon {
@@ -247,7 +247,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background: linear-gradient(135deg, #0f2742 0%, #2094E7 100%);
+  background: linear-gradient(135deg, #0A1428 0%, #224773 100%);
   border-radius: 10px;
   padding: 36px 20px;
   margin-top: 50px;

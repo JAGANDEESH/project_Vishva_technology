@@ -1,7 +1,24 @@
 .mega-menu {
   width: min(850px, 94vw);
   background: var(--surface-color);
-  overflow: hidden;
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Custom Scrollbar for Mega Menu */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
 }
 
 .main-pane {
@@ -28,20 +45,10 @@
   border-radius: 8px;
   transition: all 0.3s ease;
   margin-bottom: 4px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
   
-  &:hover {
-    background: color-mix(in srgb, var(--accent-color), transparent 94%);
-    transform: translateX(4px);
-    
-    .prod-icon-wrap {
-      background: var(--accent-color);
-      color: #fff;
-    }
-    
-    .prod-name {
-      color: var(--accent-color);
-    }
-  }
 }
 
 .prod-icon-wrap {

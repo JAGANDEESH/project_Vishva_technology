@@ -22,7 +22,9 @@ interface SolutionItem {
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
   activeFilter = 'all';
+  gridVisible = true;
   private filterSub!: Subscription;
+  private filterTimer: any;
 
   constructor(private portfolioFilter: PortfolioFilterService) {}
 
@@ -34,6 +36,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.filterSub.unsubscribe();
+    clearTimeout(this.filterTimer);
   }
 
   filters = [
@@ -52,7 +55,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
       description: 'Instant GST-compliant invoice generation with UPI/QR payment support, automated reminders, recurring billing, and real-time sales dashboard for modern businesses.',
       img: 'assets/img/gallery/gallery-1.jpg',
       icon: 'bi-receipt',
-      color: '#2094E7'
+      color: '#224773'
     },
     {
       title: 'Intelligent Accounting',
@@ -61,7 +64,7 @@ export class PortfolioComponent implements OnInit, OnDestroy {
       description: 'Complete financial management with general ledger, journal entries, expense tracking, GST compliance, bank reconciliation, and AI-driven financial forecasting.',
       img: 'assets/img/gallery/gallery-2.jpg',
       icon: 'bi-calculator',
-      color: '#2094E7'
+      color: '#224773'
     },
     {
       title: 'Automated Payroll',
@@ -125,6 +128,12 @@ export class PortfolioComponent implements OnInit, OnDestroy {
   }
 
   setFilter(key: string): void {
-    this.portfolioFilter.setFilter(key);
+    if (this.activeFilter === key) return;
+    clearTimeout(this.filterTimer);
+    this.gridVisible = false;
+    this.filterTimer = setTimeout(() => {
+      this.portfolioFilter.setFilter(key);
+      this.gridVisible = true;
+    }, 300);
   }
 }
