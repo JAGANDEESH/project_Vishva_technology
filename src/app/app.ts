@@ -39,13 +39,13 @@ import { FooterComponent } from './shared/footer/footer.component';
           <div class="preloader-ring ring-inner"></div>
           <!-- Logo centred inside rings -->
           <div class="preloader-logo-wrap">
-            <img src="assets/Lotus.svg" alt="Vishva Technologies" class="preloader-logo">
+            <img src="assets/Lotus.svg" alt="Vishva Digital Technologies" class="preloader-logo">
           </div>
         </div>
 
         <!-- Brand text -->
         <div class="preloader-brand">
-          <p class="preloader-tagline">VISHVA TECHNOLOGIES</p>
+          <p class="preloader-tagline">Vishva Digital Technologies</p>
           <p class="preloader-sub">Building Tomorrow's Solutions</p>
         </div>
 

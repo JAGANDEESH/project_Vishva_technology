@@ -19,7 +19,7 @@ export class AiAutomationComponent {
       title: 'Beyond Rule-Based Bots.<br>Truly Intelligent Automation.',
       description: 'Combine AI reasoning with RPA execution speed to automate complex, unstructured, and judgment-intensive processes that traditional rule-based systems cannot handle.',
       imageSrc: 'assets/img/ai-rpa-business-automation-2025.webp',
-      imageAlt: 'Vishva Technologies AI Automation',
+      imageAlt: 'Vishva Digital Technologies AI Automation',
       imageCaptionIcon: 'bi-stars',
       imageCaptionText: 'Enterprise-Grade AI Automation Platform',
       features: [

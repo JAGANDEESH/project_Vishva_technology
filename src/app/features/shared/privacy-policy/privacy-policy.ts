@@ -15,7 +15,7 @@ import { Component } from '@angular/core';
           <div class="pp-block">
             <h2>1. Introduction</h2>
             <p>
-              Vishva Technologies ("we", "our", "us") is committed to protecting your privacy.
+              Vishva Digital Technologies ("we", "our", "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, disclose, and safeguard your
               information when you visit our website or use our services. Please read this policy
               carefully. If you do not agree with the terms of this policy, please do not access the site.

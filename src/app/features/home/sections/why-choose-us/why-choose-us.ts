@@ -13,7 +13,7 @@ export class WhyChooseUsComponent {
     {
       icon: 'bi-rocket-takeoff',
       title: 'Outcome-Driven Product Engineering',
-      description: 'At Vishva Technologies, we don’t just build software—we build business solutions that deliver measurable results.',
+      description: 'At Vishva Digital Technologies, we don’t just build software—we build business solutions that deliver measurable results.',
       highlights: [
         'End-to-end product development (idea → design → development → deployment)',
         'Web, mobile, and enterprise applications',
